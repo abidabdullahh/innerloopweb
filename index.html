@@ -1,1501 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-
-<!-- ═══════════════════════════════════════════════════
-     INNERLOOP ATELIER — WEBSITE
-     GitHub Pages ready · Single file · Zero dependencies
-
-     SETUP (2 steps):
-     1. Contact form: Go to https://web3forms.com/ → enter
-        innerloopatelier@gmail.com → copy your Access Key →
-        replace "YOUR_WEB3FORMS_KEY_HERE" on line ~430 below.
-     2. Push this file as index.html to your GitHub repo root,
-        then enable Pages: Settings → Pages → Deploy from branch
-        → main → / (root).
-     Site will be live at: https://<username>.github.io/<repo>
-═══════════════════════════════════════════════════ -->
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0D0C0A">
-
-<title>Innerloop Atelier — Brand · Landscape · Interior | Dhaka</title>
-<meta name="description" content="Innerloop Atelier is Dhaka's execution-focused creative studio for ATL/BTL Branding, Landscaping, and Interior Design. Built on Identity. Shaped by Space.">
-<meta name="keywords" content="branding agency Dhaka, interior design Dhaka, landscape design Bangladesh, ATL BTL branding, Innerloop Atelier">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Innerloop Atelier — Built on Identity. Shaped by Space.">
-<meta property="og:description" content="Dhaka's integrated studio for Branding, Landscaping, and Interior Design. Strategy · Craft · Execution.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://innerloopatelier.com">
-<meta property="og:image" content="https://innerloopatelier.com/og-cover.jpg">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Innerloop Atelier">
-<meta name="twitter:description" content="Built on Identity. Shaped by Space. Dhaka's integrated design studio.">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://innerloopatelier.com">
-
-<!-- Fonts: Barlow Condensed (display) + DM Sans (body) -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Innerloop Atelier — Architecture, Brand & Landscape Studio, Dhaka</title>
+<meta name="description" content="Innerloop Atelier is a Dhaka-based multi-discipline design studio working across architecture & interior, brand & graphic design, and landscape & horticulture." />
+<meta property="og:title" content="Innerloop Atelier — Architecture, Brand & Landscape Studio" />
+<meta property="og:description" content="A Dhaka-based design studio at the intersection of architecture, brand, and landscape." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════
-   DESIGN TOKENS
-═══════════════════════════════════════ */
-:root {
-  --ink:        #0D0C0A;
-  --deep:       #121009;
-  --surface:    #181511;
-  --lift:       #1E1C14;
-  --hover-bg:   #232018;
-  --gold:       #C4862A;
-  --gold-hi:    #D49535;
-  --gold-dim:   rgba(196,134,42,0.12);
-  --gold-rule:  rgba(196,134,42,0.18);
-  --cream:      #EDE8DC;
-  --muted:      #726A5A;
-  --faint:      #4A4438;
-  --white:      #FFFFFF;
-  --green-wa:   #25D366;
-  --shadow-card:0 2px 12px rgba(0,0,0,0.35), 0 0 0 1px rgba(196,134,42,0.1);
-  --shadow-lift:0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(196,134,42,0.2);
-  --nav-h:      68px;
-  --max:        1180px;
-  --gutter:     60px;
-  --ease:       cubic-bezier(.25,.46,.45,.94);
-  --ease-out:   cubic-bezier(0,.0,.2,1);
-  --radius:     3px;
+:root{
+  --ink:#0C0B09;--surface:#161410;--panel:#1E1B16;
+  --gold:#C4862A;--gold-lt:#E0A040;--cream:#F0EAD8;
+  --muted:#8A8070;--rule:rgba(196,134,42,.15);
+  --font-display:"Cormorant Garamond",serif;
+  --font-mono:"Barlow Condensed",sans-serif;
+  --font-sans:"Outfit",sans-serif;
 }
-
-/* ═══════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--ink);color:var(--cream);
-  font-family:'DM Sans',system-ui,sans-serif;
-  font-weight:300;line-height:1.65;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
+*{box-sizing:border-box;margin:0;padding:0;border-color:var(--rule)}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-button{cursor:pointer;border:none;background:none;font-family:inherit}
-input,textarea,select{font-family:inherit;color:inherit}
-ul{list-style:none}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--deep)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-/* Utility */
-.max-w{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.container{padding:0 48px}}
 
-/* ═══════════════════════════════════════
-   REVEAL ANIMATIONS
-═══════════════════════════════════════ */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
-.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+/* Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,backdrop-filter .3s}
+.nav.scrolled{background:rgba(12,11,9,.85);backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 24px}
+@media(min-width:768px){.nav-inner{padding:20px 48px}}
+.brand{font-family:var(--font-mono);font-weight:700;font-size:18px;letter-spacing:.2em}
+.brand span{color:var(--gold)}
+.nav ul{display:none;gap:36px;list-style:none}
+@media(min-width:768px){.nav ul{display:flex}}
+.nav ul a,.nav-cta{font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--muted);transition:color .2s}
+.nav ul a:hover,.nav-cta:hover{color:var(--gold)}
+.nav-cta{display:none;color:var(--cream);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:8px}
+@media(min-width:768px){.nav-cta{display:inline}}
+.burger{display:block;background:none;border:0;cursor:pointer;padding:6px}
+@media(min-width:768px){.burger{display:none}}
+.burger span{display:block;width:24px;height:1px;background:var(--cream);margin-top:6px}
+.burger span:first-child{margin-top:0}
+.burger span:last-child{width:16px;background:var(--gold)}
+.mobile-menu{display:none;border-top:1px solid var(--rule);background:rgba(12,11,9,.95)}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;padding:24px;display:flex;flex-direction:column;gap:16px}
+.mobile-menu a{font-size:12px;text-transform:uppercase;letter-spacing:.25em;color:var(--muted)}
 
-/* ═══════════════════════════════════════
-   FLOATING WHATSAPP BUTTON
-═══════════════════════════════════════ */
-.wa-float{
-  position:fixed;bottom:28px;right:28px;z-index:900;
-  width:52px;height:52px;border-radius:50%;
-  background:var(--green-wa);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,0.4);
-  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
-}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,0.55)}
-.wa-float svg{width:26px;height:26px;fill:#fff}
-
-/* ═══════════════════════════════════════
-   NAVIGATION
-═══════════════════════════════════════ */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:800;
-  height:var(--nav-h);display:flex;align-items:center;
-  padding-inline:var(--gutter);
-  transition:background .3s var(--ease),border-color .3s;
-  border-bottom:1px solid transparent;
-}
-.nav.scrolled{
-  background:rgba(13,12,10,.95);
-  backdrop-filter:blur(20px) saturate(1.5);
-  -webkit-backdrop-filter:blur(20px) saturate(1.5);
-  border-bottom-color:var(--gold-rule);
-}
-.nav-logo{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:19px;font-weight:800;
-  letter-spacing:.06em;text-transform:uppercase;
-  color:var(--white);flex-shrink:0;
-}
-.nav-logo em{color:var(--gold);font-style:normal}
-.nav-logo sup{
-  font-size:8px;font-weight:600;letter-spacing:.25em;
-  color:var(--muted);vertical-align:top;margin-top:4px;
-  display:inline-block;
-}
-.nav-logo img {
-  height: 24px; /* Scaled down proportionally based on 120px native height to fit within a 68px nav bar gracefully */
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-.nav-links{
-  display:flex;align-items:center;gap:34px;
-  margin-left:auto;margin-right:32px;
-}
-.nav-links a{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11.5px;font-weight:600;
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--muted);
-  transition:color .18s;
-  position:relative;padding-bottom:2px;
-}
-.nav-links a::after{
-  content:'';position:absolute;bottom:0;left:0;
-  width:0;height:1px;background:var(--gold);
-  transition:width .22s var(--ease);
-}
-.nav-links a:hover{color:var(--cream)}
-.nav-links a:hover::after{width:100%}
-.nav-links a.active{color:var(--gold)}
-.nav-links a.active::after{width:100%}
-.nav-cta{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11px;font-weight:700;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink);background:var(--gold);
-  padding:9px 22px;border-radius:var(--radius);
-  transition:background .18s,transform .18s;
-  flex-shrink:0;
-}
-.nav-cta:hover{background:var(--gold-hi);transform:translateY(-1px)}
-
-/* Hamburger */
-.hamburger{
-  display:none;flex-direction:column;gap:5px;
-  margin-left:auto;padding:8px;cursor:pointer;
-}
-.hamburger span{
-  display:block;width:22px;height:1.5px;
-  background:var(--cream);
-  transition:all .22s var(--ease);transform-origin:center;
-}
-.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-/* Mobile drawer */
-.mobile-nav{
-  position:fixed;inset:0;top:var(--nav-h);z-index:799;
-  background:rgba(13,12,10,.98);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:28px;
-  transform:translateX(105%);
-  transition:transform .3s var(--ease-out);
-  pointer-events:none;
-}
-.mobile-nav.open{transform:translateX(0);pointer-events:all}
-.mobile-nav a{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:36px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--cream);transition:color .18s;
-}
-.mobile-nav a:hover{color:var(--gold)}
-.mobile-nav .m-cta{
-  margin-top:12px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;font-weight:700;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink);background:var(--gold);
-  padding:13px 36px;border-radius:var(--radius);
-}
-.mobile-nav-contact{
-  margin-top:8px;
-  font-size:13px;font-weight:300;color:var(--muted);
-  letter-spacing:.04em;text-align:center;
-}
-
-/* ═══════════════════════════════════════
-   HERO
-═══════════════════════════════════════ */
-#hero{
-  min-height:100vh;
-  padding:calc(var(--nav-h) + 80px) var(--gutter) 70px;
-  display:grid;
-  grid-template-columns:1fr 420px;
-  gap:40px;
-  align-items:center;
-  max-width:var(--max);margin-inline:auto;
-  position:relative;
-}
-.hero-glow{
-  position:fixed;top:0;right:0;
-  width:55%;height:70%;
-  background:radial-gradient(ellipse at 70% 30%, rgba(196,134,42,0.055) 0%, transparent 65%);
-  pointer-events:none;z-index:0;
-}
-
-.hero-content{position:relative;z-index:1}
-.hero-eyebrow{
-  display:flex;align-items:center;gap:12px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:10.5px;font-weight:700;
-  letter-spacing:.38em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:24px;
-}
-.hero-eyebrow::before{
-  content:'';width:30px;height:1px;
-  background:var(--gold);flex-shrink:0;
-}
-.hero-hl{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(68px,8.5vw,120px);
-  font-weight:900;line-height:.86;
-  letter-spacing:-.01em;text-transform:uppercase;
-  color:var(--white);
-  margin-bottom:30px;
-}
-.hero-hl .g{color:var(--gold)}
-.hero-hl .w{font-weight:300;color:rgba(237,232,220,.55)}
-.hero-desc{
-  font-size:15px;font-weight:300;
-  line-height:1.8;color:var(--muted);
-  max-width:400px;margin-bottom:40px;
-}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn-gold{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11.5px;font-weight:700;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink);background:var(--gold);
-  padding:13px 28px;border-radius:var(--radius);
-  transition:background .18s,transform .18s;
-}
-.btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px)}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11.5px;font-weight:700;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--muted);background:transparent;
-  padding:12px 28px;
-  border:1px solid var(--gold-rule);border-radius:var(--radius);
-  transition:all .18s;
-}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-
-/* Hero visual (CSS-only geometry) */
-.hero-visual{
-  position:relative;z-index:1;
-  aspect-ratio:1;
-  display:flex;align-items:center;justify-content:center;
-  min-width:0;
-}
-.hv-grid{
-  position:absolute;inset:0;
+/* Hero */
+.hero-gradient{
   background:
-    linear-gradient(rgba(196,134,42,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(196,134,42,0.05) 1px, transparent 1px);
-  background-size:40px 40px;
+    radial-gradient(1200px 600px at 15% 20%, rgba(196,134,42,.28), transparent 60%),
+    radial-gradient(900px 700px at 85% 80%, rgba(224,160,64,.18), transparent 65%),
+    radial-gradient(600px 500px at 50% 100%, rgba(58,96,64,.15), transparent 70%),
+    linear-gradient(180deg,#0C0B09 0%, #161410 60%, #0C0B09 100%);
 }
-.hv-ring{
-  position:absolute;border:1px solid;
-  transform:rotate(45deg);border-radius:0;
-}
-.hv-r1{
-  width:72%;height:72%;
-  border-color:rgba(196,134,42,0.12);
-  animation:rot 50s linear infinite;
-}
-.hv-r2{
-  width:52%;height:52%;
-  border-color:rgba(196,134,42,0.2);
-  animation:rot 32s linear infinite reverse;
-}
-.hv-r3{
-  width:30%;height:30%;
-  border-color:rgba(196,134,42,0.55);
-  animation:rot 18s linear infinite;
-}
-.hv-core{
-  position:absolute;width:9%;height:9%;
-  background:var(--gold);transform:rotate(45deg);
-  animation:pulse-core 2.5s ease-in-out infinite alternate;
-}
-.hv-axis-h,.hv-axis-v{
-  position:absolute;background:rgba(196,134,42,0.09);
-}
-.hv-axis-h{height:1px;width:85%;left:7.5%}
-.hv-axis-v{width:1px;height:85%;top:7.5%}
-.hv-corner{position:absolute;width:14px;height:14px;border-color:rgba(196,134,42,0.3);border-style:solid}
-.hv-corner.tl{top:12%;left:12%;border-width:1px 0 0 1px}
-.hv-corner.tr{top:12%;right:12%;border-width:1px 1px 0 0}
-.hv-corner.bl{bottom:12%;left:12%;border-width:0 0 1px 1px}
-.hv-corner.br{bottom:12%;right:12%;border-width:0 1px 1px 0}
-.hv-label{
-  position:absolute;bottom:6%;left:0;right:0;
-  text-align:center;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:9px;font-weight:600;
-  letter-spacing:.35em;text-transform:uppercase;
-  color:rgba(196,134,42,0.3);
-}
-@keyframes rot{to{transform:rotate(405deg)}}
-@keyframes pulse-core{
-  from{opacity:.6;box-shadow:0 0 0 0 rgba(196,134,42,0)}
-  to{opacity:1;box-shadow:0 0 16px 4px rgba(196,134,42,0.2)}
+.grain{position:relative;overflow:hidden}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative}
+.hero-inner{position:relative;z-index:1;width:100%;padding:160px 24px 96px}
+@media(min-width:768px){.hero-inner{padding:192px 48px 96px}}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.eyebrow .line{height:1px;width:40px;background:var(--gold)}
+.eyebrow span{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.3em;color:var(--gold)}
+h1{font-family:var(--font-display);font-size:clamp(40px,7vw,96px);line-height:1.05;letter-spacing:-.01em;color:var(--cream);font-weight:400}
+h1 em{font-weight:300;font-style:italic;color:var(--gold-lt)}
+.lede{margin-top:32px;max-width:560px;color:var(--muted);font-size:17px;line-height:1.7}
+.cta-row{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+.btn{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--gold);padding:12px 24px;font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--cream);cursor:pointer;background:transparent;transition:background .2s,color .2s;font-family:inherit}
+.btn:hover{background:var(--gold);color:var(--ink)}
+.link-quiet{font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--muted)}
+.link-quiet:hover{color:var(--gold)}
+.scroll-tag{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:1;font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:var(--muted)}
+
+/* Section shell */
+section{position:relative}
+.sec{border-top:1px solid var(--rule);background:var(--ink);padding:96px 0}
+@media(min-width:768px){.sec{padding:128px 0}}
+.sec-head{display:grid;gap:24px;margin-bottom:64px}
+@media(min-width:768px){.sec-head{grid-template-columns:repeat(12,1fr);align-items:end}}
+.sec-head .eyebrow{grid-column:span 4}
+.sec-head h2{grid-column:span 8;font-family:var(--font-display);font-size:clamp(32px,5vw,64px);line-height:1.1;color:var(--cream);font-weight:400}
+.sec-head h2 em{font-style:italic;color:var(--gold-lt);font-weight:300}
+
+/* Disciplines */
+.disciplines{border-top:1px solid var(--rule);background:var(--surface);padding:96px 0}
+.grid-lined{display:grid;gap:1px;background:var(--rule)}
+.grid-lined>*{background:var(--surface)}
+.disc-grid{grid-template-columns:1fr}
+@media(min-width:768px){.disc-grid{grid-template-columns:repeat(3,1fr)}}
+.disc{padding:40px}
+.disc .num{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.3em;color:var(--gold)}
+.disc h3{margin-top:24px;font-family:var(--font-display);font-size:28px;color:var(--cream);font-weight:400}
+.disc p{margin-top:16px;font-size:14px;color:var(--muted);line-height:1.7}
+
+/* Projects */
+.proj-grid{grid-template-columns:1fr}
+@media(min-width:640px){.proj-grid{grid-template-columns:1fr 1fr}}
+.proj{background:var(--ink)}
+.proj-thumb{position:relative;aspect-ratio:4/3;width:100%}
+.proj-thumb .idx{position:absolute;inset:auto 0 0 0;padding:32px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:rgba(196,134,42,.7)}
+.proj-meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding:24px}
+.proj-meta h3{font-family:var(--font-display);font-size:20px;color:var(--cream);font-weight:400}
+.proj-meta p{margin-top:4px;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+.proj-meta .year{font-family:var(--font-mono);font-size:12px;color:var(--gold)}
+
+/* About */
+.about-grid{display:grid;gap:48px}
+@media(min-width:768px){.about-grid{grid-template-columns:repeat(12,1fr)}}
+.about-copy{grid-column:span 5}
+.about-copy p{color:rgba(240,234,216,.9);line-height:1.75}
+.about-copy p+p{margin-top:24px;font-size:14px;color:var(--muted)}
+.team-wrap{grid-column:span 7}
+.team-grid{grid-template-columns:1fr}
+@media(min-width:640px){.team-grid{grid-template-columns:1fr 1fr}}
+.team{background:var(--ink);padding:24px}
+.team .initial{width:64px;height:64px;border-radius:50%;border:1px solid rgba(196,134,42,.4);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:var(--gold)}
+.team h4{margin-top:20px;font-family:var(--font-display);font-size:18px;color:var(--cream);font-weight:400}
+.team p{margin-top:4px;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+
+/* News */
+.news{list-style:none;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.news li{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:baseline;padding:24px 0;border-top:1px solid var(--rule);transition:background .2s}
+.news li:first-child{border-top:0}
+.news li:hover{background:rgba(22,20,16,.6)}
+.news .date{grid-column:span 3;font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.25em;color:var(--gold)}
+.news h3{grid-column:span 9;font-family:var(--font-display);font-size:20px;color:var(--cream);font-weight:400}
+.news .tag{grid-column:span 12;font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:var(--muted)}
+@media(min-width:768px){
+  .news .date{grid-column:span 2}
+  .news h3{grid-column:span 8}
+  .news .tag{grid-column:span 2;text-align:right}
 }
 
-/* Hero stat bar */
-.hero-stats{
-  grid-column:1/-1;margin-top:20px;
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--gold-rule);border-radius:var(--radius);
-  background:var(--surface);
-  box-shadow:var(--shadow-card);
-}
-.hs-item{
-  padding:22px 20px;text-align:center;
-  border-right:1px solid var(--gold-rule);
-}
-.hs-item:last-child{border-right:none}
-.hs-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:30px;font-weight:800;
-  color:var(--gold);line-height:1;display:block;
-}
-.hs-lbl{
-  font-size:10.5px;font-weight:400;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);margin-top:5px;display:block;
-}
+/* Blog */
+.blog-grid{grid-template-columns:1fr}
+@media(min-width:768px){.blog-grid{grid-template-columns:repeat(3,1fr)}}
+.blog{background:var(--ink);padding:32px}
+.blog .date{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--gold)}
+.blog h3{margin-top:20px;font-family:var(--font-display);font-size:24px;line-height:1.3;color:var(--cream);font-weight:400}
+.blog p{margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7}
+.blog .read{margin-top:24px;display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--gold)}
 
-/* ═══════════════════════════════════════
-   MARQUEE STRIP
-═══════════════════════════════════════ */
-.marquee-wrap{
-  overflow:hidden;background:var(--gold);
-  padding:15px 0;user-select:none;
-}
-.marquee-track{
-  display:flex;gap:0;
-  animation:marquee-scroll 30s linear infinite;
-  width:max-content;
-}
-.marquee-track:hover{animation-play-state:paused}
-.marquee-track span{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;font-weight:700;
-  letter-spacing:.3em;text-transform:uppercase;
-  color:var(--ink);white-space:nowrap;
-  padding:0 32px;
-}
-.marquee-track span em{
-  font-style:normal;opacity:.4;margin:0 12px;
-}
-@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Contact */
+.contact{border-top:1px solid var(--rule);padding:96px 0}
+.contact-grid{display:grid;gap:48px}
+@media(min-width:768px){.contact-grid{grid-template-columns:repeat(12,1fr)}}
+.contact-info{grid-column:span 5}
+.contact-info h2{margin-top:24px;font-family:var(--font-display);font-size:clamp(28px,4vw,44px);line-height:1.1;color:var(--cream);font-weight:400}
+.contact-info h2 em{font-style:italic;color:var(--gold-lt);font-weight:300}
+.contact-blocks{margin-top:40px;display:grid;gap:32px}
+@media(min-width:640px){.contact-blocks{grid-template-columns:1fr 1fr}}
+.contact-blocks .label{font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:var(--muted)}
+.contact-blocks p{margin-top:12px;font-size:14px;line-height:1.7;color:var(--cream)}
+.contact-blocks a{display:block}
+.contact-blocks a:hover{color:var(--gold)}
+.form-wrap{grid-column:span 7}
+form{border:1px solid var(--rule);background:rgba(12,11,9,.6);backdrop-filter:blur(4px);padding:32px}
+.form-row{display:grid;gap:20px}
+@media(min-width:640px){.form-row{grid-template-columns:1fr 1fr}}
+label{display:block;margin-top:20px}
+label:first-child,.form-row label{margin-top:0}
+label .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:var(--muted)}
+input,textarea{width:100%;margin-top:8px;background:transparent;border:0;border-bottom:1px solid var(--rule);padding:8px 0;color:var(--cream);font-family:inherit;font-size:14px;outline:none;transition:border-color .2s;resize:vertical}
+input::placeholder,textarea::placeholder{color:rgba(138,128,112,.6)}
+input:focus,textarea:focus{border-bottom-color:var(--gold)}
+form .btn{margin-top:32px}
+form .note{margin-top:16px;font-size:11px;color:var(--muted);line-height:1.6}
 
-/* ═══════════════════════════════════════
-   SECTION COMMONS
-═══════════════════════════════════════ */
-.section-eyebrow{
-  display:flex;align-items:center;gap:12px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:10px;font-weight:700;
-  letter-spacing:.38em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:14px;
-}
-.section-eyebrow::before{
-  content:'';width:24px;height:1px;
-  background:var(--gold);flex-shrink:0;
-}
-.section-hl{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(38px,5vw,60px);font-weight:800;
-  line-height:.88;letter-spacing:-.01em;
-  text-transform:uppercase;color:var(--white);
-  margin-bottom:18px;
-}
-.section-hl em{color:var(--gold);font-style:normal}
-.section-hl .thin{font-weight:300;color:rgba(237,232,220,.5)}
-.section-body{
-  font-size:14.5px;font-weight:300;
-  line-height:1.8;color:var(--muted);
-}
-
-/* ═══════════════════════════════════════
-   SERVICES
-═══════════════════════════════════════ */
-#services{background:var(--deep);padding:100px 0 0}
-.services-head{
-  max-width:var(--max);margin-inline:auto;
-  padding-inline:var(--gutter);
-  display:flex;align-items:flex-end;
-  justify-content:space-between;gap:40px;
-  margin-bottom:56px;
-}
-.services-head-cta{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:10.5px;font-weight:600;
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold);
-  display:flex;align-items:center;gap:8px;
-  white-space:nowrap;
-  transition:gap .2s;
-}
-.services-head-cta:hover{gap:14px}
-.services-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--gold-rule);
-}
-.svc-card{
-  padding:48px 40px 52px;
-  border-right:1px solid var(--gold-rule);
-  background:var(--surface);
-  position:relative;overflow:hidden;
-  transition:background .2s var(--ease);
-  cursor:default;
-}
-.svc-card:last-child{border-right:none}
-.svc-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:2px;
-  background:var(--gold);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .3s var(--ease);
-}
-.svc-card:hover{background:var(--lift)}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:10px;font-weight:700;
-  letter-spacing:.35em;text-transform:uppercase;
-  color:rgba(196,134,42,0.45);margin-bottom:24px;display:block;
-}
-.svc-icon{font-size:38px;display:block;margin-bottom:18px}
-.svc-name{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:24px;font-weight:700;
-  letter-spacing:.04em;text-transform:uppercase;
-  color:var(--cream);margin-bottom:10px;line-height:1;
-}
-.svc-desc{
-  font-size:13.5px;font-weight:300;
-  line-height:1.75;color:var(--muted);margin-bottom:28px;
-}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.svc-tag{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:10px;font-weight:600;
-  letter-spacing:.15em;text-transform:uppercase;
-  color:var(--faint);
-  border:1px solid var(--gold-dim);
-  padding:4px 12px;border-radius:var(--radius);
-  transition:all .18s;
-}
-.svc-card:hover .svc-tag{color:var(--muted);border-color:rgba(196,134,42,0.25)}
-
-/* ═══════════════════════════════════════
-   ABOUT / WHY US
-═══════════════════════════════════════ */
-#about{
-  padding:110px var(--gutter);
-  max-width:var(--max);margin-inline:auto;
-}
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:start;
-}
-.about-body{
-  font-size:14.5px;font-weight:300;
-  line-height:1.85;color:var(--muted);
-}
-.about-body+.about-body{margin-top:14px}
-.about-pull{
-  margin-top:36px;padding:24px 24px 24px 20px;
-  border-left:2px solid var(--gold);
-  background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;
-}
-.ap-text{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:17px;font-weight:600;
-  letter-spacing:.03em;color:var(--cream);
-  line-height:1.35;text-transform:uppercase;
-}
-.ap-attr{
-  margin-top:8px;
-  font-size:10px;font-weight:500;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);
-}
-.diff-stack{display:flex;flex-direction:column;padding-top:8px}
-.diff-row{
-  display:flex;align-items:flex-start;gap:18px;
-  padding:22px 0;
-  border-bottom:1px solid var(--gold-rule);
-  transition:padding-left .18s var(--ease);
-  cursor:default;
-}
-.diff-row:first-child{border-top:1px solid var(--gold-rule)}
-.diff-row:hover{padding-left:6px}
-.diff-ico{
-  width:38px;height:38px;flex-shrink:0;
-  background:var(--surface);
-  border:1px solid var(--gold-rule);
-  border-radius:var(--radius);
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;
-  transition:background .18s,border-color .18s;
-}
-.diff-row:hover .diff-ico{
-  background:rgba(196,134,42,0.08);
-  border-color:rgba(196,134,42,0.4);
-}
-.diff-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12.5px;font-weight:700;
-  letter-spacing:.15em;text-transform:uppercase;
-  color:var(--cream);margin-bottom:4px;
-}
-.diff-text{font-size:13px;font-weight:300;line-height:1.65;color:var(--muted)}
-
-/* ═══════════════════════════════════════
-   PROCESS
-═══════════════════════════════════════ */
-#process{
-  background:var(--deep);
-  border-top:1px solid var(--gold-rule);
-  border-bottom:1px solid var(--gold-rule);
-  padding:100px var(--gutter);
-}
-.process-inner{max-width:var(--max);margin-inline:auto}
-.process-head{
-  text-align:center;margin-bottom:64px;
-}
-.process-head .section-eyebrow{justify-content:center}
-.process-head .section-eyebrow::before{display:none}
-.process-steps{
-  display:grid;grid-template-columns:repeat(5,1fr);
-  gap:0;position:relative;
-}
-.process-steps::before{
-  content:'';position:absolute;
-  top:33px;left:calc(10% + 2px);right:calc(10% + 2px);
-  height:1px;
-  background:linear-gradient(to right,transparent,var(--gold-rule),var(--gold-rule),transparent);
-}
-.ps-item{
-  display:flex;flex-direction:column;
-  align-items:center;text-align:center;
-  padding:0 12px;
-}
-.ps-bubble{
-  width:66px;height:66px;border-radius:50%;
-  background:var(--surface);
-  border:1px solid var(--gold-rule);
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;position:relative;
-  margin-bottom:22px;z-index:1;
-  transition:all .22s var(--ease);
-}
-.ps-item:hover .ps-bubble{
-  background:rgba(196,134,42,0.09);
-  border-color:var(--gold);
-  transform:scale(1.08);
-  box-shadow:0 0 0 6px rgba(196,134,42,0.07);
-}
-.ps-n{
-  position:absolute;top:-4px;right:-4px;
-  width:18px;height:18px;border-radius:50%;
-  background:var(--gold);
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:9px;font-weight:700;color:var(--ink);
-  display:flex;align-items:center;justify-content:center;
-}
-.ps-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12.5px;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--cream);margin-bottom:7px;
-}
-.ps-text{font-size:12px;font-weight:300;color:var(--muted);line-height:1.6}
-
-/* ═══════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════ */
-#contact{
-  padding:110px var(--gutter) 100px;
-  max-width:var(--max);margin-inline:auto;
-}
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1.15fr;
-  gap:72px;align-items:start;
-}
-.contact-info-desc{
-  font-size:14.5px;font-weight:300;
-  line-height:1.8;color:var(--muted);
-  margin-bottom:36px;
-}
-.cd-list{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
-.cd-item{display:flex;align-items:flex-start;gap:14px}
-.cd-ico{
-  width:38px;height:38px;flex-shrink:0;
-  background:var(--surface);border:1px solid var(--gold-rule);
-  border-radius:var(--radius);
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;
-}
-.cd-lbl{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:9px;font-weight:700;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:3px;
-}
-.cd-val{font-size:13.5px;font-weight:300;color:var(--cream);line-height:1.5}
-.cd-val a{transition:color .18s}
-.cd-val a:hover{color:var(--gold)}
-.wa-cta{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11.5px;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink);background:var(--green-wa);
-  padding:12px 24px;border-radius:var(--radius);
-  transition:background .18s,transform .18s;
-  box-shadow:0 4px 14px rgba(37,211,102,0.25);
-}
-.wa-cta:hover{background:#22c55e;transform:translateY(-2px)}
-.wa-cta svg{width:18px;height:18px;fill:var(--ink)}
-
-/* Contact form */
-.cf-wrap{
-  background:var(--surface);
-  border:1px solid var(--gold-rule);
-  border-radius:var(--radius);
-  padding:40px 36px;
-  box-shadow:var(--shadow-card);
-}
-.cf-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:22px;font-weight:700;
-  letter-spacing:.05em;text-transform:uppercase;
-  color:var(--white);margin-bottom:6px;
-}
-.cf-sub{
-  font-size:13px;font-weight:300;color:var(--muted);
-  line-height:1.6;margin-bottom:28px;
-}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.cf-group.full{grid-column:1/-1}
-.cf-label{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--muted);
-}
-.cf-input,
-.cf-select,
-.cf-textarea{
-  width:100%;
-  background:var(--lift);
-  border:1px solid var(--gold-rule);
-  border-radius:var(--radius);
-  color:var(--cream);font-size:14px;font-weight:300;
-  padding:11px 14px;
-  transition:border-color .18s,background .18s;
-  appearance:none;-webkit-appearance:none;
-}
-.cf-input:focus,
-.cf-select:focus,
-.cf-textarea:focus{
-  outline:none;
-  border-color:var(--gold);
-  background:rgba(196,134,42,0.04);
-}
-.cf-input::placeholder,
-.cf-textarea::placeholder{color:var(--faint);opacity:.7}
-.cf-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23726A5A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-.cf-select option{background:var(--lift)}
-.cf-textarea{resize:vertical;min-height:90px;line-height:1.6}
-.cf-submit{
-  width:100%;margin-top:6px;
-  padding:14px;
-  background:var(--gold);color:var(--ink);
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;font-weight:800;
-  letter-spacing:.22em;text-transform:uppercase;
-  border-radius:var(--radius);border:none;
-  cursor:pointer;
-  transition:background .18s,transform .18s;
-}
-.cf-submit:hover{background:var(--gold-hi);transform:translateY(-1px)}
-.cf-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
-.cf-status{
-  margin-top:12px;padding:12px 16px;
-  border-radius:var(--radius);font-size:13px;
-  font-weight:400;text-align:center;
-  display:none;
-}
-.cf-status.ok{
-  display:block;
-  background:rgba(74,190,85,0.09);
-  border:1px solid rgba(74,190,85,0.22);
-  color:#5DC96A;
-}
-.cf-status.err{
-  display:block;
-  background:rgba(196,112,112,0.09);
-  border:1px solid rgba(196,112,112,0.22);
-  color:#C47070;
-}
-
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
-footer{
-  background:var(--deep);
-  border-top:1px solid var(--gold-rule);
-  padding:52px var(--gutter) 36px;
-}
-.footer-inner{max-width:var(--max);margin-inline:auto}
-.footer-top{
-  display:grid;
-  grid-template-columns:1.8fr 1fr 1fr 1fr;
-  gap:50px;
-  padding-bottom:40px;
-  border-bottom:1px solid var(--gold-rule);
-  margin-bottom:28px;
-}
-.f-logo{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:20px;font-weight:800;
-  letter-spacing:.06em;text-transform:uppercase;
-  color:var(--white);margin-bottom:10px;display:block;
-}
-.f-logo img {
-  height: 30px; /* Scaled down */
-  width: auto;
-  display: block;
-}
-.f-tagline{
-  font-size:12.5px;font-weight:300;
-  color:var(--muted);line-height:1.65;max-width:200px;
-}
-.f-col-h{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:16px;
-}
-.f-col ul{display:flex;flex-direction:column;gap:9px}
-.f-col ul a{
-  font-size:13px;font-weight:300;
-  color:var(--muted);transition:color .18s;
-}
-.f-col ul a:hover{color:var(--cream)}
-.f-contact-line{
-  font-size:12.5px;font-weight:300;
-  color:var(--muted);line-height:1.7;margin-bottom:6px;
-}
-.f-contact-line a{transition:color .18s}
-.f-contact-line a:hover{color:var(--gold)}
-.footer-bot{
-  display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
-  flex-wrap:wrap;
-}
-.f-copy{
-  font-size:11.5px;font-weight:300;color:var(--faint);
-}
-.f-copy em{color:var(--gold);font-style:normal}
-.f-stamp{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:10px;font-weight:600;
-  letter-spacing:.3em;text-transform:uppercase;
-  color:var(--faint);
-  border:1px solid var(--gold-rule);
-  padding:4px 14px;border-radius:var(--radius);
-}
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
-@media(max-width:1024px){
-  :root{--gutter:40px}
-  #hero{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .hs-item:nth-child(3){border-top:1px solid var(--gold-rule)}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .svc-card:nth-child(2){border-right:none}
-  .svc-card:nth-child(3){border-top:1px solid var(--gold-rule);border-right:none;grid-column:1/-1}
-  .about-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr;gap:36px}
-  .process-steps{
-    grid-template-columns:1fr 1fr;
-    gap:36px;
-  }
-  .process-steps::before{display:none}
-}
-@media(max-width:680px){
-  :root{--gutter:22px;--nav-h:60px}
-  section,#about,#contact,#process{padding-top:72px;padding-bottom:72px}
-  .nav-links,.nav-cta{display:none}
-  .hamburger{display:flex}
-  #hero{padding-top:calc(var(--nav-h) + 48px);padding-bottom:56px}
-  .hero-hl{font-size:clamp(54px,14vw,80px)}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .hs-item:nth-child(3),.hs-item:nth-child(4){border-top:1px solid var(--gold-rule)}
-  .hs-item:nth-child(even){border-right:none}
-  .services-grid{grid-template-columns:1fr}
-  .svc-card{border-right:none;border-bottom:1px solid var(--gold-rule)}
-  .svc-card:nth-child(3){border-top:none;grid-column:auto}
-  .services-head{flex-direction:column;align-items:flex-start;padding-inline:var(--gutter)}
-  .cf-row{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr;gap:28px}
-  .footer-bot{flex-direction:column;align-items:flex-start}
-  .process-steps{grid-template-columns:1fr;gap:28px}
-  .contact-grid{grid-template-columns:1fr}
-  .hero-glow{display:none}
-  .section-hl{font-size:clamp(32px,9vw,48px)}
-}
-@media(max-width:400px){
-  .hero-hl{font-size:52px}
-  .hs-num{font-size:24px}
-}
+/* Footer */
+footer{border-top:1px solid var(--rule);background:var(--ink);padding:40px 0}
+.foot{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:16px}
+@media(min-width:768px){.foot{flex-direction:row}}
+.foot .mark{font-family:var(--font-mono);font-size:14px;letter-spacing:.2em}
+.foot .mark span{color:var(--gold)}
+.foot .copy{font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:var(--muted)}
 </style>
 </head>
-
 <body>
 
-<!-- ═══ FLOATING WHATSAPP ═══ -->
-<a href="https://wa.me/8801759592324" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<!-- ═══ NAV ═══ -->
-<nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
-  <a href="#hero" class="nav-logo" aria-label="Innerloop Atelier — Home">
-    <img src="Innerloop-Horizon.png" alt="Innerloop Atelier">
-  </a>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">INNERLOOP<span>.</span></a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-  <a href="#contact" class="nav-cta">Start a Project</a>
-  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- Mobile nav -->
-<div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <a href="#services" class="mobile-link">Services</a>
-  <a href="#about" class="mobile-link">About</a>
-  <a href="#process" class="mobile-link">Process</a>
-  <a href="#contact" class="mobile-link">Contact</a>
-  <a href="#contact" class="m-cta mobile-link">Start a Project</a>
-  <div class="mobile-nav-contact">
-    +88 017 5959 2324 &nbsp;·&nbsp; Dhaka, Bangladesh
-  </div>
-</div>
-
-<!-- ═══ HERO ═══ -->
-<div class="hero-glow" aria-hidden="true"></div>
-
-<section id="hero" aria-label="Introduction">
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">Dhaka's Creative Studio</div>
-    <h1 class="hero-hl">
-      Built on<br>
-      <span class="g">Identity.</span><br>
-      Shaped<br>
-      <span class="w">by Space.</span>
-    </h1>
-    <p class="hero-desc">
-      An integrated studio for ATL/BTL Branding, Landscaping, and Interior Design. One brief. One team. Delivered.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-gold">Start a Project →</a>
-      <a href="#services" class="btn-ghost">Our Services</a>
+<main>
+<section id="home" class="hero hero-gradient grain">
+  <div class="hero-inner container">
+    <div class="eyebrow"><span class="line"></span><span>Multi-Discipline Design Studio · Est. Dhaka</span></div>
+    <h1>Built on Identity.<br><em>Shaped by Space.</em></h1>
+    <p class="lede">We are architects, graphic designers, and nurserymen working as one studio — so your brand, your interior, and your landscape tell the same story.</p>
+    <div class="cta-row">
+      <a href="#projects" class="btn">View Work <span>→</span></a>
+      <a href="#about" class="link-quiet">About the studio</a>
     </div>
   </div>
-
-  <!-- CSS-only geometric visual -->
-  <div class="hero-visual" aria-hidden="true">
-    <div class="hv-grid"></div>
-    <div class="hv-ring hv-r1"></div>
-    <div class="hv-ring hv-r2"></div>
-    <div class="hv-ring hv-r3"></div>
-    <div class="hv-core"></div>
-    <div class="hv-axis-h"></div>
-    <div class="hv-axis-v"></div>
-    <div class="hv-corner tl"></div>
-    <div class="hv-corner tr"></div>
-    <div class="hv-corner bl"></div>
-    <div class="hv-corner br"></div>
-    <div class="hv-label">INNERLOOP ATELIER</div>
-  </div>
-
-  <!-- Stats bar -->
-  <div class="hero-stats reveal">
-    <div class="hs-item">
-      <span class="hs-num" data-count="3" data-suffix="">3</span>
-      <span class="hs-lbl">Core Disciplines</span>
-    </div>
-    <div class="hs-item">
-      <span class="hs-num">360°</span>
-      <span class="hs-lbl">Brand to Space</span>
-    </div>
-    <div class="hs-item">
-      <span class="hs-num">1</span>
-      <span class="hs-lbl">Studio. All Delivered.</span>
-    </div>
-    <div class="hs-item">
-      <span class="hs-num">24h</span>
-      <span class="hs-lbl">Response Guarantee</span>
-    </div>
-  </div>
-
+  <div class="scroll-tag">Scroll</div>
 </section>
 
-<!-- ═══ MARQUEE ═══ -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span>STRATEGY<em>·</em>CRAFT<em>·</em>EXECUTION<em>·</em>BUILT ON IDENTITY<em>·</em>SHAPED BY SPACE<em>·</em>BRANDING<em>·</em>LANDSCAPING<em>·</em>INTERIOR DESIGN<em>·</em></span>
-    <span>STRATEGY<em>·</em>CRAFT<em>·</em>EXECUTION<em>·</em>BUILT ON IDENTITY<em>·</em>SHAPED BY SPACE<em>·</em>BRANDING<em>·</em>LANDSCAPING<em>·</em>INTERIOR DESIGN<em>·</em></span>
-  </div>
-</div>
-
-<!-- ═══ SERVICES ═══ -->
-<section id="services" aria-labelledby="services-heading">
-  <div class="services-head max-w">
-    <div class="reveal">
-      <div class="section-eyebrow">What We Do</div>
-      <h2 class="section-hl" id="services-heading">Three Disciplines.<br><em>One Studio.</em></h2>
-    </div>
-    <a href="#contact" class="services-head-cta reveal d2">See how we work →</a>
-  </div>
-
-  <div class="services-grid">
-
-    <article class="svc-card reveal d1" tabindex="0">
-      <span class="svc-num">Service 01</span>
-      <span class="svc-icon" aria-hidden="true">◈</span>
-      <h3 class="svc-name">Branding<br>ATL · BTL</h3>
-      <p class="svc-desc">
-        Full-spectrum brand communications — from outdoor hoardings and TVC strategy to in-store activations and digital campaigns. Strategy first, execution always.
-      </p>
-      <div class="svc-tags" aria-label="Services included">
-        <span class="svc-tag">Brand Identity</span>
-        <span class="svc-tag">ATL Campaigns</span>
-        <span class="svc-tag">BTL Activations</span>
-        <span class="svc-tag">OOH Design</span>
-        <span class="svc-tag">Digital Creative</span>
-        <span class="svc-tag">Brand Guidelines</span>
-      </div>
-    </article>
-
-    <article class="svc-card reveal d2" tabindex="0">
-      <span class="svc-num">Service 02</span>
-      <span class="svc-icon" aria-hidden="true">🌿</span>
-      <h3 class="svc-name">Landscape<br>Design</h3>
-      <p class="svc-desc">
-        Living environments designed with architectural rigour. Our in-house nursery team ensures every garden, rooftop, and courtyard is planted right and cared for well.
-      </p>
-      <div class="svc-tags" aria-label="Services included">
-        <span class="svc-tag">Garden Design</span>
-        <span class="svc-tag">Rooftop Gardens</span>
-        <span class="svc-tag">Corporate Green</span>
-        <span class="svc-tag">Plant Supply</span>
-        <span class="svc-tag">Water Features</span>
-        <span class="svc-tag">Hardscaping</span>
-      </div>
-    </article>
-
-    <article class="svc-card reveal d3" tabindex="0">
-      <span class="svc-num">Service 03</span>
-      <span class="svc-icon" aria-hidden="true">📐</span>
-      <h3 class="svc-name">Interior<br>Design</h3>
-      <p class="svc-desc">
-        Residential, commercial, and hospitality interiors delivered with precision. From space planning and 3D visualisation through to construction oversight and handover.
-      </p>
-      <div class="svc-tags" aria-label="Services included">
-        <span class="svc-tag">Residential</span>
-        <span class="svc-tag">Office & Commercial</span>
-        <span class="svc-tag">Hospitality</span>
-        <span class="svc-tag">3D Visualisation</span>
-        <span class="svc-tag">Space Planning</span>
-        <span class="svc-tag">Lighting Design</span>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ═══ ABOUT / WHY US ═══ -->
-<section aria-labelledby="about-heading">
-  <div id="about" class="about-grid">
-
-    <div>
-      <div class="section-eyebrow reveal">Who We Are</div>
-      <h2 class="section-hl reveal d1" id="about-heading">An Atelier<br>Built to <em>Execute.</em></h2>
-      <p class="about-body reveal d2">
-        Innerloop Atelier is Dhaka's only studio where brand thinking, spatial design, and landscape architecture operate under one roof — led by a core team of architects, graphic designers, and nurserymen.
-      </p>
-      <p class="about-body reveal d2">
-        We are not a consultancy. We don't hand over decks and disappear. Every project we take on ends with something tangible — built, printed, planted, or launched. That is the Innerloop standard.
-      </p>
-      <div class="about-pull reveal d3">
-        <p class="ap-text">
-          "Identity and space are not decorations. They are the infrastructure of how a business is perceived."
-        </p>
-        <p class="ap-attr">— Studio Philosophy · Innerloop Atelier</p>
-      </div>
-    </div>
-
-    <div>
-      <div class="section-eyebrow reveal">Why Innerloop</div>
-      <h2 class="section-hl reveal d1">What Sets<br><em>Us Apart</em></h2>
-      <div class="diff-stack reveal d2">
-        <div class="diff-row">
-          <div class="diff-ico">🎯</div>
-          <div>
-            <p class="diff-title">Execution-First</p>
-            <p class="diff-text">Every engagement ends with something delivered — not just designed. On brief, on time, to standard.</p>
-          </div>
-        </div>
-        <div class="diff-row">
-          <div class="diff-ico">🔗</div>
-          <div>
-            <p class="diff-title">True Integration</p>
-            <p class="diff-text">Brand, landscape, and interior under one brief. No fragmentation, no finger-pointing between agencies.</p>
-          </div>
-        </div>
-        <div class="diff-row">
-          <div class="diff-ico">🌿</div>
-          <div>
-            <p class="diff-title">In-House Nursery</p>
-            <p class="diff-text">Our nurserymen don't just design landscapes — they plant and maintain them. Living expertise, not outsourced.</p>
-          </div>
-        </div>
-        <div class="diff-row">
-          <div class="diff-ico">📍</div>
-          <div>
-            <p class="diff-title">Local Roots, Global Bar</p>
-            <p class="diff-text">Deep knowledge of the Dhaka market, held to an internationally benchmarked aesthetic and process standard.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ PROCESS ═══ -->
-<section id="process" aria-labelledby="process-heading">
-  <div class="process-inner">
-    <div class="process-head reveal">
-      <div class="section-eyebrow">How We Work</div>
-      <h2 class="section-hl" id="process-heading">The Innerloop <em>Method</em></h2>
-    </div>
-    <div class="process-steps" role="list">
-
-      <div class="ps-item reveal d1" role="listitem">
-        <div class="ps-bubble" aria-hidden="true">
-          🔍<span class="ps-n">1</span>
-        </div>
-        <p class="ps-title">Brief</p>
-        <p class="ps-text">We listen hard. Deep-dive into your goals, audience, and the problem worth solving.</p>
-      </div>
-
-      <div class="ps-item reveal d2" role="listitem">
-        <div class="ps-bubble" aria-hidden="true">
-          🧠<span class="ps-n">2</span>
-        </div>
-        <p class="ps-title">Strategy</p>
-        <p class="ps-text">Positioning, concept, and direction agreed in writing before any creative work begins.</p>
-      </div>
-
-      <div class="ps-item reveal d3" role="listitem">
-        <div class="ps-bubble" aria-hidden="true">
-          ✏️<span class="ps-n">3</span>
-        </div>
-        <p class="ps-title">Design</p>
-        <p class="ps-text">Crafted by specialists — architects, designers, and nurserymen working as one team.</p>
-      </div>
-
-      <div class="ps-item reveal d4" role="listitem">
-        <div class="ps-bubble" aria-hidden="true">
-          🔄<span class="ps-n">4</span>
-        </div>
-        <p class="ps-title">Refine</p>
-        <p class="ps-text">Clear feedback loops. Structured revisions. No ambiguity, no scope creep.</p>
-      </div>
-
-      <div class="ps-item reveal d4" role="listitem">
-        <div class="ps-bubble" aria-hidden="true">
-          🚀<span class="ps-n">5</span>
-        </div>
-        <p class="ps-title">Execute</p>
-        <p class="ps-text">We are on-site, in-print, and hands-in-soil. End-to-end delivery, every time.</p>
-      </div>
-
+<section class="disciplines">
+  <div class="container">
+    <div class="grid-lined disc-grid">
+      <div class="disc"><div class="num">01</div><h3>Architecture &amp; Interior</h3><p>Spatial design led by qualified architects — from residences to commercial interiors, built with material honesty and detail-first execution.</p></div>
+      <div class="disc"><div class="num">02</div><h3>Brand &amp; Graphic Design</h3><p>Identity systems, print, and campaigns crafted by trained designers who understand how a brand lives across every surface.</p></div>
+      <div class="disc"><div class="num">03</div><h3>Landscape &amp; Horticulture</h3><p>Landscapes composed by nurserymen and designers together — planting plans, courtyards, and greenscapes tended with soil-hands care.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
-<section aria-labelledby="contact-heading">
-  <div id="contact" class="contact-grid">
+<section id="projects" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="line"></span><span>Selected Work</span></div>
+      <h2>A quiet portfolio<br><em>of considered spaces.</em></h2>
+    </div>
+    <div class="grid-lined proj-grid" id="projGrid"></div>
+  </div>
+</section>
 
-    <!-- LEFT: Contact info -->
-    <div>
-      <div class="section-eyebrow reveal">Get In Touch</div>
-      <h2 class="section-hl reveal d1" id="contact-heading">Start Your<br><em>Brief Today.</em></h2>
-      <p class="contact-info-desc reveal d2">
-        Ready to build a brand, reshape a space, or grow a landscape? Send us your brief. We respond to all enquiries within 24 hours and offer a complimentary first consultation.
-      </p>
-      <div class="cd-list reveal d2">
-        <div class="cd-item">
-          <div class="cd-ico" aria-hidden="true">📞</div>
+<section id="about" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="line"></span><span>About Us</span></div>
+      <h2>A studio of specialists,<br><em>not generalists.</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>Innerloop Atelier is a Dhaka-based design studio operating at the intersection of architecture, brand, and landscape. We staff every project through to delivery — on-site, in-print, and hands-in-soil.</p>
+        <p>We do not dabble. Each service line is led by specialists who go deep: architects, trained designers, qualified nurserymen. The result is a single studio that can take a brief from strategy to physical reality.</p>
+      </div>
+      <div class="team-wrap">
+        <div class="grid-lined team-grid" id="teamGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="line"></span><span>News &amp; Media</span></div>
+      <h2>Recent notes<br><em>from the studio.</em></h2>
+    </div>
+    <ul class="news" id="newsList"></ul>
+  </div>
+</section>
+
+<section id="blog" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="line"></span><span>Journal</span></div>
+      <h2>Writing on craft,<br><em>material, and place.</em></h2>
+    </div>
+    <div class="grid-lined blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<section id="contact" class="contact hero-gradient grain">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow"><span class="line"></span><span>Get in Touch</span></div>
+        <h2>Start a brief<br><em>with the studio.</em></h2>
+        <div class="contact-blocks">
           <div>
-            <div class="cd-lbl">Phone</div>
-            <div class="cd-val">
-              <a href="tel:+8801759592324">+88 017 5959 2324</a>
-            </div>
+            <div class="label">Studio</div>
+            <p>Innerloop Atelier<br>Ka-26/1 Rasulbag<br>Mohakhali, Dhaka 1212<br>Bangladesh</p>
           </div>
-        </div>
-        <div class="cd-item">
-          <div class="cd-ico" aria-hidden="true">✉️</div>
           <div>
-            <div class="cd-lbl">Email</div>
-            <div class="cd-val">
-              <a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="cd-item">
-          <div class="cd-ico" aria-hidden="true">🌐</div>
-          <div>
-            <div class="cd-lbl">Website</div>
-            <div class="cd-val">
-              <a href="https://innerloopatelier.com" target="_blank" rel="noopener">innerloopatelier.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="cd-item">
-          <div class="cd-ico" aria-hidden="true">📍</div>
-          <div>
-            <div class="cd-lbl">Studio</div>
-            <div class="cd-val">
-              Ka-26/1, Rasulbag, Mohakhali<br>Dhaka 1212, Bangladesh
-            </div>
+            <div class="label">Contact</div>
+            <p>
+              <a href="tel:+8801759592324">+880 1759 592324</a>
+              <a href="mailto:innerloopatelier@gmail.com" style="margin-top:8px">innerloopatelier@gmail.com</a>
+            </p>
           </div>
         </div>
       </div>
-
-      <a href="https://wa.me/8801759592324?text=Hi%20Innerloop%20Atelier%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="wa-cta reveal d3" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Chat on WhatsApp
-      </a>
-    </div>
-
-    <!-- RIGHT: Lead form -->
-    <div class="reveal d2">
-      <div class="cf-wrap">
-        <p class="cf-title">Send Your Brief</p>
-        <p class="cf-sub">We'll review it and come back within 24 hours.</p>
-
-        <!--
-          FORM SETUP:
-          1. Go to https://web3forms.com/
-          2. Enter innerloopatelier@gmail.com and click Create Form
-          3. Copy the Access Key from your email
-          4. Replace YOUR_WEB3FORMS_KEY_HERE below with your key
-          That's it — form submissions will arrive in your inbox.
-        -->
-        <form id="contact-form" novalidate>
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
-          <input type="hidden" name="subject" value="New Lead — Innerloop Atelier Website">
-          <input type="hidden" name="from_name" value="Innerloop Atelier Website">
-          <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off">
-
-          <div class="cf-row">
-            <div class="cf-group">
-              <label class="cf-label" for="cf-name">Your Name *</label>
-              <input class="cf-input" type="text" id="cf-name" name="name" placeholder="Ahmed Karim" required autocomplete="name">
-            </div>
-            <div class="cf-group">
-              <label class="cf-label" for="cf-phone">Phone *</label>
-              <input class="cf-input" type="tel" id="cf-phone" name="phone" placeholder="+88 017 ..." required autocomplete="tel">
-            </div>
+      <div class="form-wrap">
+        <form id="contactForm">
+          <div class="form-row">
+            <label><span class="lbl">Name</span><input required type="text" name="name" placeholder="Your name"></label>
+            <label><span class="lbl">Email</span><input required type="email" name="email" placeholder="you@example.com"></label>
           </div>
-
-          <div class="cf-row">
-            <div class="cf-group">
-              <label class="cf-label" for="cf-email">Email</label>
-              <input class="cf-input" type="email" id="cf-email" name="email" placeholder="your@email.com" autocomplete="email">
-            </div>
-            <div class="cf-group">
-              <label class="cf-label" for="cf-service">I Need Help With *</label>
-              <select class="cf-select" id="cf-service" name="service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="Branding ATL/BTL">Branding — ATL / BTL</option>
-                <option value="Brand Identity">Brand Identity</option>
-                <option value="Landscaping">Landscaping</option>
-                <option value="Interior Design">Interior Design</option>
-                <option value="Multiple Services">Multiple Services</option>
-                <option value="Not Sure Yet">Not Sure Yet</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="cf-row">
-            <div class="cf-group full">
-              <label class="cf-label" for="cf-message">Brief / Message</label>
-              <textarea class="cf-textarea" id="cf-message" name="message" placeholder="Tell us about your project — what you need, your timeline, and any relevant details..."></textarea>
-            </div>
-          </div>
-
-          <button type="submit" class="cf-submit" id="cf-btn">Send My Brief →</button>
-          <div class="cf-status" id="cf-status" role="alert" aria-live="polite"></div>
+          <label><span class="lbl">Subject</span><input type="text" name="subject" placeholder="Project inquiry"></label>
+          <label><span class="lbl">Message</span><textarea required rows="4" name="message" placeholder="Tell us about your project..."></textarea></label>
+          <button type="submit" class="btn">Send direct mail <span>→</span></button>
+          <p class="note">This opens your email client and sends directly to the studio. No third-party server is used.</p>
         </form>
       </div>
     </div>
-
   </div>
 </section>
+</main>
 
-<!-- ═══ FOOTER ═══ -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-top">
-
-      <div class="f-brand">
-        <a href="#hero" class="f-logo">
-          <img src="Innerloop-Horizon.png" alt="Innerloop Atelier">
-        </a>
-        <p class="f-tagline">Built on Identity.<br>Shaped by Space.<br><br>Strategy · Craft · Execution</p>
-      </div>
-
-      <div class="f-col">
-        <p class="f-col-h">Services</p>
-        <ul>
-          <li><a href="#services">Branding ATL/BTL</a></li>
-          <li><a href="#services">Brand Identity</a></li>
-          <li><a href="#services">Landscape Design</a></li>
-          <li><a href="#services">Interior Design</a></li>
-          <li><a href="#services">Space Planning</a></li>
-          <li><a href="#services">3D Visualisation</a></li>
-        </ul>
-      </div>
-
-      <div class="f-col">
-        <p class="f-col-h">Studio</p>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#process">Our Process</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://wa.me/8801759592324" target="_blank" rel="noopener">WhatsApp Us</a></li>
-        </ul>
-      </div>
-
-      <div class="f-col">
-        <p class="f-col-h">Contact</p>
-        <p class="f-contact-line">
-          <a href="tel:+8801759592324">+88 017 5959 2324</a>
-        </p>
-        <p class="f-contact-line">
-          <a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a>
-        </p>
-        <p class="f-contact-line">
-          Ka-26/1, Rasulbag, Mohakhali,<br>Dhaka 1212, Bangladesh
-        </p>
-      </div>
-
-    </div>
-
-    <div class="footer-bot">
-      <p class="f-copy">
-        © 2026 <em>Innerloop Atelier</em>. All rights reserved.
-      </p>
-      <span class="f-stamp">Dhaka, Bangladesh</span>
-    </div>
-
+<footer>
+  <div class="container foot">
+    <div class="mark">INNERLOOP<span>.</span> ATELIER</div>
+    <div class="copy">© <span id="yr"></span> · Dhaka · All rights reserved</div>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════
-     JAVASCRIPT
-═══════════════════════════════════════ -->
 <script>
-'use strict';
+const PROJECTS=[
+  {title:"Rasulbag Residence",type:"Interior · Landscape",year:"2025"},
+  {title:"Atelier Identity System",type:"Brand · Print",year:"2025"},
+  {title:"Mohakhali Courtyard",type:"Landscape",year:"2024"},
+  {title:"Dhaka Studio Loft",type:"Architecture · Interior",year:"2024"}
+];
+const TEAM=[
+  {name:"Proprietor",role:"Founder & Principal"},
+  {name:"Architect",role:"Design & Execution Lead"},
+  {name:"Creative Head",role:"Brand & Art Direction"},
+  {name:"Marketing",role:"Strategy & Growth"},
+  {name:"Horticulturist",role:"Landscape & Planting"}
+];
+const NEWS=[
+  {date:"Nov 2025",title:"Innerloop featured in Dhaka Design Weekly",tag:"Press"},
+  {date:"Sep 2025",title:"Rasulbag Residence completes phase one",tag:"Project"},
+  {date:"Jul 2025",title:"Studio expands landscape team",tag:"Studio"}
+];
+const BLOG=[
+  {date:"Reading",title:"Why three disciplines, one studio",excerpt:"On the discipline of integration — and why brand, interior, and landscape belong in the same brief."},
+  {date:"Reading",title:"Material honesty in Dhaka",excerpt:"Notes on working with local stone, lime, and hardwood in a city that rewards restraint."},
+  {date:"Reading",title:"The nurseryman's eye",excerpt:"What horticulture teaches architecture about time, weather, and patience."}
+];
 
-/* ── Nav: transparent → solid on scroll ── */
-const nav = document.getElementById('main-nav');
-const navLinks = document.querySelectorAll('.nav-links a');
-function onScroll() {
-  nav.classList.toggle('scrolled', window.scrollY > 32);
-}
-window.addEventListener('scroll', onScroll, {passive:true});
-onScroll();
+document.getElementById("projGrid").innerHTML=PROJECTS.map((p,i)=>`
+  <article class="proj">
+    <div class="proj-thumb hero-gradient grain"><div class="idx">${String(i+1).padStart(2,"0")} / ${String(PROJECTS.length).padStart(2,"0")}</div></div>
+    <div class="proj-meta"><div><h3>${p.title}</h3><p>${p.type}</p></div><span class="year">${p.year}</span></div>
+  </article>`).join("");
 
-/* ── Active nav link on section enter ── */
-const sections = document.querySelectorAll('[id]');
-const linkMap = {};
-navLinks.forEach(a => {
-  const id = a.getAttribute('href').replace('#','');
-  linkMap[id] = a;
+document.getElementById("teamGrid").innerHTML=TEAM.map(t=>`
+  <div class="team"><div class="initial">${t.name.charAt(0)}</div><h4>${t.name}</h4><p>${t.role}</p></div>`).join("");
+
+document.getElementById("newsList").innerHTML=NEWS.map(n=>`
+  <li><span class="date">${n.date}</span><h3>${n.title}</h3><span class="tag">${n.tag}</span></li>`).join("");
+
+document.getElementById("blogGrid").innerHTML=BLOG.map(b=>`
+  <article class="blog"><div class="date">${b.date}</div><h3>${b.title}</h3><p>${b.excerpt}</p><span class="read">Read →</span></article>`).join("");
+
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>20),{passive:true});
+
+const burger=document.getElementById("burger"),mm=document.getElementById("mobileMenu");
+burger.addEventListener("click",()=>mm.classList.toggle("open"));
+mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mm.classList.remove("open")));
+
+document.getElementById("contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f=new FormData(e.target),name=f.get("name"),email=f.get("email"),subject=f.get("subject")||("New inquiry from "+name),msg=f.get("message");
+  const body=`Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${msg}`;
+  location.href=`mailto:innerloopatelier@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 });
-const sectionObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && linkMap[e.target.id]) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      linkMap[e.target.id].classList.add('active');
-    }
-  });
-}, {rootMargin:'-40% 0px -55% 0px'});
-sections.forEach(s => sectionObs.observe(s));
-
-/* ── Mobile menu ── */
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobile-nav');
-const mobileLinks = document.querySelectorAll('.mobile-link');
-
-function toggleMenu(open) {
-  hamburger.classList.toggle('open', open);
-  mobileNav.classList.toggle('open', open);
-  hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  document.body.style.overflow = open ? 'hidden' : '';
-}
-
-hamburger.addEventListener('click', () => {
-  toggleMenu(!mobileNav.classList.contains('open'));
-});
-mobileLinks.forEach(a => {
-  a.addEventListener('click', () => toggleMenu(false));
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') toggleMenu(false);
-});
-
-/* ── Scroll reveal ── */
-const reveals = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      revealObs.unobserve(e.target);
-    }
-  });
-}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
-reveals.forEach(el => revealObs.observe(el));
-
-/* ── Contact form submission (Web3Forms) ── */
-const form   = document.getElementById('contact-form');
-const btn    = document.getElementById('cf-btn');
-const status = document.getElementById('cf-status');
-
-if (form) {
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-
-    /* Basic validation */
-    const name  = form.querySelector('#cf-name').value.trim();
-    const phone = form.querySelector('#cf-phone').value.trim();
-    const svc   = form.querySelector('#cf-service').value;
-    if (!name || !phone || !svc) {
-      setStatus('err', 'Please fill in your name, phone, and service interest.');
-      return;
-    }
-
-    /* Check Web3Forms key is set */
-    const keyInput = form.querySelector('[name="access_key"]');
-    if (!keyInput || keyInput.value === 'YOUR_WEB3FORMS_KEY_HERE') {
-      /* Fallback: open email client */
-      const subject = encodeURIComponent('Project Enquiry — ' + svc);
-      const body    = encodeURIComponent(
-        'Name: ' + name + '
-Phone: ' + phone + '
-Service: ' + svc +
-        '
-Message: ' + (form.querySelector('#cf-message').value.trim() || '(none)')
-      );
-      window.location.href = 'mailto:innerloopatelier@gmail.com?subject=' + subject + '&body=' + body;
-      setStatus('ok', 'Opening your email client — please send the pre-filled message.');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    clearStatus();
-
-    try {
-      const res  = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        setStatus('ok', '✓ Brief received! We'll reach out within 24 hours.');
-        form.reset();
-      } else {
-        throw new Error(data.message || 'Submission failed');
-      }
-    } catch (err) {
-      setStatus('err',
-        'Something went wrong. Please call us directly: +88 017 5959 2324');
-    } finally {
-      btn.disabled  = false;
-      btn.textContent = 'Send My Brief →';
-    }
-  });
-}
-
-function setStatus(type, msg) {
-  status.className = 'cf-status ' + type;
-  status.textContent = msg;
-  status.scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-function clearStatus() {
-  status.className = 'cf-status';
-  status.textContent = '';
-}
 </script>
-
 </body>
 </html>
