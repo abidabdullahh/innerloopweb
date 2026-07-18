@@ -139,16 +139,22 @@ ul{list-style:none}
   border-bottom-color:var(--gold-rule);
 }
 .nav-logo{
-  height: 32px; /* Adjust this number to make your logo larger or smaller */
-  width: auto;
-  display: block;
-  object-fit: contain;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:19px;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--white);flex-shrink:0;
 }
 .nav-logo em{color:var(--gold);font-style:normal}
 .nav-logo sup{
   font-size:8px;font-weight:600;letter-spacing:.25em;
   color:var(--muted);vertical-align:top;margin-top:4px;
   display:inline-block;
+}
+.nav-logo img {
+  height: 24px; /* Scaled down proportionally based on 120px native height to fit within a 68px nav bar gracefully */
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 .nav-links{
   display:flex;align-items:center;gap:34px;
@@ -789,7 +795,11 @@ footer{
   letter-spacing:.06em;text-transform:uppercase;
   color:var(--white);margin-bottom:10px;display:block;
 }
-.f-logo em{color:var(--gold);font-style:normal}
+.f-logo img {
+  height: 30px; /* Scaled down */
+  width: auto;
+  display: block;
+}
 .f-tagline{
   font-size:12.5px;font-weight:300;
   color:var(--muted);line-height:1.65;max-width:200px;
@@ -892,7 +902,7 @@ footer{
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
   <a href="#hero" class="nav-logo" aria-label="Innerloop Atelier — Home">
-    <img src="logo.png" alt="Innerloop Atelier">
+    <img src="Innerloop Horizon.png" alt="Innerloop Atelier">
   </a>
   <div class="nav-links">
     <a href="#services">Services</a>
@@ -1294,7 +1304,9 @@ footer{
     <div class="footer-top">
 
       <div class="f-brand">
-        <a href="#hero" class="f-logo">INNER<em>LOOP</em> ATELIER</a>
+        <a href="#hero" class="f-logo">
+          <img src="Innerloop Horizon.png" alt="Innerloop Atelier">
+        </a>
         <p class="f-tagline">Built on Identity.<br>Shaped by Space.<br><br>Strategy · Craft · Execution</p>
       </div>
 
@@ -1435,8 +1447,11 @@ if (form) {
       /* Fallback: open email client */
       const subject = encodeURIComponent('Project Enquiry — ' + svc);
       const body    = encodeURIComponent(
-        'Name: ' + name + '\nPhone: ' + phone + '\nService: ' + svc +
-        '\nMessage: ' + (form.querySelector('#cf-message').value.trim() || '(none)')
+        'Name: ' + name + '
+Phone: ' + phone + '
+Service: ' + svc +
+        '
+Message: ' + (form.querySelector('#cf-message').value.trim() || '(none)')
       );
       window.location.href = 'mailto:innerloopatelier@gmail.com?subject=' + subject + '&body=' + body;
       setStatus('ok', 'Opening your email client — please send the pre-filled message.');
@@ -1456,7 +1471,7 @@ if (form) {
       const data = await res.json();
 
       if (data.success) {
-        setStatus('ok', '✓ Brief received! We\'ll reach out within 24 hours.');
+        setStatus('ok', '✓ Brief received! We'll reach out within 24 hours.');
         form.reset();
       } else {
         throw new Error(data.message || 'Submission failed');
