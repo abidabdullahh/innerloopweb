@@ -47,6 +47,9 @@
   --t1:#9A9080; /* text muted */
   --t2:#555045; /* text faint */
   --wa:#25D366;
+  --grn:#4A875A;       /* landscape green */
+  --grn-d:rgba(74,135,90,.15); /* green dim */
+  --grn-h:#5EA06C;     /* green hover */
 
   --nav:68px;
   --cw:1160px;
@@ -425,6 +428,29 @@ input,textarea,select{font-family:inherit;color:inherit}
 }
 
 /* ─────────────────────────────────────────
+   LANDSCAPING — GREEN SYSTEM
+───────────────────────────────────────── */
+#landscaping{background:#0C110A} /* deepest forest dark */
+#landscaping .svc-num{color:var(--grn)}
+#landscaping .svc-sub{color:var(--grn);opacity:.75}
+#landscaping .svc-name em{color:var(--grn)}
+#landscaping .svc-cta{color:var(--grn);border-bottom-color:rgba(74,135,90,.2)}
+#landscaping .svc-cta:hover{border-bottom-color:var(--grn)}
+#landscaping .chip{border-color:rgba(74,135,90,.18)}
+#landscaping .chip::before{background:var(--grn)}
+#landscaping .chip:hover{border-color:var(--grn);color:var(--grn);background:rgba(74,135,90,.07)}
+#landscaping .chip.sm{border-color:rgba(74,135,90,.12)}
+#landscaping .chip.sm:hover{border-color:var(--grn);color:var(--grn);background:rgba(74,135,90,.07)}
+/* Subtle green ambient glow */
+#landscaping::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;bottom:0;pointer-events:none;
+  background:radial-gradient(ellipse at 80% 30%, rgba(74,135,90,.06) 0%, transparent 60%),
+             radial-gradient(ellipse at 10% 80%, rgba(74,135,90,.04) 0%, transparent 50%);
+}
+#landscaping{position:relative}
+
+/* ─────────────────────────────────────────
    TEAM
 ───────────────────────────────────────── */
 #team{
@@ -443,7 +469,7 @@ input,textarea,select{font-family:inherit;color:inherit}
 }
 .team-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--gd);
 }
 .tc{
@@ -704,7 +730,6 @@ footer{
   .hero-body{grid-template-columns:1fr}
   .hv{display:none}
   .svc-inner{grid-template-columns:1fr;gap:44px}
-  .team-grid{grid-template-columns:1fr 1fr;gap:1px}
   .team-head{grid-template-columns:1fr;gap:24px}
   .contact-grid{grid-template-columns:1fr;gap:56px}
   .ft-top{grid-template-columns:1fr 1fr;gap:32px}
@@ -715,14 +740,15 @@ footer{
   .hamburger{display:flex}
   .hero-body{padding:60px var(--px) 40px}
   .hero-hl{font-size:clamp(62px,16vw,90px)}
-  .svc,.#team,#contact{padding:80px 0}
-  .team-grid{grid-template-columns:1fr}
+  .svc,#team,#contact{padding:80px 0}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
   .cf-row{grid-template-columns:1fr}
   .ft-top{grid-template-columns:1fr;gap:28px}
   .ft-bot{flex-direction:column;align-items:flex-start}
   .social-band{padding:56px var(--px)}
 }
-@media(max-width:420px){
+@media(max-width:480px){
+  .team-grid{grid-template-columns:1fr}
   .hero-hl{font-size:58px}
 }
 </style>
@@ -871,7 +897,7 @@ footer{
 
       <div class="r">
         <span class="svc-num">02 / Service</span>
-        <h2 class="svc-name">Land<em style="color:var(--g)">scape</em></h2>
+        <h2 class="svc-name">Land<em style="color:var(--grn)">scape</em></h2>
         <p class="svc-sub">Design · Planting · Installation</p>
         <p class="svc-desc">
           Living environments designed with spatial rigour. Our in-house nursery team takes every project from drawing to ground — and keeps it thriving.
@@ -973,7 +999,7 @@ footer{
         </h2>
       </div>
       <p class="team-desc r d2">
-        Three expert disciplines. One integrated team. Architects, graphic designers, and nurserymen working in close collaboration — each going deep in their own field, each understanding the whole.
+        Five specialist roles. One integrated team. From design to execution, every layer of an Innerloop project is handled by people who have mastered their craft — architects, designers, nurserymen, and the skilled tradespeople who bring it all to ground.
       </p>
     </div>
 
@@ -1048,6 +1074,44 @@ footer{
           <span class="tc-skill">Plant Sourcing</span>
           <span class="tc-skill">Irrigation</span>
           <span class="tc-skill">Landscape Install</span>
+        </div>
+      </div>
+
+      <!-- Operations / Skilled Workmen -->
+      <div class="tc r d4">
+        <div class="tc-avatar">
+          <span class="tc-emoji">🔨</span>
+        </div>
+        <div class="tc-role">Operations Team</div>
+        <div class="tc-name">Skilled Workmen</div>
+        <p class="tc-desc">
+          The hands behind the finish. Our trained tradespeople — masons, carpenters, welders, painters, and installers — are the final layer that turns every design into physical reality.
+        </p>
+        <div class="tc-skills">
+          <span class="tc-skill">Masonry</span>
+          <span class="tc-skill">Carpentry</span>
+          <span class="tc-skill">Welding &amp; Steel</span>
+          <span class="tc-skill">Painting &amp; Polish</span>
+          <span class="tc-skill">Fit-Out Install</span>
+        </div>
+      </div>
+
+      <!-- Quality Control -->
+      <div class="tc r d4">
+        <div class="tc-avatar">
+          <span class="tc-emoji">🔍</span>
+        </div>
+        <div class="tc-role">Standards &amp; Review</div>
+        <div class="tc-name">Quality Control</div>
+        <p class="tc-desc">
+          Nothing leaves the studio unreviewed. Our QC layer benchmarks every deliverable — design, installation, or campaign — against the original brief and the Innerloop standard before handover.
+        </p>
+        <div class="tc-skills">
+          <span class="tc-skill">QC &amp; Sign-off</span>
+          <span class="tc-skill">Punch List</span>
+          <span class="tc-skill">Brief Compliance</span>
+          <span class="tc-skill">Client Review</span>
+          <span class="tc-skill">Standards Audit</span>
         </div>
       </div>
 
