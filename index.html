@@ -48,7 +48,7 @@
   --text-muted: #4E4A42;
   --text-faint: #847F74;
   
-  /* Specular Highlight Borders inspired by attached reference */
+  /* Specular Highlight Borders */
   --border: rgba(255, 255, 255, 0.65);
   --border-strong: rgba(181, 117, 30, 0.25);
   --glass-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 20px 40px -10px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -69,7 +69,7 @@
   --px: 64px;
   --ease: cubic-bezier(.25,.8,.25,1);
   --snap: cubic-bezier(0.1, 0.9, 0.2, 1);
-  --r: 12px; /* Sqrt-based Apple Corner Radius */
+  --r: 12px; /* Apple UI Squircle standard */
 }
 
 [data-theme="dark"] {
@@ -87,7 +87,7 @@
   --text-faint: #555045;
   
   --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(196, 134, 42, 0.2);
+  --border-strong: rgba(196, 134, 42, 0.25);
   --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 24px 50px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   --glass-blur: blur(32px) saturate(160%);
 
@@ -134,7 +134,24 @@ body, section, nav, footer, .glass-panel, .classic-switch, .chip, .btn, .fi, .fs
 
 .wrap{max-width:var(--cw);margin-inline:auto;padding-inline:var(--px)}
 
-/* Vector Noise Grain Layer */
+/* Ambient Mesh Gradient Background */
+.mesh-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -2;
+  background: radial-gradient(circle at 10% 20%, var(--bg-alt) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, var(--gd) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, var(--bg-color-1) 0%, transparent 60%);
+  background-size: 200% 200%;
+  animation: mesh-move 20s ease infinite;
+}
+@keyframes mesh-move {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Subtle vector grain sheet over background */
 .grain-overlay {
   position: fixed;
   inset: 0;
@@ -833,7 +850,7 @@ body, section, nav, footer, .glass-panel, .classic-switch, .chip, .btn, .fi, .fs
 .cd-val{font-size:14.5px;font-weight:400;color:var(--text-primary);line-height:1.55}
 .cd-val a{transition:color .18s}.cd-val a:hover{color:var(--g)}
 
-/* Symmetrical, Icon-Only Studio dock */
+/* Symmetrical, Icon-Only Studio dock as requested */
 .contact-social-dock {
   margin-top: 40px;
   padding-top: 32px;
@@ -1153,6 +1170,7 @@ footer{
 
 <body>
 
+<div class="mesh-bg"></div>
 <div class="grain-overlay"></div>
 
 <!-- ══ FLOATING WHATSAPP ══ -->
@@ -1166,7 +1184,7 @@ footer{
   <a href="#/" class="nav-logo" aria-label="Innerloop Atelier"><img id="nav-logo-element" src="Innerloop-Horizon-Black.png" alt="Innerloop Atelier" class="nav-logo-img"></a>
   <div class="nav-links">
     
-    <!-- Services Dropdown Menu -->
+    <!-- Services Dropdown System -->
     <div class="dropdown">
       <a href="#/" class="nav-link-item" style="display:inline-flex; align-items:center; gap:6px;">
         Services 
@@ -1579,7 +1597,6 @@ footer{
         <a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Innerloop%20Atelier."
            target="_blank" rel="noopener" class="wa-btn r d3" style="margin-top:32px;">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Chat on WhatsApp
         </a>
       </div>
 
@@ -1951,10 +1968,10 @@ function applyTheme(theme) {
     metaThemeColor.setAttribute('content', theme === 'dark' ? '#0E0D0B' : '#FAF8F5');
   }
 
-  // Dynamic Image swaps per instruction
+  // Dynamic Image swaps — modified to load Innerloop-Horizon-Grey.png for Dark Mode
   if (theme === 'dark') {
-    if (navLogoElement) navLogoElement.src = 'Innerloop-Horizon-white.png';
-    if (fLogoElement) fLogoElement.src = 'Innerloop-Horizon-white.png';
+    if (navLogoElement) navLogoElement.src = 'Innerloop-Horizon-Grey.png';
+    if (fLogoElement) fLogoElement.src = 'Innerloop-Horizon-Grey.png';
   } else {
     if (navLogoElement) navLogoElement.src = 'Innerloop-Horizon-Black.png';
     if (fLogoElement) fLogoElement.src = 'Innerloop-Horizon-Black.png';
