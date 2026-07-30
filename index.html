@@ -1,2140 +1,699 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
-
-<!--
-  INNERLOOP ATELIER — innerloopatelier.com
-  GitHub Pages · Single file · Zero dependencies
-
-  FORM SETUP:
-  1. Visit https://web3forms.com/
-  2. Enter innerloopatelier@gmail.com → get Access Key via email
-  3. Replace YOUR_WEB3FORMS_KEY on line ~830
--->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F4F2EC" id="meta-theme-color">
-<title>Innerloop Atelier — Brand Communication · Landscape · Interior Design | Dhaka</title>
-<meta name="description" content="Innerloop Atelier is Dhaka's execution-focused studio for Branding, Landscaping & Interior Design. Built on Identity. Shaped by Space.">
-<meta property="og:title" content="Innerloop Atelier">
-<meta property="og:description" content="Built on Identity. Shaped by Space. Dhaka's integrated design studio.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://innerloopatelier.com">
-<meta name="twitter:card" content="summary">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://innerloopatelier.com">
+<title>INNERLOOP — Premier B2B Execution Partner | Dhaka</title>
+<meta name="description" content="Innerloop Atelier: The premier B2B partner for integrated Brand Communication, luxury Landscape Architecture, and high-performance Interior environments in Bangladesh.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- STRICT GILROY FONT ENFORCEMENT -->
 <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/gilroy-light" rel="stylesheet">
 
 <style>
 /* ─────────────────────────────────────────
-   TOKENS & ADVANCED LIQUID GLASS SYSTEM
+   CORE ARCHITECTURE & LUXURY B2B PALETTE
 ───────────────────────────────────────── */
 :root {
-  /* LIGHT MODE (Premium Warm Soft Gradient Canvas) */
-  --bg-color-1: #F4F2EC;
-  --bg-color-2: #E4E1D8;
-  --bg-alt: #DDD9CF;
-  --bg-nav: rgba(244, 242, 236, 0.75);
-  
-  --surface: rgba(255, 255, 255, 0.45);
-  --surface-lift: rgba(255, 255, 255, 0.7);
-  --surface-panel: rgba(238, 234, 225, 0.85);
-  --text-primary: #12110F;
-  --text-muted: #4E4A42;
-  --text-faint: #847F74;
-  
-  /* Specular Highlight Borders */
-  --border: rgba(255, 255, 255, 0.65);
-  --border-strong: rgba(181, 117, 30, 0.25);
-  
-  /* Complex Apple-Style 3D Shadows */
-  --glass-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 20px 40px -10px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  --glass-shadow-3d: 0 10px 20px rgba(0,0,0,0.03), 0 35px 70px -15px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
-  --glass-blur: blur(32px) saturate(180%);
+  /* THE LUXURY ACCENTS (Shared) */
+  --bronze: #ce8b4e; /* Core Brand Color - Warm Luxury */
+  --forest: #2A4B38; /* Deep Tropical Green - BD Context */
+  --platinum: #A8A9AD; /* Sleek Precision - Corporate */
+  --accent: var(--bronze);
 
-  --g: #B5751E;
-  --gh: #965E14;
-  --gd: rgba(181, 117, 30, 0.08);
-
-  --wa: #25D366;
-  --grn: #3F704D;
-  --grn-d: rgba(63, 112, 77, 0.08);
-  --bg-landscape-1: #E4ECE4;
-  --bg-landscape-2: #D4DDD4;
-
-  --nav: 92px;
-  --cw: 1160px;
-  --px: 64px;
-  --ease: cubic-bezier(.25,.8,.25,1);
-  --snap: cubic-bezier(0.1, 0.9, 0.2, 1);
-  --r: 12px; /* Apple UI Squircle standard */
+  /* Metrics & Textures */
+  --nav-h: 90px;
+  --cw: 1440px;
+  --px: clamp(24px, 5vw, 80px);
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+  /* Subtle, premium noise texture */
+  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='0.03' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* DARK MODE (Default Industrial Luxury) */
 [data-theme="dark"] {
-  /* DARK MODE */
-  --bg-color-1: #0A0908;
-  --bg-color-2: #12100E;
-  --bg-alt: #181613;
-  --bg-nav: rgba(10, 9, 8, 0.75);
-  
-  --surface: rgba(24, 22, 18, 0.65);
-  --surface-lift: rgba(32, 29, 24, 0.75);
-  --surface-panel: rgba(40, 36, 30, 0.85);
-  --text-primary: #EDE8DC;
-  --text-muted: #9A9080;
-  --text-faint: #555045;
-  
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(196, 134, 42, 0.25);
-  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 24px 50px -10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --glass-shadow-3d: 0 12px 24px rgba(0,0,0,0.4), 0 40px 80px -15px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
-  --glass-blur: blur(32px) saturate(160%);
-
-  --g: #C4862A;
-  --gh: #D49535;
-  --gd: rgba(196, 134, 42, .12);
-
-  --grn: #4A875A;
-  --grn-d: rgba(74, 135, 90, 0.15);
-  --bg-landscape-1: #0D120B;
-  --bg-landscape-2: #050704;
+  --bg-core: #0A0908; /* Deeper, richer black */
+  --bg-panel: #141312;
+  --text-p: #FFFFFF;
+  --text-m: rgba(255, 255, 255, 0.75);
+  --text-d: rgba(255, 255, 255, 0.5);
+  --border: rgba(255, 255, 255, 0.15);
+  --glass: rgba(20, 20, 20, 0.8);
 }
 
-/* ─────────────────────────────────────────
-   GLOBAL STYLES & FONT OVERRIDES
-───────────────────────────────────────── */
+/* LIGHT MODE (High-End Corporate Paper) */
+[data-theme="light"] {
+  --bg-core: #F4F2EC; /* Warm, premium off-white */
+  --bg-panel: #EBE9E3;
+  --text-p: #1A1917; /* Soft charcoal */
+  --text-m: rgba(26, 25, 23, 0.75);
+  --text-d: rgba(26, 25, 23, 0.5);
+  --border: rgba(26, 25, 23, 0.15);
+  --glass: rgba(244, 242, 236, 0.9);
+}
+
+/* GLOBAL RESET */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html, body, h1, h2, h3, h4, h5, a, p, button, input, select, textarea, label, span, li { font-family: 'Gilroy', sans-serif !important; }
+html{scroll-behavior:smooth;}
 body{
-  background: linear-gradient(135deg, var(--bg-color-1) 0%, var(--bg-color-2) 100%);
-  color:var(--text-primary);
-  font-family:'Gilroy', system-ui, sans-serif;
-  font-weight:400;line-height:1.75;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  position: relative;
-  min-height: 100vh;
+  background: var(--bg-core); color:var(--text-p); line-height:1.6; overflow-x:hidden;
+  transition: background 0.4s ease, color 0.4s ease;
 }
-a{color:inherit;text-decoration:none}
-em{font-style:normal;font-weight:300}
-ul{list-style:none}
-img{max-width:100%;display:block}
-button{cursor:pointer;border:none;background:none;font-family:inherit}
-input,textarea,select{font-family:inherit;color:inherit}
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-track{background:var(--bg-color-1)}
-::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:10px}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+body::before { content:''; position:fixed; inset:0; background: var(--noise); pointer-events:none; z-index: 9999; mix-blend-mode: overlay;}
 
-/* Smooth UI transitions */
-body, section, nav, footer, .glass-panel, .classic-switch, .chip, .btn, .fi, .fs, .ft {
-  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+a{text-decoration:none; color:inherit; transition: 0.3s var(--ease);}
+img{max-width:100%; display:block;}
+.wrap{max-width:var(--cw); margin-inline:auto; padding-inline:var(--px); position: relative; z-index: 2;}
+
+/* TYPOGRAPHY HIERARCHY - PROFESSIONAL & BOLD */
+h1, .h1 { font-size: clamp(50px, 8vw, 100px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; }
+h2, .h2 { font-size: clamp(36px, 5vw, 54px); font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; text-transform: uppercase; }
+h3 { font-size: 22px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; gap: 16px; color: var(--accent);}
+.eyebrow::before { content:''; width: 30px; height: 2px; background: currentColor; }
+.lead { font-size: clamp(16px, 1.5vw, 18px); font-weight: 400; color: var(--text-m); max-width: 580px; margin-bottom: 40px; }
+.accent-text { color: var(--accent); }
+
+/* UI ELEMENTS */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; padding: 22px 44px;
+  font-size: 12px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase;
+  background: var(--accent); color: var(--bg-core); border: 1px solid var(--accent);
+  transition: all 0.3s var(--ease); cursor: pointer; gap: 16px;
 }
+.btn:hover { background: transparent; color: var(--accent); }
+.btn-glass { background: rgba(255,255,255,0.05); border-color: var(--border); color: var(--text-p); backdrop-filter: blur(20px); }
+[data-theme="light"] .btn-glass { background: rgba(0,0,0,0.05); }
+.btn-glass:hover { border-color: var(--accent); color: var(--accent); background: transparent; }
 
-.wrap{max-width:var(--cw);margin-inline:auto;padding-inline:var(--px)}
-
-/* Ambient Mesh Gradient Background */
-.mesh-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -2;
-  background: radial-gradient(circle at 10% 20%, var(--bg-alt) 0%, transparent 40%),
-              radial-gradient(circle at 90% 80%, var(--gd) 0%, transparent 50%),
-              radial-gradient(circle at 50% 50%, var(--bg-color-1) 0%, transparent 60%);
-  background-size: 200% 200%;
-  animation: mesh-move 20s ease infinite;
-}
-@keyframes mesh-move {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
-}
-
-/* Subtle vector grain sheet over background */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.032;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* ─────────────────────────────────────────
-   REVEAL TIMING
-───────────────────────────────────────── */
-.r{opacity:0;transform:translateY(32px);transition:opacity .85s var(--snap),transform .85s var(--snap)}
-.r.in{opacity:1;transform:none}
-.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}
-.r.d3{transition-delay:.24s}.r.d4{transition-delay:.32s}
-@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none}}
-
-/* ─────────────────────────────────────────
-   3D LIQUID GLASS SYSTEM (Hardware Accelerated)
-───────────────────────────────────────── */
 .glass-panel {
-  background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border);
-  box-shadow: var(--glass-shadow);
-  border-radius: var(--r);
+  background: var(--glass); border: 1px solid var(--border);
+  backdrop-filter: blur(20px); padding: 48px; transition: border-color 0.3s;
 }
+.glass-panel:hover { border-color: var(--accent); }
 
-/* Spatial 3D layouts designed to translate beautifully to Mobile viewports */
-.glass-interactive-3d {
-  position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  will-change: transform, box-shadow;
-  transition: transform 0.5s var(--ease), background-color 0.4s var(--ease), box-shadow 0.5s var(--ease);
-}
-
-.glass-interactive-3d:hover {
-  transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
-  background: var(--surface-lift);
-  box-shadow: var(--glass-shadow-3d);
-}
-
-/* Active touch state on Mobile screens */
-.glass-interactive-3d:active {
-  transform: translateY(-2px) scale(0.99) rotateX(1deg) rotateY(1deg);
-  box-shadow: var(--glass-shadow);
-}
-
-/* Typography elements utilizing only Gilroy */
-.eyebrow{
-  font-family:'Gilroy', sans-serif;
-  font-size:10.5px;font-weight:700;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--g);display:flex;align-items:center;gap:14px;
-}
-.eyebrow::before{content:'';width:24px;height:1px;background:var(--g);flex-shrink:0}
-
-.hl{
-  font-family:'Gilroy', sans-serif;
-  font-weight:700;line-height:1.05;
-  letter-spacing:-.02em;text-transform:uppercase;
-  color:var(--text-primary);
-}
-.hl em{color:var(--g);font-style:normal;font-weight:300;letter-spacing:.005em}
-
-/* Standardized Apple UI Squircle buttons */
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Gilroy', sans-serif;
-  font-size:11.5px;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;
-  border-radius: var(--r);
-  transition:all .25s var(--ease);
-}
-.btn-fill{color:var(--bg-color-1);background:var(--g);padding:14px 32px}
-.btn-fill:hover{background:var(--gh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(181,117,30,0.2)}
-.btn-line{
-  color:var(--text-muted);padding:13px 32px;
-  border:1px solid var(--border-strong);
-}
-.btn-line:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
-
-/* Floating WhatsApp */
-.wa-float{
-  position:fixed;bottom:32px;right:32px;z-index:900;
-  width:56px;height:56px;border-radius:50%;
-  background:var(--wa);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 8px 32px rgba(37,211,102,.25);
-  transition:transform .3s var(--ease),box-shadow .3s;
-}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,.4)}
-.wa-float svg{width:26px;height:26px;fill:#fff}
+.section-taste { padding: 160px 0; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 
 /* ─────────────────────────────────────────
-   NAVIGATION & HIGH-FIDELITY MOBILE MENU
+   NAVIGATION
 ───────────────────────────────────────── */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:800;
-  height:var(--nav);display:flex;align-items:center;
-  padding-inline:var(--px);
-  border-bottom:1px solid transparent;
-  background:transparent;
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding-inline: var(--px); background: var(--glass); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border); transition: background 0.4s, border 0.4s;
 }
-.nav.on{
-  background:var(--bg-nav);
-  backdrop-filter:var(--glass-blur);
-  -webkit-backdrop-filter:var(--glass-blur);
-  border-bottom-color:var(--border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
-}
-.nav-logo{
-  font-family:'Gilroy', sans-serif;
-  font-size:19px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  color:var(--text-primary);
-}
-.nav-logo-img{display:block;height:32px;width:auto;}
-.f-logo-img{display:block;height:38px;width:auto;margin-bottom:14px;}
+.nav-logo img { height: 32px; width: auto; }
+[data-theme="dark"] .nav-logo-img { content: url('Innerloop-Horizon-Grey.png'); }
+[data-theme="light"] .nav-logo-img { content: url('Innerloop-Horizon-Black.png'); }
 
-.nav-links{
-  display:flex;align-items:center;gap:36px;
-  margin-left:auto;margin-right:32px;
-}
-.nav-link-item{
-  font-family:'Gilroy', sans-serif;
-  font-size:11px;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--text-muted);
-  position:relative;padding-bottom:4px;
-}
-.nav-link-item::after{
-  content:'';position:absolute;bottom:0;left:0;
-  width:0;height:1px;background:var(--g);
-  transition:width .25s var(--ease);
-}
-.nav-link-item:hover,
-.nav-link-item.on{color:var(--text-primary)}
-.nav-link-item.on::after,
-.nav-link-item:hover::after{width:100%}
-
-/* Apple Dropdown Navigation */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  min-width: 240px;
-  padding: 8px;
-  z-index: 999;
-  border-radius: var(--r);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease), visibility 0.3s;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-.dropdown-item {
-  display: block;
-  padding: 10px 16px;
-  font-family: 'Gilroy', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  border-radius: calc(var(--r) - 4px);
-  transition: all 0.2s;
-}
-.dropdown-item:hover {
-  background: var(--surface-lift);
-  color: var(--g);
-  padding-left: 20px;
-}
-
-/* Classic Hardware Switch */
-.switch-wrapper {
-  display:flex;align-items:center;gap:10px;margin-right:24px;
-}
-.switch-label {
-  font-size: 8.5px;font-weight: 700;text-transform: uppercase;
-  letter-spacing: 0.2em;color: var(--text-faint);
-}
-.classic-switch {
-  position:relative;width:44px;height:22px;
-  background:#DCD6CD;border-radius:100px;
-  border:1px solid rgba(0,0,0,0.1);
-  box-shadow:inset 0 3px 6px rgba(0,0,0,0.12);
-  cursor:pointer;
+.nav-controls { display: flex; align-items: center; gap: 32px; }
+.theme-switch {
+  width: 48px; height: 26px; background: var(--border); border-radius: 20px;
+  position: relative; cursor: pointer; transition: 0.3s;
 }
 .switch-handle {
-  position:absolute;top:2px;left:2px;
-  width:16px;height:16px;background:#FFF;
-  border-radius:50%;
-  box-shadow:0 3px 8px rgba(0,0,0,0.2), 0 0 1px rgba(0,0,0,0.1);
-  transition:transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 20px; height: 20px; background: var(--text-p); border-radius: 50%;
+  position: absolute; top: 3px; left: 3px; transition: 0.3s var(--ease);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-[data-theme="dark"] .classic-switch {
-  background: var(--g);
-}
-[data-theme="dark"] .switch-handle {
-  transform: translateX(22px);
-}
+[data-theme="dark"] .switch-handle { transform: translateX(22px); background: var(--bronze); }
 
-/* Elegant iOS-Style Circular Glass Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
-  transition: all 0.3s var(--ease);
-  cursor: pointer;
-  position: relative;
-  margin-left: auto;
+.menu-toggle {
+  display: flex; align-items: center; gap: 12px; cursor: pointer;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-p);
 }
-.hamburger span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--text-primary);
-  border-radius: 4px;
-  transition: all 0.25s var(--ease);
-  position: absolute;
-}
-.hamburger span:nth-child(1) { transform: translateY(-5px); }
-.hamburger span:nth-child(2) { width: 12px; transform: translateX(-3px); } /* Asymmetric Apple styling */
-.hamburger span:nth-child(3) { transform: translateY(5px); }
+.hamburger span { display: block; height: 2px; background: currentColor; margin: 6px 0; transition: 0.3s; }
+.hamburger span:nth-child(1) { width: 30px; } .hamburger span:nth-child(2) { width: 20px; margin-left: auto;}
+.menu-toggle:hover .hamburger span { width: 30px; background: var(--bronze); }
 
-/* Morphing states to exact Close button (X) */
-.hamburger.on span:nth-child(1) { transform: rotate(45deg); }
-.hamburger.on span:nth-child(2) { opacity: 0; transform: scale(0); }
-.hamburger.on span:nth-child(3) { transform: rotate(-45deg); }
-
-/* Mobile Drawer Panel */
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  top: var(--nav);
-  z-index: 799;
-  background: var(--bg-nav);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  transform: translateX(105%);
-  transition: transform 0.4s var(--snap);
-  pointer-events: none;
+.overlay-nav {
+  position: fixed; inset: 0; background: var(--bg-core); z-index: 999;
+  padding: var(--nav-h) var(--px) var(--px);
+  transform: translateY(-100%); transition: transform 0.6s var(--ease);
+  overflow-y: auto; display: flex; flex-direction: column;
 }
-.mobile-nav.on {
-  transform: translateX(0);
-  pointer-events: all;
+.overlay-nav.active { transform: translateY(0); }
+.nav-close { position: absolute; top: 30px; right: var(--px); font-size: 32px; cursor: pointer; z-index: 2; color: var(--text-p);}
+.mobile-links-list { margin-top: auto; margin-bottom: auto; display: flex; flex-direction: column; gap: 2vh; }
+.mobile-link {
+  font-size: clamp(40px, 7vh, 80px); font-weight: 800; line-height: 1; text-transform: uppercase;
+  color: var(--text-d); transition: 0.3s; display: flex; align-items: flex-start;
 }
-.mobile-nav a {
-  font-family: 'Gilroy', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  transition: color 0.2s;
-}
-.mobile-nav a:hover {
-  color: var(--g);
-}
-.mobile-nav .mn-cta {
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--bg-color-1);
-  background: var(--g);
-  padding: 14px 38px;
-  border-radius: var(--r);
-}
-
-/* SPA VIEW ROUTER */
-.view-route {
-  display: none;
-}
-.view-route.active-view {
-  display: block;
-}
+.mobile-link span { font-size: 14px; letter-spacing: 0.2em; color: var(--bronze); margin-top: 10px; margin-right: 24px; }
+.mobile-link:hover { color: var(--text-p); }
 
 /* ─────────────────────────────────────────
-   HERO & SQUIRCLE VISUAL
+   HERO: Metaphoric Slideshow (Problem Solving)
 ───────────────────────────────────────── */
-#hero{
-  min-height:100vh;
-  padding-top:var(--nav);
-  display:flex;flex-direction:column;
-  justify-content:center;
-  position:relative;overflow:hidden;
+#hero {
+  height: 100vh; min-height: 700px; padding-top: var(--nav-h);
+  display: flex; align-items: center; position: relative; overflow: hidden;
 }
-.hero-body{
-  padding:120px var(--px) 80px;
-  max-width:var(--cw);margin-inline:auto;
-  display:grid;
-  grid-template-columns:1fr 440px;
-  gap:80px;align-items:center;
-  position:relative;z-index:1;
+.hero-slide {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    opacity: 0; transform: scale(1.1); transition: opacity 1s ease-in-out, transform 8s linear; z-index: 0;
+    filter: grayscale(0.4);
 }
-.hero-eyebrow{margin-bottom:32px}
-.hero-hl{
-  font-family:'Gilroy', sans-serif;
-  font-size:clamp(64px,9vw,110px);
-  margin-bottom:32px;
-}
-.hero-desc{
-  font-size:16px;font-weight:400;
-  color:var(--text-muted);line-height:1.85;
-  max-width:400px;margin-bottom:48px;
-}
-.hero-acts{display:flex;gap:14px;flex-wrap:wrap}
+.hero-slide.active { opacity: 1; transform: scale(1); }
+/* Metaphoric Images: Strategy, Structure, Premium Finish */
+.hs1 { background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop'); } /* Strategy/Tech */
+.hs2 { background-image: url('https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=2070&auto=format&fit=crop'); } /* Structure/Growth */
+.hs3 { background-image: url('https://images.unsplash.com/photo-1620626012053-1c14b15235a9?q=80&w=2070&auto=format&fit=crop'); } /* Premium/Luxury */
 
-/* original hidden layout edges visual */
-.hv{
-  aspect-ratio:1;width:100%;
-  position:relative;
-  display:flex;align-items:center;justify-content:center;
-  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%);
-  mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%);
+#hero::after {
+    content: ''; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to right, var(--bg-core) 15%, rgba(10,9,8,0.5) 100%);
 }
-.hv-grid{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(var(--border) 1px,transparent 1px),
-    linear-gradient(90deg,var(--border) 1px,transparent 1px);
-  background-size:38px 38px;
-}
-.hv-ring{position:absolute;border:1px solid;transform:rotate(45deg)}
-.hv-r1{width:78%;height:78%;border-color:var(--gd);animation:rot 55s linear infinite}
-.hv-r2{width:56%;height:56%;border-color:var(--border);animation:rot 33s linear infinite reverse}
-.hv-r3{width:32%;height:32%;border-color:var(--g);opacity:0.7;animation:rot 20s linear infinite}
-.hv-dot{
-  position:absolute;width:8%;height:8%;
-  background:var(--g);transform:rotate(45deg);
-  animation:pls 2.8s ease-in-out infinite alternate;
-}
-.hv-h{position:absolute;height:1px;width:84%;background:linear-gradient(90deg,transparent,var(--border),transparent)}
-.hv-v{position:absolute;width:1px;height:84%;background:linear-gradient(transparent,var(--border),transparent)}
-
-.hv-c{position:absolute;width:12px;height:12px;border-color:var(--border-strong);border-style:solid}
-.hv-c.tl{top:11%;left:11%;border-width:1px 0 0 1px}
-.hv-c.tr{top:11%;right:11%;border-width:1px 1px 0 0}
-.hv-c.bl{bottom:11%;left:11%;border-width:0 0 1px 1px}
-.hv-c.br{bottom:11%;right:11%;border-width:0 1px 1px 0}
-
-@keyframes rot{to{transform:rotate(405deg)}}
-@keyframes pls{
-  from{opacity:.5;box-shadow:0 0 0 0 rgba(196,134,42,0)}
-  to{opacity:1;box-shadow:0 0 20px 5px rgba(196,134,42,.15)}
-}
-
-/* Scroll hint */
-.scroll-hint{
-  display:flex;flex-direction:column;align-items:center;gap:12px;
-  padding-bottom:36px;
-  position:relative;z-index:1;
-}
-.sh-line{
-  width:1px;height:52px;
-  background:linear-gradient(to bottom,transparent,var(--g));
-  animation:sh-anim 2.2s ease-in-out infinite;
-}
-.sh-label{
-  font-family:'Gilroy', sans-serif;
-  font-size:8.5px;font-weight:700;
-  letter-spacing:.4em;text-transform:uppercase;
-  color:var(--text-faint);
-}
+.hero-content { position: relative; z-index: 2; max-width: 850px; }
 
 /* ─────────────────────────────────────────
-   MARQUEE
+   MARQUEE RIBBON
 ───────────────────────────────────────── */
-.marquee{overflow:hidden;background:var(--g);padding:16px 0;user-select:none}
-.marquee-t{
-  display:flex;width:max-content;
-  animation:mq 28s linear infinite;
+.marquee { background: var(--bronze); padding: 36px 0; overflow: hidden; }
+.marquee-track { display: flex; white-space: nowrap; animation: scroll 30s linear infinite; }
+.m-item {
+    font-size: 24px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #0A0908; margin-right: 100px; display: flex; align-items: center;
 }
-.marquee-t:hover{animation-play-state:paused}
-.marquee-t span{
-  font-family:'Gilroy', sans-serif;
-  font-size:12px;font-weight:700;
-  letter-spacing:.3em;text-transform:uppercase;
-  color:var(--bg-color-1);white-space:nowrap;padding:0 28px;
-}
-.marquee-t span em{font-style:normal;opacity:.35;margin:0 8px}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scroll { to { transform: translateX(-50%); }}
 
 /* ─────────────────────────────────────────
-   CLIENTS SCROLL
+   METAPHORIC INFOGRAPHICS
 ───────────────────────────────────────── */
-.clients{
-  padding:140px 0;
-  background:var(--bg-alt);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+.infographic-container {
+    padding: 60px; background: var(--bg-panel); border: 1px solid var(--border);
+    transition: background 0.4s, border 0.4s; position: relative;
 }
-.clients-head{
-  display:grid;grid-template-columns:1.2fr 1fr;
-  gap:48px;align-items:end;
-  padding:0 clamp(20px,4vw,56px);
-  margin-bottom:72px;
-}
-.clients-head .eyebrow{color:var(--text-primary);opacity:.6;margin-bottom:12px}
-.clients-head h2{
-  font-family:'Gilroy', sans-serif;font-weight:500;
-  font-size:clamp(32px,3.8vw,48px);line-height:1.15;
-  margin:0;letter-spacing:-.015em;
-}
-.clients-head h2 em{font-style:normal;font-weight:300;opacity:.6}
-.clients-head p{
-  max-width:380px;font-size:15px;line-height:1.8;
-  color:var(--text-muted);margin:0;
-}
-.clients-track-wrap{
-  position:relative;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-}
-.clients-track-wrap + .clients-track-wrap{margin-top:20px}
-.clients-track{
-  display:flex;width:max-content;
-  animation:clients-scroll 40s linear infinite;
-}
-.clients-track.reverse{animation-direction:reverse;animation-duration:48s}
-.client-cell{
-  flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  min-width:240px;height:80px;padding:0 40px;
-  font-family:'Gilroy', sans-serif;
-  font-size:20px;font-weight:500;letter-spacing:.02em;
-  color:var(--text-primary);opacity:.8;
-  border-right:1px solid var(--border);
-  white-space:nowrap;
-}
-.client-cell em{font-style:normal;font-weight:300;opacity:.5;margin-left:5px}
-@keyframes clients-scroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
+/* Taste-specific background treatments */
+.immersive-bg { position: absolute; inset: 0; z-index: 0; filter: grayscale(0.7) brightness(0.8); opacity: 0.15; transition: opacity 0.4s; mix-blend-mode: luminosity; }
+[data-theme="light"] .immersive-bg { opacity: 0.08; filter: grayscale(0.5); }
+
+#branding { --accent: var(--bronze); }
+/* Metaphor: High-end Retail/Spotlight */
+#branding .immersive-bg { background: url('https://images.unsplash.com/photo-1561710309-6642dd83d56b?q=80&w=2071&auto=format&fit=crop') center/cover; }
+
+#landscape { --accent: var(--forest); }
+/* Metaphor: Tropical Luxury/Resort vibe (Bangladeshi context) */
+#landscape .immersive-bg { background: url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop') center/cover; }
+
+#interior { --accent: var(--platinum); }
+/* Metaphor: Precision/Sleek Corporate */
+#interior .immersive-bg { background: url('https://images.unsplash.com/photo-1497366754035-4803264aa91c?q=80&w=2070&auto=format&fit=crop') center/cover; }
 
 /* ─────────────────────────────────────────
-   SERVICE SECTIONS — DYNAMIC THEMES (3D SPECULAR GLASS)
+   TEAM & FOUNDER
 ───────────────────────────────────────── */
-.svc{padding:140px 0;border-bottom:1px solid var(--border);position:relative}
-.svc-inner{
-  display:grid;
-  grid-template-columns:400px 1fr;
-  gap:96px;align-items:start;
+#team { --accent: var(--bronze); }
+.team-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start; }
+.founder-img {
+  height: 550px; width: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1);
+  border: 1px solid var(--border); margin-bottom: 40px;
 }
-.svc-num{
-  font-family:'Gilroy', sans-serif;
-  font-size:11px;font-weight:700;
-  letter-spacing:.24em;text-transform:uppercase;
-  color:var(--g);display:block;margin-bottom:24px;
+.founder-quote {
+  font-size: 26px; font-weight: 800; line-height: 1.25; text-transform: uppercase;
+  padding-left: 40px; border-left: 4px solid var(--accent); margin-bottom: 40px;
 }
-
-/* Only Brand Communication remains split on two lines */
-.svc-title-split{
-  font-family:'Gilroy', sans-serif;
-  font-size:clamp(34px, 4vw, 52px);
-  font-weight:700;line-height:1.15;
-  letter-spacing:-.015em;text-transform:uppercase;
-  color:var(--text-primary);margin-bottom:24px;
-}
-.svc-title-split em{color:inherit;font-style:normal;font-weight:300}
-
-/* Landscape and Interior single line titles */
-.svc-title-single{
-  font-family:'Gilroy', sans-serif;
-  font-size:clamp(38px, 4.5vw, 58px);
-  font-weight:700;line-height:1.1;
-  letter-spacing:-.015em;text-transform:uppercase;
-  color:var(--text-primary);margin-bottom:24px;
-}
-.svc-title-single em{color:inherit;font-style:normal;font-weight:300}
-
-.svc-sub{
-  font-family:'Gilroy', sans-serif;
-  font-size:13px;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--g);margin-bottom:24px;opacity:.8;
-}
-.svc-desc{
-  font-size:15px;font-weight:400;
-  color:var(--text-muted);line-height:1.85;
-  margin-bottom:44px;
-}
-.svc-cta{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Gilroy', sans-serif;
-  font-size:11px;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--g);transition:gap .2s var(--ease);
-  border-bottom:1px solid var(--gd);padding-bottom:6px;
-}
-.svc-cta:hover{gap:16px;border-bottom-color:var(--g)}
-
-/* Right side panel */
-.panel-label{
-  font-family:'Gilroy', sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.35em;text-transform:uppercase;
-  color:var(--text-faint);margin-bottom:18px;
-  display:flex;align-items:center;gap:12px;
-}
-.panel-label::after{content:'';flex:1;max-width:48px;height:1px;background:var(--text-faint);opacity:.3}
-
-.chip-cloud{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
-.chip{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:10px 20px;
-  font-family:'Gilroy', sans-serif;
-  font-size:11.5px;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--text-muted);
-  border-radius: var(--r);
-}
-.chip::before{
-  content:'';width:4px;height:4px;border-radius:50%;
-  background:var(--g);opacity:.5;flex-shrink:0;
-}
-.chip:hover{
-  border-color:var(--g);color:var(--g);
-  background:var(--gd);
-}
-.chip.sm{
-  padding:8px 16px;font-size:10.5px;
-  border-color:var(--border);color:var(--text-faint);
-  background:transparent;
-}
-
-/* LANDSCAPE GREEN LIQUID GLASS OVERLAY */
-#landscaping{
-  background: linear-gradient(135deg, var(--bg-landscape-1) 0%, var(--bg-landscape-2) 100%);
-}
-#landscaping .svc-num{color:var(--grn)}
-#landscaping .svc-sub{color:var(--grn)}
-#landscaping .svc-cta{color:var(--grn);border-bottom-color:rgba(63,112,77,0.2)}
-#landscaping .svc-cta:hover{border-bottom-color:var(--grn)}
-#landscaping .chip::before{background:var(--grn)}
-#landscaping .chip:hover{border-color:var(--grn);color:var(--grn);background:var(--grn-d)}
-/* Specular deep green border for landscape glass pane */
-#landscaping .glass-panel {
-  background: rgba(255, 255, 255, 0.4);
-  border-color: rgba(63, 112, 77, 0.35);
-  box-shadow: 0 4px 10px rgba(63,112,77,0.02), 0 20px 40px -10px rgba(63,112,77,0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
-}
+.team-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.team-card { display: flex; align-items: flex-start; gap: 24px; padding: 36px; }
+.tc-icon { font-size: 32px; color: var(--accent); line-height: 1; }
 
 /* ─────────────────────────────────────────
-   TEAM & FOUNDER BIO WINDOW
+   CLIENT TRUST & GALLERY
 ───────────────────────────────────────── */
-#team{
-  padding:140px 0;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+#clients { --accent: var(--bronze); background: var(--bg-panel); transition: background 0.4s;}
+.handshake-img {
+    width: 100%; height: 400px; object-fit: cover; filter: grayscale(1);
+    border: 1px solid var(--border); margin-bottom: 60px; mix-blend-mode: overlay; opacity: 0.6;
 }
-.team-head{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:72px;align-items:end;margin-bottom:72px;
-}
-.team-desc{
-  font-size:15px;font-weight:400;
-  color:var(--text-muted);line-height:1.85;max-width:460px;
-}
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.tc{
-  padding:44px 32px;
-}
-.tc-avatar{
-  width:76px;height:76px;border-radius:50%;
-  background:var(--bg-color-1);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:28px;overflow:hidden;
-}
-.tc-photo{width:100%;height:100%;object-fit:cover}
-.tc-emoji{font-size:28px;line-height:1}
-.tc-role{
-  font-family:'Gilroy', sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.32em;text-transform:uppercase;
-  color:var(--g);margin-bottom:10px;
-}
-.tc-name{
-  font-family:'Gilroy', sans-serif;
-  font-size:20px;font-weight:500;
-  letter-spacing:.04em;text-transform:uppercase;
-  color:var(--text-primary);margin-bottom:14px;
-}
-.tc-desc{
-  font-size:13.5px;font-weight:400;
-  color:var(--text-muted);line-height:1.75;margin-bottom:24px;
-}
-.tc-skills{display:flex;flex-wrap:wrap;gap:6px}
-.tc-skill{
-  font-family:'Gilroy', sans-serif;
-  font-size:9px;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:var(--text-faint);
-  border:1px solid var(--border);
-  padding:4px 12px;border-radius:12px;
-}
-.btn-read-bio{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:'Gilroy', sans-serif;
-  font-size:10px;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--g);cursor:pointer;
-  margin-top:20px;
-}
-.btn-read-bio:hover{color:var(--gh)}
+[data-theme="light"] .handshake-img { mix-blend-mode: multiply; opacity: 0.3; }
 
-/* Immersive Apple Glass Modal Window */
-.modal {
-  position:fixed;inset:0;z-index:1000;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity 0.4s var(--ease);
-}
-.modal.open {
-  opacity:1;pointer-events:all;
-}
-.modal-overlay {
-  position:absolute;inset:0;
-  background:rgba(12, 11, 9, 0.4);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-}
-.modal-content {
-  position:relative;
-  width:90%;max-width:600px;
-  max-height:85vh;overflow-y:auto;
-  z-index:1001;
-  transform:scale(0.96) translateY(20px);
-  transition:transform 0.5s var(--snap), background-color 0.4s;
-  padding:52px;
-}
-.modal.open .modal-content {
-  transform:scale(1) translateY(0);
-}
-.modal-close {
-  position:absolute;top:28px;right:28px;
-  font-size:24px;line-height:1;color:var(--text-faint);
-  background:none;border:none;cursor:pointer;
-  transition:color 0.15s;
-}
-.modal-close:hover {color:var(--g)}
+.trust-engine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.te-card { background: var(--bg-core); border: 1px solid var(--border); padding: 48px; transition: background 0.4s; text-align: center;}
+.te-icon { font-size: 40px; color: var(--accent); margin-bottom: 24px; }
+.te-stat { font-size: 54px; font-weight: 800; line-height: 1; margin-bottom: 12px; }
+.te-label { font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-m); }
 
-/* Editorial layouts */
-.modal-header {
-  display:flex;align-items:center;gap:24px;
-  margin-bottom:32px;border-bottom:1px solid var(--border);
-  padding-bottom:28px;
+#work { --accent: var(--bronze); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;}
+.g-item { aspect-ratio: 4/5; position: relative; overflow: hidden; border: 1px solid var(--border); }
+.g-img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s var(--ease); filter: grayscale(1); }
+.g-item:hover .g-img { transform: scale(1.05); filter: grayscale(0); }
+.g-label {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 32px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    transform: translateY(100%); transition: 0.4s var(--ease);
 }
-.modal-name {
-  font-family:'Gilroy', sans-serif;
-  font-size:24px;font-weight:600;
-  color:var(--text-primary);
-  text-transform:uppercase;letter-spacing:0.04em;
-}
-.modal-role {
-  font-family:'Gilroy', sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:0.25em;color:var(--g);
-  text-transform:uppercase;margin-top:4px;
-}
-.modal-desc p {
-  font-size:15px;line-height:1.85;
-  color:var(--text-muted);margin-bottom:20px;
-}
-.modal-desc p strong {
-  color:var(--text-primary);font-weight:600;
-}
-.modal-desc p:last-child {margin-bottom:0}
-
-/* Abstract layout markings */
-.modal-decorator {
-  position: absolute;
-  top: 16px;
-  left: 20px;
-  font-family: monospace;
-  font-size: 8px;
-  color: var(--text-faint);
-  opacity: 0.5;
-  letter-spacing: 0.1em;
-}
+.g-item:hover .g-label { transform: translateY(0); }
+.gl-title { font-size: 18px; font-weight: 800; text-transform: uppercase; color: #FFF; }
+.gl-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--bronze); text-transform: uppercase; margin-top: 8px; }
 
 /* ─────────────────────────────────────────
-   CONTACT & STUDIO CHANNELS DOCK
+   PROFESSIONAL FOOTER
 ───────────────────────────────────────── */
-#contact{padding:140px 0;background:var(--bg-color-1)}
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1.1fr;
-  gap:96px;align-items:start;
+footer { background: var(--bg-panel); padding: 100px 0 40px; border-top: 1px solid var(--border); transition: background 0.4s;}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+.f-link { display: block; color: var(--text-m); margin-bottom: 16px; font-size: 14px; transition: 0.3s; font-weight: 500;}
+.f-link:hover { color: var(--bronze); }
+.footer-bottom {
+    padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between;
+    font-size: 12px; color: var(--text-d); text-transform: uppercase; letter-spacing: 0.05em;
 }
-.contact-pitch{
-  font-size:clamp(32px,4vw,52px);
-  font-family:'Gilroy', sans-serif;
-  font-weight:600;line-height:1.1;
-  letter-spacing:-.015em;text-transform:uppercase;
-  color:var(--text-primary);margin-bottom:32px;
-}
-.contact-pitch em{color:inherit;font-style:normal;font-weight:300}
-.contact-sub{
-  font-size:15.5px;font-weight:400;color:var(--text-muted);
-  line-height:1.8;max-width:400px;margin-bottom:48px;
-}
-.cd-list{display:flex;flex-direction:column;gap:18px;margin-bottom:36px}
-.cd-row{display:flex;align-items:flex-start;gap:16px}
-.cd-ico{
-  width:40px;height:40px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;
-}
-.cd-lbl{
-  font-family:'Gilroy', sans-serif;
-  font-size:9px;font-weight:700;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--g);margin-bottom:4px;
-}
-.cd-val{font-size:14.5px;font-weight:400;color:var(--text-primary);line-height:1.55}
-.cd-val a{transition:color .18s}.cd-val a:hover{color:var(--g)}
-
-/* Symmetrical, Icon-Only Studio dock */
-.contact-social-dock {
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-.csd-title {
-  font-family: 'Gilroy', sans-serif;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 24px;
-}
-.csd-icons {
-  display: inline-flex;
-  gap: 16px;
-  justify-content: center;
-}
-.csd-btn {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  border-radius: 50%;
-  transition: all 0.3s var(--ease);
-}
-.csd-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-.csd-btn:hover {
-  color: var(--g);
-  background: var(--surface-lift);
-  transform: translateY(-2px);
-}
-
-.wa-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Gilroy', sans-serif;
-  font-size:11.5px;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:#fff;background:var(--wa);
-  padding:14px 28px;border-radius:var(--r);
-}
-.wa-btn:hover{background:#22c55e;transform:translateY(-2px)}
-.wa-btn svg{width:17px;height:17px;fill:#fff}
-
-/* Form panel */
-.cf{
-  padding:44px 40px;
-}
-.cf-h{
-  font-family:'Gilroy', sans-serif;
-  font-size:22px;font-weight:500;
-  letter-spacing:.05em;text-transform:uppercase;
-  color:var(--text-primary);margin-bottom:8px;
-}
-.cf-s{font-size:13.5px;font-weight:400;color:var(--text-muted);margin-bottom:32px;line-height:1.6}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fg{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
-.fg.full{grid-column:1/-1}
-.fl{
-  font-family:'Gilroy', sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--text-faint);
-}
-.fi,.fs,.ft{
-  width:100%;background:var(--bg-color-1);
-  border:1px solid var(--border);border-radius:var(--r);
-  color:var(--text-primary);font-size:14.5px;font-weight:400;
-  padding:12px 16px;
-  transition:border-color .18s,background .18s;
-  appearance:none;-webkit-appearance:none;
-}
-.fi:focus,.fs:focus,.ft:focus{
-  outline:none;border-color:var(--g);
-  background:var(--gd);
-}
-.fi::placeholder,.ft::placeholder{color:var(--text-faint);opacity:.6}
-.fs{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239E9687' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 16px center;
-  padding-right:38px;
-}
-.fs option{background:var(--bg-color-1)}
-.ft{resize:vertical;min-height:96px;line-height:1.65}
-.cf-submit{
-  width:100%;margin-top:12px;padding:15px;
-  background:var(--g);color:var(--bg-color-1);
-  font-family:'Gilroy', sans-serif;
-  font-size:12px;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;
-  border:none;border-radius:var(--r);cursor:pointer;
-  transition:background .18s,transform .18s;
-}
-.cf-submit:hover{background:var(--gh);transform:translateY(-1px)}
-.cf-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.cf-msg{
-  margin-top:14px;padding:12px 16px;
-  border-radius:var(--r);font-size:13.5px;text-align:center;
-  display:none;
-}
-.cf-msg.ok{display:block;background:rgba(74,190,85,.09);border:1px solid rgba(74,190,85,.2);color:#3F704D}
-.cf-msg.err{display:block;background:rgba(196,112,112,.09);border:1px solid rgba(196,112,112,.2);color:#C47070}
-
-/* Attachment layout */
-.ff{position:relative}
-.ff input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.ff-box{
-  display:flex;align-items:center;gap:12px;
-  background:var(--bg-color-1);border:1px dashed var(--border);border-radius:var(--r);
-  padding:14px 16px;color:var(--text-faint);font-size:13px;
-  transition:border-color .18s,background .18s,color .18s;
-}
-.ff:hover .ff-box,.ff input:focus + .ff-box{border-color:var(--g);color:var(--text-primary);background:var(--gd)}
-.ff-ic{width:16px;height:16px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.6}
-.ff-txt{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ff-hint{font-size:10.5px;color:var(--text-faint);margin-top:6px;letter-spacing:.02em}
-.ff-clr{background:none;border:none;color:var(--text-faint);cursor:pointer;font-size:16px;line-height:1;padding:2px 6px;display:none}
-.ff.has-file .ff-clr{display:inline-block}
-.ff.has-file .ff-box{border-style:solid;border-color:var(--g);color:var(--text-primary)}
+.fb-links { display: flex; gap: 24px; }
+.fb-links a:hover { color: var(--text-p); }
 
 /* ─────────────────────────────────────────
-   PORTFOLIO GALLERY VIEW
+   RESPONSIVE
 ───────────────────────────────────────── */
-#gallery-view {
-  padding-top: var(--nav);
-  min-height: 100vh;
+@media(max-width: 1024px) {
+  .split-grid, .team-split { grid-template-columns: 1fr; gap: 60px; }
+  .trust-engine, .gallery-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .founder-img { height: auto; aspect-ratio: 1/1; }
 }
-.gallery-intro {
-  padding: 80px 0 60px;
-  text-align: center;
-}
-.gallery-intro h1 {
-  font-size: clamp(44px, 6vw, 76px);
-  margin-bottom: 24px;
-}
-.gallery-intro p {
-  color: var(--text-muted);
-  max-width: 500px;
-  margin-inline: auto;
-  font-size: 16px;
-}
-.gallery-grid-section {
-  padding: 60px 0 120px;
-}
-.gallery-block {
-  margin-bottom: 100px;
-}
-.gallery-block:last-child {
-  margin-bottom: 0;
-}
-.gallery-block-header {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 20px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.gallery-block-title {
-  font-family: 'Gilroy', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-primary);
-}
-.gallery-block-link {
-  font-family: 'Gilroy', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--g);
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.gallery-block-link:hover {
-  color: var(--gh);
-}
-.gallery-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-.gallery-card {
-  overflow: hidden;
-  padding: 24px;
-}
-.gallery-visual-box {
-  aspect-ratio: 4/3;
-  border-radius: calc(var(--r) - 4px);
-  background: var(--bg-alt);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-.gallery-visual-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Proportional crops */
-  display: block;
-}
-.gallery-visual-box .tag {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  font-family: 'Gilroy', sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  color: #1E1C18;
-  z-index: 2;
-}
-.gallery-card-title {
-  font-family: 'Gilroy', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-}
-.gallery-card-client {
-  font-size: 12.5px;
-  color: var(--text-muted);
-}
-
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
-footer{
-  background:var(--bg-alt);border-top:1px solid var(--border);
-  padding:72px var(--px) 44px;
-}
-.footer-inner{max-width:var(--cw);margin-inline:auto}
-.ft-top{
-  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
-  gap:64px;padding-bottom:52px;
-  border-bottom:1px solid var(--border);margin-bottom:32px;
-}
-.f-logo{
-  font-family:'Gilroy', sans-serif;
-  font-size:20px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  color:var(--text-primary);margin-bottom:12px;display:block;
-}
-.f-logo em{color:inherit;font-style:normal;font-weight:300}
-.f-tg{font-size:13px;font-weight:400;color:var(--text-muted);line-height:1.75;max-width:220px}
-.fc-h{
-  font-family:'Gilroy', sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.3em;text-transform:uppercase;
-  color:var(--g);margin-bottom:18px;
-}
-.fc ul{display:flex;flex-direction:column;gap:10px}
-.fc ul a{font-size:13.5px;font-weight:400;color:var(--text-muted);transition:color .18s}
-.fc ul a:hover{color:var(--text-primary)}
-.fc-line{font-size:13.5px;font-weight:400;color:var(--text-muted);line-height:1.75;margin-bottom:6px}
-.fc-line a{transition:color .18s}.fc-line a:hover{color:var(--g)}
-.ft-bot{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:16px;flex-wrap:wrap;
-}
-.f-copy{font-size:11.5px;font-weight:400;color:var(--text-faint)}
-.f-stamp{
-  font-family:'Gilroy', sans-serif;
-  font-size:9.5px;font-weight:700;
-  letter-spacing:.3em;text-transform:uppercase;
-  color:var(--text-faint);border:1px solid var(--border);
-  padding:5px 16px;border-radius:12px;
-}
-
-/* ─────────────────────────────────────────
-   RESPONSIVE LAYOUT OVERRIDES (Smartphone UI)
-───────────────────────────────────────── */
-@media(max-width:1024px){
-  :root{--px:40px}
-  .hero-body{grid-template-columns:1fr;gap:48px}
-  .hv{display:none}
-  .svc-inner{grid-template-columns:1fr;gap:48px}
-  .team-head{grid-template-columns:1fr;gap:32px}
-  .team-grid{grid-template-columns:repeat(2,1fr);gap:18px}
-  .gallery-items{grid-template-columns:repeat(2,1fr);gap:24px}
-  .contact-grid{grid-template-columns:1fr;gap:64px}
-  .ft-top{grid-template-columns:1fr 1fr;gap:48px}
-}
-@media(max-width:700px){
-  :root{--px:24px;--nav:76px}
-  .nav-links, .nav>.nav-cta {display:none}
-  .hamburger{display:flex}
-  .switch-wrapper {margin-right: 12px;}
-  .hero-body{padding:80px var(--px) 52px}
-  .hero-hl{font-size:clamp(54px,14vw,84px)}
-  .svc,#team,#contact{padding:100px 0}
-  .team-grid{grid-template-columns:1fr}
-  .gallery-items{grid-template-columns:1fr;gap:24px}
-  .cf-row{grid-template-columns:1fr}
-  .ft-top{grid-template-columns:1fr;gap:36px}
-  .ft-bot{flex-direction:column;align-items:flex-start;gap:12px}
-  .modal-content{padding:40px 24px}
+@media(max-width: 768px) {
+  .trust-engine, .gallery-grid, .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 24px; }
+  .nav-controls { gap: 16px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="mesh-bg"></div>
-<div class="grain-overlay"></div>
-
-<!-- ══ FLOATING WHATSAPP ══ -->
-<a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Innerloop%20Atelier."
-   target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp Innerloop Atelier">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- ══ NAV ══ -->
-<nav class="nav" id="nav">
-  <a href="#/" class="nav-logo" aria-label="Innerloop Atelier"><img id="nav-logo-element" src="Innerloop-Horizon-Black.png" alt="Innerloop Atelier" class="nav-logo-img"></a>
-  <div class="nav-links">
-    
-    <!-- Services Dropdown System -->
-    <div class="dropdown">
-      <a href="#/" class="nav-link-item" style="display:inline-flex; align-items:center; gap:6px;">
-        Services 
-        <svg viewBox="0 0 10 6" style="width:8px; height:5px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round;"><path d="M1 1l4 4 4-4"/></svg>
-      </a>
-      <div class="dropdown-menu glass-panel">
-        <a href="#branding" class="dropdown-item">Brand Communication</a>
-        <a href="#landscaping" class="dropdown-item">Landscape</a>
-        <a href="#interior" class="dropdown-item">Interior Design</a>
-      </div>
+<!-- ══ NAVIGATION ══ -->
+<nav class="nav">
+  <a href="#/" class="nav-logo">
+    <!-- Logo switches based on theme via CSS -->
+    <img class="nav-logo-img" src="Innerloop-Horizon-Grey.png" alt="INNERLOOP">
+  </a>
+  <div class="nav-controls">
+    <div class="theme-switch" id="theme-toggle" role="switch" aria-label="Toggle Dark Mode">
+        <div class="switch-handle"></div>
     </div>
-
-    <a href="#team" class="nav-link-item">Team</a>
-    <a href="#/gallery" class="nav-link-item" id="nav-gallery-trigger">Gallery</a>
-    <a href="#contact" class="nav-link-item">Contact</a>
+    <div class="menu-toggle" id="menu-open">
+        MENU <div class="hamburger"><span></span><span></span></div>
+    </div>
   </div>
-
-  <!-- Hardware Toggle Switch -->
-  <div class="switch-wrapper">
-    <span class="switch-label">Mode</span>
-    <button id="theme-toggle" class="classic-switch" role="switch" aria-checked="false" aria-label="Toggle structural theme color">
-      <span class="switch-handle"></span>
-    </button>
-  </div>
-
-  <a href="#contact" class="btn btn-fill nav-cta" style="flex-shrink:0">Start a Project</a>
-  
-  <!-- Redesigned iOS-Style Circular Glass Hamburger -->
-  <button class="hamburger" id="hbg" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<div class="mobile-nav" id="mnav">
-  <a href="#branding" class="ml">Brand Communication</a>
-  <a href="#landscaping" class="ml">Landscape</a>
-  <a href="#interior" class="ml">Interior Design</a>
-  <a href="#team" class="ml">Team</a>
-  <a href="#/gallery" class="ml">Gallery</a>
-  <a href="#contact" class="ml">Contact</a>
-  <a href="#contact" class="ml mn-cta">Start a Project</a>
+<div class="overlay-nav" id="overlay-nav">
+  <div class="nav-close" id="menu-close">✕</div>
+  <div class="mobile-links-list">
+    <a href="#branding" class="mobile-link nav-link"><span>01</span>Branding</a>
+    <a href="#landscape" class="mobile-link nav-link"><span>02</span>Landscape</a>
+    <a href="#interior" class="mobile-link nav-link"><span>03</span>Interior</a>
+    <a href="#team" class="mobile-link nav-link"><span>04</span>Leadership</a>
+    <a href="#clients" class="mobile-link nav-link"><span>05</span>Trust</a>
+    <a href="#contact" class="mobile-link nav-link"><span>06</span>Contact</a>
+  </div>
 </div>
 
-<!-- ══════════════════════════════
-     VIEW 1: LANDING PAGE
-══════════════════════════════ -->
-<div id="main-view" class="view-route active-view">
 
-  <!-- ══ HERO ══ -->
-  <section id="hero">
-    <div class="hero-body wrap">
-      <div class="hero-content">
-        <div class="eyebrow hero-eyebrow r">Field Statement</div>
-        <h1 class="hl hero-hl r d1">
-          Built on<br>
-          <em style="color:var(--g); font-style:normal; font-weight:700;">Identity.</em><br>
-          Shaped by<br>Space.
-        </h1>
-        <p class="hero-desc r d2">
-          One studio. Three disciplines.<br>
-          Strategy, craft, and execution — delivered.
-        </p>
-        <div class="hero-acts r d3">
-          <a href="#contact" class="btn btn-fill">Start a Project →</a>
-          <a href="#/gallery" class="btn btn-line">Explore Gallery</a>
+<!-- ══ HERO: THE PROBLEM SOLVER (Metaphoric Slideshow) ══ -->
+<section id="hero">
+  <div class="hero-slide hs1 active"></div>
+  <div class="hero-slide hs2"></div>
+  <div class="hero-slide hs3"></div>
+
+  <div class="wrap hero-content">
+    <div class="eyebrow" style="color: var(--bronze);">B2B Execution Partner</div>
+    <h1>
+      Fragmented Execution<br>
+      <span class="accent-text" style="color: var(--bronze);">Kills Brand Value.</span>
+    </h1>
+    <p class="lead">
+      Top-tier brands in Dhaka suffer when strategy, architecture, and identity are disconnected. Innerloop is the unified execution partner that integrates these disciplines to build coherent, market-dominating assets.
+    </p>
+    <a href="#contact" class="btn" style="--accent: var(--bronze);">
+        Solve The Fragmentation
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" fill="currentColor"/></svg>
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ MARQUEE RIBBON ══ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="m-item">SHELTECH (PVT.) LTD.</div>
+    <div class="m-item">MAX SPACE</div>
+    <div class="m-item">EMINENCE TECHNOLOGIES LTD.</div>
+    <div class="m-item">CREDENCE GROUP</div>
+    <div class="m-item">ALI JAHAN AGRO RESORT</div>
+    <!-- Repeat -->
+    <div class="m-item">SHELTECH (PVT.) LTD.</div>
+    <div class="m-item">MAX SPACE</div>
+  </div>
+</div>
+
+
+<!-- ══ TASTE 1: BRANDING (Advertisement Centric & Premium Leads) ══ -->
+<section id="branding" class="section-taste">
+  <div class="immersive-bg"></div>
+  <div class="wrap split-grid">
+    <div>
+      <div class="eyebrow">01 // Branding & Communication</div>
+      <h2>Turn Market Noise Into <span class="accent-text">Premium Signals.</span></h2>
+      <p class="lead">
+        In a crowded Dhaka market, generic advertising fails. We engineer advertisement-centric visual systems that elevate your brand's perceived value, ensuring you attract high-net-worth business leads rather than just passive views.
+      </p>
+      <a href="#contact" class="btn btn-glass">Generate Premium Leads</a>
+    </div>
+    <!-- Metaphoric Infographic: The Lead Conversion Funnel -->
+    <div class="infographic-container glass-panel" style="text-align: center;">
+        <h3 style="margin-bottom: 40px;">The Valuation Funnel</h3>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <!-- Step 1 -->
+            <div style="flex: 1;">
+                <div style="font-size: 40px; color: var(--text-d); margin-bottom: 16px;">🔊</div>
+                <div style="font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">Market Noise</div>
+                <div style="font-size: 12px; color: var(--text-m);">Generic, fragmented messaging.</div>
+            </div>
+            <!-- Arrow -->
+            <div style="font-size: 24px; color: var(--accent);">→</div>
+             <!-- Step 2 -->
+            <div style="flex: 1; transform: scale(1.1);">
+                <div style="font-size: 50px; color: var(--accent); margin-bottom: 16px;">💎</div>
+                <div style="font-weight: 800; text-transform: uppercase; margin-bottom: 8px; color: var(--accent);">Premium Signal</div>
+                <div style="font-size: 12px; color: var(--text-m);">Coherent, high-value identity.</div>
+            </div>
+             <!-- Arrow -->
+            <div style="font-size: 24px; color: var(--accent);">→</div>
+             <!-- Step 3 -->
+            <div style="flex: 1;">
+                <div style="font-size: 40px; color: var(--text-p); margin-bottom: 16px;">🤝</div>
+                <div style="font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">Qualified Leads</div>
+                <div style="font-size: 12px; color: var(--text-m);">Authentic business opportunities.</div>
+            </div>
         </div>
-      </div>
-
-      <!-- Symmetrical visual frames -->
-      <div class="hv" aria-hidden="true">
-        <div class="hv-grid"></div>
-        <div class="hv-ring hv-r1"></div>
-        <div class="hv-ring hv-r2"></div>
-        <div class="hv-ring hv-r3"></div>
-        <div class="hv-dot"></div>
-        <div class="hv-h"></div>
-        <div class="hv-v"></div>
-        <div class="hv-c tl"></div>
-        <div class="hv-c tr"></div>
-        <div class="hv-c bl"></div>
-        <div class="hv-c br"></div>
-      </div>
-    </div>
-
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="sh-line"></div>
-      <span class="sh-label">Scroll</span>
-    </div>
-  </section>
-
-  <!-- ══ MARQUEE ══ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-t">
-      <span>STRATEGY<em>·</em>CRAFT<em>·</em>EXECUTION<em>·</em>Brand Communication<em>·</em>LANDSCAPING<em>·</em>INTERIOR DESIGN<em>·</em>BUILT ON IDENTITY<em>·</em>SHAPED BY SPACE<em>·</em></span>
-      <span>STRATEGY<em>·</em>CRAFT<em>·</em>EXECUTION<em>·</em>Brand Communication<em>·</em>LANDSCAPING<em>·</em>INTERIOR DESIGN<em>·</em>BUILT ON IDENTITY<em>·</em>SHAPED BY SPACE<em>·</em></span>
     </div>
   </div>
+</section>
 
-  <!-- ══ CLIENTS ══ -->
-  <section class="clients" id="clients" aria-label="Selected clients">
-    <div class="wrap">
-      <div class="clients-head">
-        <div class="r">
-          <span class="eyebrow">Selected Clients</span>
-          <h2>Trusted by teams <em>we're proud to build with.</em></h2>
-        </div>
-        <p class="r d1">Collaborating with real estate developers, hospitality brands, tech firms, and businesses throughout Dhaka.</p>
-      </div>
 
-      <div class="clients-track-wrap">
-        <div class="clients-track">
-          <div class="client-cell">Sheltech <em>(PVT.) Ltd.</em></div>
-          <div class="client-cell">Max <em>Space</em></div>
-          <div class="client-cell">Eminence <em>Technologies Ltd.</em></div>
-          <div class="client-cell">Credence <em>Group</em></div>
-          <div class="client-cell">Ali Jahan <em>Agro Resort</em></div>
-          <div class="client-cell">Sheltech <em>(PVT.) Ltd.</em></div>
-          <div class="client-cell">Max <em>Space</em></div>
-          <div class="client-cell">Eminence <em>Technologies Ltd.</em></div>
-          <div class="client-cell">Credence <em>Group</em></div>
-          <div class="client-cell">Ali Jahan <em>Agro Resort</em></div>
+<!-- ══ TASTE 2: LANDSCAPING (Bangladeshi Boutique & Resort) ══ -->
+<section id="landscape" class="section-taste">
+  <div class="immersive-bg"></div>
+  <div class="wrap split-grid">
+      <!-- Infographic: The Value Addition Ecosystem -->
+    <div class="infographic-container glass-panel" style="order: 0;">
+        <h3 style="margin-bottom: 40px;">Tropical Value Ecosystem</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+            <div style="text-align: center; padding: 24px; border: 1px solid var(--border);">
+                <div style="font-size: 32px; color: var(--accent); margin-bottom: 16px;">🌴</div>
+                <div style="font-weight: 800; text-transform: uppercase;">Resort Amenity</div>
+                <div style="font-size: 12px; color: var(--text-m);">Premium poolside & leisure structuring.</div>
+            </div>
+            <div style="text-align: center; padding: 24px; border: 1px solid var(--border);">
+                <div style="font-size: 32px; color: var(--accent); margin-bottom: 16px;">🏢</div>
+                <div style="font-weight: 800; text-transform: uppercase;">Boutique Value</div>
+                <div style="font-size: 12px; color: var(--text-m);">Rooftop & terrace equity appreciation.</div>
+            </div>
         </div>
-      </div>
-
-      <div class="clients-track-wrap">
-        <div class="clients-track reverse">
-          <div class="client-cell">Sheltech <em>(PVT.) Ltd.</em></div>
-          <div class="client-cell">Max <em>Space</em></div>
-          <div class="client-cell">Eminence <em>Technologies Ltd.</em></div>
-          <div class="client-cell">Credence <em>Group</em></div>
-          <div class="client-cell">Ali Jahan <em>Agro Resort</em></div>
-          <div class="client-cell">Sheltech <em>(PVT.) Ltd.</em></div>
-          <div class="client-cell">Max <em>Space</em></div>
-          <div class="client-cell">Eminence <em>Technologies Ltd.</em></div>
-          <div class="client-cell">Credence <em>Group</em></div>
-          <div class="client-cell">Ali Jahan <em>Agro Resort</em></div>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <!-- ══ SERVICE 01 — BRANDING (3D GOLD GLASS THEME) ══ -->
-  <section class="svc" id="branding">
-    <div class="wrap">
-      <div class="svc-inner">
-
-        <div class="r">
-          <span class="svc-num">01 / Service</span>
-          <h2 class="svc-title-split">Brand<br><em>Communication</em></h2>
-          <p class="svc-sub">ATL · BTL · Brand Identity</p>
-          <p class="svc-desc">
-            We build visual communication platforms that align message clarity with physical presence. From graphic standards to comprehensive campaign operations.
-          </p>
-          <a href="#/gallery" class="svc-cta">View Branding Portfolio →</a>
-        </div>
-
-        <div class="r d2 card-container-3d">
-          <div class="glass-panel glass-interactive-3d" style="padding: 44px 36px;">
-            <div class="panel-label">Target Sectors</div>
-            <div class="chip-cloud">
-              <span class="chip glass-panel">Real Estate</span>
-              <span class="chip glass-panel">Fintech</span>
-              <span class="chip glass-panel">Healthcare</span>
-              <span class="chip glass-panel">FMCG</span>
-              <span class="chip glass-panel">Hospitality</span>
-            </div>
-
-            <div class="panel-label" style="margin-top: 16px;">Scope of Deliverables</div>
-            <div class="chip-cloud">
-              <span class="chip sm glass-panel">Visual Guidelines</span>
-              <span class="chip sm glass-panel">Print Production</span>
-              <span class="chip sm glass-panel">Outdoor / OOH</span>
-              <span class="chip sm glass-panel">BTL Activations</span>
-              <span class="chip sm glass-panel">Social Design</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SERVICE 02 — LANDSCAPING (3D GREEN GLASS THEME) ══ -->
-  <section class="svc" id="landscaping">
-    <div class="wrap">
-      <div class="svc-inner">
-
-        <div class="r">
-          <span class="svc-num">02 / Service</span>
-          <h2 class="svc-title-single">Landscape</h2>
-          <p class="svc-sub">Design · Planting · Installation</p>
-          <p class="svc-desc">
-            Biological structure designed with absolute site accuracy. Our landscape teams manage plant species parameters from development directly into regional grounds.
-          </p>
-          <a href="#/gallery" class="svc-cta">View Landscape Projects →</a>
-        </div>
-
-        <div class="r d2 card-container-3d">
-          <div class="glass-panel glass-interactive-3d" style="padding: 44px 36px;">
-            <div class="panel-label">Project Typologies</div>
-            <div class="chip-cloud">
-              <span class="chip glass-panel">Resort Landscape</span>
-              <span class="chip glass-panel">Vacation Estates</span>
-              <span class="chip glass-panel">Rooftop Gardens</span>
-              <span class="chip glass-panel">Green Walls</span>
-            </div>
-
-            <div class="panel-label" style="margin-top: 16px;">Physical Engineering</div>
-            <div class="chip-cloud">
-              <span class="chip sm glass-panel">Irrigation Systems</span>
-              <span class="chip sm glass-panel">Water Structures</span>
-              <span class="chip sm glass-panel">Specimen Sourcing</span>
-              <span class="chip sm glass-panel">Hardscape Paving</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SERVICE 03 — INTERIOR (3D METAL/PLATINUM GLASS THEME) ══ -->
-  <section class="svc" id="interior">
-    <div class="wrap">
-      <div class="svc-inner">
-
-        <div class="r">
-          <span class="svc-num">03 / Service</span>
-          <h2 class="svc-title-single">Interior</h2>
-          <p class="svc-sub">Design · Planning · Execution</p>
-          <p class="svc-desc">
-            Functional spaces arranged around spatial performance. We coordinate fit-out parameters from early space mapping up to technical building handovers.
-          </p>
-          <a href="#/gallery" class="svc-cta">View Interior Work →</a>
-        </div>
-
-        <div class="r d2 card-container-3d">
-          <div class="glass-panel glass-interactive-3d" style="padding: 44px 36px;">
-            <div class="panel-label">Spatial Typologies</div>
-            <div class="chip-cloud">
-              <span class="chip glass-panel">Corporate Workspaces</span>
-              <span class="chip glass-panel">Apartments</span>
-              <span class="chip glass-panel">Retail Outlets</span>
-              <span class="chip glass-panel">Food &amp; Beverage</span>
-            </div>
-
-            <div class="panel-label" style="margin-top: 16px;">Technical Coordination</div>
-            <div class="chip-cloud">
-              <span class="chip sm glass-panel">Space Optimization</span>
-              <span class="chip sm glass-panel">3D Render Analysis</span>
-              <span class="chip sm glass-panel">Material Specifications</span>
-              <span class="chip sm glass-panel">Technical Details</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TEAM ══ -->
-  <section id="team">
-    <div class="wrap">
-      <div class="team-head">
-        <div class="r">
-          <div class="eyebrow" style="margin-bottom:18px">The Studio</div>
-          <h2 class="hl" style="font-size:clamp(40px,4.5vw,60px)">
-            Built by<br><em>Specialists.</em>
-          </h2>
-        </div>
-        <p class="team-desc r d2">
-          Five operational disciplines coordinated under a unified studio. Every phase of an Innerloop project is completed by staff specialists with masteries in their fields.
-        </p>
-      </div>
-
-      <div class="team-grid">
-
-        <!-- Proprietor -->
-        <div class="tc glass-panel glass-interactive-3d r">
-          <div class="tc-avatar" style="border-radius:50%">
-            <img src="Abid-Photo-300-x-300.jpg" alt="Abid Abdullah" class="tc-photo">
-          </div>
-          <div class="tc-role">Founder &amp; Proprietor</div>
-          <div class="tc-name">Abid Abdullah</div>
-          <p class="tc-desc">
-            Directs cross-disciplinary output, brand parameters, and technical scope parameters across projects.
-          </p>
-          <div class="tc-skills">
-            <span class="tc-skill">Strategy</span>
-            <span class="tc-skill">Management</span>
-          </div>
-          <button type="button" class="btn-read-bio" id="open-bio-btn">View Profile →</button>
-        </div>
-
-        <!-- Architects -->
-        <div class="tc glass-panel glass-interactive-3d r d1">
-          <div class="tc-avatar">
-            <span class="tc-emoji">🏗</span>
-          </div>
-          <div class="tc-role">Core Discipline</div>
-          <div class="tc-name">Architects</div>
-          <p class="tc-desc">
-            Coordinates build specifications with landscape design, technical drawings, and physical site parameters.
-          </p>
-          <div class="tc-skills">
-            <span class="tc-skill">Drafting</span>
-            <span class="tc-skill">3D Modelling</span>
-          </div>
-        </div>
-
-        <!-- Designers -->
-        <div class="tc glass-panel glass-interactive-3d r d2">
-          <div class="tc-avatar">
-            <span class="tc-emoji">◈</span>
-          </div>
-          <div class="tc-role">Core Discipline</div>
-          <div class="tc-name">Designers</div>
-          <p class="tc-desc">
-            Formulates campaign materials, typography details, and structural brand directions for visual systems.
-          </p>
-          <div class="tc-skills">
-            <span class="tc-skill">Identity</span>
-            <span class="tc-skill">Graphics</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FOUNDER BIO WINDOW (Editorial Squircle Modal) ══ -->
-  <div id="bio-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="modal-content glass-panel">
-      <span class="modal-decorator">COORD. 23.7802° N, 90.4042° E // PROFILE</span>
-      <button class="modal-close" id="modal-close" aria-label="Close profile window">&times;</button>
-      <div class="modal-body">
-        <div class="modal-header">
-          <div class="tc-avatar" style="margin-bottom:0; width:68px; height:68px; border-color:var(--g);">
-            <img src="Abid-Photo-300-x-300.jpg" alt="Abid Abdullah" class="tc-photo">
-          </div>
-          <div>
-            <h3 id="modal-title" class="modal-name">Abid Abdullah</h3>
-            <p class="modal-role">Founder &amp; Proprietor</p>
-          </div>
-        </div>
-        <!-- Biography copy updated per instructions -->
-        <div class="modal-desc">
-          <p><strong>Abid Abdullah</strong> is the founder of <strong>Innerloop Atelier</strong>, a practice focused on <strong>Brand Communication, Landscape Design, and Interior Design</strong>. His work reflects a practical understanding of branding, business, and presentation, shaped by years of hands-on experience.</p>
-          <p>He holds a <strong>BBA</strong> and an <strong>MBA in Management from National University</strong>. He began working in the branding sector in <strong>2017</strong>, and since then he has developed a strong professional background in brand development, communication, and strategic positioning.</p>
-          <p>In <strong>2017</strong>, he also started <strong>Rapid Drops Design</strong>, which marked the beginning of his independent journey in the field. Over time, he has continued to build experience through work that demands clarity, consistency, and a thoughtful approach to brand perception.</p>
-          <p>Through <strong>Innerloop Atelier</strong>, Abid Abdullah brings together experience, strategy, and creative direction in a way that feels grounded, professional, and purposeful.</p>
-        </div>
-      </div>
+    <div style="order: 1;">
+      <div class="eyebrow">02 // Landscape Architecture</div>
+      <h2>Tropical Luxury as a <span class="accent-text">Business Asset.</span></h2>
+      <p class="lead">
+        For Bangladesh's boutique real estate and resort owners, landscaping isn't gardening—it's value creation. We engineer lush, resilient tropical environments that serve as premium amenities, directly increasing property desirability and booking rates.
+      </p>
+      <a href="#contact" class="btn btn-glass">Enhance Property Value</a>
     </div>
   </div>
+</section>
 
-  <!-- ══ CONTACT & INTEGRATED SOCIAL DOCK ══ -->
-  <section id="contact">
-    <div class="wrap contact-grid">
 
-      <!-- Left Side Info panel -->
-      <div>
-        <div class="eyebrow r" style="margin-bottom:24px">Get In Touch</div>
-        <h2 class="contact-pitch r d1">
-          Send Your<br><em>Brief.</em>
-        </h2>
-        <p class="contact-sub r d2">
-          We respond within 24 hours to schedule design alignments. Use any preferred communication channel listed below.
-        </p>
-
-        <div class="cd-list r d2">
-          <div class="cd-row">
-            <div class="cd-ico">📞</div>
-            <div>
-              <div class="cd-lbl">Phone</div>
-              <div class="cd-val"><a href="tel:+8801759592324">+88 017 5959 2324</a></div>
+<!-- ══ TASTE 3: INTERIOR (Metaphoric Performance) ══ -->
+<section id="interior" class="section-taste">
+  <div class="immersive-bg"></div>
+  <div class="wrap split-grid">
+    <div>
+      <div class="eyebrow">03 // Interior Design</div>
+      <h2>The Architecture of <span class="accent-text">Corporate Stature.</span></h2>
+      <p class="lead">
+        Your physical environment is a statement of your business's efficiency and status. We design sleek, precision-engineered interiors for HQs and executive spaces that facilitate high-performance workflows and impress global stakeholders.
+      </p>
+      <a href="#contact" class="btn btn-glass">Optimize Your HQ</a>
+    </div>
+    <!-- Infographic: The Precision Metaphor -->
+    <div class="infographic-container glass-panel" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+        <div style="font-size: 80px; color: var(--accent); opacity: 0.2; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">⚙︎</div>
+        <h3 style="position: relative; z-index: 2;">Precision Engineered Spaces</h3>
+        <div style="display: flex; gap: 24px; justify-content: center; margin-top: 32px; position: relative; z-index: 2;">
+            <div style="text-align: center;">
+                 <div style="font-weight: 800; font-size: 24px; color: var(--accent);">0%</div>
+                 <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Spatial Waste</div>
             </div>
-          </div>
-          <div class="cd-row">
-            <div class="cd-ico">✉️</div>
-            <div>
-              <div class="cd-lbl">Email</div>
-              <div class="cd-val"><a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a></div>
+            <div style="width: 1px; background: var(--border);"></div>
+            <div style="text-align: center;">
+                 <div style="font-weight: 800; font-size: 24px; color: var(--accent);">100%</div>
+                 <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Material Integrity</div>
             </div>
-          </div>
-          <div class="cd-row">
-            <div class="cd-ico">📍</div>
-            <div>
-              <div class="cd-lbl">Studio</div>
-              <div class="cd-val">Ka-26/1, Rasulbag, Mohakhali<br>Dhaka 1212, Bangladesh</div>
-            </div>
-          </div>
         </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Symmetrical, Icon-Only Studio dock as requested -->
-        <div class="contact-social-dock r d2">
-          <p class="csd-title">Studio Channels</p>
-          <div class="csd-icons">
-            <a href="https://www.facebook.com/innerloopatelier" target="_blank" rel="noopener" class="csd-btn glass-panel" aria-label="Facebook Link">
-              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/innerloopatelier" target="_blank" rel="noopener" class="csd-btn glass-panel" aria-label="Instagram Link">
-              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/innerloopatelier" target="_blank" rel="noopener" class="csd-btn glass-panel" aria-label="LinkedIn Link">
-              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-          </div>
+
+<!-- ══ TEAM & FOUNDER ══ -->
+<section id="team" class="section-taste">
+    <div class="wrap team-split">
+        <!-- Founder Block -->
+        <div>
+            <div class="eyebrow">Studio Leadership</div>
+            <h2 style="margin-bottom: 32px;">The Strategic <span class="accent-text">Architect.</span></h2>
+            <!-- USING PROVIDED FOUNDER IMAGE -->
+            <img src="Abid-Photo-300-x-300.jpg" alt="Abid Abdullah" class="founder-img">
+            <blockquote class="founder-quote">
+                "Top-tier businesses in Dhaka demand more than just design; they demand coherent execution that drives tangible growth."
+            </blockquote>
+            <h3>Abid Abdullah</h3>
+            <p class="lead" style="margin-bottom: 0; font-size: 16px;">Founder & Proprietor. Combining an MBA/BBA in Management with years of field experience, Abid ensures every Innerloop project bridges the gap between strategic intent and physical reality.</p>
         </div>
-
-        <a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Innerloop%20Atelier."
-           target="_blank" rel="noopener" class="wa-btn r d3" style="margin-top:32px;">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </a>
-      </div>
-
-      <!-- Right Side Form panel -->
-      <div class="r d2">
-        <div class="cf glass-panel">
-          <p class="cf-h">Send Your Brief</p>
-          <p class="cf-s">Our estimators will assess structural specs and contact you.</p>
-
-          <form id="cf" novalidate enctype="multipart/form-data">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-            <input type="hidden" name="subject" value="New Lead — Innerloop Atelier">
-            <input type="hidden" name="from_name" value="Innerloop Atelier Website">
-            <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off">
-
-            <div class="cf-row">
-              <div class="fg">
-                <label class="fl" for="f-name">Name *</label>
-                <input class="fi" type="text" id="f-name" name="name" placeholder="Your full name" required autocomplete="name">
-              </div>
-              <div class="fg">
-                <label class="fl" for="f-phone">Phone *</label>
-                <input class="fi" type="tel" id="f-phone" name="phone" placeholder="+88 017..." required autocomplete="tel">
-              </div>
-            </div>
-            <div class="cf-row">
-              <div class="fg">
-                <label class="fl" for="f-email">Email</label>
-                <input class="fi" type="email" id="f-email" name="email" placeholder="your@email.com" autocomplete="email">
-              </div>
-              <div class="fg">
-                <label class="fl" for="f-svc">I Need *</label>
-                <select class="fs" id="f-svc" name="service" required>
-                  <option value="" disabled selected>Choose a service</option>
-                  <option>Branding — ATL / BTL</option>
-                  <option>Brand Identity</option>
-                  <option>Landscaping</option>
-                  <option>Interior Design</option>
-                  <option>Multiple Services</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-            </div>
-            <div class="fg full">
-              <label class="fl" for="f-msg">Project Brief</label>
-              <textarea class="ft" id="f-msg" name="message" placeholder="Tell us about your project space, timeline, and site details…"></textarea>
-            </div>
-
-            <div class="fg full">
-              <label class="fl" for="f-file">Attach Reference Files (optional)</label>
-              <div class="ff" id="f-ff">
-                <input type="file" id="f-file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp,.zip,.ai,.psd,.fig" multiple>
-                <div class="ff-box">
-                  <svg class="ff-ic" viewBox="0 0 24 24"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7M12 3v13M7 8l5-5 5 5"/></svg>
-                  <span class="ff-txt" id="f-file-txt">Click to upload — PDF, images, docs (max 10MB total)</span>
-                  <button type="button" class="ff-clr" id="f-file-clr" aria-label="Remove files">×</button>
+        <!-- Functional Teams -->
+        <div>
+            <div class="eyebrow">Functional Units</div>
+            <h2 style="margin-bottom: 40px;">Specialized <span class="accent-text">Intellect.</span></h2>
+            <div class="team-grid">
+                <div class="team-card glass-panel">
+                    <div class="tc-icon">🏗</div>
+                    <div>
+                        <div class="tc-role" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px;">Architecture Division</div>
+                        <div class="tc-title" style="font-size: 20px; font-weight: 800; text-transform: uppercase;">Technical Leads</div>
+                    </div>
                 </div>
-              </div>
-              <div class="ff-hint">Files sent as email attachments to our inbox.</div>
+                <div class="team-card glass-panel">
+                    <div class="tc-icon">⚡︎</div>
+                    <div>
+                        <div class="tc-role" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px;">Brand Division</div>
+                        <div class="tc-title" style="font-size: 20px; font-weight: 800; text-transform: uppercase;">Visual Strategists</div>
+                    </div>
+                </div>
+                <div class="team-card glass-panel">
+                    <div class="tc-icon">🛡</div>
+                    <div>
+                        <div class="tc-role" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px;">Execution Division</div>
+                        <div class="tc-title" style="font-size: 20px; font-weight: 800; text-transform: uppercase;">Project Managers</div>
+                    </div>
+                </div>
             </div>
-
-            <button type="submit" class="cf-submit" id="cf-btn">Send My Brief →</button>
-            <div class="cf-msg" id="cf-msg" role="alert" aria-live="polite"></div>
-          </form>
         </div>
-      </div>
-
     </div>
-  </section>
+</section>
 
-</div>
 
-<!-- ══════════════════════════════
-     VIEW 2: DYNAMIC PORTFOLIO GALLERY (Hash Routing)
-══════════════════════════════ -->
-<div id="gallery-view" class="view-route">
-  
-  <section class="gallery-intro wrap">
-    <div class="eyebrow" style="justify-content:center; margin-bottom:24px;">Project Files</div>
-    <h1 class="hl">Creative<br><em>Execution.</em></h1>
-    <p>A structured catalog of completed branding materials, landscaping structures, and interior fit-outs across Dhaka.</p>
-  </section>
-
-  <section class="gallery-grid-section wrap">
-
-    <!-- Brand Communication -->
-    <div class="gallery-block">
-      <div class="gallery-block-header">
-        <h3 class="gallery-block-title">Brand Communication</h3>
-        <a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20Brand%20Communication%20projects." target="_blank" rel="noopener" class="gallery-block-link">Learn More →</a>
-      </div>
-      <div class="gallery-items">
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Exhibition Stall</span>
-            <!-- Proportional crop style -->
-            <img src="Rehab Fair Stall- Creadence Group.jpeg" alt="Rehab Fair Stall — Credence Group">
+<!-- ══ CLIENT TRUST ENGINE & HANDSHAKE ══ -->
+<section id="clients" class="section-taste">
+  <div class="wrap">
+      <div class="split-grid">
+          <div>
+              <div class="eyebrow">The B2B Partnership Model</div>
+              <h2>Building <span class="accent-text">Long-Term Value.</span></h2>
+              <p class="lead">
+                  Our clients aren't looking for one-off projects; they require reliable execution partners for ongoing growth. We build trust through radical transparency and a relentless focus on the business ROI of design.
+              </p>
+              <!-- Business Handshake Visual -->
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="B2B Partnership" class="handshake-img">
           </div>
-          <h4 class="gallery-card-title">Rehab Fair Stall</h4>
-          <p class="gallery-card-client">Creadence Group</p>
-        </div>
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Calendar Design</span>
-            <img src="Yearly Calendar-Gift Item.jpeg" alt="Yearly Calendar — Gift Item">
+          <div class="trust-engine">
+              <div class="te-card">
+                  <div class="te-icon">🤝</div>
+                  <div class="te-stat">95%</div>
+                  <div class="te-label">Repeat Business Rate</div>
+              </div>
+              <div class="te-card">
+                  <div class="te-icon">⏱</div>
+                  <div class="te-stat">24hr</div>
+                  <div class="te-label">Estimator Alignment</div>
+              </div>
+              <div class="te-card">
+                  <div class="te-icon">🛡</div>
+                  <div class="te-stat">100%</div>
+                  <div class="te-label">Brand Compliance</div>
+              </div>
           </div>
-          <h4 class="gallery-card-title">Yearly Calendar Design</h4>
-          <p class="gallery-card-client">Gift Item</p>
-        </div>
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">LED Signage</span>
-            <img src="LED Signage-Max BTL.jpeg" alt="LED Signage — Max BTL">
-          </div>
-          <h4 class="gallery-card-title">LED Signage Installation</h4>
-          <p class="gallery-card-client">Max BTL</p>
-        </div>
       </div>
-    </div>
-
-    <!-- Landscape -->
-    <div class="gallery-block">
-      <div class="gallery-block-header">
-        <h3 class="gallery-block-title">Landscape Design</h3>
-        <a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20Landscape%20projects." target="_blank" rel="noopener" class="gallery-block-link">Learn More →</a>
-      </div>
-      <div class="gallery-items">
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Pergola Design</span>
-            <img src="Residential Pergola- Uttara.jpeg" alt="Residential Pergola — Uttara">
-          </div>
-          <h4 class="gallery-card-title">Residential Pergola</h4>
-          <p class="gallery-card-client">Uttara</p>
-        </div>
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Rooftop Garden</span>
-            <img src="Residential Rooftop- Dhanmondi.jpeg" alt="Residential Rooftop — Dhanmondi">
-          </div>
-          <h4 class="gallery-card-title">Residential Rooftop</h4>
-          <p class="gallery-card-client">Dhanmondi</p>
-        </div>
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Green Wall</span>
-            <img src="Green Wall- Gulshan.jpeg" alt="Green Wall — Gulshan">
-          </div>
-          <h4 class="gallery-card-title">Vertical Green Wall</h4>
-          <p class="gallery-card-client">Gulshan</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Interior Design -->
-    <div class="gallery-block">
-      <div class="gallery-block-header">
-        <h3 class="gallery-block-title">Interior Design</h3>
-        <a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20Interior%20Design%20projects." target="_blank" rel="noopener" class="gallery-block-link">Learn More →</a>
-      </div>
-      <div class="gallery-items">
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Kitchen</span>
-            <img src="Modern Kitchen-Lalmatia.jpg" alt="Modern Kitchen — Lalmatia">
-          </div>
-          <h4 class="gallery-card-title">Modern Kitchen</h4>
-          <p class="gallery-card-client">Lalmatia</p>
-        </div>
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Corporate Office</span>
-            <img src="Office Space-Dhanmondi.jpg" alt="Office Space — Dhanmondi">
-          </div>
-          <h4 class="gallery-card-title">Office Space</h4>
-          <p class="gallery-card-client">Dhanmondi</p>
-        </div>
-        <div class="gallery-card glass-panel glass-interactive-3d">
-          <div class="gallery-visual-box">
-            <span class="tag">Residential Interior</span>
-            <img src="Residential Interior-Uttara.jpg" alt="Residential Interior — Uttara">
-          </div>
-          <h4 class="gallery-card-title">Residential Interior</h4>
-          <p class="gallery-card-client">Uttara</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="ft-top">
-      <div>
-        <a href="#/" class="f-logo" aria-label="Innerloop Atelier"><img id="f-logo-element" src="Innerloop-Horizon-Black.png" alt="Innerloop Atelier" class="f-logo-img"></a>
-        <p class="f-tg">Built on Identity.<br>Shaped by Space.<br><br>Strategy · Craft · Execution</p>
-      </div>
-      <div class="fc">
-        <p class="fc-h">Services</p>
-        <ul>
-          <li><a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20Branding%20ATL%2FBTL%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Branding ATL/BTL</a></li>
-          <li><a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20Brand%20Identity%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Brand Identity Systems</a></li>
-          <li><a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20Landscape%20Design%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Landscape Design</a></li>
-          <li><a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20Green%20Wall%20%26%20Vertical%20Garden%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Vertical Green Walls</a></li>
-          <li><a href="https://wa.me/8801759592324?text=Hi%2C%20I%27d%20like%20to%20discuss%20Interior%20Design%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Interior Architecture</a></li>
-        </ul>
-      </div>
-      <div class="fc">
-        <p class="fc-h">Studio</p>
-        <ul>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#/gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://wa.me/8801759592324" target="_blank" rel="noopener">WhatsApp</a></li>
-        </ul>
-      </div>
-      <div class="fc">
-        <p class="fc-h">Contact</p>
-        <p class="fc-line"><a href="tel:+8801759592324">+88 017 5959 2324</a></p>
-        <p class="fc-line"><a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a></p>
-        <p class="fc-line">Ka-26/1, Rasulbag, Mohakhali,<br>Dhaka 1212, Bangladesh</p>
-      </div>
-    </div>
-    <div class="ft-bot">
-      <p class="f-copy">© 2026 <em>Innerloop Atelier</em>. All rights reserved.</p>
-      <span class="f-stamp">Designed by Team Innerloop Atelier</span>
-    </div>
   </div>
+</section>
+
+<!-- ══ PROJECT GALLERY (USING ORIGINAL ASSETS) ══ -->
+<section id="work" class="section-taste">
+    <div class="wrap">
+        <div class="eyebrow">Execution Archive</div>
+        <h2>Tangible <span class="accent-text">Outputs.</span></h2>
+        <div class="gallery-grid">
+            <div class="g-item">
+                <!-- Updated BTL Image -->
+                <img src="Credence 2024.jpeg" class="g-img" alt="Credence BTL">
+                <div class="g-label">
+                    <div class="gl-title">Credence 2024 Activation</div>
+                    <div class="gl-cat">BTL Deployment</div>
+                </div>
+            </div>
+            <div class="g-item">
+                <img src="Rehab Fair Stall- Creadence Group.jpeg" class="g-img" alt="Rehab Fair Stall">
+                <div class="g-label">
+                    <div class="gl-title">Rehab Fair Pavilion</div>
+                    <div class="gl-cat">Brand Activation</div>
+                </div>
+            </div>
+            <div class="g-item">
+                <img src="Residential Rooftop- Dhanmondi.jpeg" class="g-img" alt="Dhanmondi Rooftop">
+                <div class="g-label">
+                    <div class="gl-title">Sky Sanctuary Dhanmondi</div>
+                    <div class="gl-cat">Boutique Landscape</div>
+                </div>
+            </div>
+            <div class="g-item">
+                <img src="Office Space-Dhanmondi.jpg" class="g-img" alt="Office Space">
+                <div class="g-label">
+                    <div class="gl-title">Eminence Tech HQ</div>
+                    <div class="gl-cat">Corporate Interior</div>
+                </div>
+            </div>
+            <div class="g-item">
+                <img src="Green Wall- Gulshan.jpeg" class="g-img" alt="Green Wall">
+                <div class="g-label">
+                    <div class="gl-title">Vertical Ecosystem Gulshan</div>
+                    <div class="gl-cat">Technical Landscape</div>
+                </div>
+            </div>
+            <div class="g-item">
+                <img src="Modern Kitchen-Lalmatia.jpg" class="g-img" alt="Modern Kitchen">
+                <div class="g-label">
+                    <div class="gl-title">Premium Residence Lalmatia</div>
+                    <div class="gl-cat">Interior Fit-Out</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ══ CONTACT (Professional Direct Line) ══ -->
+<section id="contact" class="section-taste" style="border-bottom: none;">
+    <div class="wrap split-grid">
+        <div>
+            <div class="eyebrow">Direct Line</div>
+            <h2>Priority <span class="accent-text">Consultation.</span></h2>
+            <p class="lead">
+              Ready for execution? Bypassing standard channels, this line connects directly with our senior estimating team for immediate alignment on scope and strategy.
+            </p>
+            <div style="margin-top: 40px;">
+              <p style="font-size: 18px; font-weight: 800;">Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212</p>
+              <a href="mailto:innerloopatelier@gmail.com" style="font-size: 16px; display: block; margin-top: 16px; color: var(--text-m);">innerloopatelier@gmail.com</a>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+             <a href="tel:+8801759592324" class="btn" style="width: 100%; padding: 40px; font-size: 20px; gap: 24px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92V19.92C22.0011 20.1986 21.9441 20.4742 21.8325 20.7294C21.7209 20.9846 21.5573 21.2137 21.3521 21.402C21.1468 21.5902 20.9046 21.7336 20.6407 21.8228C20.3769 21.912 20.0974 21.9452 19.82 21.92C16.7428 21.5857 13.787 20.5342 11.19 18.84C8.77382 17.2481 6.7219 15.1962 5.13 12.78C3.42696 10.1687 2.37707 7.19985 2.05 4.10999C2.02467 3.83271 2.05781 3.55339 2.14719 3.29007C2.23658 3.02676 2.38018 2.7853 2.56869 2.5809C2.75719 2.3765 2.98631 2.21381 3.24172 2.10333C3.49714 1.99285 3.77305 1.93702 4.05 1.93999H7.05C7.53334 1.93661 8.00281 2.10897 8.37507 2.42646C8.74733 2.74394 8.99825 3.18626 9.08 3.67999C9.23283 4.83786 9.51572 5.97345 9.92 7.06999C10.0806 7.50272 10.0927 7.97456 9.95491 8.41349C9.81716 8.85243 9.53689 9.23466 9.16 9.50999L7.89 10.78C9.30512 13.2706 11.3694 15.3349 13.86 16.75L15.13 15.48C15.4053 15.1031 15.7876 14.8228 16.2265 14.6851C16.6654 14.5473 17.1373 14.5594 17.57 14.72C18.6665 15.1243 19.8021 15.4072 20.96 15.56C21.4582 15.643 21.9036 15.8983 22.2213 16.2762C22.5389 16.6542 22.7086 17.1306 22.7 17.62L22 16.92Z" fill="currentColor"/></svg>
+                CALL EXECUTION DESK
+            </a>
+            <p style="text-align: center; margin-top: 16px; font-size: 14px; color: var(--text-m);">+88 017 5959 2324</p>
+        </div>
+    </div>
+</section>
+
+<!-- ══ PROFESSIONAL FOOTER ══ -->
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            <!-- Col 1: Brand -->
+            <div>
+                <img src="Innerloop-Horizon-Grey.png" class="footer-logo" style="height: 30px; margin-bottom: 32px; opacity: 0.8;">
+                <p class="lead" style="font-size: 14px; margin-bottom: 32px;">
+                    The premier B2B execution partner for integrated design environments in Dhaka.
+                </p>
+            </div>
+            <!-- Col 2: Services -->
+            <div>
+                <div class="eyebrow" style="color: var(--text-m); margin-bottom: 24px;">Expertise</div>
+                <a href="#branding" class="f-link">Brand Communication</a>
+                <a href="#landscape" class="f-link">Landscape Architecture</a>
+                <a href="#interior" class="f-link">Interior Design</a>
+            </div>
+             <!-- Col 3: Company -->
+            <div>
+                <div class="eyebrow" style="color: var(--text-m); margin-bottom: 24px;">Company</div>
+                <a href="#team" class="f-link">Leadership</a>
+                <a href="#clients" class="f-link">Client Trust</a>
+                <a href="#contact" class="f-link">Contact</a>
+            </div>
+             <!-- Col 4: Legal (Professional Addition) -->
+            <div>
+                <div class="eyebrow" style="color: var(--text-m); margin-bottom: 24px;">Legal</div>
+                <a href="#" class="f-link">Terms of Service</a>
+                <a href="#" class="f-link">Privacy Policy</a>
+                <a href="#" class="f-link">B2B Compliance</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 INNERLOOP ATELIER. All Rights Reserved.</div>
+            <div class="fb-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
-<!-- ══════════════════════════════
-     JAVASCRIPT (SINGLE-FILE MVC ROUTER)
-══════════════════════════════ -->
+
+<!-- JAVASCRIPT ENGINE -->
 <script>
-'use strict';
+// 1. MOBILE MENU TOGGLE
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
+const overlay = document.getElementById('overlay-nav');
+const navLinks = document.querySelectorAll('.nav-link');
 
-/* Nav elements */
-const nav = document.getElementById('nav');
-function onS(){nav.classList.toggle('on',scrollY>30)}
-addEventListener('scroll',onS,{passive:true});onS();
-
-/* ─────────────────────────────────────────
-   DYNAMIC ROUTER (Main Page & Gallery Permalink)
-───────────────────────────────────────── */
-const mainView = document.getElementById('main-view');
-const galleryView = document.getElementById('gallery-view');
-const navLinks = document.querySelectorAll('.nav-links .nav-link-item, .mobile-nav .ml');
-
-function router() {
-  const currentHash = window.location.hash || '#/';
-  
-  if (currentHash === '#/gallery') {
-    mainView.classList.remove('active-view');
-    galleryView.classList.add('active-view');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    navLinks.forEach(a => {
-      const href = a.getAttribute('href');
-      a.classList.toggle('on', href === '#/gallery');
-    });
-  } else {
-    galleryView.classList.remove('active-view');
-    mainView.classList.add('active-view');
-    
-    if (currentHash.startsWith('#') && currentHash !== '#/' && currentHash !== '#') {
-      const id = currentHash.slice(1);
-      const target = document.getElementById(id);
-      if (target) {
-        const navH = nav.offsetHeight || 0;
-        const y = target.getBoundingClientRect().top + window.pageYOffset - navH;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }
-  }
+function toggleNav(state) {
+  overlay.classList.toggle('active', state);
+  document.body.style.overflow = state ? 'hidden' : '';
 }
+menuOpen.addEventListener('click', () => toggleNav(true));
+menuClose.addEventListener('click', () => toggleNav(false));
+navLinks.forEach(l => l.addEventListener('click', () => toggleNav(false)));
 
-document.addEventListener('click', e => {
-  const a = e.target.closest('a[href^="#"]');
-  if (!a) return;
-  const href = a.getAttribute('href');
-  
-  if (href === '#/gallery' || href === '#/') {
-    window.location.hash = href;
-  } else if (href.startsWith('#') && href !== '#') {
-    e.preventDefault();
-    if (window.location.hash === '#/gallery') {
-      window.location.hash = '#/';
-      setTimeout(() => {
-        const target = document.getElementById(href.slice(1));
-        if (target) {
-          const navH = nav.offsetHeight || 0;
-          const y = target.getBoundingClientRect().top + window.pageYOffset - navH;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const target = document.getElementById(href.slice(1));
-      if (target) {
-        const navH = nav.offsetHeight || 0;
-        const y = target.getBoundingClientRect().top + window.pageYOffset - navH;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }
-  }
+// 2. LIGHT/DARK MODE TOGGLE
+const themeSwitch = document.getElementById('theme-toggle');
+const htmlRoot = document.documentElement;
+let isDark = true;
+themeSwitch.addEventListener('click', () => {
+    isDark = !isDark;
+    htmlRoot.setAttribute('data-theme', isDark ? 'dark' : 'light');
 });
 
-window.addEventListener('hashchange', router);
-window.addEventListener('load', router);
-
-/* Intersection Observer for Active Menu Link Highlight */
-const lmap={};
-navLinks.forEach(a=>{const h=a.getAttribute('href');if(h&&h.startsWith('#'))(lmap[h.slice(1)]=lmap[h.slice(1)]||[]).push(a)});
-const secs=document.querySelectorAll('section[id]');
-const io=new IntersectionObserver(es=>{
-  es.forEach(e=>{
-    if(!e.isIntersecting)return;
-    const id=e.target.id;
-    if(!lmap[id] || window.location.hash === '#/gallery')return;
-    navLinks.forEach(a=>a.classList.remove('on'));
-    lmap[id].forEach(a=>a.classList.add('on'));
-  });
-},{rootMargin:'-40% 0px -55% 0px',threshold:0});
-secs.forEach(sec=>io.observe(sec));
-
-/* Mobile Drawer controls */
-const hbg=document.getElementById('hbg');
-const mnav=document.getElementById('mnav');
-function tog(o){
-  hbg.classList.toggle('on',o);
-  mnav.classList.toggle('on',o);
-  hbg.setAttribute('aria-expanded',o?'true':'false');
-  document.body.style.overflow=o?'hidden':'';
+// 3. METAPHORIC HERO SLIDESHOW (Cross-fade)
+let slideIndex = 0;
+const slides = document.querySelectorAll('.hero-slide');
+function runSlideshow() {
+    slides.forEach(s => s.classList.remove('active'));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
 }
-hbg.addEventListener('click',()=>tog(!mnav.classList.contains('on')));
-document.querySelectorAll('.ml').forEach(a=>a.addEventListener('click',()=>tog(false)));
-addEventListener('keydown',e=>{if(e.key==='Escape')tog(false)});
-
-/* Scroll animations trigger */
-const rev=document.querySelectorAll('.r');
-const ro=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}});
-},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
-rev.forEach(el=>ro.observe(el));
-
-/* ─────────────────────────────────────────
-   CLASSIC HARDWARE TOGGLE SWITCH (Default Light)
-───────────────────────────────────────── */
-const themeToggleBtn = document.getElementById('theme-toggle');
-const rootElement = document.documentElement;
-const metaThemeColor = document.getElementById('meta-theme-color');
-
-let currentTheme = 'light';
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme) {
-  currentTheme = storedTheme;
-}
-
-function applyTheme(theme) {
-  rootElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  currentTheme = theme;
-  
-  if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', theme === 'dark' ? '#0E0D0B' : '#F4F2EC');
-  }
-
-  // Unified global loop targeting all mobile and desktop logo instances simultaneously
-  const allLogos = document.querySelectorAll('.nav-logo-img, .f-logo-img');
-  allLogos.forEach(logo => {
-    if (theme === 'dark') {
-      logo.src = 'Innerloop-Horizon-Grey.png';
-    } else {
-      logo.src = 'Innerloop-Horizon-Black.png';
-    }
-  });
-}
-
-themeToggleBtn.addEventListener('click', () => {
-  const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
-  applyTheme(targetTheme);
-});
-
-// Run sync on DOM load
-applyTheme(currentTheme);
-
-/* ─────────────────────────────────────────
-   PROPRIETOR POPUP MODAL (Editorial Squircle)
-───────────────────────────────────────── */
-const openBioBtn = document.getElementById('open-bio-btn');
-const bioModal = document.getElementById('bio-modal');
-const closeBioBtn = document.getElementById('modal-close');
-const modalOverlay = document.getElementById('modal-overlay');
-
-function toggleModal(open) {
-  if (open) {
-    bioModal.classList.add('open');
-    bioModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    closeBioBtn.focus();
-  } else {
-    bioModal.classList.remove('open');
-    bioModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    openBioBtn.focus();
-  }
-}
-
-if (openBioBtn && bioModal && closeBioBtn && modalOverlay) {
-  openBioBtn.addEventListener('click', () => toggleModal(true));
-  closeBioBtn.addEventListener('click', () => toggleModal(false));
-  modalOverlay.addEventListener('click', () => toggleModal(false));
-  
-  addEventListener('keydown', e => {
-    if (e.key === 'Escape' && bioModal.classList.contains('open')) {
-      toggleModal(false);
-    }
-  });
-}
-
-/* Contact form handling */
-const cf=document.getElementById('cf');
-const cfb=document.getElementById('cf-btn');
-const cfm=document.getElementById('cf-msg');
-
-function setMsg(t,m){cfm.className='cf-msg '+t;cfm.textContent=m}
-function clrMsg(){cfm.className='cf-msg';cfm.textContent=''}
-
-if(cf){
-  const ffWrap=document.getElementById('f-ff');
-  const ffInp=document.getElementById('f-file');
-  const ffTxt=document.getElementById('f-file-txt');
-  const ffClr=document.getElementById('f-file-clr');
-  const FF_DEFAULT='Click to upload — PDF, images, docs (max 10MB total)';
-  const FF_MAX=10*1024*1024;
-  function fmtSz(b){return b<1024?b+'B':b<1048576?(b/1024).toFixed(0)+'KB':(b/1048576).toFixed(1)+'MB'}
-  ffInp.addEventListener('change',()=>{
-    const fs=ffInp.files;
-    if(!fs||!fs.length){ffWrap.classList.remove('has-file');ffTxt.textContent=FF_DEFAULT;return}
-    let total=0;for(const f of fs)total+=f.size;
-    if(total>FF_MAX){setMsg('err','Attachments exceed 10MB. Please compress or send via WhatsApp.');ffInp.value='';ffWrap.classList.remove('has-file');ffTxt.textContent=FF_DEFAULT;return}
-    clrMsg();
-    ffWrap.classList.add('has-file');
-    ffTxt.textContent=fs.length===1?fs[0].name+' ('+fmtSz(fs[0].size)+')':fs.length+' files ('+fmtSz(total)+')';
-  });
-  ffClr.addEventListener('click',e=>{e.stopPropagation();ffInp.value='';ffWrap.classList.remove('has-file');ffTxt.textContent=FF_DEFAULT});
-
-  cf.addEventListener('submit',async e=>{
-    e.preventDefault();
-    const name=cf.querySelector('#f-name').value.trim();
-    const phone=cf.querySelector('#f-phone').value.trim();
-    const svc=cf.querySelector('#f-svc').value;
-    if(!name||!phone||!svc){setMsg('err','Please fill in name, phone, and service.');return}
-
-    const key=cf.querySelector('[name="access_key"]').value;
-    if(!key||key==='YOUR_WEB3FORMS_KEY'){
-      const sub=encodeURIComponent('Project Brief — '+svc);
-      const att=ffInp.files&&ffInp.files.length?'\n\n[Please attach: '+Array.from(ffInp.files).map(f=>f.name).join(', ')+']':'';
-      const bod=encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nService: '+svc+'\nMessage: '+(cf.querySelector('#f-msg').value.trim()||'—')+att);
-      location.href='mailto:innerloopatelier@gmail.com?subject='+sub+'&body='+bod;
-      setMsg('ok','Opening your email client — attach selected files and send.');
-      return;
-    }
-
-    cfb.disabled=true;cfb.textContent='Sending…';clrMsg();
-    try{
-      const res=await fetch('https://api.web3forms.com/submit',{
-        method:'POST',headers:{Accept:'application/json'},
-        body:new FormData(cf)
-      });
-      const d=await res.json();
-      if(d.success){setMsg('ok','✓ Brief received! We\'ll reach out within 24 hours.');cf.reset();ffWrap.classList.remove('has-file');ffTxt.textContent=FF_DEFAULT}
-      else throw new Error(d && d.message ? d.message : 'submit_failed');
-    }catch(err){setMsg('err','Couldn\'t send right now. Please WhatsApp or call +88 017 5959 2324.')}
-    finally{cfb.disabled=false;cfb.textContent='Send My Brief →'}
-  });
-}
+setInterval(runSlideshow, 6000); // Change image every 6 seconds
 </script>
 
 </body>
