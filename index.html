@@ -2,1182 +2,678 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#FBF7EF">
-<title>Innerloop Atelier — B2B Execution Partner.</title>
+<title>Innerloop Atelier — One Partner. Brand to Build.</title>
 <meta name="description" content="Innerloop Atelier — the B2B execution partner for branding, landscape and interior delivery. One team, one standard, every industry.">
+<link rel="canonical" href="https://www.innerloopatelier.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <noscript><style>.r{opacity:1!important;transform:none!important}#preload{display:none!important}</style></noscript>
 <style>
-:root{
-  color-scheme:light;--bg:#FBF7EF;--bg2:#F1E9D9;--ink:#17110D;--dim:#5B5047;--pt:#8A4F1F;
-  --pop:#CD8B4F;--on-pop:#1A0F05;
-  --lime:#B7D9A3;--on-lime:#10260F;
-  --gold:#1F3047;--on-gold:#F7F2E9;
-  --wa:#25D366;--line:#D8CCB6;--r:26px;
-  --ease:cubic-bezier(.2,.85,.25,1.2);
-}
+@font-face{font-family:Gilroy;font-weight:400;font-display:swap;src:local('Gilroy Regular'),url(fonts/Gilroy-Regular.woff2) format('woff2')}
+@font-face{font-family:Gilroy;font-weight:700;font-display:swap;src:local('Gilroy Bold'),url(fonts/Gilroy-Bold.woff2) format('woff2')}
+@font-face{font-family:Gilroy;font-weight:800;font-display:swap;src:local('Gilroy ExtraBold'),url(fonts/Gilroy-ExtraBold.woff2) format('woff2')}
+:root{color-scheme:light;--bg:#FBF7EF;--bg2:#F1E9D9;--ink:#17110D;--dim:#5B5047;--pt:#8A4F1F;--pop:#CD8B4F;--on-pop:#1A0F05;
+--lime:#B7D9A3;--on-lime:#10260F;--navy:#1F3047;--wine:#7A1F2B;--line:#D8CCB6;--wa:#25D366;--r:26px;
+--ease:cubic-bezier(.2,.85,.25,1.1);--f:Gilroy,'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-section[id]{scroll-margin-top:88px}
-body{background:var(--bg);color:var(--ink);font-family:var(--f);overflow-x:hidden;line-height:1.6}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:3;opacity:.05;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+section[id]{scroll-margin-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
 input,select,textarea{font-family:inherit;color:inherit}
 ::selection{background:var(--pop);color:var(--on-pop)}
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--pop);border-radius:100px;border:2px solid var(--bg)}
-.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
-.disp{font-family:var(--f);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
-.r{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.r.in{opacity:1;transform:none}
-.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}
-
-/* PRELOADER */
-#preload{position:fixed;inset:0;z-index:2000;background:var(--bg);display:flex;flex-direction:column;
- align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
-#preload.done{opacity:0;visibility:hidden;pointer-events:none}
-.pl-logo {width:256px; height:auto; animation:pulse 1.5s infinite ease-in-out;}
-@keyframes pulse {
-  0% { transform: scale(0.95); opacity: 0.6; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.6; }
-}
-
-/* SCROLL PROGRESS */
-.sprog{position:fixed;top:0;left:0;height:3px;background:var(--pop);z-index:1000;width:0%}
-
-.cdot{position:fixed;top:0;left:0;width:16px;height:16px;border-radius:50%;background:var(--pop);
-  pointer-events:none;z-index:1600;transform:translate(-50%,-50%);
-  transition:transform .15s ease-out,width .2s var(--ease),height .2s var(--ease);
-  mix-blend-mode:difference;display:none;align-items:center;justify-content:center;
-  font-family:var(--f);font-weight:700;font-size:10px;text-transform:uppercase;color:#fff}
-@media(pointer:fine){.cdot{display:flex}}
-.cdot.big{width:68px;height:68px}
-
-.wa-float{position:fixed;bottom:26px;right:26px;z-index:900;width:58px;height:58px;border-radius:50%;
-  background:var(--wa);border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;
-  box-shadow:4px 4px 0 var(--pop);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
-.wa-float:hover{transform:translate(-3px,-3px) rotate(-8deg);box-shadow:7px 7px 0 var(--pop)}
-.wa-float svg{width:28px;height:28px;fill:#fff}
-
-.nav{position:fixed;top:0;inset-inline:0;z-index:800;display:flex;align-items:center;justify-content:space-between;
-  padding:18px clamp(20px,4vw,56px);transition:background .25s,border-color .25s;border-bottom:3px solid transparent}
-.nav.on{background:rgba(251,247,239,.92);backdrop-filter:blur(14px);border-bottom-color:var(--pop)}
-.nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo img {height: 50px; width: auto;} /* Increased logo size */
-.nav-links{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:26px}
-.nav-links a{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;position:relative;transition:color .18s}
-.nav-links a:hover{color:var(--pop)}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:100px;font-weight:700;
-  font-size:13px;letter-spacing:.03em;text-transform:uppercase;border:3px solid var(--ink);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
-.btn-fill{background:var(--pop);color:var(--on-pop);border-color:var(--pop)}
-.btn-fill:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
-.btn-line{background:transparent;color:var(--ink)}
-.btn-line:hover{background:var(--ink);color:var(--bg);transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--pop)}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;margin-left:auto}
-.hamburger span{width:24px;height:3px;background:var(--ink);border-radius:2px;transition:all .22s var(--ease)}
-.hamburger.on span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.hamburger.on span:nth-child(2){opacity:0}
-.hamburger.on span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.mnav{position:fixed;inset:0;z-index:799;background:var(--bg);display:flex;flex-direction:column;align-items:center;
-  justify-content:center;gap:22px;transform:translateY(-105%);transition:transform .35s var(--ease);pointer-events:none}
-.mnav.on{transform:translateY(0);pointer-events:all}
-.mnav a{font-family:var(--f);font-weight:800;font-size:38px;text-transform:uppercase;color:var(--ink)}
-.mnav a:hover{color:var(--pop)}
-.mnav .btn{margin-top:10px}
-
-#hero{min-height:100vh;padding-top:100px;display:flex;flex-direction:column;justify-content:center;position:relative}
-.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;pointer-events:none;z-index:0;will-change:transform}
-.blob1{width:420px;height:420px;background:var(--pop);top:-100px;right:-100px}
-.blob2{width:320px;height:320px;background:var(--lime);bottom:0;left:-120px;opacity:.18}
-.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;padding-block:48px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--on-lime);font-weight:700;
-  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:100px;transform:rotate(-2deg);margin-bottom:22px}
-.hero-h1{font-size:clamp(40px,6.3vw,94px);line-height:1;margin-bottom:24px}
-.hero-sub{font-size:16px;color:var(--dim);max-width:500px;margin-bottom:32px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.quad{display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:var(--r);overflow:hidden;border:3px solid var(--ink)}
-.qz{padding:30px 22px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;
-  cursor:pointer;transition:background .22s,color .22s;position:relative}
-.qz:nth-child(1){background:var(--bg2)}
-.qz:nth-child(2){background:var(--pop);color:var(--on-pop)}
-.qz:nth-child(3){background:var(--gold);color:var(--on-gold)}
-.qz:nth-child(4){background:var(--lime);color:var(--on-lime)}
-.qz-name{font-family:var(--f);font-weight:800;font-size:19px;text-transform:uppercase}
-.qz-sub{font-size:12px;margin-top:8px;opacity:.85}
-.qz-ar{align-self:flex-end;font-size:20px;transition:transform .22s var(--ease)}
-.qz:hover .qz-ar{transform:translate(4px,-4px)}
-.qz:nth-child(1):hover{background:#E6DCC6}
-
-.mq-wrap{transform:rotate(-1.3deg);margin-block:60px;overflow:hidden}
-.mq{background:var(--pop);border-block:3px solid var(--ink);padding:13px 0;overflow:hidden}
-.mq-t{display:flex;width:max-content;animation:mq 24s linear infinite}
-.mq-t:hover{animation-play-state:paused}
-.mq-t span{font-family:var(--f);font-weight:800;font-size:19px;color:var(--on-pop);white-space:nowrap;padding-inline:22px;text-transform:uppercase}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.clients{padding-block:20px 90px}
-.clients-head{margin-bottom:36px}
-.clients-head .disp{font-size:clamp(28px,3.4vw,44px)}
-.c-track-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.c-track{display:flex;gap:14px;width:max-content;animation:ctrack 34s linear infinite}
-.c-track-wrap:hover .c-track{animation-play-state:paused}
-.c-pill{flex:0 0 auto;padding:16px 30px;border:3px solid var(--ink);border-radius:100px;font-weight:700;
-  text-transform:uppercase;font-size:14px;letter-spacing:.02em;background:var(--bg2)}
-@keyframes ctrack{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.offer{padding-block:90px}
-.offer-head{margin-bottom:40px}
-.offer-grid{display:grid;grid-template-columns:repeat(2,1fr);border:3px solid var(--ink);border-radius:var(--r);overflow:hidden}
-.of{padding:22px 26px;border-bottom:2px solid var(--line);border-right:2px solid var(--line);display:flex;
-  justify-content:space-between;align-items:center;gap:16px;transition:background .18s}
-.of:nth-child(2n){border-right:none}
-.of:nth-last-child(-n+2){border-bottom:none}
-.of:hover{background:var(--bg2)}
-.of-n{font-family:var(--f);font-weight:800;font-size:15px;text-transform:uppercase}
-.of-d{font-size:12.5px;color:var(--dim);text-align:right}
-
-.process{padding-block:90px}
-.process-head{margin-bottom:48px;max-width:600px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:3px solid var(--ink);border-radius:var(--r);overflow:hidden}
-.step{background:var(--bg2);padding:30px 24px}
-.step-n{font-family:var(--f);font-weight:800;font-size:34px;color:var(--pop);display:block;margin-bottom:14px;opacity:.7}
-.step-t{font-family:var(--f);font-weight:800;font-size:17px;text-transform:uppercase;margin-bottom:10px}
-.step-d{font-size:12.5px;color:var(--dim);line-height:1.65}
-
-.svc{padding-block:100px;border-top:3px solid var(--line)}
-.svc-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.svc-tag{display:inline-block;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;
-  padding:7px 16px;border-radius:100px;margin-bottom:20px}
-.svc-name{font-size:clamp(42px,5.6vw,84px);margin-bottom:16px}
-.svc-desc{font-size:15px;color:var(--dim);max-width:440px;margin-bottom:26px}
-.svc-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
-.svc-tags span{border:2px solid var(--line);padding:8px 16px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase}
-#branding .svc-tag{background:var(--pop);color:var(--on-pop)}
-#landscaping{background:var(--bg2)}
-#landscaping .svc-tag{background:var(--lime);color:var(--on-lime)}
-#interior .svc-tag{background:var(--gold);color:var(--on-gold)}
-.svc-visual{aspect-ratio:1;border-radius:var(--r);border:3px solid var(--ink);display:flex;align-items:center;
-  justify-content:center;font-family:var(--f);font-weight:800;font-size:15vw;text-transform:uppercase}
-#branding .svc-visual{background:var(--pop);color:var(--on-pop)}
-#landscaping .svc-visual{background:var(--lime);color:var(--on-lime)}
-#interior .svc-visual{background:var(--gold);color:var(--on-gold)}
-
-.work{padding-block:90px}
-.work-head{margin-bottom:44px;max-width:600px}
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.wk{border:3px solid var(--ink);border-radius:var(--r);padding:40px 26px;min-height:160px;
-  display:flex;flex-direction:column;justify-content:space-between;transition:transform .22s var(--ease);cursor:default}
-.wk:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--wc)}
-.wk-tag{display:inline-block;align-self:flex-start;background:var(--wc);color:var(--wct);font-weight:700;
-  font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:100px}
-.wk-t{font-family:var(--f);font-weight:800;font-size:19px;text-transform:uppercase;margin-top:20px}
-
-#studio{padding-block:100px;background:var(--bg2);border-top:3px solid var(--line);border-bottom:3px solid var(--line)}
-.studio-head{max-width:600px;margin-bottom:56px}
-.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tc{border:3px solid var(--ink);border-radius:var(--r);padding:28px;background:var(--bg);transition:transform .22s var(--ease)}
-.tc:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--pop)}
-.tc-av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:24px;margin-bottom:16px;transform:rotate(-4deg)}
-.tc:nth-child(6n+1) .tc-av{background:var(--pop);color:var(--on-pop)}
-.tc:nth-child(6n+2) .tc-av{background:var(--lime);color:var(--on-lime)}
-.tc:nth-child(6n+3) .tc-av{background:var(--gold);color:var(--on-gold)}
-.tc:nth-child(6n+4) .tc-av{background:var(--lime);color:var(--on-lime)}
-.tc:nth-child(6n+5) .tc-av{background:var(--pop);color:var(--on-pop)}
-.tc:nth-child(6n+6) .tc-av{background:var(--gold);color:var(--on-gold)}
-.tc-role{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
-.tc-name{font-family:var(--f);font-weight:800;font-size:18px;text-transform:uppercase;margin-bottom:10px}
-.tc-desc{font-size:13px;color:var(--dim)}
-
-.statement{padding-block:90px;text-align:center}
-
-.faq{padding-block:90px}
-.faq-head{margin-bottom:40px;max-width:600px}
-.faq-list{display:flex;flex-direction:column;gap:14px}
-.fq{border:3px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg2)}
-.fq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;
-  font-family:var(--f);font-weight:800;font-size:14.5px;text-transform:uppercase;text-align:left;gap:16px}
-.fq-ic{font-size:22px;flex-shrink:0;transition:transform .25s var(--ease);color:var(--pt)}
-.fq.open .fq-ic{transform:rotate(45deg)}
-.fq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
-.fq-a p{padding:0 24px 22px;font-size:14px;color:var(--dim);line-height:1.7}
-.fq.open .fq-a{max-height:200px}
-
-#contact{padding-block:100px}
-.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.ct-h{font-size:clamp(40px,5.6vw,76px);margin-bottom:22px}
-.ct-sub{font-size:15px;color:var(--dim);max-width:400px;margin-bottom:30px}
-.cd{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
-.cd-ic{width:40px;height:40px;flex-shrink:0;border:3px solid var(--ink);border-radius:12px;display:flex;
-  align-items:center;justify-content:center;font-size:16px;background:var(--bg2)}
-.cd-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pt);margin-bottom:3px}
-.cd-val{font-size:14.5px}
-.cd-val a:hover{color:var(--pop)}
-.cf{border:3px solid var(--ink);border-radius:var(--r);padding:34px;background:var(--bg2)}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fg{margin-bottom:14px}
-.fl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:6px}
-.fi,.fs,.ft{width:100%;background:var(--bg);border:3px solid var(--line);border-radius:14px;color:var(--ink);
-  font-size:14.5px;padding:12px 14px;transition:border-color .18s}
-.fi:focus,.fs:focus,.ft:focus{outline:none;border-color:var(--pop)}
-.ft{resize:vertical;min-height:90px}
-.cf-submit{width:100%;margin-top:6px;padding:16px;background:var(--pop);color:var(--on-pop);font-weight:700;
-  font-size:13px;letter-spacing:.05em;text-transform:uppercase;border-radius:100px;border:3px solid var(--ink);
-  transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
-.cf-submit:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--lime)}
-.cf-submit:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
-.cf-msg{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:13px;text-align:center;display:none}
-.cf-msg.ok{display:block;background:#EEF9C9;border:2px solid #7A9A00;color:#27330A}
-.cf-msg.err{display:block;background:#FFE6DC;border:2px solid var(--pop);color:#7A2306}
-
-footer{border-top:3px solid var(--pop);padding:56px clamp(20px,4vw,56px) 30px;background:var(--bg2)}
-.ft-in{max-width:1180px;margin-inline:auto}
-.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;padding-bottom:34px;border-bottom:2px solid var(--line);margin-bottom:22px}
-.f-logo{font-family:var(--f);font-weight:800;font-size:21px;text-transform:uppercase;margin-bottom:12px;display:block}
-.f-logo img {height: 50px; width: auto;} /* Increased footer logo size */
-.f-tag{font-size:12.5px;color:var(--dim);max-width:220px}
-.fc-h{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pt);margin-bottom:14px}
-.fc ul{display:flex;flex-direction:column;gap:9px}
-.fc ul a{font-size:13.5px;color:var(--dim);transition:color .18s}
-.fc ul a:hover{color:var(--ink)}
-.ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.f-copy{font-size:11.5px;color:var(--dim)}
-.f-stamp{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--line);padding:6px 14px;border-radius:100px}
-
-[hidden]{display:none!important}
-@keyframes sheen{from{background-position:0 0}to{background-position:100% 0}}
-@media(prefers-reduced-motion:reduce){.disp,.mq-t,.c-track{animation:none}html{scroll-behavior:auto}}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.nav-links{gap:22px}
-.ind{padding-block:30px 70px}
-.ind-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.ind-grid span{border:3px solid var(--ink);border-radius:100px;padding:11px 22px;font-weight:700;font-size:13.5px;text-transform:uppercase;background:var(--bg2);transition:transform .2s var(--ease),background .2s}
-.ind-grid span:hover{background:var(--lime);transform:translate(-3px,-3px) rotate(-1.5deg)}
-/* portfolio view */
-.pf{padding-block:130px 90px}
-.pf-h{font-size:clamp(44px,8vw,110px);margin:18px 0 16px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 34px}
-.chip{padding:10px 20px;border:3px solid var(--ink);border-radius:100px;font-weight:700;text-transform:uppercase;font-size:12.5px;background:var(--bg);transition:transform .2s var(--ease)}
-.chip:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--pop)}
-.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.gal{column-width:270px;column-gap:16px}
-.gt{break-inside:avoid;margin:0 0 16px;position:relative;border:3px solid var(--ink);border-radius:var(--r);overflow:hidden;cursor:pointer;
- animation:gin .5s var(--ease) both;transition:transform .22s var(--ease),box-shadow .22s var(--ease);display:block;width:100%}
-.gt:hover,.gt:focus-visible{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--pop)}
-@keyframes gin{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-.gt img,.gt video{width:100%;height:100%;object-fit:cover;display:block}
-.gt figcaption,.lb-ph p{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(251,247,239,.95);border:2px solid var(--ink);border-radius:16px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--ink)}
-.gtag{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pt)}
-.gc-Branding{background:var(--pop);color:var(--on-pop)}.gc-Landscape{background:var(--lime);color:var(--on-lime)}.gc-Interior{background:var(--gold);color:var(--on-gold)}
-.ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f);font-weight:800;font-size:clamp(60px,9vw,120px);opacity:.28}
-.pb{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;background:var(--bg);color:var(--ink);border:3px solid var(--ink);display:grid;place-items:center;font-size:14px;z-index:2}
-.pf-cta{margin-top:30px}
-.lb{position:fixed;inset:0;z-index:2100;background:rgba(251,247,239,.97);display:flex;align-items:center;justify-content:center;padding:70px 76px 96px;flex-direction:column;gap:16px}
-.lb-stage{width:min(1100px,100%);display:flex;justify-content:center}
-.lb-stage img,.lb-stage video{max-width:100%;max-height:calc(100vh - 190px);border:3px solid var(--ink);border-radius:var(--r)}
-.lb-stage iframe{width:100%;aspect-ratio:16/9;max-height:calc(100vh - 190px);border:3px solid var(--ink);border-radius:var(--r)}
-.lb-ph{position:relative;height:min(64vh,620px);max-width:100%;border:3px solid var(--ink);border-radius:var(--r)}
-.lb-cap{font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.04em}
-.lb-x,.lb-n{position:absolute;width:52px;height:52px;border-radius:50%;border:3px solid var(--ink);background:var(--lime);color:var(--on-lime);font-size:20px;font-weight:700;display:grid;place-items:center;z-index:3}
-.lb-x{top:16px;right:16px;position:absolute}.lb-n{top:50%;margin-top:-26px}.lb-p{left:14px}.lb-nx{right:14px}
-.lb-x:hover,.lb-n:hover{background:var(--pop)}
-/* booking */
-.bk{padding-block:100px;background:var(--bg2);border-block:3px solid var(--line)}
-.bk-head{max-width:640px;margin-bottom:40px}
-.bk-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:24px}
-.bk-card{border:3px solid var(--ink);border-radius:var(--r);padding:clamp(18px,3vw,28px);background:var(--bg)}
-.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.cal-m{font-family:var(--f);font-weight:800;text-transform:uppercase;font-size:17px}
-.cal-nav{width:40px;height:40px;border-radius:50%;border:3px solid var(--ink);font-weight:700;background:var(--bg)}
-.cal-nav:disabled{opacity:.35;cursor:not-allowed}
-.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
-.cal-w{font-size:10.5px;font-weight:700;text-transform:uppercase;text-align:center;color:var(--dim);padding-bottom:4px}
-.cday{aspect-ratio:1;border-radius:12px;font-weight:700;font-size:14px;border:2px solid transparent;background:transparent;color:var(--ink);transition:background .15s}
-.cday:hover:not(:disabled){border-color:var(--ink);background:var(--lime)}
-.cday[aria-pressed=true]{background:var(--pop);color:var(--on-pop);border-color:var(--ink)}
-.cday:disabled{color:#968A78;cursor:not-allowed;text-decoration:line-through}
-.cal-note{font-size:12px;color:var(--dim);margin-top:14px}
-.bk-sm{display:flex;gap:8px;margin-bottom:8px}
-.bk-sm .fi{flex:1;min-width:0}
-.bk-sm button{padding:0 18px;border:3px solid var(--ink);border-radius:14px;background:var(--lime);color:var(--on-lime);font-weight:700;font-size:12.5px;text-transform:uppercase}
-.bk-ai{font-size:12.5px;min-height:20px;margin-bottom:14px;color:var(--ink)}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-bottom:16px}
-.slot{padding:11px 6px;border:3px solid var(--ink);border-radius:100px;font-weight:700;font-size:13px;background:var(--bg)}
-.slot:hover{background:var(--lime)}.slot[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.bk-sum{border:2px dashed var(--ink);border-radius:14px;padding:12px 14px;font-size:13.5px;margin:6px 0 14px;min-height:48px}
-.bk-btns{display:flex;gap:10px;flex-wrap:wrap}
-.bk-btns .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
-.sel-d{background:var(--bg);border:3px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;font-size:14.5px}
-/* footer legal + modal */
-.legal{font-size:12.5px;color:var(--dim);max-width:860px;line-height:1.75;margin-bottom:22px}
-.tcbtn{background:var(--lime);color:var(--on-lime);border:3px solid var(--ink)!important;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
-.tcbtn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--pop)}
-.tcm{position:fixed;inset:0;z-index:2200;background:rgba(23,17,13,.55);display:flex;align-items:center;justify-content:center;padding:18px}
-.tcm-box{background:var(--bg);border:3px solid var(--ink);border-radius:var(--r);max-width:780px;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
-.tcm-top{display:flex;justify-content:space-between;align-items:center;padding:20px 26px;border-bottom:3px solid var(--ink);background:var(--bg2)}
-.tcm-top .lb-x{position:static;width:42px;height:42px;font-size:16px}
-.tcm-h{font-family:var(--f);font-weight:800;text-transform:uppercase;font-size:clamp(20px,3vw,28px)}
-.tcm-body{overflow-y:auto;padding:22px 26px 30px;font-size:14px;line-height:1.75;color:var(--ink)}
-.tcm-body h3{font-family:var(--f);font-weight:800;font-size:14px;text-transform:uppercase;margin:20px 0 4px}
-.tcm-body p{color:var(--dim)}.tcm-body em{color:var(--pt);font-style:normal;font-weight:700}
-@media(max-width:1024px){.bk-grid{grid-template-columns:1fr}.lb{padding:70px 20px 100px}}
-@media(max-width:700px){.lb-n{top:auto;bottom:24px;margin:0}.lb-p{left:calc(50% - 64px)}.lb-nx{right:calc(50% - 64px)}.bk{padding-block:70px}.pf{padding-block:110px 70px}.bk-sm{flex-direction:column}.bk-sm button{padding:12px}}
+[hidden]{display:none!important}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
+.disp{font-weight:800;letter-spacing:-.04em;line-height:1.04}
+.pop{background:linear-gradient(100deg,#8A4F1F,#CD8B4F 50%,#E9B67F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:clamp(16px,1.4vw,19px);color:var(--dim);max-width:60ch}
+.eyebrow{display:inline-block;background:var(--lime);color:var(--on-lime);font-weight:700;font-size:12px;letter-spacing:.06em;padding:7px 15px;border-radius:100px}
+.h2{font-size:clamp(30px,4.2vw,56px);margin:14px 0 18px}
+.r{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:100px;font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);transition:transform .25s var(--ease),box-shadow .25s,background .2s,color .2s}
+.btn-fill{background:var(--pop);color:var(--on-pop);border-color:var(--pop)}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(205,139,79,.4)}
+.btn-line:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 
-#branding .svc-visual,#branding .svc-tag,.gc-Branding{background:#7A1F2B;color:#FBF1E8}
-.tagbar{display:inline-block;background:var(--pop);color:var(--on-pop);font-weight:700;font-size:11.5px;letter-spacing:.16em;padding:7px 14px;margin-bottom:20px}
-.about{padding-block:70px}.about-g{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.about-t{display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--ink);border-radius:var(--r);overflow:hidden;background:#404040;color:#F7F2E9}
-.about-t div{padding:22px 20px;border:1px solid #5E5E5E;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:flex;flex-direction:column;gap:12px;min-height:130px;justify-content:flex-end}
-.about-t b{font-family:var(--f);font-weight:800;font-size:32px;color:var(--pop);letter-spacing:0;line-height:1}
-.scd{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.scd div{border:3px solid var(--ink);border-radius:var(--r);padding:22px 24px;background:var(--bg2)}
-.scd b{font-family:var(--f);font-weight:800;text-transform:uppercase;display:block;margin-bottom:6px}.scd span{font-size:13px;color:var(--dim)}
-.why{padding-block:90px;background:var(--bg2);border-block:3px solid var(--line)}
-.steps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-@media(max-width:1024px){.about-g{grid-template-columns:1fr}}
-@media(max-width:700px){.scd{grid-template-columns:1fr}.why{padding-block:70px}}
-@font-face{font-family:'Gilroy';font-weight:300;font-display:swap;src:local('Gilroy Light'),local('Gilroy-Light'),url(fonts/Gilroy-Light.woff2) format('woff2')}
-@font-face{font-family:'Gilroy';font-weight:400;font-display:swap;src:local('Gilroy Regular'),local('Gilroy-Regular'),url(fonts/Gilroy-Regular.woff2) format('woff2')}
-@font-face{font-family:'Gilroy';font-weight:500;font-display:swap;src:local('Gilroy Medium'),local('Gilroy-Medium'),url(fonts/Gilroy-Medium.woff2) format('woff2')}
-@font-face{font-family:'Gilroy';font-weight:600;font-display:swap;src:local('Gilroy SemiBold'),local('Gilroy-SemiBold'),url(fonts/Gilroy-SemiBold.woff2) format('woff2')}
-@font-face{font-family:'Gilroy';font-weight:700;font-display:swap;src:local('Gilroy Bold'),local('Gilroy-Bold'),url(fonts/Gilroy-Bold.woff2) format('woff2')}
-@font-face{font-family:'Gilroy';font-weight:800;font-display:swap;src:local('Gilroy ExtraBold'),local('Gilroy-ExtraBold'),url(fonts/Gilroy-ExtraBold.woff2) format('woff2')}
-@font-face{font-family:'Gilroy';font-weight:900;font-display:swap;src:local('Gilroy Black'),local('Gilroy-Black'),url(fonts/Gilroy-Black.woff2) format('woff2')}
-:root{--f:'Gilroy','Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif}
-body{font-family:var(--f)}
-.disp{font-weight:800;text-transform:none;letter-spacing:-.04em;line-height:1.03;color:var(--ink)}
-.disp .pop{background:linear-gradient(100deg,#8A4F1F 0%,#CD8B4F 50%,#E9B67F 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-.step-t,.tc-name,.wk-t,.cd-lbl,.tcm-h{text-transform:none;letter-spacing:-.02em}
-.hero-h1{font-size:clamp(44px,6.6vw,100px);margin-bottom:22px}
-.hero-sub,.lead{font-weight:400;font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:var(--dim)}
-.eyebrow{font-weight:700}
-/* nav dropdown */
-.dd{position:relative}.dd-t small{font-size:10px;margin-left:3px}
-.dd-m{position:absolute;top:100%;left:-18px;padding-top:16px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+/* preloader */
+#preload{position:fixed;inset:0;z-index:2000;background:var(--bg);display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+#preload.done{opacity:0;visibility:hidden;pointer-events:none}
+.pl-mark{position:relative;width:min(46vmin,420px);aspect-ratio:1}
+.pl-logo{display:block;width:100%;height:auto;opacity:.1;filter:grayscale(1)}
+.pl-fill{position:absolute;inset:0;background:linear-gradient(180deg,#E9B67F,#CD8B4F 45%,#8A4F1F);
+-webkit-mask:url(Preload-Icon.svg) center/contain no-repeat;mask:url(Preload-Icon.svg) center/contain no-repeat;
+clip-path:inset(100% 0 0 0);animation:plfill 1.7s cubic-bezier(.65,0,.25,1) forwards}
+@keyframes plfill{to{clip-path:inset(0)}}
+.sprog{position:fixed;top:0;left:0;height:3px;background:var(--pop);z-index:1000;width:0}
+.wa-float{position:fixed;bottom:24px;right:22px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 28px rgba(37,211,102,.42);transition:transform .25s,box-shadow .25s}
+.wa-float:hover{transform:translateY(-3px)}.wa-float svg{width:27px;height:27px;fill:#fff}
+.skip{position:absolute;left:-999px;top:8px;z-index:3000;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:700}.skip:focus{left:8px}
+
+/* nav */
+.nav{position:fixed;top:0;inset-inline:0;z-index:800;display:flex;align-items:center;gap:26px;padding:16px clamp(20px,4vw,56px);transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+.nav.on{background:rgba(251,247,239,.92);backdrop-filter:blur(14px);border-bottom-color:rgba(23,17,13,.08)}
+.nav-logo img{height:44px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:24px;margin-left:auto}
+.nav-links>a,.dd-t{font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;transition:color .18s}
+.nav-links>a:hover,.dd-t:hover{color:var(--pop)}
+.dd{position:relative}
+.dd-m{position:absolute;top:100%;left:-18px;padding-top:16px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
 .dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
-.dd-m>div{width:340px;background:rgba(251,247,239,.97);backdrop-filter:blur(18px);border:1px solid rgba(23,17,13,.1);border-radius:24px;box-shadow:0 30px 70px rgba(23,17,13,.2);padding:10px}
-.nav-links .dd-m a{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:16px;text-transform:none;letter-spacing:0;font-size:15px}
-.nav-links .dd-m a:hover{background:var(--bg2);color:var(--ink)}
-.dd-m b{font-weight:900;font-size:12px;color:var(--pt)}.dd-m span{font-weight:700;display:block;line-height:1.25}
-.dd-m i{display:block;font-style:normal;font-weight:400;font-size:12px;color:var(--dim);margin-top:2px}
-/* hero slideshow + panel */
-#hero{position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
-.hero-in{padding-top:120px;width:100%}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
-.hs.on{opacity:1;animation:kb 10s ease-out forwards}
-@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.13)}}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.9) 0%,rgba(251,247,239,.72) 34%,rgba(251,247,239,0) 64%)}
-.blob{display:none}
-.sp{justify-self:end;width:100%;max-width:460px;background:rgba(255,255,255,.72);backdrop-filter:blur(22px) saturate(1.4);-webkit-backdrop-filter:blur(22px) saturate(1.4);border:1px solid rgba(23,17,13,.1);border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(23,17,13,.2)}
-.sp a{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:24px 26px;border-bottom:1px solid rgba(23,17,13,.08);transition:background .2s}
+.dd-m>div{width:330px;background:rgba(251,247,239,.97);backdrop-filter:blur(18px);border:1px solid rgba(23,17,13,.1);border-radius:22px;box-shadow:0 30px 70px rgba(23,17,13,.2);padding:10px}
+.dd-m a{display:flex;gap:14px;align-items:center;padding:13px 15px;border-radius:15px}
+.dd-m a:hover{background:var(--bg2)}
+.dd-m b{font-size:12px;color:var(--pt)}.dd-m span{font-weight:700;font-size:14.5px;line-height:1.25}
+.dd-m i{display:block;font-style:normal;font-weight:400;font-size:12px;color:var(--dim)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;margin-left:auto}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+.hamburger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.on span:nth-child(2){opacity:0}
+.hamburger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:799;background:var(--bg);display:flex;flex-direction:column;padding:92px 28px 40px;overflow-y:auto;transform:translateY(-105%);transition:transform .4s var(--ease);pointer-events:none}
+.mnav.on{transform:none;pointer-events:all}
+.mnav a{font-size:19px;font-weight:600;letter-spacing:-.01em;padding:15px 0;border-bottom:1px solid var(--line)}
+.mnav a.btn{margin-top:26px;border:1.5px solid var(--pop);justify-content:center;font-size:12.5px;font-weight:700;padding:14px 22px}
+
+/* hero */
+#hero{position:relative;overflow:hidden;min-height:min(100vh,880px);display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0}
+.hero-bg::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(90deg,rgba(251,247,239,.92),rgba(251,247,239,.7) 32%,rgba(251,247,239,0) 62%),linear-gradient(180deg,rgba(251,247,239,0) 72%,rgba(251,247,239,.95))}
+.hs{position:absolute;inset:0;background-size:cover;background-position:center;visibility:hidden;clip-path:inset(0 0 0 100%);transform:scale(1.14);filter:saturate(1.06) contrast(1.03)}
+.hs.prev{visibility:visible;z-index:1;clip-path:inset(0);transform:scale(1.02)}
+.hs.on{visibility:visible;z-index:2;animation:hsReveal 1.7s cubic-bezier(.77,0,.18,1) forwards,hsZoom 9s cubic-bezier(.2,.6,.2,1) forwards}
+@keyframes hsReveal{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0)}}
+@keyframes hsZoom{from{transform:scale(1.14)}to{transform:scale(1.02)}}
+.hero-pg{position:absolute;left:clamp(20px,4vw,56px);bottom:26px;z-index:4;display:flex;gap:6px}
+.hero-pg i{position:relative;width:36px;height:3px;border-radius:3px;overflow:hidden;background:rgba(23,17,13,.2)}
+.hero-pg i.on::after{content:"";position:absolute;inset:0;background:var(--pop);transform-origin:left;animation:pgf 7s linear forwards}
+@keyframes pgf{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero-in{position:relative;z-index:5;width:100%;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;padding-block:104px 56px}
+.hero-h1{font-size:clamp(40px,5.2vw,80px);margin:20px 0 18px}
+.tagbar{display:inline-block;background:var(--pop);color:var(--on-pop);font-weight:700;font-size:12px;letter-spacing:.16em;padding:7px 14px;margin-bottom:18px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.sp{justify-self:end;width:100%;max-width:450px;background:rgba(255,255,255,.72);backdrop-filter:blur(22px) saturate(1.4);border:1px solid rgba(23,17,13,.1);border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(23,17,13,.2)}
+.sp a{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:22px 26px;border-bottom:1px solid rgba(23,17,13,.08);transition:background .2s}
 .sp a:hover{background:rgba(205,139,79,.18)}
-.sp a:last-child{border:0;background:var(--ink);color:var(--bg)}.sp a:last-child:hover{background:#2b2119}
-.sp-n{font-weight:900;font-size:13px;color:var(--pt);letter-spacing:.06em}
-.sp b{display:block;font-weight:800;font-size:19px;letter-spacing:-.02em;line-height:1.2}
-.sp em{display:block;font-style:normal;font-size:13px;color:var(--dim);margin-top:3px}
-.sp a:last-child em{color:#D9CFBE}.sp a:last-child .sp-n{color:var(--pop)}
-.sp i{font-style:normal;font-size:20px;transition:transform .22s var(--ease)}.sp a:hover i{transform:translate(4px,-4px)}
-/* ribbon + logos */
-.mq-wrap{transform:none;margin-block:0}
-.mq{background:#1d1d1f;border-block:0;padding:16px 0}
-.mq-t span{color:#F5EFE4;font-weight:700;font-size:15px;letter-spacing:.14em}
-.c-track{animation-duration:80s;gap:0;align-items:center}
-.c-logo{flex:0 0 auto;padding:0 clamp(28px,4vw,54px)}
-.c-logo img{height:46px;width:auto;display:block;filter:grayscale(1);opacity:.7;transition:filter .3s,opacity .3s}
+.sp a:last-child{border:0;background:var(--ink);color:var(--bg)}
+.sp-n{font-weight:800;font-size:12px;color:var(--pt)}.sp a:last-child .sp-n{color:var(--pop)}
+.sp b{display:block;font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1.2}
+.sp em{display:block;font-style:normal;font-size:13px;color:var(--dim)}.sp a:last-child em{color:#D9CFBE}
+
+.mq{background:#1d1d1f;padding:16px 0;overflow:hidden}
+.mq-t{display:flex;width:max-content;animation:mq 40s linear infinite}
+.mq-t span{color:#F5EFE4;font-weight:700;font-size:14px;letter-spacing:.14em;white-space:nowrap;padding-inline:22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.clients{padding-block:90px}
+.c-wrap{overflow:hidden;margin-top:32px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.c-track{display:flex;align-items:center;width:max-content;animation:mq 80s linear infinite}
+.c-wrap:hover .c-track{animation-play-state:paused}
+.c-logo{padding:0 clamp(28px,4vw,54px)}
+.c-logo img{height:46px;width:auto;display:block;filter:grayscale(1);opacity:.7;transition:.3s}
 .c-logo:hover img{filter:none;opacity:1}
-/* who we are */
-.about{padding-block:100px}.ab-top{max-width:920px;margin-bottom:46px}
-.ab-h{font-size:clamp(34px,5vw,72px);margin:14px 0 22px}
-.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.aud>div{padding:32px 28px;border-radius:28px;background:var(--bg2);border:1px solid var(--line);transition:transform .3s var(--ease),box-shadow .3s}
-.aud>div:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(23,17,13,.12)}
-.aud small{font-weight:800;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--pt)}
-.aud b{display:block;font-weight:800;font-size:23px;letter-spacing:-.025em;margin:10px 0;line-height:1.15}
-.aud p{font-size:14.5px;color:var(--dim);line-height:1.6}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:16px;border-radius:28px;background:#1d1d1f;color:#F5EFE4;overflow:hidden}
-.stats div{padding:34px 26px;border-right:1px solid #3a3a3d}.stats div:last-child{border:0}
-.stats b{display:block;font-weight:900;font-size:clamp(40px,5vw,70px);letter-spacing:-.045em;line-height:1;color:var(--pop)}
-.stats span{display:block;margin-top:12px;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+
+section.blk{padding-block:90px}
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.card{padding:30px 26px;border-radius:26px;background:var(--bg2);border:1px solid var(--line);transition:transform .3s var(--ease),box-shadow .3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(23,17,13,.12)}
+.card small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--pt)}
+.card b{display:block;font-weight:800;font-size:22px;letter-spacing:-.025em;margin:10px 0;line-height:1.15}
+.card p{font-size:14.5px;color:var(--dim)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:16px;border-radius:26px;background:#1d1d1f;color:#F5EFE4;overflow:hidden}
+.stats div{padding:32px 26px;border-right:1px solid #3a3a3d}.stats div:last-child{border:0}
+.stats b{display:block;font-weight:800;font-size:clamp(38px,5vw,64px);letter-spacing:-.045em;line-height:1;color:var(--pop)}
+.stats span{display:block;margin-top:10px;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.chips2{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips2 span{border:1.5px solid var(--ink);border-radius:100px;padding:10px 20px;font-weight:600;font-size:13.5px;background:var(--bg2);transition:.2s}
+.chips2 span:hover{background:var(--lime);transform:translateY(-2px)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;background:var(--line);border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden;margin-top:36px}
+.step{background:var(--bg2);padding:28px 22px}
+.step-n{display:block;font-weight:800;font-size:32px;color:var(--pt);margin-bottom:12px}
+.step h3{font-weight:800;font-size:17px;letter-spacing:-.02em;margin-bottom:8px}
+.step p{font-size:13px;color:var(--dim)}
+
 /* services */
 .svc2{position:relative;overflow:hidden;padding-block:110px;isolation:isolate}
-.svc2-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(14px) saturate(1.2);transform:scale(1.1);z-index:-2;will-change:transform}
-.svc2::before{content:"";position:absolute;inset:0;background:rgba(251,247,239,.5);z-index:-1}
+.svc2-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(14px) saturate(1.2);z-index:-2}
+.svc2::before{content:"";position:absolute;inset:0;background:rgba(251,247,239,.55);z-index:-1}
 .svc2-in{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
-.svc2-n{font-weight:900;font-size:14px;letter-spacing:.12em;color:var(--ac);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.svc2-n{font-weight:800;font-size:14px;letter-spacing:.12em;color:var(--ac);display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .svc2-n::after{content:"";width:64px;height:3px;background:var(--ac);border-radius:3px}
-.svc2 h2{font-size:clamp(36px,5vw,72px);margin-bottom:20px}
-.svc2 .lead{max-width:560px;margin-bottom:24px}
-.svc2-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
-.svc2-tags span{padding:8px 16px;border-radius:100px;background:rgba(255,255,255,.75);border:1px solid rgba(23,17,13,.14);font-weight:600;font-size:12.5px}
-.svc2-box{position:relative;margin:0;border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 90px rgba(23,17,13,.28);border:1px solid rgba(255,255,255,.7);background:var(--bg2);border-top:6px solid var(--ac)}
+.svc2 h2{font-size:clamp(34px,4.6vw,64px);margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 28px}
+.tags span{padding:8px 15px;border-radius:100px;background:rgba(255,255,255,.75);border:1px solid rgba(23,17,13,.14);font-weight:600;font-size:12.5px}
+.svc2-box{position:relative;margin:0;border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 90px rgba(23,17,13,.28);background:linear-gradient(160deg,#EADBC6,var(--ac));border-top:6px solid var(--ac)}
 .svc2-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
 .svc2-box:hover img{transform:scale(1.05)}
-.svc2-box figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:14px 18px;border-radius:20px;background:rgba(251,247,239,.9);backdrop-filter:blur(14px);font-weight:700;font-size:13px;display:flex;justify-content:space-between;gap:10px}
-.svc2-box figcaption em{font-style:normal;color:var(--ac)}
-/* founder */
-.founder{padding-block:100px}
+.svc2-box figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:13px 18px;border-radius:20px;background:rgba(251,247,239,.9);backdrop-filter:blur(14px);font-weight:700;font-size:13px;display:flex;justify-content:space-between;gap:10px}
+.svc2-box em{font-style:normal;color:var(--ac)}
+
+/* studio */
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.tc{border:1.5px solid var(--ink);border-radius:var(--r);padding:26px;background:var(--bg);transition:transform .25s var(--ease),box-shadow .25s}
+.tc:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(23,17,13,.14)}
+.tc-av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:22px;margin-bottom:14px;background:var(--lime)}
+.tc small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.tc b{display:block;font-weight:800;font-size:18px;letter-spacing:-.02em;margin:4px 0 8px}
+.tc p{font-size:13.5px;color:var(--dim)}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
 .fd{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,70px);align-items:center}
 .fd-ph{position:relative;aspect-ratio:4/5;border-radius:32px;overflow:hidden;background:linear-gradient(160deg,#EADBC6,#CD8B4F);display:grid;place-items:center;box-shadow:0 40px 90px rgba(23,17,13,.22)}
 .fd-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.fd-ph span{font-weight:900;font-size:clamp(80px,12vw,150px);color:rgba(23,17,13,.35);letter-spacing:-.05em}
-.fd q{display:block;quotes:none;font-weight:300;font-size:clamp(22px,2.6vw,36px);line-height:1.3;letter-spacing:-.02em;margin:18px 0 24px}
-.fd q b{font-weight:800}.fd-n{font-weight:800;font-size:20px;letter-spacing:-.02em}.fd-r{font-size:14px;color:var(--dim);margin-bottom:26px}
-.fm-top{display:flex;gap:18px;align-items:center;margin-bottom:6px}.fm-top .fd-ph{width:88px;aspect-ratio:1;border-radius:50%;flex:none;box-shadow:none}.fm-top .fd-ph span{font-size:34px}
-.why .tc:last-child{grid-column:span 2}
-@media(max-width:1024px){.aud,.stats{grid-template-columns:1fr 1fr}.svc2-in,.fd{grid-template-columns:1fr}.sp{justify-self:stretch;max-width:none}.svc2-box{aspect-ratio:16/11}.why .tc:last-child{grid-column:auto}.hero-bg::after{background:rgba(251,247,239,.12)}.hero-in>div:first-child{background:rgba(251,247,239,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:28px;border-radius:28px}}
-@media(max-width:700px){.aud{grid-template-columns:1fr}.svc2{padding-block:70px}.stats div{padding:24px 18px}}
-@media(prefers-reduced-motion:reduce){.hs.on{animation:none}}
-/* audit fixes */
-.hero-h1{font-size:clamp(40px,5.2vw,80px)}
-#hero{min-height:min(100vh,880px)}.hero-in{padding-top:104px;padding-bottom:36px}
-.eyebrow{transform:none;font-size:12px}
-.fl,.cd-lbl,.cal-w,.gtag,.aud small,.sp-n,.tagbar{font-size:12px}
-.step-n{color:var(--pt)}
-#landscaping h2{font-size:clamp(32px,4.2vw,58px)}
-.svc2-box{background:linear-gradient(160deg,#EADBC6,var(--ac))}
-.mq-wrap+section{padding-top:80px}
-.skip{position:absolute;left:-999px;top:8px;z-index:3000;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:700}.skip:focus{left:8px}
-footer a{display:inline-block;padding:5px 0}
-.cdot,.cring{opacity:0}.cur-on .cdot,.cur-on .cring{opacity:1}
-@media(hover:none){.cdot,.cring{display:none!important}}
-@media(max-width:700px){.c-logo img{height:34px}.c-logo{padding:0 22px}.wa-float{width:52px;height:52px;bottom:16px;right:14px}}
+.fd-ph span{font-weight:800;font-size:clamp(80px,12vw,150px);color:rgba(23,17,13,.35)}
+.fd q{display:block;quotes:none;font-weight:400;font-size:clamp(22px,2.6vw,34px);line-height:1.3;letter-spacing:-.02em;margin:18px 0 22px}
+.fd-n{font-weight:800;font-size:20px}.fd-r{font-size:14px;color:var(--dim);margin-bottom:24px}
+.statement{text-align:center;padding-block:90px;font-size:clamp(34px,6vw,76px)}
+
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.fq{border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg2)}
+.fq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 24px;font-weight:800;font-size:15px;text-align:left}
+.fq-ic{font-size:22px;color:var(--pt);transition:transform .25s var(--ease)}.fq.open .fq-ic{transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.fq-a p{padding:0 24px 20px;font-size:14.5px;color:var(--dim)}.fq.open .fq-a{max-height:220px}
+
+/* booking */
+.bk-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:22px;margin-top:36px}
+.bk-card{border:1.5px solid var(--ink);border-radius:var(--r);padding:clamp(18px,3vw,28px);background:var(--bg)}
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-m{font-weight:800;font-size:17px}
+.cal-nav{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--ink);font-weight:700}.cal-nav:disabled{opacity:.35;cursor:not-allowed}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal-w{font-size:12px;font-weight:700;text-align:center;color:var(--dim)}
+.cday{aspect-ratio:1;border-radius:12px;font-weight:700;font-size:14px;border:1.5px solid transparent}
+.cday:hover:not(:disabled){border-color:var(--ink);background:var(--lime)}
+.cday[aria-pressed=true]{background:var(--pop);color:var(--on-pop);border-color:var(--ink)}
+.cday:disabled{color:#968A78;cursor:not-allowed;text-decoration:line-through}
+.note{font-size:12.5px;color:var(--dim);margin-top:14px}
+.fl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:6px}
+.fi,.fs,.ft{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;font-size:15px;padding:12px 14px;transition:border-color .18s}
+.fi:focus,.fs:focus,.ft:focus{outline:none;border-color:var(--pop)}
+.ft{resize:vertical;min-height:90px}
+.fg{margin-bottom:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bk-sm{display:flex;gap:8px;margin-bottom:8px}.bk-sm .fi{flex:1;min-width:0}
+.bk-sm button{padding:0 18px;border:1.5px solid var(--ink);border-radius:12px;background:var(--lime);color:var(--on-lime);font-weight:700;font-size:12.5px;text-transform:uppercase}
+.bk-ai{font-size:13px;min-height:20px;margin-bottom:12px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-bottom:16px}
+.slot{padding:10px 6px;border:1.5px solid var(--ink);border-radius:100px;font-weight:700;font-size:13px}
+.slot:hover{background:var(--lime)}.slot[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.bk-sum{border:1.5px dashed var(--ink);border-radius:14px;padding:12px 14px;font-size:13.5px;margin:6px 0 14px;min-height:48px}
+.bk-btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* contact + footer */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.cd{display:flex;gap:14px;margin-bottom:16px}
+.cd-ic{width:40px;height:40px;flex:none;border:1.5px solid var(--ink);border-radius:12px;display:grid;place-items:center;background:var(--bg2)}
+.cd-l{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pt)}
+.cd a:hover{color:var(--pop)}
+.cf{border:1.5px solid var(--ink);border-radius:var(--r);padding:30px;background:var(--bg2)}
+.cf-submit{width:100%;margin-top:6px}
+.cf-msg{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:13px;text-align:center;display:none}
+.cf-msg.ok{display:block;background:#EEF9C9;border:1.5px solid #7A9A00;color:#27330A}
+.cf-msg.err{display:block;background:#FFE6DC;border:1.5px solid var(--pop);color:#7A2306}
+footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;background:var(--bg2)}
+.ft-in{max-width:1180px;margin-inline:auto}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.ft-top img{height:44px;width:auto}
+.f-tag{font-size:13px;color:var(--dim);max-width:230px;margin-top:12px}
+.fc-h{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pt);margin-bottom:12px}
+.fc a{display:inline-block;padding:5px 0;font-size:14px;color:var(--dim)}.fc a:hover{color:var(--ink)}
+.legal{font-size:12.5px;color:var(--dim);max-width:860px;margin-bottom:22px}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--dim)}
+.tcbtn{background:var(--lime);color:var(--on-lime);border:1.5px solid var(--ink);padding:7px 15px;border-radius:100px;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+/* portfolio + modals */
+.pf{padding-block:130px 90px}
+.pf-h{font-size:clamp(44px,8vw,104px);margin:18px 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 32px}
+.chip{padding:10px 20px;border:1.5px solid var(--ink);border-radius:100px;font-weight:700;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;transition:.2s}
+.chip:hover{transform:translateY(-2px)}.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.gal{column-width:270px;column-gap:16px}
+.gt{position:relative;display:block;width:100%;margin:0 0 16px;break-inside:avoid;border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden;cursor:pointer;background:var(--bg2);animation:gin .5s var(--ease) both;transition:transform .25s var(--ease),box-shadow .25s}
+.gt:hover,.gt:focus-visible{transform:translateY(-5px);box-shadow:0 22px 44px rgba(23,17,13,.16)}
+@keyframes gin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.gt img,.gt video{width:100%;height:100%;object-fit:cover;display:block}
+.gt figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(251,247,239,.95);border-radius:16px;padding:10px 14px;font-size:14px;display:flex;flex-direction:column}
+.gtag{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pt)}
+.pb{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:13px}
+.lb{position:fixed;inset:0;z-index:2100;background:rgba(251,247,239,.97);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:70px 76px 96px}
+.lb-stage{width:min(1100px,100%);display:flex;justify-content:center}
+.lb-stage img,.lb-stage video{max-width:100%;max-height:calc(100vh - 190px);border-radius:var(--r)}
+.lb-stage iframe{width:100%;aspect-ratio:16/9;max-height:calc(100vh - 190px);border:0;border-radius:var(--r)}
+.lb-cap{font-weight:700;font-size:13px;letter-spacing:.04em}
+.xb{position:absolute;width:50px;height:50px;border-radius:50%;border:1.5px solid var(--ink);background:var(--lime);color:var(--on-lime);font-size:18px;font-weight:700;display:grid;place-items:center;z-index:3}
+.xb:hover{background:var(--pop)}
+.lb-x{top:16px;right:16px}.lb-p,.lb-nx{top:50%;margin-top:-25px}.lb-p{left:14px}.lb-nx{right:14px}
+.tcm{position:fixed;inset:0;z-index:2200;background:rgba(23,17,13,.55);display:grid;place-items:center;padding:18px}
+.tcm-box{background:var(--bg);border:1.5px solid var(--ink);border-radius:var(--r);max-width:760px;width:100%;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+.tcm-top{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1.5px solid var(--ink);background:var(--bg2)}
+.tcm-top h2{font-weight:800;font-size:clamp(20px,3vw,26px);letter-spacing:-.02em}
+.tcm-top .xb{position:static;width:40px;height:40px;font-size:15px}
+.tcm-body{overflow-y:auto;padding:20px 24px 28px;font-size:14px}
+.tcm-body h3{font-weight:800;font-size:14px;margin:18px 0 4px}.tcm-body p{color:var(--dim)}
+
 @media(max-width:1024px){
-  .hero-in{grid-template-columns:1fr}
-  .svc-in{grid-template-columns:1fr}
-  .svc-visual{aspect-ratio:2.4/1;font-size:9vw;order:-1}
-  .crew{grid-template-columns:repeat(2,1fr)}
-  .work-grid{grid-template-columns:repeat(2,1fr)}
-  .ct-grid{grid-template-columns:1fr;gap:44px}
-  .ft-top{grid-template-columns:1fr 1fr}
+.hero-in,.svc2-in,.fd,.bk-grid,.ct-grid{grid-template-columns:1fr}
+.hero-in{gap:30px}.sp{justify-self:stretch;max-width:none}
+.hero-bg::after{background:rgba(251,247,239,.14)}
+.hero-in>div:first-child{background:rgba(251,247,239,.84);backdrop-filter:blur(14px);padding:26px;border-radius:26px}
+.aud,.stats{grid-template-columns:1fr 1fr}.crew{grid-template-columns:1fr 1fr}
+.svc2-box{aspect-ratio:16/11}.ct-grid{gap:44px}.ft-top{grid-template-columns:1fr 1fr}.lb{padding:70px 20px 100px}
 }
 @media(max-width:700px){
-  .nav-links,.nav>.btn{display:none}
-  .hamburger{display:flex}
-  .quad{grid-template-columns:1fr}
-  .cf-row{grid-template-columns:1fr}
-  .crew{grid-template-columns:1fr}
-  .offer-grid{grid-template-columns:1fr}
-  .of{border-right:none!important}
-  .of:last-child{border-bottom:none}
-  .work-grid{grid-template-columns:1fr}
-  .ft-top{grid-template-columns:1fr;gap:26px}
-  .svc{padding-block:70px}
-  #studio,#contact,.offer,.statement,.process,.work,.faq{padding-block:70px}
+.nav{padding:12px 20px}.nav-logo img{height:34px}
+.nav-links,.nav>.btn{display:none}.hamburger{display:flex}
+.hero-h1{font-size:clamp(32px,9.4vw,44px);line-height:1.06}
+.hero-in{padding-top:88px;gap:26px}.hero-in>div:first-child{padding:22px}
+.sp a{padding:16px 18px;gap:12px}.sp b{font-size:16px}.sp em{font-size:12px}
+.h2,.svc2 h2{font-size:clamp(26px,7.4vw,34px)}
+.aud,.crew,.row,.stats{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats b{font-size:36px}.stats div{padding:22px 18px}
+.card b{font-size:20px}
+section.blk,.svc2,.clients,.statement{padding-block:56px}.pf{padding-block:110px 60px}
+.c-logo img{height:34px}.c-logo{padding:0 22px}
+.bk-sm{flex-direction:column}.bk-sm button{padding:12px}
+.ft-top{grid-template-columns:1fr;gap:26px}.hero-pg{bottom:14px}
+.pl-mark{width:min(64vw,300px)}.wa-float{width:52px;height:52px;bottom:16px;right:14px}
+.lb-p,.lb-nx{top:auto;bottom:24px;margin:0}.lb-p{left:calc(50% - 64px)}.lb-nx{right:calc(50% - 64px)}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:none}
+.hs.on{clip-path:inset(0);transform:scale(1.04)}.pl-fill{animation:none;clip-path:inset(0)}
 }
 </style>
-<link rel="canonical" href="https://www.innerloopatelier.com/">
-<link rel="icon" href="Preload-Logo.svg">
 </head>
 <body>
 <a class="skip" href="#home">Skip to content</a>
 
-<div id="preload">
-  <img src="Preload-Logo.svg" alt="Innerloop Atelier Loading" class="pl-logo">
-</div>
-<script>
-(function(){
-  var pl=document.getElementById('preload');
-  if(!pl)return;
-  function hide(){pl.classList.add('done')}
-  addEventListener('load', function(){ setTimeout(hide, 350) });
-  setTimeout(hide, 2500);
-})();
-</script>
-
+<div id="preload"><div class="pl-mark" role="img" aria-label="Innerloop Atelier loading"><img src="Preload-Icon.svg" alt="" class="pl-logo"><span class="pl-fill"></span></div></div>
 <div class="sprog" id="sprog"></div>
 
-<a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20brief%20Innerloop%20Atelier%20on%20a%20project."
-   target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp Innerloop Atelier">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.463 3.488A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
-</a>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20brief%20Innerloop%20Atelier%20on%20a%20project." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp Innerloop Atelier">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.463 3.488A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
 
 <nav class="nav" id="nav">
-  <a href="#hero" class="nav-logo"><img src="Preload-Logo.svg" alt="Innerloop Atelier"></a>
-  <div class="nav-links">
-    <div class="dd"><a href="#branding" class="dd-t" aria-haspopup="true">Services <small>▾</small></a><div class="dd-m"><div>
-      <a href="#branding"><b>01</b><span>Brand &amp; Communication<i>ATL · BTL · Identity</i></span></a>
-      <a href="#landscaping"><b>02</b><span>Landscape Design &amp; Urban Spaces<i>Aesthetic curation</i></span></a>
-      <a href="#interior"><b>03</b><span>Interior Design<i>Residential · Commercial · Hospitality</i></span></a>
-    </div></div></div>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#studio">Studio</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a href="#book" class="btn btn-fill magnet">Book a Call →</a>
-  <button class="hamburger" id="hbg" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<a href="#hero" class="nav-logo"><img src="Preload-Logo.svg" alt="Innerloop Atelier"></a>
+<div class="nav-links">
+<div class="dd"><a href="#branding" class="dd-t">Services ▾</a><div class="dd-m"><div>
+<a href="#branding"><b>01</b><span>Brand &amp; Communication<i>ATL · BTL · Identity</i></span></a>
+<a href="#landscaping"><b>02</b><span>Landscape &amp; Urban Spaces<i>Aesthetic curation</i></span></a>
+<a href="#interior"><b>03</b><span>Interior Design<i>Residential · Commercial · Hospitality</i></span></a></div></div></div>
+<a href="#portfolio">Portfolio</a><a href="#studio">Studio</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+<a href="#book" class="btn btn-fill">Book a call →</a>
+<button class="hamburger" id="hbg" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="mnav" id="mnav">
-  <a href="#branding" class="ml">Brand &amp; Communication</a>
-  <a href="#landscaping" class="ml">Landscape &amp; Urban Spaces</a>
-  <a href="#interior" class="ml">Interior Design</a>
-  <a href="#portfolio" class="ml">Portfolio</a>
-  <a href="#studio" class="ml">Studio</a>
-  <a href="#faq" class="ml">FAQ</a>
-  <a href="#contact" class="ml">Contact</a>
-  <a href="#book" class="btn btn-fill ml">Book a Call →</a>
+<a href="#branding">Brand &amp; Communication</a><a href="#landscaping">Landscape &amp; Urban Spaces</a><a href="#interior">Interior Design</a>
+<a href="#portfolio">Portfolio</a><a href="#studio">Studio</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+<a href="#book" class="btn btn-fill">Book a call →</a>
 </div>
 
 <main id="home">
-
 <section id="hero">
-  <div class="hero-bg" id="hs"></div>
-  <div class="wrap hero-in">
-    <div>
-      <span class="eyebrow r">B2B execution partner · industry leading framework</span>
-      <h1 class="disp hero-h1 r d1">Fragmented Execution <span class="pop">Kills</span> Brand Value.</h1>
-      <span class="tagbar r d1">STRATEGY | CRAFT | EXECUTION</span>
-      <p class="hero-sub r d2" style="max-width:540px;margin-bottom:32px">Brand, landscape and interior delivery under one accountable team. One standard, one timeline, zero hand-offs — for the leaders who answer for the result.</p>
-      <div class="hero-cta r d3">
-        <a href="#book" class="btn btn-fill magnet">Book a Strategy Call →</a>
-        <a href="#portfolio" class="btn btn-line magnet">View Portfolio</a>
-      </div>
-    </div>
-    <div class="sp r d2">
-      <a href="#branding"><span class="sp-n">01</span><div><b>Brand &amp; Communication</b><em>ATL · BTL · Identity</em></div><i>↗</i></a>
-      <a href="#landscaping"><span class="sp-n">02</span><div><b>Landscape Design &amp; Urban Spaces</b><em>Aesthetic curation</em></div><i>↗</i></a>
-      <a href="#interior"><span class="sp-n">03</span><div><b>Interior Design</b><em>Residential · Commercial · Hospitality</em></div><i>↗</i></a>
-      <a href="#book"><span class="sp-n">→</span><div><b>Book a strategy call</b><em>30 minutes. Straight answers.</em></div><i>↗</i></a>
-    </div>
-  </div>
+<div class="hero-bg" id="hs"></div>
+<div class="wrap hero-in">
+<div>
+<span class="eyebrow r">B2B execution partner</span>
+<h1 class="disp hero-h1 r d1">Fragmented execution <span class="pop">kills</span> brand value.</h1>
+<span class="tagbar r d1">STRATEGY | CRAFT | EXECUTION</span>
+<p class="lead r d2" style="margin-top:0">Brand, landscape and interior delivery under one accountable team. One standard, one timeline, zero hand-offs — for the leaders who answer for the result.</p>
+<div class="hero-cta r d2"><a href="#book" class="btn btn-fill">Book a strategy call →</a><a href="#portfolio" class="btn btn-line">View portfolio</a></div>
+</div>
+<div class="sp r d2">
+<a href="#branding"><span class="sp-n">01</span><div><b>Brand &amp; Communication</b><em>ATL · BTL · Identity</em></div><i>↗</i></a>
+<a href="#landscaping"><span class="sp-n">02</span><div><b>Landscape &amp; Urban Spaces</b><em>Aesthetic curation</em></div><i>↗</i></a>
+<a href="#interior"><span class="sp-n">03</span><div><b>Interior Design</b><em>Residential · Commercial · Hospitality</em></div><i>↗</i></a>
+<a href="#book"><span class="sp-n">→</span><div><b>Book a strategy call</b><em>30 minutes. Straight answers.</em></div><i>↗</i></a>
+</div>
+</div>
 </section>
 
-<div class="mq-wrap">
-  <div class="mq">
-    <div class="mq-t">
-      <span>BRAND &amp; COMMUNICATION ✺ LANDSCAPE DESIGN &amp; URBAN SPACES AESTHETIC CURATION ✺ INTERIOR DESIGN ✺ STRATEGY · CRAFT · EXECUTION ✺ BUILT ON IDENTITY. SHAPED BY SPACE ✺</span>
-      <span>BRAND &amp; COMMUNICATION ✺ LANDSCAPE DESIGN &amp; URBAN SPACES AESTHETIC CURATION ✺ INTERIOR DESIGN ✺ STRATEGY · CRAFT · EXECUTION ✺ BUILT ON IDENTITY. SHAPED BY SPACE ✺</span>
-    </div>
-  </div>
-</div>
+<div class="mq"><div class="mq-t">
+<span>BRAND &amp; COMMUNICATION ✺ LANDSCAPE &amp; URBAN SPACES ✺ INTERIOR DESIGN ✺ STRATEGY · CRAFT · EXECUTION ✺ BUILT ON IDENTITY. SHAPED BY SPACE ✺</span>
+<span>BRAND &amp; COMMUNICATION ✺ LANDSCAPE &amp; URBAN SPACES ✺ INTERIOR DESIGN ✺ STRATEGY · CRAFT · EXECUTION ✺ BUILT ON IDENTITY. SHAPED BY SPACE ✺</span>
+</div></div>
 
 <section class="clients wrap">
-  <div class="clients-head r">
-    <span class="eyebrow">Proof of execution</span>
-    <h2 class="disp" style="margin-top:14px">Trusted by the developers and brands that build.</h2>
-  </div>
-  <div class="c-track-wrap">
-    <div class="c-track">
-      <div class="c-logo"><img src="Ace.svg" alt="Ace Developers" loading="lazy"></div>
-      <div class="c-logo"><img src="BHL.svg" alt="BHL Group" loading="lazy"></div>
-      <div class="c-logo"><img src="Credence.svg" alt="Credence" loading="lazy"></div>
-      <div class="c-logo"><img src="Eminence.svg" alt="Eminence" loading="lazy"></div>
-      <div class="c-logo"><img src="max.svg" alt="Max Space" loading="lazy"></div>
-      <div class="c-logo"><img src="Sheltech.svg" alt="Sheltech" loading="lazy"></div>
-      <div class="c-logo"><img src="TPH.svg" alt="The Premium Homes" loading="lazy"></div>
-      <div class="c-logo"><img src="Urban.svg" alt="Urban" loading="lazy"></div>
-    </div>
-  </div>
+<div class="r"><span class="eyebrow">Proof of execution</span><h2 class="disp h2">Trusted by the developers and brands that build.</h2></div>
+<div class="c-wrap"><div class="c-track" id="ct">
+<div class="c-logo"><img src="Ace.svg" alt="Ace Developers" loading="lazy"></div>
+<div class="c-logo"><img src="BHL.svg" alt="BHL Group" loading="lazy"></div>
+<div class="c-logo"><img src="Credence.svg" alt="Credence" loading="lazy"></div>
+<div class="c-logo"><img src="Eminence.svg" alt="Eminence" loading="lazy"></div>
+<div class="c-logo"><img src="max.svg" alt="Max Space" loading="lazy"></div>
+<div class="c-logo"><img src="Sheltech.svg" alt="Sheltech" loading="lazy"></div>
+<div class="c-logo"><img src="TPH.svg" alt="The Premium Homes" loading="lazy"></div>
+<div class="c-logo"><img src="Urban.svg" alt="Urban" loading="lazy"></div>
+</div></div>
 </section>
 
-<section class="about wrap" id="about">
-  <div class="ab-top r"><span class="eyebrow">Who we are</span>
-    <h2 class="disp ab-h">One accountable partner for brand, landscape and <span class="pop">interior.</span></h2>
-    <p class="lead">Innerloop Atelier is a multi-disciplinary studio where brand thinking, spatial design and landscape architecture converge. We don't just conceptualise — we deliver. For leadership teams, that means fewer vendors, one standard and one point of accountability, from first brief to final handover.</p></div>
-  <div class="aud r d1">
-    <div><small>For CEOs &amp; founders</small><b>One partner answerable for the whole result.</b><p>How your brand looks, feels and performs — across print, outdoor, digital and physical space — owned by a single team.</p></div>
-    <div><small>For supply chain &amp; procurement</small><b>Fewer vendors. One scope, one timeline.</b><p>One brief, one schedule and one handover, with site oversight and delivery tracking built in instead of chased.</p></div>
-    <div><small>For brand managers</small><b>Consistency that survives the real world.</b><p>The same identity on a billboard, a lobby wall and a landscaped forecourt — governed by guidelines your vendors can follow.</p></div>
-  </div>
-  <div class="stats r d2"><div><b>3</b><span>Core disciplines</span></div><div><b>1</b><span>Accountable team</span></div><div><b>24h</b><span>Brief response time</span></div><div><b>360°</b><span>Brand to space</span></div></div>
+<section class="blk wrap" id="about">
+<div class="r" style="max-width:900px"><span class="eyebrow">Who we are</span>
+<h2 class="disp h2" style="font-size:clamp(32px,5vw,68px)">One accountable partner for brand, landscape and <span class="pop">interior.</span></h2>
+<p class="lead">Innerloop Atelier is a multi-disciplinary studio where brand thinking, spatial design and landscape architecture converge. We don't just conceptualise — we deliver: fewer vendors, one standard and one point of accountability, from first brief to final handover.</p></div>
+<div class="aud r d1">
+<div class="card"><small>For CEOs &amp; founders</small><b>One partner answerable for the whole result.</b><p>How your brand looks, feels and performs — across print, outdoor, digital and physical space — owned by a single team.</p></div>
+<div class="card"><small>For supply chain &amp; procurement</small><b>Fewer vendors. One scope, one timeline.</b><p>One brief, one schedule and one handover, with site oversight and delivery tracking built in.</p></div>
+<div class="card"><small>For brand managers</small><b>Consistency that survives the real world.</b><p>The same identity on a billboard, a lobby wall and a landscaped forecourt — governed by guidelines your vendors can follow.</p></div>
+</div>
+<div class="stats r d2"><div><b>3</b><span>Core disciplines</span></div><div><b>1</b><span>Accountable team</span></div><div><b>24h</b><span>Brief response</span></div><div><b>360°</b><span>Brand to space</span></div></div>
 </section>
 
-<section class="ind wrap" id="industries">
-  <div class="r"><span class="eyebrow">Every industry</span>
-  <h2 class="disp" style="margin-top:14px;font-size:clamp(30px,4vw,52px)">Your sector.<br>Our execution standard.</h2></div>
-  <div class="ind-grid r d1"><span>Real Estate</span><span>Healthcare & Pharma</span><span>Hospitality</span><span>Manufacturing</span><span>Banking & Finance</span><span>Retail & F&amp;B</span><span>Education</span><span>Technology</span><span>Agro &amp; Resorts</span><span>Corporate Offices</span><span>Logistics</span><span>NGOs &amp; Development</span></div>
+<section class="blk wrap" id="industries">
+<div class="r"><span class="eyebrow">Every industry</span><h2 class="disp h2">Your sector. Our execution standard.</h2></div>
+<div class="chips2 r d1"><span>Real Estate</span><span>Healthcare &amp; Pharma</span><span>Hospitality</span><span>Manufacturing</span><span>Banking &amp; Finance</span><span>Retail &amp; F&amp;B</span><span>Education</span><span>Technology</span><span>Agro &amp; Resorts</span><span>Corporate Offices</span><span>Logistics</span><span>NGOs &amp; Development</span></div>
 </section>
 
-<section class="process wrap">
-  <div class="process-head r">
-    <span class="eyebrow">The Innerloop Method</span>
-    <h2 class="disp" style="margin-top:14px;font-size:clamp(30px,4vw,52px)">Brief to handover.<br>One owner throughout.</h2>
-  </div>
-  <div class="steps">
-    <div class="step r d0"><span class="step-n">01</span><h3 class="step-t">Brief &amp; Discover</h3><p class="step-d">Deep-dive into your goals, context and audience. We ask the questions others skip.</p></div>
-    <div class="step r d1"><span class="step-n">02</span><h3 class="step-t">Strategise</h3><p class="step-d">Positioning, concept and creative direction agreed before a pixel is moved.</p></div>
-    <div class="step r d2"><span class="step-n">03</span><h3 class="step-t">Design &amp; Develop</h3><p class="step-d">Our multi-disciplinary team crafts solutions with precision and considered artistry.</p></div>
-    <div class="step r d3"><span class="step-n">04</span><h3 class="step-t">Refine &amp; Align</h3><p class="step-d">Structured feedback cycles with clear revision protocols — no ambiguity.</p></div>
-    <div class="step r d3"><span class="step-n">05</span><h3 class="step-t">Execute &amp; Deliver</h3><p class="step-d">On-site oversight, print production, installation and handover end to end.</p></div>
-  </div>
+<section class="blk wrap" id="method">
+<div class="r"><span class="eyebrow">The Innerloop method</span><h2 class="disp h2">Brief to handover. One owner throughout.</h2></div>
+<div class="steps r d1">
+<div class="step"><span class="step-n">01</span><h3>Brief &amp; discover</h3><p>Deep-dive into your goals, context and audience. We ask the questions others skip.</p></div>
+<div class="step"><span class="step-n">02</span><h3>Strategise</h3><p>Positioning, concept and creative direction agreed before a pixel is moved.</p></div>
+<div class="step"><span class="step-n">03</span><h3>Design &amp; develop</h3><p>Our multi-disciplinary team crafts solutions with precision and considered artistry.</p></div>
+<div class="step"><span class="step-n">04</span><h3>Refine &amp; align</h3><p>Structured feedback cycles with clear revision protocols — no ambiguity.</p></div>
+<div class="step"><span class="step-n">05</span><h3>Execute &amp; deliver</h3><p>On-site oversight, print production, installation and handover end to end.</p></div>
+</div>
 </section>
 
 <section class="svc2" id="branding" style="--ac:#7A1F2B">
-  <div class="svc2-bg" data-bg style="background-image:url('SBbranding.jpg')"></div>
-  <div class="wrap svc2-in">
-    <div class="r">
-      <span class="svc2-n">01</span>
-      <h2 class="disp">Brand &amp; Communication</h2>
-      <p class="lead">From the first visual touchpoint to the widest media reach. Our practice spans the full Above-the-Line and Below-the-Line spectrum — outdoor, print, TVC and digital — with the strategic depth and executional breadth your identity needs to hold across every vendor.</p>
-      <div class="svc2-tags"><span>Outdoor / OOH</span><span>Print Media</span><span>TVC &amp; AVC</span><span>Digital ATL</span><span>BTL</span><span>Brand Identity</span><span>Governance &amp; Guidelines</span></div>
-      <a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Brand%20%26%20Communication%20project." target="_blank" rel="noopener" class="btn btn-fill">Brief Us →</a>
-    </div>
-    <figure class="svc2-box r d2"><img src="FBrand.jpg" alt="Brand &amp; Communication" loading="lazy"><figcaption><span>Brand &amp; Communication</span><em>ATL · BTL</em></figcaption></figure>
-  </div>
+<div class="svc2-bg" data-bg style="background-image:url('SBbranding.jpg')"></div>
+<div class="wrap svc2-in"><div class="r">
+<span class="svc2-n">01</span><h2 class="disp">Brand &amp; Communication</h2>
+<p class="lead">From the first visual touchpoint to the widest media reach. Our practice spans the full Above-the-Line and Below-the-Line spectrum — outdoor, print, TVC and digital — with the depth and breadth your identity needs to hold across every vendor.</p>
+<div class="tags"><span>Outdoor / OOH</span><span>Print Media</span><span>TVC &amp; AVC</span><span>Digital ATL</span><span>BTL</span><span>Brand Identity</span><span>Governance &amp; Guidelines</span></div>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Brand%20%26%20Communication%20project." target="_blank" rel="noopener" class="btn btn-fill">Brief us →</a></div>
+<figure class="svc2-box r d2"><img src="FBrand.jpg" alt="Brand &amp; Communication" loading="lazy"><figcaption><span>Brand &amp; Communication</span><em>ATL · BTL</em></figcaption></figure></div>
 </section>
 
 <section class="svc2" id="landscaping" style="--ac:#2F6B3A">
-  <div class="svc2-bg" data-bg style="background-image:url('SBlandscape.jpg')"></div>
-  <div class="wrap svc2-in">
-    <div class="r">
-      <span class="svc2-n">02</span>
-      <h2 class="disp">Landscape Design &amp; Urban Spaces Aesthetic Curation</h2>
-      <p class="lead">Professional nurserymen and horticulturists treat every outdoor space as a living composition. We pair planting knowledge with spatial design to create environments that mature beautifully — enhancing property value and wellbeing.</p>
-      <div class="svc2-tags"><span>Garden Design</span><span>Corporate Greenery</span><span>Rooftop &amp; Vertical</span><span>Paving &amp; Structures</span><span>Water Features</span><span>Plant Supply</span></div>
-      <a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Landscape%20project." target="_blank" rel="noopener" class="btn btn-fill">Brief Us →</a>
-    </div>
-    <figure class="svc2-box r d2"><img src="FLandscape.jpg" alt="Landscape &amp; Urban Spaces" loading="lazy"><figcaption><span>Landscape &amp; Urban Spaces</span><em>Living design</em></figcaption></figure>
-  </div>
+<div class="svc2-bg" data-bg style="background-image:url('SBlandscape.jpg')"></div>
+<div class="wrap svc2-in"><div class="r">
+<span class="svc2-n">02</span><h2 class="disp">Landscape Design &amp; Urban Spaces Aesthetic Curation</h2>
+<p class="lead">Professional nurserymen and horticulturists treat every outdoor space as a living composition. We pair planting knowledge with spatial design to create environments that mature beautifully — enhancing property value and wellbeing.</p>
+<div class="tags"><span>Garden Design</span><span>Corporate Greenery</span><span>Rooftop &amp; Vertical</span><span>Paving &amp; Structures</span><span>Water Features</span><span>Plant Supply</span></div>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Landscape%20project." target="_blank" rel="noopener" class="btn btn-fill">Brief us →</a></div>
+<figure class="svc2-box r d2"><img src="FLandscape.jpg" alt="Landscape &amp; Urban Spaces" loading="lazy"><figcaption><span>Landscape &amp; Urban Spaces</span><em>Living design</em></figcaption></figure></div>
 </section>
 
 <section class="svc2" id="interior" style="--ac:#1F3047">
-  <div class="svc2-bg" data-bg style="background-image:url('SBinterior.jpg')"></div>
-  <div class="wrap svc2-in">
-    <div class="r">
-      <span class="svc2-n">03</span>
-      <h2 class="disp">Interior Design</h2>
-      <p class="lead">Space is the final layer of identity. Architectural rigour with artful detailing — delivering spaces that function precisely and feel unmistakably considered, from offices and showrooms to hospitality and residences.</p>
-      <div class="svc2-tags"><span>Residential</span><span>Commercial &amp; Office</span><span>Hospitality</span><span>Lighting Design</span><span>Space Planning</span><span>3D Visualisation</span></div>
-      <a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20an%20Interior%20project." target="_blank" rel="noopener" class="btn btn-fill">Brief Us →</a>
-    </div>
-    <figure class="svc2-box r d2"><img src="FInterior.jpg" alt="Interior Design" loading="lazy"><figcaption><span>Interior Design</span><em>Space as identity</em></figcaption></figure>
-  </div>
+<div class="svc2-bg" data-bg style="background-image:url('SBinterior.jpg')"></div>
+<div class="wrap svc2-in"><div class="r">
+<span class="svc2-n">03</span><h2 class="disp">Interior Design</h2>
+<p class="lead">Space is the final layer of identity. Architectural rigour with artful detailing — spaces that function precisely and feel unmistakably considered, from offices and showrooms to hospitality and residences.</p>
+<div class="tags"><span>Residential</span><span>Commercial &amp; Office</span><span>Hospitality</span><span>Lighting Design</span><span>Space Planning</span><span>3D Visualisation</span></div>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20an%20Interior%20project." target="_blank" rel="noopener" class="btn btn-fill">Brief us →</a></div>
+<figure class="svc2-box r d2"><img src="FInterior.jpg" alt="Interior Design" loading="lazy"><figcaption><span>Interior Design</span><em>Space as identity</em></figcaption></figure></div>
 </section>
 
-<section class="work wrap">
-  <div class="work-head r">
-    <span class="eyebrow">What this looks like</span>
-    <h2 class="disp" style="margin-top:14px;font-size:clamp(30px,4vw,52px)">Not hypothetical.<br>This is the work.</h2>
-  </div>
-  <div class="work-grid">
-    <div class="wk r" style="--wc:var(--pop);--wct:var(--on-pop)"><span class="wk-tag">Branding</span><h3 class="wk-t">Corporate Rebrand</h3></div>
-    <div class="wk r d1" style="--wc:var(--lime);--wct:var(--on-lime)"><span class="wk-tag">Landscape</span><h3 class="wk-t">Rooftop Garden Suite</h3></div>
-    <div class="wk r d2" style="--wc:var(--gold);--wct:var(--on-gold)"><span class="wk-tag">Interior</span><h3 class="wk-t">Boutique Café Fit-Out</h3></div>
-    <div class="wk r" style="--wc:var(--pop);--wct:var(--on-pop)"><span class="wk-tag">Branding</span><h3 class="wk-t">Campaign Launch</h3></div>
-    <div class="wk r d1" style="--wc:var(--lime);--wct:var(--on-lime)"><span class="wk-tag">Landscape</span><h3 class="wk-t">Resort Grounds</h3></div>
-    <div class="wk r d2" style="--wc:var(--gold);--wct:var(--on-gold)"><span class="wk-tag">Interior</span><h3 class="wk-t">Corporate Office</h3></div>
-  </div>
-  <div class="r" style="margin-top:30px"><a href="#portfolio" class="btn btn-fill">Open the Full Portfolio →</a></div>
-</section>
+<section class="blk alt" id="studio"><div class="wrap">
+<div class="r"><span class="eyebrow">The people</span><h2 class="disp h2">Built by specialists.</h2><p class="lead">One team, start to finish — strategist to nurseryman. No hand-offs, nothing lost in translation.</p></div>
+<div class="crew">
+<div class="tc r"><div class="tc-av">👑</div><small>Founder &amp; Proprietor</small><b>Abid Abdullah</b><p>Runs strategy, client relationships, and keeps every discipline honest to the brief.</p></div>
+<div class="tc r d1"><div class="tc-av">🏗️</div><small>Core discipline</small><b>Architects</b><p>Space planning, technical drawing, 3D modelling and site supervision — BNBC-compliant, site to sign-off.</p></div>
+<div class="tc r d2"><div class="tc-av">◈</div><small>Core discipline</small><b>Graphic Designers</b><p>Brand identity, campaign design, typography and motion graphics that hold up across every medium.</p></div>
+<div class="tc r"><div class="tc-av">🌿</div><small>Core discipline</small><b>Horticulturists</b><p>Plans, layouts, plant selection, installation and plant care — from planting day to long-term growth.</p></div>
+<div class="tc r d1"><div class="tc-av">🔨</div><small>Operations</small><b>Workmen</b><p>The hands that turn every drawing into something you can actually stand in.</p></div>
+<div class="tc r d2"><div class="tc-av">🔍</div><small>Standards</small><b>Quality Control</b><p>Nothing ships until it's benchmarked against the brief and the Innerloop standard.</p></div>
+</div></div></section>
 
-<section id="studio">
-  <div class="wrap">
-    <div class="studio-head r">
-      <span class="eyebrow">The people</span>
-      <h2 class="disp" style="font-size:clamp(36px,5vw,64px);margin-top:16px">Built by<br>specialists.</h2>
-      <p class="hero-sub" style="margin-top:16px">One team, start to finish — strategist to nurseryman. No hand-offs, nothing lost in translation.</p>
-    </div>
-    <div class="crew">
-      <div class="tc r">
-        <div class="tc-av">👑</div>
-        <div class="tc-role">Founder & Proprietor</div>
-        <div class="tc-name">Abid Abdullah</div>
-        <p class="tc-desc">Runs strategy, client relationships, and keeps every discipline honest to the brief.</p>
-      </div>
-      <div class="tc r d1">
-        <div class="tc-av">🏗️</div>
-        <div class="tc-role">Core Discipline</div>
-        <div class="tc-name">Architects</div>
-        <p class="tc-desc">Space planning, technical drawing, 3D modelling and site supervision — BNBC-compliant, site to sign-off.</p>
-      </div>
-      <div class="tc r d2">
-        <div class="tc-av">◈</div>
-        <div class="tc-role">Core Discipline</div>
-        <div class="tc-name">Graphic Designers</div>
-        <p class="tc-desc">Brand identity, campaign design, typography and motion graphics that hold up across every medium.</p>
-      </div>
-      <div class="tc r">
-        <div class="tc-av">🌿</div>
-        <div class="tc-role">Core Discipline</div>
-        <div class="tc-name">Horticulturists</div>
-        <p class="tc-desc">Plans, layouts, plant selection, installation and plant care — from planting day to long-term growth.</p>
-      </div>
-      <div class="tc r d1">
-        <div class="tc-av">🔨</div>
-        <div class="tc-role">Operations</div>
-        <div class="tc-name">Workmen</div>
-        <p class="tc-desc">The hands that turn every drawing into something you can actually stand in.</p>
-      </div>
-      <div class="tc r d2">
-        <div class="tc-av">🔍</div>
-        <div class="tc-role">Standards</div>
-        <div class="tc-name">Quality Control</div>
-        <p class="tc-desc">Nothing ships until it's benchmarked against the brief and the Innerloop standard.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="why" id="why"><div class="wrap"><div class="studio-head r"><span class="eyebrow">Why Innerloop</span><h2 class="disp" style="font-size:clamp(36px,5vw,64px);margin-top:16px">What sets<br>us apart.</h2></div><div class="crew"><div class="tc r"><div class="tc-name">Execution-first culture</div><p class="tc-desc">We are not a consultancy. We are a delivery studio. Every engagement ends with something tangible — built, printed, planted or launched.</p></div><div class="tc r"><div class="tc-name">Cross-discipline integration</div><p class="tc-desc">Brand, space and landscape under one roof. We eliminate the fragmentation that comes from managing multiple agencies.</p></div><div class="tc r"><div class="tc-name">Architecture-led thinking</div><p class="tc-desc">Our design process is rooted in architectural logic — proportional, structural and built to last.</p></div><div class="tc r"><div class="tc-name">Living expertise</div><p class="tc-desc">With in-house nursery knowledge, we go beyond design into real horticultural care and plant longevity.</p></div><div class="tc r"><div class="tc-name">Local context, global standards</div><p class="tc-desc">Deep roots in the local design and business ecosystem, with an aesthetic sensibility benchmarked against international practice.</p></div></div></div></section>
-
-<section class="founder wrap" id="founder"><div class="fd">
-  <div class="fd-ph r"><span>AA</span><img id="fp" alt="Abid Abdullah, Founder of Innerloop Atelier" hidden></div>
-  <div class="r d1"><span class="eyebrow">The founder</span>
-    <q>“A brand is not a logo, and a space is not a room. Both are <b>environments</b> — carefully authored to shape how people feel, decide and remember.”</q>
-    <div class="fd-n">Abid Abdullah</div><div class="fd-r">Founder &amp; Proprietor, Innerloop Atelier</div>
-    <button class="btn btn-fill" id="fm-open" type="button">Learn more →</button></div>
+<section class="blk wrap" id="why">
+<div class="r"><span class="eyebrow">Why Innerloop</span><h2 class="disp h2">What sets us apart.</h2></div>
+<div class="crew">
+<div class="tc r"><b>Execution-first culture</b><p>We are a delivery studio, not a consultancy. Every engagement ends with something tangible — built, printed, planted or launched.</p></div>
+<div class="tc r d1"><b>Cross-discipline integration</b><p>Brand, space and landscape under one roof, without the fragmentation of managing multiple agencies.</p></div>
+<div class="tc r d2"><b>Architecture-led thinking</b><p>Our process is rooted in architectural logic — proportional, structural and built to last.</p></div>
+<div class="tc r"><b>Living expertise</b><p>In-house nursery knowledge takes us beyond design into real horticultural care and plant longevity.</p></div>
+<div class="tc r d1"><b>Local context, global standards</b><p>Deep roots in the local design and business ecosystem, benchmarked against international practice.</p></div>
 </div></section>
 
-<section class="statement wrap">
-  <p class="disp r" style="font-size:clamp(34px,6vw,80px)">
-    We are<br>
-    <span class="pop">Identity-obsessed.</span><br>
-    Detail-driven.<br>
-    Never fragmented.
-  </p>
-</section>
+<section class="blk wrap" id="founder"><div class="fd">
+<div class="fd-ph r"><span>AA</span><img id="fp" alt="Abid Abdullah, Founder of Innerloop Atelier" hidden></div>
+<div class="r d1"><span class="eyebrow">The founder</span>
+<q>“A brand is not a logo, and a space is not a room. Both are <b>environments</b> — carefully authored to shape how people feel, decide and remember.”</q>
+<div class="fd-n">Abid Abdullah</div><div class="fd-r">Founder &amp; Proprietor, Innerloop Atelier</div>
+<button class="btn btn-fill" id="fm-open" type="button">Learn more →</button></div>
+</div></section>
 
-<section class="faq wrap" id="faq">
-  <div class="faq-head r">
-    <span class="eyebrow">FAQ</span>
-    <h2 class="disp" style="margin-top:14px;font-size:clamp(30px,4vw,52px)">Questions,<br>answered straight.</h2>
-  </div>
-  <div class="faq-list">
-    <div class="fq r">
-      <button class="fq-q"><span>How quickly will we hear back?</span><span class="fq-ic">+</span></button>
-      <div class="fq-a"><p>Within 24 hours, every time. WhatsApp usually gets you an answer the same day.</p></div>
-    </div>
-    <div class="fq r d1">
-      <button class="fq-q"><span>Which industries and locations do you serve?</span><span class="fq-ic">+</span></button>
-      <div class="fq-a"><p>Any industry, any scale. Branding runs fully remote; landscape and interior projects run on-site with our own crews wherever the brief takes us.</p></div>
-    </div>
-    <div class="fq r d2">
-      <button class="fq-q"><span>What do you need from me to start?</span><span class="fq-ic">+</span></button>
-      <div class="fq-a"><p>A brief — even a rough one. Voice note, WhatsApp message, half a page. We'll shape it from there.</p></div>
-    </div>
-    <div class="fq r">
-      <button class="fq-q"><span>Do you take on small projects?</span><span class="fq-ic">+</span></button>
-      <div class="fq-a"><p>If it's got a real problem to solve, we're interested. Send it over and we'll tell you honestly.</p></div>
-    </div>
-    <div class="fq r d1">
-      <button class="fq-q"><span>Can one team really handle branding AND construction?</span><span class="fq-ic">+</span></button>
-      <div class="fq-a"><p>That's the whole point of Innerloop. One studio, one point of contact, zero hand-off chaos.</p></div>
-    </div>
-  </div>
-</section>
+<section class="statement wrap"><p class="disp r">We are<br><span class="pop">identity-obsessed.</span><br>Detail-driven.<br>Never fragmented.</p></section>
 
-<section class="bk" id="book">
-  <div class="wrap">
-    <div class="bk-head r">
-      <span class="eyebrow">Book a strategy call</span>
-      <h2 class="disp" style="margin-top:14px;font-size:clamp(30px,4vw,52px)">Pick a time.<br>It lands in your calendar.</h2>
-      <p class="hero-sub" style="margin-top:14px">Choose a slot, or just type it — “next Tuesday afternoon”, “Oct 12 at 3pm”. Then add it straight to Google Calendar with us as a guest.</p>
-    </div>
-    <div class="bk-grid r d1">
-      <div class="bk-card">
-        <div class="cal-top"><button class="cal-nav" id="c-prev" aria-label="Previous month">←</button><span class="cal-m" id="c-title"></span><button class="cal-nav" id="c-next" aria-label="Next month">→</button></div>
-        <div class="cal-g" id="c-grid"></div>
-        <p class="cal-note">Sunday–Thursday. Times are Bangladesh Time (GMT+6); Google Calendar converts them to yours.</p>
-      </div>
-      <div class="bk-card">
-        <label class="fl" for="bk-q">Smart scheduler — say when</label>
-        <div class="bk-sm"><input class="fi" id="bk-q" placeholder="e.g. next Wednesday at 11am"><button type="button" id="bk-go">Find slot</button></div>
-        <p class="bk-ai" id="bk-ai" role="status"></p>
-        <label class="fl">Time slot</label>
-        <div class="slots" id="slots"></div>
-        <div class="cf-row">
-          <div class="fg"><label class="fl" for="bk-n">Name</label><input class="fi" id="bk-n" placeholder="Your name"></div>
-          <div class="fg"><label class="fl" for="bk-c">Company</label><input class="fi" id="bk-c" placeholder="Company / industry"></div>
-        </div>
-        <div class="fg"><label class="fl" for="bk-t">Topic</label><select class="fs" id="bk-t"><option>Branding</option><option>Landscape</option><option>Interior</option><option>Multiple services</option><option>Not sure yet</option></select></div>
-        <div class="bk-sum" id="bk-sum">Pick a date and time to continue.</div>
-        <div class="bk-btns"><button class="btn btn-fill" id="bk-g" disabled>Add to Google Calendar</button><button class="btn btn-line" id="bk-i" disabled>Download .ics</button></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="blk wrap" id="faq">
+<div class="r"><span class="eyebrow">FAQ</span><h2 class="disp h2">Questions, answered straight.</h2></div>
+<div class="faq-list">
+<div class="fq r"><button class="fq-q" aria-expanded="false"><span>How quickly will we hear back?</span><span class="fq-ic">+</span></button><div class="fq-a"><p>Within 24 hours, every time. WhatsApp usually gets you an answer the same day.</p></div></div>
+<div class="fq r"><button class="fq-q" aria-expanded="false"><span>Which industries and locations do you serve?</span><span class="fq-ic">+</span></button><div class="fq-a"><p>Any industry, any scale. Branding runs fully remote; landscape and interior projects run on-site with our own crews wherever the brief takes us.</p></div></div>
+<div class="fq r"><button class="fq-q" aria-expanded="false"><span>What do you need from me to start?</span><span class="fq-ic">+</span></button><div class="fq-a"><p>A brief — even a rough one. Voice note, WhatsApp message, half a page. We'll shape it from there.</p></div></div>
+<div class="fq r"><button class="fq-q" aria-expanded="false"><span>Do you take on small projects?</span><span class="fq-ic">+</span></button><div class="fq-a"><p>If it's got a real problem to solve, we're interested. Send it over and we'll tell you honestly.</p></div></div>
+<div class="fq r"><button class="fq-q" aria-expanded="false"><span>Can one team really handle branding AND construction?</span><span class="fq-ic">+</span></button><div class="fq-a"><p>That's the whole point of Innerloop. One studio, one point of contact, zero hand-off chaos.</p></div></div>
+</div></section>
 
-<section id="contact">
-  <div class="wrap ct-grid">
-    <div class="r">
-      <span class="eyebrow">Let's work together</span>
-      <h2 class="disp ct-h" style="margin-top:16px">Let's close<br>the <span class="pop">gaps.</span></h2>
-      <p class="ct-sub">Launching a brand, reimagining a space or breathing life into a landscape? Bring us the brief. We reply within 24 hours — WhatsApp is fastest.</p>
-      <div class="cd">
-        <div class="cd-ic">📞</div>
-        <div><div class="cd-lbl">Phone</div><div class="cd-val"><a href="tel:+8801759592324">+88 017 5959 2324</a> · <a href="tel:+8801521341076">+88 015 2134 1076</a></div></div>
-      </div>
-      <div class="cd">
-        <div class="cd-ic">✉️</div>
-        <div><div class="cd-lbl">Email</div><div class="cd-val"><a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a><br><a href="mailto:info@innerloopatelier.com">info@innerloopatelier.com</a></div></div>
-      </div>
-      <div class="cd">
-        <div class="cd-ic">📍</div>
-        <div><div class="cd-lbl">Studio</div><div class="cd-val">Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212</div></div>
-      </div>
-      <a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20brief%20Innerloop%20Atelier%20on%20a%20project." target="_blank" rel="noopener" class="btn btn-fill magnet" style="margin-top:12px;background:var(--wa);border-color:var(--wa);color:#fff">Chat on WhatsApp →</a>
-    </div>
+<section class="blk alt" id="book"><div class="wrap">
+<div class="r" style="max-width:640px"><span class="eyebrow">Book a strategy call</span><h2 class="disp h2">Pick a time. It lands in your calendar.</h2>
+<p class="lead">Choose a slot, or just type it — “next Tuesday afternoon”, “Oct 12 at 3pm”. Then add it to Google Calendar with us as a guest.</p></div>
+<div class="bk-grid r d1">
+<div class="bk-card">
+<div class="cal-top"><button class="cal-nav" id="c-prev" aria-label="Previous month">←</button><span class="cal-m" id="c-title"></span><button class="cal-nav" id="c-next" aria-label="Next month">→</button></div>
+<div class="cal-g" id="c-grid"></div>
+<p class="note">Sunday–Thursday. Times are Bangladesh Time (GMT+6); Google Calendar converts them to yours.</p>
+</div>
+<div class="bk-card">
+<label class="fl" for="bk-q">Smart scheduler — say when</label>
+<div class="bk-sm"><input class="fi" id="bk-q" placeholder="e.g. next Wednesday at 11am"><button type="button" id="bk-go">Find slot</button></div>
+<p class="bk-ai" id="bk-ai" role="status"></p>
+<label class="fl">Time slot</label><div class="slots" id="slots"></div>
+<div class="row"><div class="fg"><label class="fl" for="bk-n">Name</label><input class="fi" id="bk-n" placeholder="Your name"></div>
+<div class="fg"><label class="fl" for="bk-c">Company</label><input class="fi" id="bk-c" placeholder="Company / industry"></div></div>
+<div class="fg"><label class="fl" for="bk-t">Topic</label><select class="fs" id="bk-t"><option>Branding</option><option>Landscape</option><option>Interior</option><option>Multiple services</option><option>Not sure yet</option></select></div>
+<div class="bk-sum" id="bk-sum">Pick a date and time to continue.</div>
+<div class="bk-btns"><button class="btn btn-fill" id="bk-g" disabled>Add to Google Calendar</button><button class="btn btn-line" id="bk-i" disabled>Download .ics</button></div>
+</div></div></div></section>
 
-    <div class="r d2">
-      <div class="cf">
-        <form id="cf" novalidate>
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
-          <input type="hidden" name="subject" value="New Lead — Innerloop Atelier (Website)">
-          <div class="cf-row">
-            <div class="fg"><label class="fl">Name *</label><input class="fi" type="text" id="f-name" placeholder="Your full name" required></div>
-            <div class="fg"><label class="fl">Phone *</label><input class="fi" type="tel" id="f-phone" placeholder="+88 017..." required></div>
-          </div>
-          <div class="fg"><label class="fl">I need *</label>
-            <select class="fs" id="f-svc" required>
-              <option value="" disabled selected>Choose a service</option>
-              <option>Branding</option><option>Landscaping</option><option>Interior Design</option><option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="fg"><label class="fl">Brief</label><textarea class="ft" id="f-msg" placeholder="Tell us what you're building…"></textarea></div>
-          <button type="submit" class="cf-submit magnet" id="cf-btn">Send it →</button>
-          <div class="cf-msg" id="cf-msg" role="alert"></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
+<section class="blk wrap" id="contact"><div class="ct-grid">
+<div class="r"><span class="eyebrow">Let's work together</span><h2 class="disp h2" style="font-size:clamp(36px,5.4vw,72px)">Let's close the <span class="pop">gaps.</span></h2>
+<p class="lead" style="margin-bottom:28px">Launching a brand, reimagining a space or breathing life into a landscape? Bring us the brief. We reply within 24 hours — WhatsApp is fastest.</p>
+<div class="cd"><div class="cd-ic">📞</div><div><div class="cd-l">Phone</div><a href="tel:+8801759592324">+88 017 5959 2324</a> · <a href="tel:+8801521341076">+88 015 2134 1076</a></div></div>
+<div class="cd"><div class="cd-ic">✉️</div><div><div class="cd-l">Email</div><a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a><br><a href="mailto:info@innerloopatelier.com">info@innerloopatelier.com</a></div></div>
+<div class="cd"><div class="cd-ic">📍</div><div><div class="cd-l">Studio</div>Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212</div></div>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20brief%20Innerloop%20Atelier%20on%20a%20project." target="_blank" rel="noopener" class="btn" style="margin-top:10px;background:var(--wa);border-color:var(--wa);color:#fff">Chat on WhatsApp →</a></div>
+<div class="r d2"><div class="cf"><form id="cf" novalidate>
+<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+<input type="hidden" name="subject" value="New Lead — Innerloop Atelier (Website)">
+<div class="row"><div class="fg"><label class="fl" for="f-name">Name *</label><input class="fi" id="f-name" name="name" placeholder="Your full name" required></div>
+<div class="fg"><label class="fl" for="f-phone">Phone *</label><input class="fi" type="tel" id="f-phone" name="phone" placeholder="+88 017..." required></div></div>
+<div class="fg"><label class="fl" for="f-svc">I need *</label><select class="fs" id="f-svc" name="service" required><option value="" disabled selected>Choose a service</option><option>Branding</option><option>Landscaping</option><option>Interior Design</option><option>Not sure yet</option></select></div>
+<div class="fg"><label class="fl" for="f-msg">Brief</label><textarea class="ft" id="f-msg" name="message" placeholder="Tell us what you're building…"></textarea></div>
+<button type="submit" class="btn btn-fill cf-submit" id="cf-btn">Send it →</button>
+<div class="cf-msg" id="cf-msg" role="alert"></div></form></div></div>
+</div></section>
 </main>
 
-<main id="pfv" hidden>
-  <section class="pf wrap">
-    <span class="eyebrow">Portfolio</span>
-    <h1 class="disp pf-h">Execution you can see.</h1>
-    <p class="hero-sub">Photos and films from live brand, landscape and interior projects. Filter, tap, expand.</p>
-    <div class="chips" id="chips" role="group" aria-label="Filter portfolio"></div>
-    <div class="gal" id="gal" aria-live="polite"></div>
-    <div class="pf-cta"><a href="#book" class="btn btn-fill">Book a Strategy Call →</a></div>
-  </section>
-</main>
+<main id="pfv" hidden><section class="pf wrap">
+<span class="eyebrow">Portfolio</span><h1 class="disp pf-h">Execution you can see.</h1>
+<p class="lead">Photos and films from live brand, landscape and interior projects. Filter, tap, expand.</p>
+<div class="chips" id="chips" role="group" aria-label="Filter portfolio"></div>
+<div class="gal" id="gal" aria-live="polite"></div>
+<p style="margin-top:30px"><a href="#book" class="btn btn-fill">Book a strategy call →</a></p>
+</section></main>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Media viewer">
-  <button class="lb-x" id="lb-x" aria-label="Close viewer">✕</button>
-  <button class="lb-n lb-p" id="lb-p" aria-label="Previous">←</button>
-  <div class="lb-stage" id="lb-st"></div>
-  <p class="lb-cap" id="lb-cap"></p>
-  <button class="lb-n lb-nx" id="lb-nx" aria-label="Next">→</button>
-</div>
-<div class="tcm" id="tcm" hidden role="dialog" aria-modal="true" aria-labelledby="tc-h">
-  <div class="tcm-box"><div class="tcm-top"><h2 class="tcm-h" id="tc-h">Terms &amp; Conditions</h2><button class="lb-x" id="tc-x" aria-label="Close terms">✕</button></div>
-  <div class="tcm-body"><h3>1. Who we are</h3><p>Innerloop Atelier is a sole proprietorship owned by Abid Abdullah, at Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212, Bangladesh (innerloopatelier@gmail.com). “We” means Innerloop Atelier; “you” means the client.</p>
+<button class="xb lb-x" id="lb-x" aria-label="Close viewer">✕</button><button class="xb lb-p" id="lb-p" aria-label="Previous">←</button>
+<div class="lb-stage" id="lb-st"></div><p class="lb-cap" id="lb-cap"></p>
+<button class="xb lb-nx" id="lb-nx" aria-label="Next">→</button></div>
+
+<div class="tcm" id="tcm" hidden role="dialog" aria-modal="true" aria-labelledby="tc-h"><div class="tcm-box">
+<div class="tcm-top"><h2 id="tc-h">Terms &amp; Conditions</h2><button class="xb" data-close aria-label="Close terms">✕</button></div>
+<div class="tcm-body">
+<h3>1. Who we are</h3><p>Innerloop Atelier is a sole proprietorship owned by Abid Abdullah, Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212, Bangladesh (innerloopatelier@gmail.com). “We” means Innerloop Atelier; “you” means the client.</p>
 <h3>2. Scope &amp; quotations</h3><p>Work starts only on a written proposal or quotation you accept. Changes to scope, area or specification are priced as a written change order before work proceeds.</p>
-<h3>3. Fees, taxes &amp; payment</h3><p>Fees are in Bangladesh Taka (BDT) unless agreed otherwise. Payment follows the schedule in the accepted proposal (typically an advance, then milestones). VAT, tax deductions at source and other levies apply as required by the law in force in Bangladesh. We may pause work on overdue invoices.</p>
+<h3>3. Fees, taxes &amp; payment</h3><p>Fees are in Bangladesh Taka (BDT) unless agreed otherwise. Payment follows the schedule in the accepted proposal (typically an advance, then milestones). VAT, tax deductions at source and other levies apply as required by law. We may pause work on overdue invoices.</p>
 <h3>4. Intellectual property</h3><p>Under the Copyright Act of Bangladesh, rights in final approved deliverables transfer to you on full payment. Our tools, templates, unused concepts and pre-existing materials stay ours. Unless a confidentiality agreement says otherwise, we may show completed work in our portfolio.</p>
-<h3>5. Client responsibilities</h3><p>You provide timely briefs, feedback, site access and materials you have the right to use. Permits and approvals from competent authorities (for example RAJUK, city corporations or other regulators) are your responsibility unless expressly included in writing. Design and construction work follows the Bangladesh National Building Code (BNBC) where applicable.</p>
-<h3>6. Landscape &amp; living material</h3><p>Plants are living material. Establishment, maintenance and replacement terms apply only as stated in your proposal. Weather and seasonal conditions may affect schedules and plant performance.</p>
+<h3>5. Client responsibilities</h3><p>You provide timely briefs, feedback, site access and materials you have the right to use. Permits and approvals from authorities (for example RAJUK or city corporations) are your responsibility unless included in writing. Design and construction work follows the Bangladesh National Building Code (BNBC) where applicable.</p>
+<h3>6. Landscape &amp; living material</h3><p>Plants are living material. Establishment, maintenance and replacement terms apply only as stated in your proposal. Weather and season may affect schedules and plant performance.</p>
 <h3>7. Timelines &amp; force majeure</h3><p>Dates are estimates that depend on timely client input. Neither party is liable for delay caused by events beyond reasonable control, including natural disasters, strikes, civil disturbance, government action or utility failure.</p>
 <h3>8. Confidentiality &amp; personal data</h3><p>We keep client information confidential. Details you submit through forms, WhatsApp, email or the booking tool are used only to respond to you, deliver services and meet legal obligations. We do not sell personal data. Booking details are placed in your own Google Calendar by you; we do not access your calendar.</p>
 <h3>9. Limitation of liability</h3><p>To the extent the law permits, our total liability for any claim is limited to the fees paid for the relevant project stage. We are not liable for indirect or consequential loss.</p>
-<h3>10. Governing law &amp; disputes</h3><p>These terms and all agreements with us are governed by the laws of the People’s Republic of Bangladesh, including the Contract Act, 1872. Parties will first try to settle disputes in good faith; unresolved disputes may be referred to arbitration under the Arbitration Act, 2001, and otherwise fall under the courts of Dhaka.</p>
-<h3>11. Changes</h3><p>We may update these terms; the version published on the date of your written acceptance applies to your project. <em>Last updated: 2 October 2026.</em></p></div></div>
+<h3>10. Governing law &amp; disputes</h3><p>These terms are governed by the laws of the People’s Republic of Bangladesh, including the Contract Act, 1872. Parties will first try to settle disputes in good faith; unresolved disputes may be referred to arbitration under the Arbitration Act, 2001, and otherwise fall under the courts of Dhaka.</p>
+<h3>11. Changes</h3><p>We may update these terms; the version published on the date of your written acceptance applies to your project. <em>Last updated: 2 October 2026.</em></p>
+</div></div></div>
+
+<div class="tcm" id="fm" hidden role="dialog" aria-modal="true" aria-labelledby="fm-h"><div class="tcm-box">
+<div class="tcm-top"><h2 id="fm-h">About the founder</h2><button class="xb" data-close aria-label="Close">✕</button></div>
+<div class="tcm-body">
+<h3>Why Innerloop</h3><p>Abid founded Innerloop Atelier on one conviction: fragmentation is what erodes brand value. When identity, space and landscape are managed by separate agencies, the result drifts. Innerloop puts them under one accountable team.</p>
+<h3>What he leads</h3><p>Brand &amp; Communication, Landscape Design &amp; Urban Spaces Aesthetic Curation, and Interior Design — delivered by in-house architects, graphic designers and horticulturists.</p>
+<h3>How the studio works</h3><p>Execution first. We are a delivery studio: every engagement ends with something tangible — built, printed, planted or launched.</p>
+<h3>Work with us</h3><p>Leaders, supply chain and brand teams can book a 30-minute strategy call directly. <a href="#book" data-close style="color:var(--pt);font-weight:700">Book a call →</a></p>
+</div></div></div>
+
+<footer><div class="ft-in">
+<div class="ft-top">
+<div><a href="#hero"><img src="Preload-Logo.svg" alt="Innerloop Atelier"></a><p class="f-tag">Built on Identity. Shaped by Space.<br><br>Strategy · Craft · Execution</p></div>
+<div class="fc"><p class="fc-h">Work</p>
+<a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Branding%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Branding</a><br>
+<a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Landscaping%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Landscaping</a><br>
+<a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Interior%20Design%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Interior Design</a></div>
+<div class="fc"><p class="fc-h">Studio</p>
+<a href="#portfolio">Portfolio</a><br><a href="#book">Book a call</a><br><a href="#studio">The crew</a><br><a href="#faq">FAQ</a><br><a href="#contact">Contact</a><br>
+<a href="https://www.instagram.com/innerloopatelier" target="_blank" rel="noopener">Instagram</a><br><a href="https://wa.me/8801759592324" target="_blank" rel="noopener">WhatsApp</a></div>
 </div>
-
-<div class="tcm" id="fm" hidden role="dialog" aria-modal="true" aria-labelledby="fm-h">
-  <div class="tcm-box"><div class="tcm-top"><h2 class="tcm-h" id="fm-h">About the founder</h2><button class="lb-x" id="fm-x" aria-label="Close">✕</button></div>
-  <div class="tcm-body"><div class="fm-top"><div class="fd-ph"><span>AA</span><img id="fp2" alt="Abid Abdullah" hidden></div><div><div class="fd-n">Abid Abdullah</div><div class="fd-r" style="margin:0">Founder &amp; Proprietor</div></div></div>
-  <h3>Why Innerloop</h3><p>Abid founded Innerloop Atelier on one conviction: fragmentation is what erodes brand value. When identity, space and landscape are managed by separate agencies, the result drifts. Innerloop puts them under one accountable team.</p>
-  <h3>What he leads</h3><p>Brand &amp; Communication, Landscape Design &amp; Urban Spaces Aesthetic Curation, and Interior Design — delivered by in-house architects, graphic designers and horticulturists.</p>
-  <h3>How the studio works</h3><p>Execution first. We are not a consultancy; we are a delivery studio. Every engagement ends with something tangible — built, printed, planted or launched.</p>
-  <h3>Work with us</h3><p>Leaders, supply chain and brand teams can book a 30-minute strategy call directly. <a href="#book" id="fm-book" style="color:var(--pt);font-weight:700">Book a call →</a></p></div></div>
-</div>
-<footer>
-  <div class="ft-in">
-    <div class="ft-top">
-      <div>
-        <a href="#hero" class="f-logo"><img src="Preload-Logo.svg" alt="Innerloop Atelier"></a>
-        <p class="f-tag">Built on Identity. Shaped by Space.<br><br>Strategy · Craft · Execution</p>
-      </div>
-      <div class="fc">
-        <p class="fc-h">Work</p>
-        <ul>
-          <li><a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Branding%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Branding</a></li>
-          <li><a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Landscaping%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Landscaping</a></li>
-          <li><a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Interior%20Design%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Interior Design</a></li>
-        </ul>
-      </div>
-      <div class="fc">
-        <p class="fc-h">Studio</p>
-        <ul>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#book">Book a Call</a></li>
-          <li><a href="#studio">The Crew</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://www.instagram.com/innerloopatelier" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://wa.me/8801759592324" target="_blank" rel="noopener">WhatsApp</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="legal" id="legal"><p class="fc-h">Legal information</p>
-      Innerloop Atelier is a sole proprietorship owned by Abid Abdullah, Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212, Bangladesh. All services, quotations and contracts are governed by the laws of the People's Republic of Bangladesh. Prices are in BDT and subject to VAT and other taxes as applicable by law.<span id="legal-ids"></span></div>
-    <div class="ft-bot">
-      <p class="f-copy">© 2026 Innerloop Atelier. All rights reserved.</p>
-      <button type="button" class="f-stamp tcbtn" id="tc-open">Terms &amp; Conditions</button>
-    </div>
-  </div>
-</footer>
+<p class="legal">Innerloop Atelier is a sole proprietorship owned by Abid Abdullah, Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212, Bangladesh. All services, quotations and contracts are governed by the laws of the People's Republic of Bangladesh. Prices are in BDT and subject to VAT and other taxes as applicable by law.</p>
+<div class="ft-bot"><p>© 2026 Innerloop Atelier. All rights reserved.</p><button type="button" class="tcbtn" id="tc-open">Terms &amp; Conditions</button></div>
+</div></footer>
 
 <script>
 'use strict';
-var nav=document.getElementById('nav');
-function onS(){nav.classList.toggle('on',scrollY>30)}
-addEventListener('scroll',onS,{passive:true});onS();
+var $=function(i){return document.getElementById(i)},qa=function(s){return document.querySelectorAll(s)};
 
-var sprog=document.getElementById('sprog');
-function onScrollProg(){
-  if(!sprog)return;
-  var h=document.documentElement;
-  var pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
-  sprog.style.width=(isFinite(pct)?pct:0)+'%';
+/* preloader: icon fill needs ~1.9s */
+(function(){var pl=$('preload'),t0=Date.now();function hide(){pl.classList.add('done')}
+function wait(){setTimeout(hide,Math.max(0,1900-(Date.now()-t0)))}
+if(document.readyState==='complete')wait();else addEventListener('load',wait);setTimeout(hide,4000)})();
+
+/* nav, progress, menu, reveal, faq */
+var nav=$('nav'),sprog=$('sprog'),hbg=$('hbg'),mnav=$('mnav');
+function onScroll(){nav.classList.toggle('on',scrollY>30);var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;sprog.style.width=(isFinite(p)?p:0)+'%'}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+function tog(o){hbg.classList.toggle('on',o);mnav.classList.toggle('on',o);hbg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+hbg.onclick=function(){tog(!mnav.classList.contains('on'))};
+qa('.mnav a').forEach(function(a){a.addEventListener('click',function(){tog(false)})});
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
+qa('.r').forEach(function(el){ro.observe(el)});
+setTimeout(function(){qa('.r:not(.in)').forEach(function(el){el.classList.add('in')})},2500);
+qa('.fq-q').forEach(function(b){b.onclick=function(){var f=b.closest('.fq');b.setAttribute('aria-expanded',f.classList.toggle('open'))}});
+
+/* hero slideshow: ordered curtain reveal + progress */
+var H0=['HeroBrand1.jpg','Herointerior2.jpg','Herointerior3.jpg','HeroLandscape1.jpg','Herointerior5.jpg','HeroLandscape2.jpg','HeroLandscape6.jpg'],
+hs=$('hs'),pg=document.createElement('div'),cur=-1,els=[],started=false;
+pg.className='hero-pg';pg.setAttribute('aria-hidden','true');$('hero').appendChild(pg);
+H0.forEach(function(u){var d=document.createElement('div');d.className='hs';d.style.backgroundImage='url("'+u+'")';hs.appendChild(d);els.push(d);pg.appendChild(document.createElement('i'))});
+function next(){
+  var n=(cur+1)%els.length,i;
+  els.forEach(function(e){e.classList.remove('prev')});
+  if(cur>-1){els[cur].classList.remove('on');els[cur].classList.add('prev')}
+  els[n].classList.remove('on','prev');void els[n].offsetWidth;els[n].classList.add('on');cur=n;
+  for(i=0;i<pg.children.length;i++){pg.children[i].classList.remove('on');if(i===n){void pg.children[i].offsetWidth;pg.children[i].classList.add('on')}}
 }
-addEventListener('scroll',onScrollProg,{passive:true});onScrollProg();
+function start(){if(started)return;started=true;next();setInterval(function(){if(!document.hidden&&!$('home').hidden)next()},7000)}
+var im=new Image();im.onload=im.onerror=start;im.src=H0[0];setTimeout(start,1800);
 
-var hbg=document.getElementById('hbg');
-var mnav=document.getElementById('mnav');
-function tog(o){
-  hbg.classList.toggle('on',o);
-  mnav.classList.toggle('on',o);
-  hbg.setAttribute('aria-expanded',o?'true':'false');
-  document.body.style.overflow=o?'hidden':'';
-}
-hbg.addEventListener('click',function(){tog(!mnav.classList.contains('on'))});
-document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){tog(false)})});
-addEventListener('keydown',function(e){if(e.key==='Escape')tog(false)});
+/* client logo loop, parallax */
+var ct=$('ct');Array.prototype.slice.call(ct.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');ct.appendChild(k)});
+var bgs=qa('[data-bg]'),tk=0;
+addEventListener('scroll',function(){if(tk)return;tk=1;requestAnimationFrame(function(){tk=0;bgs.forEach(function(b){b.style.transform='translateY('+(b.parentNode.getBoundingClientRect().top*-.1)+'px) scale(1.1)'})})},{passive:true});
+['fp'].forEach(function(i){var e=$(i);e.src='Founder.jpg';e.hidden=false});
 
-var rev=document.querySelectorAll('.r');
-var ro=new IntersectionObserver(function(es){
-  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}});
-},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
-rev.forEach(function(el){ro.observe(el)});
-setTimeout(function(){document.querySelectorAll('.r:not(.in)').forEach(function(el){el.classList.add('in')})},2500);
-</script>
-
-<script>
-'use strict';
-try{
-  var blobs=document.querySelectorAll('.blob');
-  function onParallax(){
-    var y=scrollY;
-    blobs.forEach(function(b,i){b.style.transform='translateY('+(y*(i%2?0.15:-0.1))+'px)'});
-  }
-  addEventListener('scroll',onParallax,{passive:true});
-
-  if(matchMedia('(pointer:fine)').matches){
-    var pdot=document.createElement('div');
-    pdot.className='cdot';
-    document.body.appendChild(pdot);
-    addEventListener('mousemove',function(e){pdot.style.left=e.clientX+'px';pdot.style.top=e.clientY+'px'});
-    document.querySelectorAll('.qz').forEach(function(el){
-      el.addEventListener('mouseenter',function(){pdot.classList.add('big');pdot.textContent='VIEW'});
-      el.addEventListener('mouseleave',function(){pdot.classList.remove('big');pdot.textContent=''});
-    });
-    document.querySelectorAll('.magnet').forEach(function(el){
-      el.addEventListener('mousemove',function(e){
-        var r=el.getBoundingClientRect();
-        var x=(e.clientX-r.left-r.width/2)*0.3;
-        var y2=(e.clientY-r.top-r.height/2)*0.3;
-        el.style.transform='translate('+(x-3)+'px,'+(y2-3)+'px)';
-      });
-      el.addEventListener('mouseleave',function(){el.style.transform=''});
-    });
-  }
-
-  document.querySelectorAll('.fq-q').forEach(function(btn){
-    btn.addEventListener('click',function(){btn.closest('.fq').classList.toggle('open')});
-  });
-}catch(err){}
-
-function confetti(){
-  var cs=getComputedStyle(document.body);
-  var colors=[cs.getPropertyValue('--pop'),cs.getPropertyValue('--lime'),cs.getPropertyValue('--gold')];
-  for(var i=0;i<24;i++){
-    (function(i){
-      var p=document.createElement('div');
-      p.style.position='fixed';p.style.left='50%';p.style.top='40%';
-      p.style.width='8px';p.style.height='8px';
-      p.style.background=colors[i%3];p.style.zIndex='1500';
-      p.style.borderRadius=(i%2?'50%':'2px');p.style.pointerEvents='none';
-      document.body.appendChild(p);
-      var ang=Math.random()*Math.PI*2;
-      var dist=80+Math.random()*180;
-      var dx=Math.cos(ang)*dist;
-      var dy=Math.sin(ang)*dist-60;
-      if(p.animate){
-        p.animate([
-          {transform:'translate(0,0) rotate(0)',opacity:1},
-          {transform:'translate('+dx+'px,'+dy+'px) rotate('+(Math.random()*360)+'deg)',opacity:0}
-        ],{duration:900+Math.random()*500,easing:'cubic-bezier(.2,.8,.3,1)'});
-      }
-      setTimeout(function(){p.remove()},1500);
-    })(i);
-  }
-}
-</script>
-
-<script>
-'use strict';
-var cf=document.getElementById('cf');
-var cfb=document.getElementById('cf-btn');
-var cfm=document.getElementById('cf-msg');
+/* contact form */
+var cf=$('cf'),cfb=$('cf-btn'),cfm=$('cf-msg');
 function setMsg(t,m){cfm.className='cf-msg '+t;cfm.textContent=m}
 cf.addEventListener('submit',async function(e){
   e.preventDefault();
-  var name=document.getElementById('f-name').value.trim();
-  var phone=document.getElementById('f-phone').value.trim();
-  var svc=document.getElementById('f-svc').value;
-  var msg=document.getElementById('f-msg').value.trim();
-  if(!name||!phone||!svc){setMsg('err','Fill in name, phone, and service.');return}
+  var name=$('f-name').value.trim(),phone=$('f-phone').value.trim(),svc=$('f-svc').value,msg=$('f-msg').value.trim();
+  if(!name||!phone||!svc){setMsg('err','Fill in name, phone and service.');return}
   var key=cf.querySelector('[name="access_key"]').value;
   if(!key||key==='YOUR_WEB3FORMS_KEY'){
-    var sub=encodeURIComponent('Project Brief — '+svc);
-    var bod=encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nService: '+svc+'\nMessage: '+(msg||'—'));
-    location.href='mailto:innerloopatelier@gmail.com?subject='+sub+'&body='+bod;
-    setMsg('ok','Opening your email client — hit send when ready.');
-    return;
-  }
+    location.href='mailto:innerloopatelier@gmail.com?subject='+encodeURIComponent('Project Brief — '+svc)+'&body='+encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nService: '+svc+'\nMessage: '+(msg||'—'));
+    setMsg('ok','Opening your email app — hit send when ready.');return}
   cfb.disabled=true;cfb.textContent='Sending…';
-  try{
-    var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},
-      body:new FormData(cf)});
-    var d=await res.json();
-    if(d.success){
-      setMsg('ok',"✓ Got it! We'll reach out within 24 hours.");
-      if(typeof confetti==='function')confetti();
-      cf.reset();
-    }else{throw new Error('failed')}
-  }catch(err){setMsg('err',"Couldn't send — WhatsApp or call +88 017 5959 2324 instead.")}
+  try{var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(cf)});
+    if((await r.json()).success){setMsg('ok','Got it! We\'ll reach out within 24 hours.');cf.reset()}else throw 0}
+  catch(x){setMsg('err','Couldn\'t send — WhatsApp or call +88 017 5959 2324 instead.')}
   finally{cfb.disabled=false;cfb.textContent='Send it →'}
 });
-</script>
-<script>
-'use strict';
-var $=function(i){return document.getElementById(i)};
-var LEGAL={'Trade Licence No.':'','TIN':'','BIN':''};
-var li=Object.keys(LEGAL).filter(function(k){return LEGAL[k]}).map(function(k){return k+': '+LEGAL[k]});
-if(li.length)$('legal-ids').innerHTML='<br>'+li.join(' · ');
 
+/* views: home / portfolio */
 var home=$('home'),pfv=$('pfv');
 function showView(p){home.hidden=p;pfv.hidden=!p;document.title=p?'Portfolio — Innerloop Atelier':'Innerloop Atelier — One Partner. Brand to Build.'}
 function go(id,push){
-  var p=id==='portfolio';
-  if(p===home.hidden){}else showView(p);
+  var p=id==='portfolio';if(p===home.hidden){}else showView(p);
   if(push)history.pushState(null,'','#'+id);
   if(p){scrollTo(0,0);return}
-  var t=$(id);
-  requestAnimationFrame(function(){if(t)scrollTo({top:t.getBoundingClientRect().top+pageYOffset-84,behavior:'smooth'})});
+  var t=$(id);requestAnimationFrame(function(){if(t)scrollTo({top:t.getBoundingClientRect().top+pageYOffset-84,behavior:'smooth'})});
 }
 document.addEventListener('click',function(e){
-  var a=e.target.closest('a[href^="#"]');if(!a)return;
-  var id=a.getAttribute('href').slice(1);
-  if(!id||(id!=='portfolio'&&!$(id)))return;
-  e.preventDefault();go(id,true);
-});
+  var a=e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);
+  if(!id||(id!=='portfolio'&&!$(id)))return;e.preventDefault();go(id,true)});
 addEventListener('popstate',function(){go(location.hash.slice(1)||'hero',false)});
 if(location.hash==='#portfolio')showView(true);
 
-var GAL=[
- {k:'v',c:'Branding',t:'Credence Ambassador Meet Event',a:'16/9', yt:'54YRVCcSO0E'},
- {k:'v',c:'Branding',t:'Rehab Fair Stall - Credence',a:'16/9', yt:'j1ovOKfYmv4'},
- {k:'v',c:'Landscape',t:'Landscaping Project at Dhanmondi',a:'16/9', yt:'5qvMECeL8JI'},
- {k:'p',c:'Branding',t:'Event Execution',a:'4/3', src:'Event (1).jpg'},
- {k:'p',c:'Branding',t:'Event Execution',a:'4/5', src:'Event (2).jpg'},
- {k:'p',c:'Branding',t:'Event Execution',a:'4/3', src:'Event (3).jpg'},
- {k:'p',c:'Branding',t:'Event Execution',a:'1/1', src:'Event (4).jpg'},
- {k:'p',c:'Branding',t:'Project Fencing',a:'16/9', src:'Fence (1).jpg'},
- {k:'p',c:'Branding',t:'Project Fencing',a:'16/9', src:'Fence (2).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/5', src:'Signage (1).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/3', src:'Signage (2).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'16/9', src:'Signage (3).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'1/1', src:'Signage (4).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/5', src:'Signage (5).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/3', src:'Signage (6).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'16/9', src:'Signage (7).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'1/1', src:'Signage (8).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/5', src:'Signage (9).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/3', src:'Signage (10).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'16/9', src:'Signage (11).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'1/1', src:'Signage (12).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/5', src:'Signage (13).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'4/3', src:'Signage (14).jpg'},
- {k:'p',c:'Branding',t:'Signage & Identity',a:'16/9', src:'Signage (15).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/5', src:'Landscaping (1).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/3', src:'Landscaping (2).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'16/9', src:'Landscaping (3).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'1/1', src:'Landscaping (4).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/5', src:'Landscaping (5).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/3', src:'Landscaping (6).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'16/9', src:'Landscaping (7).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'1/1', src:'Landscaping (8).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/5', src:'Landscaping (9).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/3', src:'Landscaping (10).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'16/9', src:'Landscaping (11).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'1/1', src:'Landscaping (12).jpg'},
- {k:'p',c:'Landscape',t:'Landscape Aesthetic Curation',a:'4/5', src:'Landscaping (13).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'4/5', src:'Interior Design (1).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'4/3', src:'Interior Design (2).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'16/9', src:'Interior Design (3).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'1/1', src:'Interior Design (4).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'4/5', src:'Interior Design (5).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'4/3', src:'Interior Design (6).jpg'},
- {k:'p',c:'Interior',t:'Interior Space Planning',a:'16/9', src:'Interior Design (7).jpg'}
-];
-var gal=$('gal'),chips=$('chips'),cur='All',list=[],li2=0;
-function match(g){return cur==='All'||(cur==='Videos'?g.k==='v':g.c===cur)}
+/* gallery */
+var AS=['4/5','4/3','16/9','1/1'],GAL=[
+{k:'v',c:'Branding',t:'Credence Ambassador Meet Event',a:'16/9',yt:'54YRVCcSO0E'},
+{k:'v',c:'Branding',t:'Rehab Fair Stall - Credence',a:'16/9',yt:'j1ovOKfYmv4'},
+{k:'v',c:'Landscape',t:'Landscaping Project at Dhanmondi',a:'16/9',yt:'5qvMECeL8JI'}];
+function add(c,t,f,n,as){for(var i=1;i<=n;i++)GAL.push({k:'p',c:c,t:t,a:as?as[i-1]:AS[(i-1)%4],src:f+' ('+i+').jpg'})}
+add('Branding','Event Execution','Event',4,['4/3','4/5','4/3','1/1']);
+add('Branding','Project Fencing','Fence',2,['16/9','16/9']);
+add('Branding','Signage & Identity','Signage',15);
+add('Landscape','Landscape Aesthetic Curation','Landscaping',13);
+add('Interior','Interior Space Planning','Interior Design',7);
+var gal=$('gal'),chips=$('chips'),curF='All',list=[],li=0;
+function match(g){return curF==='All'||(curF==='Videos'?g.k==='v':g.c===curF)}
 function tile(g,i){
-  var m;
-  if(g.k==='p'&&g.src)m='<img loading="lazy" decoding="async" alt="'+g.t+'" src="'+g.src+'">';
-  else if(g.k==='v'&&g.src)m='<video muted loop playsinline preload="metadata" src="'+g.src+'"'+(g.poster?' poster="'+g.poster+'"':'')+'></video>';
-  else if(g.yt)m='<img loading="lazy" alt="'+g.t+'" src="https://i.ytimg.com/vi/'+g.yt+'/hqdefault.jpg">';
-  else m='<span class="ph">'+('0'+(GAL.indexOf(g)+1)).slice(-2)+'</span>';
-  return '<figure class="gt gc-'+g.c+'" style="aspect-ratio:'+g.a+';animation-delay:'+i*45+'ms" tabindex="0" role="button" aria-label="Open '+g.t+'" data-i="'+i+'">'+m+(g.k==='v'?'<span class="pb">▶</span>':'')+'<figcaption><span class="gtag">'+g.c+(g.k==='v'?' · Film':'')+'</span><b>'+g.t+'</b></figcaption></figure>';
-}
+  var m=g.yt?'<img loading="lazy" alt="'+g.t+'" src="https://i.ytimg.com/vi/'+g.yt+'/hqdefault.jpg">':'<img loading="lazy" decoding="async" alt="'+g.t+'" src="'+g.src+'">';
+  return '<figure class="gt" style="aspect-ratio:'+g.a+';animation-delay:'+Math.min(i,20)*40+'ms" tabindex="0" role="button" aria-label="Open '+g.t+'" data-i="'+i+'">'+m+(g.k==='v'?'<span class="pb">▶</span>':'')+'<figcaption><span class="gtag">'+g.c+(g.k==='v'?' · Film':'')+'</span><b>'+g.t+'</b></figcaption></figure>'}
 function draw(){list=GAL.filter(match);gal.innerHTML=list.map(tile).join('')}
 ['All','Branding','Landscape','Interior','Videos'].forEach(function(n){
   var b=document.createElement('button');b.className='chip';b.textContent=n;b.setAttribute('aria-pressed',n==='All');
-  b.onclick=function(){cur=n;chips.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===b)});draw()};
-  chips.appendChild(b);
-});
+  b.onclick=function(){curF=n;chips.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===b)});draw()};chips.appendChild(b)});
 draw();
-function vid(e,f){var t=e.target.closest('.gt'),v=t&&t.querySelector('video');if(v){f?v.play().catch(function(){}):v.pause()}}
-gal.addEventListener('mouseover',function(e){vid(e,1)});gal.addEventListener('mouseout',function(e){vid(e,0)});
+
+/* lightbox + modals */
 var lb=$('lb'),lst=$('lb-st'),lastF=null;
-function stage(g){
-  if(g.k==='v'&&g.src)return '<video controls autoplay playsinline src="'+g.src+'"></video>';
-  if(g.yt)return '<iframe src="https://www.youtube-nocookie.com/embed/'+g.yt+'?autoplay=1&rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="'+g.t+'"></iframe>';
-  if(g.src)return '<img alt="'+g.t+'" src="'+g.src+'">';
-  return '<div class="lb-ph gc-'+g.c+'" style="aspect-ratio:'+g.a+'"><span class="ph">'+(g.k==='v'?'▶':'')+'</span><p>'+g.t+'</p></div>';
-}
-function show(i){li2=(i+list.length)%list.length;var g=list[li2];lst.innerHTML=stage(g);$('lb-cap').textContent=g.c+' — '+g.t+'  ('+(li2+1)+'/'+list.length+')'}
+function show(i){li=(i+list.length)%list.length;var g=list[li];
+  lst.innerHTML=g.yt?'<iframe src="https://www.youtube-nocookie.com/embed/'+g.yt+'?autoplay=1&rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="'+g.t+'"></iframe>':'<img alt="'+g.t+'" src="'+g.src+'">';
+  $('lb-cap').textContent=g.c+' — '+g.t+'  ('+(li+1)+'/'+list.length+')'}
 function openLb(i){lastF=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';show(i);$('lb-x').focus()}
 function closeLb(){lb.hidden=true;lst.innerHTML='';document.body.style.overflow='';if(lastF)lastF.focus()}
 gal.addEventListener('click',function(e){var t=e.target.closest('.gt');if(t)openLb(+t.dataset.i)});
 gal.addEventListener('keydown',function(e){var t=e.target.closest('.gt');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openLb(+t.dataset.i)}});
-$('lb-x').onclick=closeLb;$('lb-p').onclick=function(){show(li2-1)};$('lb-nx').onclick=function(){show(li2+1)};
+$('lb-x').onclick=closeLb;$('lb-p').onclick=function(){show(li-1)};$('lb-nx').onclick=function(){show(li+1)};
 var tx=0;lb.addEventListener('touchstart',function(e){tx=e.changedTouches[0].clientX},{passive:true});
-lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>60)show(li2+(d<0?1:-1))});
-
-var tcm=$('tcm');
-function tcOpen(o){tcm.hidden=!o;document.body.style.overflow=o?'hidden':'';if(o)$('tc-x').focus();else $('tc-open').focus()}
-$('tc-open').onclick=function(){tcOpen(true)};$('tc-x').onclick=function(){tcOpen(false)};
-tcm.addEventListener('click',function(e){if(e.target===tcm)tcOpen(false)});
+lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>60)show(li+(d<0?1:-1))});
+function modal(m,o){m.hidden=!o;document.body.style.overflow=o?'hidden':'';if(o)m.querySelector('.xb').focus()}
+[$('tcm'),$('fm')].forEach(function(m){
+  m.addEventListener('click',function(e){if(e.target===m||e.target.closest('[data-close]'))modal(m,false)})});
+$('tc-open').onclick=function(){modal($('tcm'),true)};$('fm-open').onclick=function(){modal($('fm'),true)};
 addEventListener('keydown',function(e){
-  if(e.key==='Escape'){if(!tcm.hidden)tcOpen(false);if(!lb.hidden)closeLb()}
-  if(!lb.hidden){if(e.key==='ArrowRight')show(li2+1);if(e.key==='ArrowLeft')show(li2-1)}
-});
+  if(e.key==='Escape'){tog(false);if(!lb.hidden)closeLb();[$('tcm'),$('fm')].forEach(function(m){if(!m.hidden)modal(m,false)})}
+  if(!lb.hidden){if(e.key==='ArrowRight')show(li+1);if(e.key==='ArrowLeft')show(li-1)}});
 
-var AI_ENDPOINT='';
-var SLOTS=['10:00','11:00','12:00','14:00','15:00','16:00','17:00'],MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
-var DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],TODAY=new Date();TODAY.setHours(0,0,0,0);
+/* booking */
+var SLOTS=['10:00','11:00','12:00','14:00','15:00','16:00','17:00'],MN=['January','February','March','April','May','June','July','August','September','October','November','December'],
+DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],TODAY=new Date();TODAY.setHours(0,0,0,0);
 var bs={m:new Date(TODAY.getFullYear(),TODAY.getMonth(),1),d:null,t:null};
 function p2(n){return('0'+n).slice(-2)}
 function okDay(d){return d>TODAY&&d.getDay()!==5&&d.getDay()!==6}
-function ap(t){var h=+t.split(':')[0],m=t.split(':')[1];return(h%12||12)+':'+m+(h<12?' AM':' PM')}
+function ap(t){var h=+t.split(':')[0];return(h%12||12)+':'+t.split(':')[1]+(h<12?' AM':' PM')}
 function lbl(){return DN[bs.d.getDay()]+', '+bs.d.getDate()+' '+MN[bs.d.getMonth()].slice(0,3)+' '+bs.d.getFullYear()+' · '+ap(bs.t)}
 function drawCal(){
   var y=bs.m.getFullYear(),mo=bs.m.getMonth(),first=new Date(y,mo,1).getDay(),n=new Date(y,mo+1,0).getDate(),h='';
@@ -1190,25 +686,26 @@ function drawCal(){
   $('c-prev').disabled=bs.m<=new Date(TODAY.getFullYear(),TODAY.getMonth(),1);
   $('c-next').disabled=bs.m>=new Date(TODAY.getFullYear(),TODAY.getMonth()+5,1);
 }
-function drawSlots(){
-  $('slots').innerHTML=bs.d?SLOTS.map(function(t){return'<button class="slot" data-t="'+t+'" aria-pressed="'+(bs.t===t)+'">'+ap(t)+'</button>'}).join(''):'<span class="cal-note">Pick a date first.</span>';
-}
+function drawSlots(){$('slots').innerHTML=bs.d?SLOTS.map(function(t){return'<button class="slot" data-t="'+t+'" aria-pressed="'+(bs.t===t)+'">'+ap(t)+'</button>'}).join(''):'<span class="note">Pick a date first.</span>'}
+function evt(){
+  var h=+bs.t.split(':')[0],y=bs.d.getFullYear(),m=bs.d.getMonth(),d=bs.d.getDate(),u=Date.UTC(y,m,d,h-6,0),
+  f=function(ms){return new Date(ms).toISOString().replace(/[-:]|\.\d{3}/g,'')},ds=''+y+p2(m+1)+p2(d);
+  return{u:u,s:ds+'T'+p2(h)+'0000',e:ds+'T'+p2(h)+'3000',us:f(u),ue:f(u+18e5)}}
 function sum(){
   var r=bs.d&&bs.t;$('bk-g').disabled=$('bk-i').disabled=!r;
   if(!r){$('bk-sum').textContent=bs.d?'Now pick a time slot.':'Pick a date and time to continue.';return}
-  var u=new Date(evt().u),loc='';try{loc=u.toLocaleString([],{weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZoneName:'short'})}catch(x){}
-  $('bk-sum').innerHTML='<b>'+lbl()+'</b> · 30 min · Bangladesh Time'+(loc?'<br>In your time: '+loc:'');
-}
+  var loc='';try{loc=new Date(evt().u).toLocaleString([],{weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZoneName:'short'})}catch(x){}
+  $('bk-sum').innerHTML='<b>'+lbl()+'</b> · 30 min · Bangladesh Time'+(loc?'<br>In your time: '+loc:'')}
 function render(){drawCal();drawSlots();sum()}
 $('c-grid').addEventListener('click',function(e){var b=e.target.closest('.cday');if(!b)return;bs.d=new Date(bs.m.getFullYear(),bs.m.getMonth(),+b.dataset.d);render()});
 $('slots').addEventListener('click',function(e){var b=e.target.closest('.slot');if(!b)return;bs.t=b.dataset.t;drawSlots();sum()});
 $('c-prev').onclick=function(){bs.m=new Date(bs.m.getFullYear(),bs.m.getMonth()-1,1);drawCal()};
 $('c-next').onclick=function(){bs.m=new Date(bs.m.getFullYear(),bs.m.getMonth()+1,1);drawCal()};
 function parse(q){
-  q=q.toLowerCase().replace(/month/g,'');
-  var M='jan feb mar apr may jun jul aug sep oct nov dec'.split(' '),d=new Date(TODAY),t=null,got=0,x;
-  var m1=q.match(/\b(\d{1,2})(?:st|nd|rd|th)?\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/),m2=q.match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})\b/);
-  if(m1||m2){var mi=M.indexOf(m1?m1[2]:m2[1]),dd=+(m1?m1[1]:m2[2]);d=new Date(TODAY.getFullYear(),mi,dd);if(d<=TODAY)d.setFullYear(d.getFullYear()+1);got=1}
+  q=q.toLowerCase();var M='jan feb mar apr may jun jul aug sep oct nov dec'.split(' '),d=new Date(TODAY),t=null,got=0,x,
+  m1=q.match(/\b(\d{1,2})(?:st|nd|rd|th)?\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/),
+  m2=q.match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})\b/);
+  if(m1||m2){d=new Date(TODAY.getFullYear(),M.indexOf(m1?m1[2]:m2[1]),+(m1?m1[1]:m2[2]));if(d<=TODAY)d.setFullYear(d.getFullYear()+1);got=1}
   else if(/tomorrow/.test(q)){d.setDate(d.getDate()+1);got=1}
   else if(/next week/.test(q)){d.setDate(d.getDate()+(7-d.getDay()));got=1}
   else if((x=q.match(/in (\d+) days?/))){d.setDate(d.getDate()+ +x[1]);got=1}
@@ -1216,62 +713,24 @@ function parse(q){
   var tm=q.match(/\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/),t24=q.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/);
   if(tm)t=((+tm[1])%12+(tm[3]==='pm'?12:0))*60+(+tm[2]||0);else if(t24)t=+t24[1]*60+ +t24[2];
   else if(/noon|midday/.test(q))t=720;else if(/morning/.test(q))t=600;else if(/afternoon/.test(q))t=900;else if(/evening|late/.test(q))t=1020;
-  if(!got&&t===null)return null;
-  if(!got)d.setDate(d.getDate()+1);
+  if(!got&&t===null)return null;if(!got)d.setDate(d.getDate()+1);
   for(var i=0;i<14&&!okDay(d);i++)d.setDate(d.getDate()+1);
   var best=SLOTS[0],bd=1e9;SLOTS.forEach(function(s){var v=Math.abs(+s.split(':')[0]*60-(t===null?600:t));if(v<bd){bd=v;best=s}});
-  return{d:d,t:best};
-}
-async function smart(q){
-  if(AI_ENDPOINT){try{var r=await fetch(AI_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:q,today:TODAY.toISOString().slice(0,10)})});
-    var j=await r.json(),p=j.date.split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);if(okDay(d)&&SLOTS.indexOf(j.time)>-1)return{d:d,t:j.time}}catch(x){}}
-  return parse(q);
-}
-async function runSmart(){
+  return{d:d,t:best}}
+function runSmart(){
   var q=$('bk-q').value.trim(),o=$('bk-ai');if(!q){o.textContent='Type a day and time, e.g. “next Tuesday afternoon”.';return}
-  var r=await smart(q);
-  if(!r){o.textContent='Couldn’t read that. Try “Oct 12 at 3pm” or “tomorrow morning”.';return}
-  bs.d=r.d;bs.t=r.t;bs.m=new Date(r.d.getFullYear(),r.d.getMonth(),1);render();o.textContent='Got it: '+lbl()+'. Change it above if needed.';
-}
+  var r=parse(q);if(!r){o.textContent='Couldn’t read that. Try “Oct 12 at 3pm” or “tomorrow morning”.';return}
+  bs.d=r.d;bs.t=r.t;bs.m=new Date(r.d.getFullYear(),r.d.getMonth(),1);render();o.textContent='Got it: '+lbl()+'. Change it above if needed.'}
 $('bk-go').onclick=runSmart;$('bk-q').addEventListener('keydown',function(e){if(e.key==='Enter')runSmart()});
-function evt(){
-  var h=+bs.t.split(':')[0],y=bs.d.getFullYear(),m=bs.d.getMonth(),d=bs.d.getDate();
-  var u=Date.UTC(y,m,d,h-6,0),f=function(ms){return new Date(ms).toISOString().replace(/[-:]|\.\d{3}/g,'')};
-  var ds=''+y+p2(m+1)+p2(d);
-  return{u:u,s:ds+'T'+p2(h)+'0000',e:ds+'T'+p2(h)+'3000',us:f(u),ue:f(u+18e5)};
-}
-function info(){
-  var n=$('bk-n').value.trim(),c=$('bk-c').value.trim();
-  return{title:'Strategy Call — Innerloop Atelier',det:'Topic: '+$('bk-t').value+(n?'\nName: '+n:'')+(c?'\nCompany: '+c:'')+'\nWe confirm within 24 hours. WhatsApp: +88 017 5959 2324',loc:'Video or phone call (link sent on confirmation)'};
-}
-$('bk-g').onclick=function(){
-  var e=evt(),i=info();
-  window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(i.title)+'&dates='+e.s+'/'+e.e+'&ctz=Asia%2FDhaka&details='+encodeURIComponent(i.det)+'&location='+encodeURIComponent(i.loc)+'&add='+encodeURIComponent('innerloopatelier@gmail.com'),'_blank','noopener');
-};
+function info(){var n=$('bk-n').value.trim(),c=$('bk-c').value.trim();
+  return{title:'Strategy Call — Innerloop Atelier',det:'Topic: '+$('bk-t').value+(n?'\nName: '+n:'')+(c?'\nCompany: '+c:'')+'\nWe confirm within 24 hours. WhatsApp: +88 017 5959 2324',loc:'Video or phone call (link sent on confirmation)'}}
+$('bk-g').onclick=function(){var e=evt(),i=info();
+  window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(i.title)+'&dates='+e.s+'/'+e.e+'&ctz=Asia%2FDhaka&details='+encodeURIComponent(i.det)+'&location='+encodeURIComponent(i.loc)+'&add='+encodeURIComponent('innerloopatelier@gmail.com'),'_blank','noopener')};
 $('bk-i').onclick=function(){
   var e=evt(),i=info(),esc=function(t){return t.replace(/\n/g,'\\n').replace(/,/g,'\\,')};
   var ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Innerloop Atelier//Booking//EN\r\nBEGIN:VEVENT\r\nUID:'+e.us+'@innerloopatelier\r\nDTSTAMP:'+new Date().toISOString().replace(/[-:]|\.\d{3}/g,'')+'\r\nDTSTART:'+e.us+'\r\nDTEND:'+e.ue+'\r\nSUMMARY:'+esc(i.title)+'\r\nDESCRIPTION:'+esc(i.det)+'\r\nLOCATION:'+esc(i.loc)+'\r\nATTENDEE:mailto:innerloopatelier@gmail.com\r\nEND:VEVENT\r\nEND:VCALENDAR';
-  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='innerloop-strategy-call.ics';a.click();
-};
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='innerloop-strategy-call.ics';a.click()};
 render();
-</script>
-<script>
-(function(){
-addEventListener('mousemove',function(){document.documentElement.classList.add('cur-on')},{once:true});
-var FOUNDER_PHOTO='Founder.jpg';
-['fp','fp2'].forEach(function(i){var e=document.getElementById(i);if(e&&FOUNDER_PHOTO){e.src=FOUNDER_PHOTO;e.hidden=false}});
-var H0=['HeroBrand1.jpg', 'Herointerior2.jpg', 'Herointerior3.jpg', 'HeroLandscape1.jpg', 'Herointerior5.jpg', 'HeroLandscape2.jpg', 'HeroLandscape6.jpg'],H=[],hs=document.getElementById('hs'),cur=-1,els=[];
-function next(){var n;do{n=Math.floor(Math.random()*H.length)}while(n===cur&&H.length>1);var e=els[n];if(cur>-1)els[cur].classList.remove('on');e.classList.remove('on');void e.offsetWidth;e.classList.add('on');cur=n}
-H0.forEach(function(u){var im=new Image();im.onload=function(){var d=document.createElement('div');d.className='hs';d.style.backgroundImage='url("'+u+'")';hs.appendChild(d);H.push(u);if(H.length===1){els=hs.children;next()}};im.src=u});
-setInterval(function(){if(!document.hidden&&!document.getElementById('home').hidden)next()},6500);
-var t=document.querySelector('.c-track');if(t)Array.prototype.slice.call(t.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');t.appendChild(k)});
-var bgs=document.querySelectorAll('[data-bg]'),tk=0;
-addEventListener('scroll',function(){if(tk)return;tk=1;requestAnimationFrame(function(){tk=0;bgs.forEach(function(b){var r=b.parentNode.getBoundingClientRect();b.style.transform='translateY('+(r.top*-.1)+'px) scale(1.1)'})})},{passive:true});
-var fm=document.getElementById('fm');function fo(o){fm.hidden=!o;document.body.style.overflow=o?'hidden':'';if(o)document.getElementById('fm-x').focus()}
-document.getElementById('fm-open').onclick=function(){fo(true)};document.getElementById('fm-x').onclick=function(){fo(false)};
-document.getElementById('fm-book').onclick=function(){fo(false)};
-fm.addEventListener('click',function(e){if(e.target===fm)fo(false)});addEventListener('keydown',function(e){if(e.key==='Escape'&&!fm.hidden)fo(false)});
-})();
 </script>
 </body>
 </html>
