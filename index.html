@@ -7,6 +7,47 @@
 <title>Innerloop Atelier — One Partner. Brand to Build.</title>
 <meta name="description" content="Innerloop Atelier — the B2B execution partner for branding, landscape and interior delivery. One team, one standard, every industry.">
 <link rel="canonical" href="https://www.innerloopatelier.com/">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Innerloop Atelier">
+<meta property="og:title" content="Innerloop Atelier — One Partner. Brand to Build.">
+<meta property="og:description" content="B2B execution partner for branding, landscape, and interior delivery under one accountable team. One standard, one timeline, zero hand-offs.">
+<meta property="og:url" content="https://www.innerloopatelier.com/">
+<meta property="og:image" content="https://www.innerloopatelier.com/images/HeroBrand1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Innerloop Atelier — One Partner. Brand to Build.">
+<meta name="twitter:description" content="B2B execution partner for branding, landscape, and interior delivery. One team, one standard, zero hand-offs.">
+<meta name="twitter:image" content="https://www.innerloopatelier.com/images/HeroBrand1.jpg">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Innerloop Atelier",
+  "image": "https://www.innerloopatelier.com/images/Preload-Logo.svg",
+  "url": "https://www.innerloopatelier.com/",
+  "telephone": "+8801759592324",
+  "email": "innerloopatelier@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ka-26/1, Rasulbag, Mohakhali",
+    "addressLocality": "Dhaka",
+    "postalCode": "1212",
+    "addressCountry": "BD"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Abid Abdullah"
+  },
+  "sameAs": [
+    "https://www.instagram.com/innerloopatelier"
+  ],
+  "description": "Innerloop Atelier is a B2B execution studio integrating Brand & Communication, Landscape Design & Urban Spaces, and Interior Design under one accountable team."
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -15,9 +56,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <noscript><style>.r{opacity:1!important;transform:none!important}#preload{display:none!important}</style></noscript>
 <style>
-@font-face{font-family:Gilroy;font-weight:400;font-display:swap;src:local('Gilroy Regular'),url(fonts/Gilroy-Regular.woff2) format('woff2')}
-@font-face{font-family:Gilroy;font-weight:700;font-display:swap;src:local('Gilroy Bold'),url(fonts/Gilroy-Bold.woff2) format('woff2')}
-@font-face{font-family:Gilroy;font-weight:800;font-display:swap;src:local('Gilroy ExtraBold'),url(fonts/Gilroy-ExtraBold.woff2) format('woff2')}
+@font-face{font-family:Gilroy;font-weight:400;font-display:swap;src:local('Gilroy Regular'),local('Gilroy-Regular'),local('Gilroy')}
+@font-face{font-family:Gilroy;font-weight:700;font-display:swap;src:local('Gilroy Bold'),local('Gilroy-Bold')}
+@font-face{font-family:Gilroy;font-weight:800;font-display:swap;src:local('Gilroy ExtraBold'),local('Gilroy-ExtraBold')}
 :root{color-scheme:light;--bg:#FBF7EF;--bg2:#F1E9D9;--ink:#17110D;--dim:#5B5047;--pt:#8A4F1F;--pop:#CD8B4F;--on-pop:#1A0F05;
 --lime:#B7D9A3;--on-lime:#10260F;--navy:#1F3047;--wine:#7A1F2B;--line:#D8CCB6;--wa:#25D366;--r:26px;
 --ease:cubic-bezier(.2,.85,.25,1.1);--f:Gilroy,'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif}
@@ -532,12 +573,16 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 <div class="fg"><label class="fl" for="f-phone">Phone *</label><input class="fi" type="tel" id="f-phone" name="phone" placeholder="+88 017..." required></div></div>
 <div class="fg"><label class="fl" for="f-svc">I need *</label><select class="fs" id="f-svc" name="service" required><option value="" disabled selected>Choose a service</option><option>Branding</option><option>Landscaping</option><option>Interior Design</option><option>Not sure yet</option></select></div>
 <div class="fg"><label class="fl" for="f-msg">Brief</label><textarea class="ft" id="f-msg" name="message" placeholder="Tell us what you're building…"></textarea></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
 <button type="submit" class="btn btn-fill cf-submit" id="cf-btn">Send it →</button>
+<button type="button" class="btn btn-line" id="cf-wa" style="font-size:13px;padding:12px 18px">Brief via WhatsApp ↗</button>
+</div>
 <div class="cf-msg" id="cf-msg" role="alert"></div></form></div></div>
 </div></section>
 </main>
 
-<main id="pfv" hidden><section class="pf wrap">
+<main id="portfolio" hidden><section class="pf wrap">
+<div style="margin-bottom:28px"><a href="#home" class="btn btn-line" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;padding:8px 18px">← Back to Overview</a></div>
 <span class="eyebrow">Portfolio</span><h1 class="disp pf-h">Execution you can see.</h1>
 <p class="lead">Photos and films from live brand, landscape and interior projects. Filter, tap, expand.</p>
 <div class="chips" id="chips" role="group" aria-label="Filter portfolio"></div>
@@ -579,9 +624,9 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 <div class="ft-top">
 <div><a href="#hero"><img src="images/Preload-Logo.svg" alt="Innerloop Atelier"></a><p class="f-tag">Built on Identity. Shaped by Space.<br><br>Strategy · Craft · Execution</p></div>
 <div class="fc"><p class="fc-h">Work</p>
-<a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Branding%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Branding</a><br>
-<a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Landscaping%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Landscaping</a><br>
-<a href="https://wa.me/8801759592324?text=Hi!%20I'd%20like%20to%20discuss%20Interior%20Design%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Interior Design</a></div>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20discuss%20Branding%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Branding</a><br>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20discuss%20Landscaping%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Landscaping</a><br>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20discuss%20Interior%20Design%20with%20Innerloop%20Atelier." target="_blank" rel="noopener">Interior Design</a></div>
 <div class="fc"><p class="fc-h">Studio</p>
 <a href="#portfolio">Portfolio</a><br><a href="#book">Book a call</a><br><a href="#studio">The crew</a><br><a href="#faq">FAQ</a><br><a href="#contact">Contact</a><br>
 <a href="https://www.instagram.com/innerloopatelier" target="_blank" rel="noopener">Instagram</a><br><a href="https://wa.me/8801759592324" target="_blank" rel="noopener">WhatsApp</a></div>
@@ -633,25 +678,32 @@ addEventListener('scroll',function(){if(tk)return;tk=1;requestAnimationFrame(fun
 ['fp'].forEach(function(i){var e=$(i);e.src='images/Founder.jpg';e.hidden=false});
 
 /* contact form */
-var cf=$('cf'),cfb=$('cf-btn'),cfm=$('cf-msg');
-function setMsg(t,m){cfm.className='cf-msg '+t;cfm.textContent=m}
+var cf=$('cf'),cfb=$('cf-btn'),cfm=$('cf-msg'),cfwa=$('cf-wa');
+function setMsg(t,m){cfm.className='cf-msg '+t;cfm.innerHTML=m}
+function getWaUrl(){
+  var name=$('f-name').value.trim(),phone=$('f-phone').value.trim(),svc=$('f-svc').value,msg=$('f-msg').value.trim();
+  var text='Hi Innerloop! I want to discuss a project.'+(name?'\n\nName: '+name:'')+(phone?'\nPhone: '+phone:'')+(svc?'\nService: '+svc:'')+(msg?'\nBrief: '+msg:'');
+  return 'https://wa.me/8801759592324?text='+encodeURIComponent(text);
+}
+if(cfwa){cfwa.onclick=function(){window.open(getWaUrl(),'_blank','noopener')}}
 cf.addEventListener('submit',async function(e){
   e.preventDefault();
   var name=$('f-name').value.trim(),phone=$('f-phone').value.trim(),svc=$('f-svc').value,msg=$('f-msg').value.trim();
   if(!name||!phone||!svc){setMsg('err','Fill in name, phone and service.');return}
   var key=cf.querySelector('[name="access_key"]').value;
   if(!key||key==='YOUR_WEB3FORMS_KEY'){
+    var waUrl=getWaUrl();
     location.href='mailto:innerloopatelier@gmail.com?subject='+encodeURIComponent('Project Brief — '+svc)+'&body='+encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nService: '+svc+'\nMessage: '+(msg||'—'));
-    setMsg('ok','Opening your email app — hit send when ready.');return}
+    setMsg('ok','Opening email app… Or <a href="'+waUrl+'" target="_blank" rel="noopener" style="text-decoration:underline;font-weight:700">Send directly on WhatsApp ↗</a>');return}
   cfb.disabled=true;cfb.textContent='Sending…';
   try{var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(cf)});
     if((await r.json()).success){setMsg('ok','Got it! We\'ll reach out within 24 hours.');cf.reset()}else throw 0}
-  catch(x){setMsg('err','Couldn\'t send — WhatsApp or call +88 017 5959 2324 instead.')}
+  catch(x){setMsg('err','Couldn\'t send — <a href="'+getWaUrl()+'" target="_blank" rel="noopener" style="text-decoration:underline;font-weight:700">Chat on WhatsApp instead ↗</a>')}
   finally{cfb.disabled=false;cfb.textContent='Send it →'}
 });
 
 /* views: home / portfolio */
-var home=$('home'),pfv=$('pfv');
+var home=$('home'),pfv=$('portfolio')||$('pfv');
 function showView(p){home.hidden=p;pfv.hidden=!p;document.title=p?'Portfolio — Innerloop Atelier':'Innerloop Atelier — One Partner. Brand to Build.'}
 function go(id,push){
   var p=id==='portfolio';if(p===home.hidden){}else showView(p);
