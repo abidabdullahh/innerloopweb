@@ -719,6 +719,7 @@ if(location.hash==='#portfolio')showView(true);
 
 /* gallery */
 var AS=['4/5','4/3','16/9','1/1'],GAL=[
+{k:'v',c:'Branding',t:'Fence Branding of The Premium Homes — Canvas of Happiness Project',a:'16/9',fb:'https://www.facebook.com/reel/2716808102083753',src:'images/TPH-Fence-Canvas-Of-Happiness.jpg'},
 {k:'v',c:'Branding',t:'Credence Ambassador Meet Event',a:'16/9',yt:'54YRVCcSO0E'},
 {k:'v',c:'Branding',t:'Rehab Fair Stall - Credence',a:'16/9',yt:'j1ovOKfYmv4'},
 {k:'v',c:'Landscape',t:'Landscaping Project at Dhanmondi',a:'16/9',yt:'5qvMECeL8JI'}];
@@ -742,8 +743,14 @@ draw();
 /* lightbox + modals */
 var lb=$('lb'),lst=$('lb-st'),lastF=null;
 function show(i){li=(i+list.length)%list.length;var g=list[li];
-  lst.innerHTML=g.yt?'<iframe src="https://www.youtube-nocookie.com/embed/'+g.yt+'?autoplay=1&rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="'+g.t+'"></iframe>':'<img alt="'+g.t+'" src="'+g.src+'">';
-  $('lb-cap').textContent=g.c+' — '+g.t+'  ('+(li+1)+'/'+list.length+')'}
+  if(g.yt){
+    lst.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+g.yt+'?autoplay=1&rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="'+g.t+'"></iframe>';
+  }else if(g.fb){
+    lst.innerHTML='<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;max-width:90vw;margin:auto"><iframe src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(g.fb)+'&show_text=0" style="border:none;overflow:hidden;width:min(480px,90vw);height:min(70vh,540px);border-radius:12px;background:#000" allow="autoplay;clipboard-write;encrypted-media;picture-in-picture;web-share" allowfullscreen="true" title="'+g.t+'"></iframe><div style="margin-top:14px"><a href="'+g.fb+'" target="_blank" rel="noopener" class="btn btn-fill" style="font-size:12px;padding:8px 18px">Watch Reel on Facebook ↗</a></div></div>';
+  }else{
+    lst.innerHTML='<img alt="'+g.t+'" src="'+g.src+'">';
+  }
+  $('lb-cap').textContent=g.c+' — '+g.t+'  ('+(li+1)+'/'+list.length+')';}
 function openLb(i){lastF=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';show(i);$('lb-x').focus()}
 function closeLb(){lb.hidden=true;lst.innerHTML='';document.body.style.overflow='';if(lastF)lastF.focus()}
 gal.addEventListener('click',function(e){var t=e.target.closest('.gt');if(t)openLb(+t.dataset.i)});
