@@ -103,7 +103,7 @@ All visual assets and media are consolidated directly into this single `images/`
 
 | Title | File Path | Ratio | Key Value Proposition | Attached Link |
 | :--- | :--- | :--- | :--- | :--- |
-| 1. **Handover Key Box** | `images/accessories-key-box.jpg` | 16:9 | Handcrafted dark walnut presentation box with laser-carved monogram & charcoal velvet lining. Transforms apartment handovers into an unforgettable ceremonial benchmark. | [Facebook Reel](https://www.facebook.com/share/r/1Bybjyhb2v) |
+| 1. **Handover Key Box** | `images/accessories-key-box.jpg` | 4:5 | Handcrafted dark walnut presentation box with laser-carved monogram & charcoal velvet lining. Transforms apartment handovers into an unforgettable ceremonial benchmark. | [Facebook Reel Embed](https://www.facebook.com/reel/1092184407185171/) |
 | 2. **Executive Desk Calendar** | `images/accessories-calendar.jpg` | 4:3 | Letterpress cotton cards housed in a handcrafted solid walnut block for daily C-suite desk visibility. | — |
 | 3. **VIP Corporate Gift Pack** | `images/accessories-gift-pack.jpg` | 4:3 | Debossed leather notebook, matte thermal bottle & precision pen in custom rigid foam-inlay unboxing packaging. | — |
 | 4. **Custom Crest Award** | `images/accessories-crest.jpg` | 4:3 | Beveled optical crystal acrylic, brushed brass detailing & dark walnut plinth with permanent laser engraving. | — |
