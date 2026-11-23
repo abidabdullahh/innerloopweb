@@ -161,8 +161,9 @@ clip-path:inset(100% 0 0 0);animation:plfill 1.7s cubic-bezier(.65,0,.25,1) forw
 .c-track{display:flex;align-items:center;width:max-content;animation:mq 80s linear infinite}
 .c-wrap:hover .c-track{animation-play-state:paused}
 .c-logo{padding:0 clamp(28px,4vw,54px)}
+.c-logo a{display:block;cursor:pointer}
 .c-logo img{height:46px;width:auto;display:block;filter:grayscale(1);opacity:.7;transition:.3s}
-.c-logo:hover img{filter:none;opacity:1}
+.c-logo:hover img,.c-logo a:focus img{filter:none;opacity:1}
 
 section.blk{padding-block:90px}
 .aud{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
@@ -429,14 +430,14 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 <section class="clients wrap">
 <div class="r"><span class="eyebrow">Proof of execution</span><h2 class="disp h2">Trusted by the developers and brands that build.</h2></div>
 <div class="c-wrap"><div class="c-track" id="ct">
-<div class="c-logo"><img src="images/Ace.svg" alt="Ace Developers" loading="lazy"></div>
-<div class="c-logo"><img src="images/BHL.svg" alt="BHL Group" loading="lazy"></div>
-<div class="c-logo"><img src="images/Credence.svg" alt="Credence" loading="lazy"></div>
-<div class="c-logo"><img src="images/Eminence.svg" alt="Eminence" loading="lazy"></div>
-<div class="c-logo"><img src="images/max.svg" alt="Max Space" loading="lazy"></div>
-<div class="c-logo"><img src="images/Sheltech.svg" alt="Sheltech" loading="lazy"></div>
-<div class="c-logo"><img src="images/TPH.svg" alt="The Premium Homes" loading="lazy"></div>
-<div class="c-logo"><img src="images/Urban.svg" alt="Urban" loading="lazy"></div>
+<div class="c-logo"><a href="https://sheltech-bd.com" target="_blank" rel="noopener noreferrer" aria-label="Sheltech"><img src="images/Sheltech.svg" alt="Sheltech" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://urban.com.bd" target="_blank" rel="noopener noreferrer" aria-label="Urban"><img src="images/Urban.svg" alt="Urban" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://www.dpremiumhomes.com" target="_blank" rel="noopener noreferrer" aria-label="The Premium Homes"><img src="images/TPH.svg" alt="The Premium Homes" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://www.credencehousingltd.com" target="_blank" rel="noopener noreferrer" aria-label="Credence"><img src="images/Credence.svg" alt="Credence" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://maxbtl.com" target="_blank" rel="noopener noreferrer" aria-label="Max"><img src="images/max.svg" alt="Max" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://eminencetl.com" target="_blank" rel="noopener noreferrer" aria-label="Eminence"><img src="images/Eminence.svg" alt="Eminence" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://ace.com.bd" target="_blank" rel="noopener noreferrer" aria-label="Ace"><img src="images/Ace.svg" alt="Ace" loading="lazy"></a></div>
+<div class="c-logo"><a href="https://bhlgroup.com.bd" target="_blank" rel="noopener noreferrer" aria-label="BHL Group"><img src="images/BHL.svg" alt="BHL Group" loading="lazy"></a></div>
 </div></div>
 </section>
 
@@ -932,7 +933,7 @@ function start(){if(started)return;started=true;next();setInterval(function(){if
 var im=new Image();im.onload=im.onerror=start;im.src=H0[0];setTimeout(start,1800);
 
 /* client logo loop, parallax */
-var ct=$('ct');Array.prototype.slice.call(ct.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');ct.appendChild(k)});
+var ct=$('ct');Array.prototype.slice.call(ct.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');var a=k.querySelector('a');if(a)a.setAttribute('tabindex','-1');ct.appendChild(k)});
 var bgs=qa('[data-bg]'),tk=0;
 addEventListener('scroll',function(){if(tk)return;tk=1;requestAnimationFrame(function(){tk=0;bgs.forEach(function(b){b.style.transform='translateY('+(b.parentNode.getBoundingClientRect().top*-.1)+'px) scale(1.1)'})})},{passive:true});
 ['fp'].forEach(function(i){var e=$(i);e.src='images/Founder.jpg';e.hidden=false});

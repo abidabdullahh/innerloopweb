@@ -36,16 +36,16 @@ All visual assets and media are consolidated directly into this single `images/`
 ## 3. Clients & Partners Section
 *Section: `<section class="clients wrap">` — Developer & corporate logo marquee*
 
-| Title | File Path | Type | Usage |
-| :--- | :--- | :--- | :--- |
-| **Ace Developers** | `images/Ace.svg` | SVG | Client marquee loop |
-| **BHL Group** | `images/BHL.svg` | SVG | Client marquee loop |
-| **Credence Housing** | `images/Credence.svg` | SVG | Client marquee loop |
-| **Eminence** | `images/Eminence.svg` | SVG | Client marquee loop |
-| **Max Space** | `images/max.svg` | SVG | Client marquee loop |
-| **Sheltech** | `images/Sheltech.svg` | SVG | Client marquee loop |
-| **The Premium Homes (TPH)** | `images/TPH.svg` | SVG | Client marquee loop |
-| **Urban** | `images/Urban.svg` | SVG | Client marquee loop |
+| Title | File Path | Type | Usage | Website |
+| :--- | :--- | :--- | :--- | :--- |
+| 1. **Sheltech** | `images/Sheltech.svg` | SVG | Client marquee loop | https://sheltech-bd.com |
+| 2. **Urban** | `images/Urban.svg` | SVG | Client marquee loop | https://urban.com.bd |
+| 3. **The Premium Homes (TPH)** | `images/TPH.svg` | SVG | Client marquee loop | https://www.dpremiumhomes.com |
+| 4. **Credence Housing** | `images/Credence.svg` | SVG | Client marquee loop | https://www.credencehousingltd.com |
+| 5. **Max** | `images/max.svg` | SVG | Client marquee loop | https://maxbtl.com |
+| 6. **Eminence** | `images/Eminence.svg` | SVG | Client marquee loop | https://eminencetl.com |
+| 7. **Ace Developers** | `images/Ace.svg` | SVG | Client marquee loop | https://ace.com.bd |
+| 8. **BHL Group** | `images/BHL.svg` | SVG | Client marquee loop | https://bhlgroup.com.bd |
 
 ---
 
