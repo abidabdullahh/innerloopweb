@@ -321,12 +321,21 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 .gt img,.gt video{width:100%;height:100%;object-fit:cover;display:block}
 .gt figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(251,247,239,.95);border-radius:16px;padding:10px 14px;font-size:14px;display:flex;flex-direction:column}
 .gtag{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pt)}
+.gdesc{font-size:11.5px;color:var(--dim);margin-top:3px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pb{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:13px}
 .lb{position:fixed;inset:0;z-index:2100;background:rgba(251,247,239,.97);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:70px 76px 96px}
 .lb-stage{width:min(1100px,100%);display:flex;justify-content:center}
-.lb-stage img,.lb-stage video{max-width:100%;max-height:calc(100vh - 190px);border-radius:var(--r)}
-.lb-stage iframe{width:100%;aspect-ratio:16/9;max-height:calc(100vh - 190px);border:0;border-radius:var(--r)}
-.lb-cap{font-weight:700;font-size:13px;letter-spacing:.04em}
+.lb-stage img,.lb-stage video{max-width:100%;max-height:calc(100vh - 220px);border-radius:var(--r)}
+.lb-stage iframe{width:100%;aspect-ratio:16/9;max-height:calc(100vh - 220px);border:0;border-radius:var(--r)}
+.lb-cap{font-weight:700;font-size:13px;letter-spacing:.04em;text-align:center;max-width:800px}
+.acc-banner{background:var(--bg2);border:1.5px solid var(--ink);border-radius:var(--r);padding:clamp(22px,3.5vw,36px);margin:24px 0 28px;display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
+.acc-badge{display:inline-block;padding:4px 12px;background:var(--lime);color:var(--on-lime);border:1.5px solid var(--ink);border-radius:100px;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.acc-lead{font-size:clamp(13.5px,1.4vw,15.5px);color:var(--dim);line-height:1.55;margin-top:6px}
+.acc-feats{display:grid;gap:10px}
+.acc-feat{background:var(--bg);border:1px solid rgba(23,17,13,.12);padding:10px 14px;border-radius:12px}
+.acc-feat b{font-size:12.5px;color:var(--ink);display:block;margin-bottom:2px}
+.acc-feat span{font-size:11.5px;color:var(--dim);line-height:1.35;display:block}
+@media(max-width:860px){.acc-banner{grid-template-columns:1fr;gap:18px}}
 .xb{position:absolute;width:50px;height:50px;border-radius:50%;border:1.5px solid var(--ink);background:var(--lime);color:var(--on-lime);font-size:18px;font-weight:700;display:grid;place-items:center;z-index:3}
 .xb:hover{background:var(--pop)}
 .lb-x{top:16px;right:16px}.lb-p,.lb-nx{top:50%;margin-top:-25px}.lb-p{left:14px}.lb-nx{right:14px}
@@ -843,7 +852,35 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 <main id="portfolio" hidden><section class="pf wrap">
 <div style="margin-bottom:28px"><a href="#home" class="btn btn-line" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;padding:8px 18px">← Back to Overview</a></div>
 <span class="eyebrow">Portfolio</span><h1 class="disp pf-h">Execution you can see.</h1>
-<p class="lead">Photos and films from live brand, landscape and interior projects. Filter, tap, expand.</p>
+<p class="lead">Photos and films from live brand, landscape, interior and bespoke merchandise projects. Filter, tap, expand.</p>
+
+<!-- Dedicated Innerloop Accessories Showcase Section -->
+<div class="acc-banner" id="accessories">
+  <div>
+    <span class="acc-badge">Signature Collection</span>
+    <h2 class="disp" style="font-size:clamp(26px,4vw,38px);margin-bottom:12px">Innerloop Accessories</h2>
+    <p class="acc-lead">Tactile corporate gifts, VIP handover presentation suites, executive stationery, and branded site gear. Each element is engineered with architectural restraint, noble materials, and permanent precision branding to deliver enduring perceived value.</p>
+    <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px">
+      <button type="button" class="btn btn-fill" id="btn-filter-acc" style="font-size:12px;padding:8px 18px">View Accessories Collection ↓</button>
+      <a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20inquire%20about%20Innerloop%20Accessories%20and%20corporate%20gifting." target="_blank" rel="noopener" class="btn btn-line" style="font-size:12px;padding:8px 18px">Inquire on WhatsApp ↗</a>
+    </div>
+  </div>
+  <div class="acc-feats">
+    <div class="acc-feat">
+      <b>Bespoke Architectural Craftsmanship</b>
+      <span>Solid American walnut joinery, optical acrylic &amp; permanent laser etching.</span>
+    </div>
+    <div class="acc-feat">
+      <b>Developer Handover Ready</b>
+      <span>Luxury velvet-lined key presentation boxes designed to crown project deliveries.</span>
+    </div>
+    <div class="acc-feat">
+      <b>Executive Distinction</b>
+      <span>600gsm cotton business cards, Smyth-sewn monographs &amp; branded site gear.</span>
+    </div>
+  </div>
+</div>
+
 <div class="chips" id="chips" role="group" aria-label="Filter portfolio"></div>
 <div class="gal" id="gal" aria-live="polite"></div>
 <p style="margin-top:30px"><a href="#book" class="btn btn-fill">Book a strategy call →</a></p>
@@ -990,16 +1027,41 @@ add('Branding','Project Fencing','images/Fence',2,['16/9','16/9']);
 add('Branding','Signage & Identity','images/Signage',15);
 add('Landscape','Landscape Aesthetic Curation','images/Landscaping',13);
 add('Interior','Interior Space Planning','images/Interior Design',7);
+
+/* Innerloop Accessories collection */
+GAL.push(
+{k:'v',c:'Accessories',t:'Key Box — Luxury Handover Presentation Suite',a:'16/9',fb:'https://www.facebook.com/share/r/1Bybjyhb2v',src:'images/accessories-key-box.jpg',d:'Handcrafted solid walnut property handover presentation box with laser-carved monogram & charcoal velvet lining.',prop:'Transforms apartment and villa handovers into a ceremony. Provides luxury real estate developers with an enduring physical artifact that honors buyers and secures client referrals.'},
+{k:'p',c:'Accessories',t:'Executive Architectural Desk Calendar',a:'4/3',src:'images/accessories-calendar.jpg',d:'Thick letterpress cotton cards set in a solid handcrafted walnut wood block.',prop:'Daily C-suite visibility with architectural minimalism. Replaces generic throwaway calendars with an enduring desk sculpture.'},
+{k:'p',c:'Accessories',t:'Corporate Gift Pack with Notebook Bottle Pen',a:'4/3',src:'images/accessories-gift-pack.jpg',d:'Debossed leather notebook, matte vacuum thermal bottle & precision metal pen in custom rigid unboxing box.',prop:'Turnkey corporate gifting designed for VIP stakeholders and foreign delegates. Delivers a tactile unboxing experience that reflects executive stature.'},
+{k:'p',c:'Accessories',t:'Custom Crest Recognition Award',a:'4/3',src:'images/accessories-crest.jpg',d:'Beveled optical crystal acrylic, brushed brass detailing & dark walnut plinth with laser engraving.',prop:'Architectural honors for landmark project completions and annual corporate excellence. Engineered to catch ambient light and command shelf presence.'},
+{k:'p',c:'Accessories',t:'Bottle Branding — Thermal Vacuum Bottle',a:'4/5',src:'images/accessories-bottle.jpg',d:'Double-wall insulated matte stainless steel with precision laser-engraved monogram logo.',prop:'Sustainable everyday utility with 24-hr temperature retention. High-durability powder coating engineered for both active site visits and boardroom meetings.'},
+{k:'p',c:'Accessories',t:'Laser Engraved Gift Items',a:'16/9',src:'images/accessories-laser-engraved.jpg',d:'Precision laser-engraved solid walnut desk tray, matte brass card case & geometric wooden coaster trio.',prop:'Indelible laser precision on noble organic materials. Resists wear and communicates timeless bespoke craftsmanship.'},
+{k:'p',c:'Accessories',t:'Bespoke Architectural Key Ring',a:'1/1',src:'images/accessories-keyring.jpg',d:'Full-grain vegetable-tanned leather strap with solid brushed brass geometric hardware.',prop:'Tactile everyday brand affinity for homeowners. Built from raw brass and saddle-stitched Italian leather that develops a rich natural patina over years.'},
+{k:'p',c:'Accessories',t:'Branded Construction Vest & Helmets Site Gear',a:'4/3',src:'images/accessories-vest-helmet.jpg',d:'High-visibility charcoal & amber reflective safety vest with matching matte architectural hard helmet.',prop:'Professional authority and safety compliance during site inspections, VIP investor walkthroughs, and foundation ceremonies.'},
+{k:'p',c:'Accessories',t:'Premium Business Cards Suite',a:'4/3',src:'images/accessories-business-card.jpg',d:'600gsm ultra-heavy cotton cardstock with painted copper edges, blind debossed grid & foil typography.',prop:'Instant tactile gravitas upon introduction. The heavyweight cotton fiber and copper edge foiling immediately distinguish leadership from competitors.'},
+{k:'p',c:'Accessories',t:'Luxury Brochure Printing & Monograph',a:'16/9',src:'images/accessories-brochure.jpg',d:'Smyth-sewn layflat corporate brochure with blind debossed linen-textured cover & copper foil titles.',prop:'Full-bleed double spread floor plans and photography without gutter curve. Essential for luxury developer project launches and architectural portfolios.'},
+{k:'p',c:'Accessories',t:'Luxury Kraft Hand Bag & Shopping Tote',a:'4/5',src:'images/accessories-handbag.jpg',d:'Heavyweight matte kraft paper tote with woven herringbone cotton handles & copper foil logo.',prop:'Walking billboards in commercial and residential districts. Engineered with reinforced cardboard bases to carry heavy presentation dossiers and gifts.'},
+{k:'p',c:'Accessories',t:'Bespoke Architectural Envelopes',a:'4/3',src:'images/accessories-envelope.jpg',d:'C5 luxury textured warm ivory cotton envelope with geometric blind debossed flap & foil calligraphy.',prop:'Creates ceremonial anticipation before an executive proposal or contract is read. Sets a tone of premium formality.'},
+{k:'p',c:'Accessories',t:'Executive Watermarked Letterhead Pad',a:'4/3',src:'images/accessories-letterhead.jpg',d:'A4 luxury textured cotton paper with architectural grid margins and minimalist branding.',prop:'Ensures contracts, official tenders, and correspondence carry the unmistakable weight of authentic craftsmanship.'},
+{k:'p',c:'Accessories',t:'Handcrafted Wooden Corporate Gifts',a:'4/3',src:'images/accessories-wooden-gift.jpg',d:'Solid American black walnut executive desk objects with natural beeswax finish & laser branding.',prop:'Warm, tactile wooden companions that occupy prime real estate on executive desks for decades.'}
+);
+
 var gal=$('gal'),chips=$('chips'),curF='All',list=[],li=0;
 function match(g){return curF==='All'||(curF==='Videos'?g.k==='v':g.c===curF)}
 function tile(g,i){
   var m=g.yt?'<img loading="lazy" alt="'+g.t+'" src="https://i.ytimg.com/vi/'+g.yt+'/hqdefault.jpg">':'<img loading="lazy" decoding="async" alt="'+g.t+'" src="'+g.src+'">';
-  return '<figure class="gt" style="aspect-ratio:'+g.a+';animation-delay:'+Math.min(i,20)*40+'ms" tabindex="0" role="button" aria-label="Open '+g.t+'" data-i="'+i+'">'+m+(g.k==='v'?'<span class="pb">▶</span>':'')+'<figcaption><span class="gtag">'+g.c+(g.k==='v'?' · Film':'')+'</span><b>'+g.t+'</b></figcaption></figure>'}
+  return '<figure class="gt" style="aspect-ratio:'+g.a+';animation-delay:'+Math.min(i,20)*40+'ms" tabindex="0" role="button" aria-label="Open '+g.t+'" data-i="'+i+'">'+m+(g.k==='v'?'<span class="pb">▶</span>':'')+'<figcaption><span class="gtag">'+g.c+(g.k==='v'?' · Film':'')+'</span><b>'+g.t+'</b>'+(g.d?'<span class="gdesc">'+g.d+'</span>':'')+'</figcaption></figure>'}
 function draw(){list=GAL.filter(match);gal.innerHTML=list.map(tile).join('')}
-['All','Branding','Landscape','Interior','Videos'].forEach(function(n){
+['All','Branding','Accessories','Landscape','Interior','Videos'].forEach(function(n){
   var b=document.createElement('button');b.className='chip';b.textContent=n;b.setAttribute('aria-pressed',n==='All');
   b.onclick=function(){curF=n;chips.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===b)});draw()};chips.appendChild(b)});
 draw();
+
+var btnAcc=$('btn-filter-acc');
+if(btnAcc)btnAcc.onclick=function(){
+  chips.querySelectorAll('.chip').forEach(function(c){if(c.textContent==='Accessories')c.click()});
+  var t=$('chips');if(t)scrollTo({top:t.getBoundingClientRect().top+pageYOffset-80,behavior:'smooth'});
+};
 
 /* lightbox + modals */
 var lb=$('lb'),lst=$('lb-st'),lastF=null;
@@ -1011,7 +1073,11 @@ function show(i){li=(i+list.length)%list.length;var g=list[li];
   }else{
     lst.innerHTML='<img alt="'+g.t+'" src="'+g.src+'">';
   }
-  $('lb-cap').textContent=g.c+' — '+g.t+'  ('+(li+1)+'/'+list.length+')';}
+  var cap='<div style="font-size:14px;font-weight:700"><b>'+g.c+'</b> — '+g.t+' <span style="opacity:.6;font-size:12px;font-weight:400">('+(li+1)+'/'+list.length+')</span></div>';
+  if(g.d) cap+='<div style="font-size:13px;color:var(--dim);margin-top:4px;font-weight:400;max-width:760px;line-height:1.45">'+g.d+'</div>';
+  if(g.prop) cap+='<div style="margin-top:8px;padding:8px 14px;background:rgba(205,139,79,.12);border-left:3px solid var(--pop);border-radius:4px;font-size:12.5px;font-weight:400;text-align:left;max-width:760px;line-height:1.45"><b style="color:var(--pt);font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:2px">Value Proposition</b>'+g.prop+'</div>';
+  if(g.c==='Accessories'||g.prop) cap+='<div style="margin-top:10px"><a href="https://wa.me/8801759592324?text='+encodeURIComponent('Hi Innerloop Atelier! I want to inquire about custom '+g.t+' for my brand/project.')+'" target="_blank" rel="noopener" class="btn btn-fill" style="font-size:11.5px;padding:6px 14px">Inquire on WhatsApp ↗</a></div>';
+  $('lb-cap').innerHTML=cap;}
 function openLb(i){lastF=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';show(i);$('lb-x').focus()}
 function closeLb(){lb.hidden=true;lst.innerHTML='';document.body.style.overflow='';if(lastF)lastF.focus()}
 gal.addEventListener('click',function(e){var t=e.target.closest('.gt');if(t)openLb(+t.dataset.i)});

@@ -95,3 +95,25 @@ All visual assets and media are consolidated directly into this single `images/`
 | Title | File Path | Role |
 | :--- | :--- | :--- |
 | **Founder & Proprietor Portrait** | `images/Founder.jpg` | Abid Abdullah studio profile |
+
+---
+
+## 8. Innerloop Accessories & Corporate Gifting Section
+*Section: Dedicated portfolio showcase `<div class="acc-banner" id="accessories">` and gallery category `Accessories`*
+
+| Title | File Path | Ratio | Key Value Proposition | Attached Link |
+| :--- | :--- | :--- | :--- | :--- |
+| 1. **Handover Key Box** | `images/accessories-key-box.jpg` | 16:9 | Handcrafted dark walnut presentation box with laser-carved monogram & charcoal velvet lining. Transforms apartment handovers into an unforgettable ceremonial benchmark. | [Facebook Reel](https://www.facebook.com/share/r/1Bybjyhb2v) |
+| 2. **Executive Desk Calendar** | `images/accessories-calendar.jpg` | 4:3 | Letterpress cotton cards housed in a handcrafted solid walnut block for daily C-suite desk visibility. | — |
+| 3. **VIP Corporate Gift Pack** | `images/accessories-gift-pack.jpg` | 4:3 | Debossed leather notebook, matte thermal bottle & precision pen in custom rigid foam-inlay unboxing packaging. | — |
+| 4. **Custom Crest Award** | `images/accessories-crest.jpg` | 4:3 | Beveled optical crystal acrylic, brushed brass detailing & dark walnut plinth with permanent laser engraving. | — |
+| 5. **Bottle Branding** | `images/accessories-bottle.jpg` | 4:5 | Double-wall insulated matte stainless steel bottle with laser-engraved monogram. 24-hr temperature retention. | — |
+| 6. **Laser Engraved Gifts** | `images/accessories-laser-engraved.jpg` | 16:9 | Solid walnut desk tray, matte brass card case & geometric wooden coaster trio with micron-level laser precision. | — |
+| 7. **Bespoke Key Ring** | `images/accessories-keyring.jpg` | 1:1 | Full-grain vegetable-tanned leather strap with solid brushed brass geometric hardware that patinas with age. | — |
+| 8. **Construction Site Gear** | `images/accessories-vest-helmet.jpg` | 4:3 | High-visibility charcoal & amber reflective safety vest with matching matte architectural hard helmet. | — |
+| 9. **Premium Business Cards** | `images/accessories-business-card.jpg` | 4:3 | 600gsm ultra-heavy cotton cardstock with painted copper edges, blind debossed grid & foil typography. | — |
+| 10. **Luxury Brochure Printing** | `images/accessories-brochure.jpg` | 16:9 | Smyth-sewn layflat corporate monograph with blind debossed linen-textured cover & copper foil titles. | — |
+| 11. **Architectural Hand Bag** | `images/accessories-handbag.jpg` | 4:5 | Heavyweight matte kraft paper shopping tote with woven herringbone cotton handles & metallic foil logo. | — |
+| 12. **Bespoke Envelopes** | `images/accessories-envelope.jpg` | 4:3 | C5 luxury textured warm ivory cotton envelope with geometric blind debossed flap & foil calligraphy. | — |
+| 13. **Letterhead Pad** | `images/accessories-letterhead.jpg` | 4:3 | A4 luxury textured cotton paper with architectural grid margins, official watermark, and minimal branding. | — |
+| 14. **Wooden Corporate Gifts** | `images/accessories-wooden-gift.jpg` | 4:3 | Handcrafted solid American black walnut executive desk objects with natural beeswax finish & laser branding. | — |
