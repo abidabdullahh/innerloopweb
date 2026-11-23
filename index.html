@@ -88,14 +88,23 @@ input,select,textarea{font-family:inherit;color:inherit}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 
 /* preloader */
-#preload{position:fixed;inset:0;z-index:2000;background:var(--bg);display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+#preload{position:fixed;inset:0;z-index:2000;background:var(--bg);display:grid;place-items:center;transition:opacity .7s cubic-bezier(.4,0,.2,1),visibility .7s}
+#preload::before{content:'';position:absolute;width:min(90vw,440px);height:min(90vw,440px);background:radial-gradient(circle,rgba(205,139,79,.15) 0%,rgba(241,233,217,.06) 55%,transparent 72%);border-radius:50%;pointer-events:none;animation:plAura 3.6s ease-in-out infinite alternate}
 #preload.done{opacity:0;visibility:hidden;pointer-events:none}
-.pl-mark{position:relative;width:min(46vmin,200px);aspect-ratio:1}
-.pl-logo{display:block;width:100%;height:auto;opacity:.1;filter:grayscale(1)}
-.pl-fill{position:absolute;inset:0;background:linear-gradient(180deg,#E9B67F,#CD8B4F 45%,#8A4F1F);
--webkit-mask:url(images/Preload-Icon.svg) center/contain no-repeat;mask:url(images/Preload-Icon.svg) center/contain no-repeat;
-clip-path:inset(100% 0 0 0);animation:plfill 1.7s cubic-bezier(.65,0,.25,1) forwards}
-@keyframes plfill{to{clip-path:inset(0)}}
+#preload.done .pl-mark{transform:scale(1.03) translateY(-6px);filter:blur(6px);opacity:0}
+.pl-mark{position:relative;width:min(82vw,360px);aspect-ratio:1825.76/390.95;animation:plFloat 3.4s ease-in-out infinite alternate;transition:transform .7s cubic-bezier(.4,0,.2,1),opacity .6s ease,filter .6s ease}
+.pl-logo{display:block;width:100%;height:auto;opacity:.13;filter:grayscale(1)}
+.pl-fill{position:absolute;inset:0;background:linear-gradient(100deg,var(--ink) 0%,var(--pt) 35%,var(--pop) 70%,#F5DFBC 100%);
+-webkit-mask:url(images/Preload-Logo.svg) center/contain no-repeat;mask:url(images/Preload-Logo.svg) center/contain no-repeat;
+clip-path:inset(0 100% 0 0);animation:plReveal 1.8s cubic-bezier(.35,0,.15,1) forwards}
+.pl-shimmer{position:absolute;inset:0;background:linear-gradient(105deg,transparent 20%,rgba(255,245,230,.8) 50%,transparent 80%);
+background-size:200% 100%;background-position:150% 0;
+-webkit-mask:url(images/Preload-Logo.svg) center/contain no-repeat;mask:url(images/Preload-Logo.svg) center/contain no-repeat;
+opacity:0;animation:plShimmer 2.4s ease-in-out infinite 1.2s;pointer-events:none}
+@keyframes plAura{from{transform:scale(.88);opacity:.5}to{transform:scale(1.12);opacity:1}}
+@keyframes plFloat{0%{transform:translateY(0) scale(.985)}100%{transform:translateY(-4px) scale(1.008)}}
+@keyframes plReveal{0%{clip-path:inset(0 100% 0 0)}100%{clip-path:inset(0 0% 0 0)}}
+@keyframes plShimmer{0%{background-position:150% 0;opacity:0}25%{opacity:.85}75%{opacity:.85}100%{background-position:-50% 0;opacity:0}}
 .sprog{position:fixed;top:0;left:0;height:3px;background:var(--pop);z-index:1000;width:0}
 .wa-float{position:fixed;bottom:24px;right:22px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 28px rgba(37,211,102,.42);transition:transform .25s,box-shadow .25s}
 .wa-float:hover{transform:translateY(-3px)}.wa-float svg{width:27px;height:27px;fill:#fff}
@@ -362,19 +371,19 @@ section.blk,.svc2,.clients,.statement{padding-block:56px}.pf{padding-block:110px
 .c-logo img{height:34px}.c-logo{padding:0 22px}
 .bk-sm{flex-direction:column}.bk-sm button{padding:12px}
 .ft-top{grid-template-columns:1fr;gap:26px}.hero-pg{bottom:14px}
-.pl-mark{width:min(64vw,300px)}.wa-float{width:52px;height:52px;bottom:16px;right:14px}
+.pl-mark{width:min(85vw,290px)}.wa-float{width:52px;height:52px;bottom:16px;right:14px}
 .lb-p,.lb-nx{top:auto;bottom:24px;margin:0}.lb-p{left:calc(50% - 64px)}.lb-nx{right:calc(50% - 64px)}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:none}
-.hs.on{clip-path:inset(0);transform:scale(1.04)}.pl-fill{animation:none;clip-path:inset(0)}
+.hs.on{clip-path:inset(0);transform:scale(1.04)}.pl-fill{animation:none;clip-path:inset(0)!important}#preload::before,.pl-mark,.pl-shimmer{animation:none!important}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#home">Skip to content</a>
 
-<div id="preload"><div class="pl-mark" role="img" aria-label="Innerloop Atelier loading"><img src="images/Preload-Icon.svg" alt="" class="pl-logo"><span class="pl-fill"></span></div></div>
+<div id="preload"><div class="pl-mark" role="img" aria-label="Innerloop Atelier loading"><img src="images/Preload-Logo.svg" alt="Innerloop Atelier" class="pl-logo"><span class="pl-fill"></span><span class="pl-shimmer"></span></div></div>
 <div class="sprog" id="sprog"></div>
 
 <a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20brief%20Innerloop%20Atelier%20on%20a%20project." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp Innerloop Atelier">
@@ -900,10 +909,10 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 'use strict';
 var $=function(i){return document.getElementById(i)},qa=function(s){return document.querySelectorAll(s)};
 
-/* preloader: icon fill needs ~1.9s */
+/* preloader: main logo fill needs ~2.0s */
 (function(){var pl=$('preload'),t0=Date.now();function hide(){pl.classList.add('done')}
-function wait(){setTimeout(hide,Math.max(0,1900-(Date.now()-t0)))}
-if(document.readyState==='complete')wait();else addEventListener('load',wait);setTimeout(hide,4000)})();
+function wait(){setTimeout(hide,Math.max(0,2000-(Date.now()-t0)))}
+if(document.readyState==='complete')wait();else addEventListener('load',wait);setTimeout(hide,4200)})();
 
 /* nav, progress, menu, reveal, faq */
 var nav=$('nav'),sprog=$('sprog'),hbg=$('hbg'),mnav=$('mnav');

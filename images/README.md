@@ -12,8 +12,8 @@ All visual assets and media are consolidated directly into this single `images/`
 | **Site Favicon (SVG)** | `images/favicon.svg` | SVG | Vector browser tab icon |
 | **Site Favicon 32x32** | `images/favicon-32.png` | PNG | Standard 32px raster browser icon |
 | **Apple Touch Icon** | `images/apple-touch-icon.png` | PNG | iOS home screen bookmark icon |
-| **Preloader Monogram Mark** | `images/Preload-Icon.svg` | SVG | Animated SVG mask on page load preloader |
-| **Brand Primary Wordmark (SVG)**| `images/Preload-Logo.svg` | SVG | Main navigation header and footer logo |
+| **Brand Primary Wordmark (SVG)**| `images/Preload-Logo.svg` | SVG | Main navigation header, footer, and animated preloader logo |
+| **Preloader Monogram Mark** | `images/Preload-Icon.svg` | SVG | Monogram icon asset / favicon source |
 | **Brand Fallback Wordmark (PNG)**| `images/Preload-Logo.png` | PNG | High-res raster fallback brand wordmark |
 
 ---
