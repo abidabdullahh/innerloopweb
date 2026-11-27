@@ -165,92 +165,84 @@ clip-path:inset(100% 0 0 0);animation:plfill 1.7s cubic-bezier(.65,0,.25,1) forw
 .c-logo img{height:46px;width:auto;display:block;filter:grayscale(1);opacity:.7;transition:.3s}
 .c-logo:hover img,.c-logo a:focus img{filter:none;opacity:1}
 
-section.blk{padding-block:90px}
-.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.card{padding:30px 26px;border-radius:26px;background:var(--bg2);border:1px solid var(--line);transition:transform .3s var(--ease),box-shadow .3s}
-.card:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(23,17,13,.12)}
-.card small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--pt)}
-.card b{display:block;font-weight:800;font-size:22px;letter-spacing:-.025em;margin:10px 0;line-height:1.15}
+/* sections */
+section.blk{padding-block:82px}
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.card{padding:28px 24px;border-radius:16px;background:var(--bg2);border:1px solid var(--line);transition:transform .25s var(--ease),border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--ink)}
+.card small{font-weight:700;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--pt)}
+.card b{display:block;font-weight:800;font-size:21px;letter-spacing:-.025em;margin:10px 0;line-height:1.18}
 .card p{font-size:14.5px;color:var(--dim)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:16px;border-radius:26px;background:#1d1d1f;color:#F5EFE4;overflow:hidden}
-.stats div{padding:32px 26px;border-right:1px solid #3a3a3d}.stats div:last-child{border:0}
-.stats b{display:block;font-weight:800;font-size:clamp(38px,5vw,64px);letter-spacing:-.045em;line-height:1;color:var(--pop)}
-.stats span{display:block;margin-top:10px;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
-.chips2{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.chips2 span{border:1.5px solid var(--ink);border-radius:100px;padding:10px 20px;font-weight:600;font-size:13.5px;background:var(--bg2);transition:.2s}
-.chips2 span:hover{background:var(--lime);transform:translateY(-2px)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;background:var(--line);border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden;margin-top:36px}
-.step{background:var(--bg2);padding:28px 22px}
-.step-n{display:block;font-weight:800;font-size:32px;color:var(--pt);margin-bottom:12px}
-.step h3{font-weight:800;font-size:17px;letter-spacing:-.02em;margin-bottom:8px}
-.step p{font-size:13px;color:var(--dim)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:16px;border-radius:16px;background:#1d1d1f;color:#F5EFE4;overflow:hidden}
+.stats div{padding:28px 24px;border-right:1px solid #333336}.stats div:last-child{border:0}
+.stats b{display:block;font-weight:800;font-size:clamp(32px,4.2vw,52px);letter-spacing:-.04em;line-height:1;color:var(--pop)}
+.stats span{display:block;margin-top:8px;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#CFC7B8}
 
-/* services */
-.svc2{position:relative;overflow:hidden;padding-block:100px;isolation:isolate;border-bottom:1px solid var(--line)}
-.svc2-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(8px) saturate(1.15);z-index:-2}
-.svc2::before{content:"";position:absolute;inset:0;background:rgba(251,247,239,.65);z-index:-1}
-.svc2-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:36px}
-.svc2-n{font-weight:800;font-size:13.5px;letter-spacing:.12em;color:var(--ac);display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.svc2-n::after{content:"";width:64px;height:3px;background:var(--ac);border-radius:3px}
-.svc2 h2{font-size:clamp(32px,4.5vw,58px);margin-bottom:12px;line-height:1.1}
-.arch-pill{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:100px;background:rgba(23,17,13,.06);border:1px solid rgba(23,17,13,.12);color:var(--ink);margin-bottom:12px}
-.arch-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ac,var(--pop))}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);margin-top:28px}
+.ind-grid span{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:14.5px;color:var(--ink)}
 
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-block:28px}
-.svc-card{background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border:1.5px solid var(--ink);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s,border-color .2s}
-.svc-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(23,17,13,.14);border-color:var(--ac,var(--pop))}
-.svc-card-img{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#EADBC6}
-.svc-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
-.svc-card:hover .svc-card-img img{transform:scale(1.06)}
-.svc-card-tag{position:absolute;top:10px;left:10px;padding:5px 11px;border-radius:100px;background:rgba(251,247,239,.95);backdrop-filter:blur(4px);font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(23,17,13,.1)}
-.svc-card-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
-.svc-card-body h3{font-size:17px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;line-height:1.25}
-.svc-card-body p{font-size:13px;color:var(--dim);line-height:1.5;flex:1}
-.svc-card-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid rgba(23,17,13,.08);font-size:11.5px;color:var(--ac,var(--pt));font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--ink);border-radius:16px;overflow:hidden;margin-top:32px}
+.step{background:var(--bg2);padding:26px 22px}
+.step-n{display:block;font-weight:800;font-size:26px;color:var(--pt);margin-bottom:10px}
+.step h3{font-weight:800;font-size:16.5px;letter-spacing:-.02em;margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--dim)}
 
-.svc-action-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:24px 28px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1.5px solid var(--ink);border-radius:24px;margin-top:32px;box-shadow:0 18px 40px rgba(23,17,13,.08)}
-.svc-action-info small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ac,var(--pt));margin-bottom:3px}
-.svc-action-info b{display:block;font-size:19px;font-weight:800;letter-spacing:-.02em}
-.svc-action-info p{font-size:13px;color:var(--dim);margin-top:2px}
+/* services — clean alternating bands, no blurred backdrop */
+.svc2{position:relative;padding-block:88px;border-bottom:1px solid var(--line);background:var(--bg)}
+.svc2.alt-band{background:var(--bg2)}
+.svc2-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:32px}
+.svc2-n{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);display:inline-flex;align-items:center;gap:10px;margin-bottom:10px}
+.svc2-n::after{content:"";width:40px;height:2px;background:var(--ac)}
+.svc2 h2{font-size:clamp(30px,4.2vw,52px);margin-bottom:10px;line-height:1.08}
+
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-block:24px}
+.svc-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s var(--ease),border-color .2s}
+.svc2.alt-band .svc-card{background:var(--bg)}
+.svc-card:hover{transform:translateY(-3px);border-color:var(--ink)}
+.svc-card-img{width:100%;aspect-ratio:16/10;overflow:hidden;background:#EADBC6}
+.svc-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.svc-card:hover .svc-card-img img{transform:scale(1.04)}
+.svc-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.svc-card-kicker{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ac,var(--pt));margin-bottom:5px}
+.svc-card-body h3{font-size:17px;font-weight:800;letter-spacing:-.02em;margin-bottom:7px;line-height:1.25}
+.svc-card-body p{font-size:13.5px;color:var(--dim);line-height:1.52;flex:1}
+
+.svc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;margin-top:24px;border-top:1px solid var(--line)}
+.svc-foot p{font-size:14.5px;color:var(--dim);max-width:58ch}
 .svc-action-btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
 /* Dhanshiri Concern Section */
-.dg-box{border:1.5px solid var(--ink);border-radius:28px;background:var(--bg);padding:clamp(24px,4vw,44px);margin-top:32px;box-shadow:0 24px 60px rgba(23,17,13,.1)}
+.dg-box{border:1px solid var(--ink);border-radius:18px;background:var(--bg);padding:clamp(24px,4vw,40px);margin-top:28px}
 .dg-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,48px);align-items:center}
-.dg-founder{display:flex;gap:18px;align-items:center;padding:18px;border-radius:20px;background:var(--bg2);border:1px solid var(--line);margin-block:20px}
-.dg-founder img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--ink);flex-shrink:0}
+.dg-founder{display:flex;gap:16px;align-items:center;padding:16px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);margin-block:18px}
+.dg-founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1.5px solid var(--ink);flex-shrink:0}
 .dg-founder b{display:block;font-size:16px;font-weight:800}
 .dg-founder em{display:block;font-style:normal;font-size:12.5px;color:#2F6B3A;font-weight:700}
-.dg-founder p{font-size:12px;color:var(--dim);margin-top:3px}
-.dg-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-.dg-b{padding:14px;border-radius:16px;background:var(--bg);border:1px solid rgba(23,17,13,.12);text-align:center}
-.dg-b b{display:block;font-size:22px;font-weight:800;color:#2F6B3A}
+.dg-founder p{font-size:12.5px;color:var(--dim);margin-top:3px}
+.dg-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.dg-b{padding:14px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);text-align:center}
+.dg-b b{display:block;font-size:20px;font-weight:800;color:#2F6B3A}
 .dg-b span{display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--dim);letter-spacing:.06em;margin-top:2px}
 
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 28px}
-.tags span{padding:8px 15px;border-radius:100px;background:rgba(255,255,255,.75);border:1px solid rgba(23,17,13,.14);font-weight:600;font-size:12.5px}
-.svc2-box{position:relative;margin:0;border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 90px rgba(23,17,13,.28);background:linear-gradient(160deg,#EADBC6,var(--ac));border-top:6px solid var(--ac)}
-.svc2-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
-.svc2-box:hover img{transform:scale(1.05)}
-.svc2-box figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:13px 18px;border-radius:20px;background:rgba(251,247,239,.9);backdrop-filter:blur(6px);font-weight:700;font-size:13px;display:flex;justify-content:space-between;gap:10px}
-.svc2-box em{font-style:normal;color:var(--ac)}
-
-/* studio */
-.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-.tc{border:1.5px solid var(--ink);border-radius:var(--r);padding:26px;background:var(--bg);transition:transform .25s var(--ease),box-shadow .25s}
-.tc:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(23,17,13,.14)}
-.tc-av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:22px;margin-bottom:14px;background:var(--lime)}
-.tc small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+/* studio + principles */
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.tc{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--bg);transition:transform .22s var(--ease),border-color .2s}
+.tc:hover{transform:translateY(-3px);border-color:var(--ink)}
+.tc-num{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--pt);margin-bottom:10px}
+.tc small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
 .tc b{display:block;font-weight:800;font-size:18px;letter-spacing:-.02em;margin:4px 0 8px}
 .tc p{font-size:13.5px;color:var(--dim)}
+.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px;margin-top:32px;border-top:1px solid var(--ink);padding-top:24px}
+.pr-item{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.pr-item b{display:block;font-size:17px;font-weight:800;letter-spacing:-.015em;margin-bottom:5px}
+.pr-item p{font-size:14px;color:var(--dim)}
 .alt{background:var(--bg2);border-block:1px solid var(--line)}
 .fd{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,70px);align-items:center}
-.fd-ph{position:relative;aspect-ratio:4/5;border-radius:32px;overflow:hidden;background:linear-gradient(160deg,#EADBC6,#CD8B4F);display:grid;place-items:center;box-shadow:0 40px 90px rgba(23,17,13,.22)}
+.fd-ph{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#EADBC6,#CD8B4F);display:grid;place-items:center;border:1px solid var(--ink)}
 .fd-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .fd-ph span{font-weight:800;font-size:clamp(80px,12vw,150px);color:rgba(23,17,13,.35)}
-.fd q{display:block;quotes:none;font-weight:400;font-size:clamp(22px,2.6vw,34px);line-height:1.3;letter-spacing:-.02em;margin:18px 0 22px}
+.fd q{display:block;quotes:none;font-weight:400;font-size:clamp(22px,2.5vw,32px);line-height:1.32;letter-spacing:-.02em;margin:18px 0 22px}
 .fd-n{font-weight:800;font-size:20px}.fd-r{font-size:14px;color:var(--dim);margin-bottom:24px}
-.statement{text-align:center;padding-block:90px;font-size:clamp(34px,6vw,76px)}
 
 .faq-list{display:flex;flex-direction:column;gap:12px;margin-top:32px}
 .fq{border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg2)}
@@ -288,11 +280,10 @@ section.blk{padding-block:90px}
 
 /* contact + footer */
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.cd{display:flex;gap:14px;margin-bottom:16px}
-.cd-ic{width:40px;height:40px;flex:none;border:1.5px solid var(--ink);border-radius:12px;display:grid;place-items:center;background:var(--bg2)}
-.cd-l{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pt)}
+.cd{display:flex;flex-direction:column;gap:2px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.cd-l{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--pt)}
 .cd a:hover{color:var(--pop)}
-.cf{border:1.5px solid var(--ink);border-radius:var(--r);padding:30px;background:var(--bg2)}
+.cf{border:1px solid var(--ink);border-radius:16px;padding:30px;background:#fff}
 .cf-submit{width:100%;margin-top:6px}
 .cf-msg{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:13px;text-align:center;display:none}
 .cf-msg.ok{display:block;background:#EEF9C9;border:1.5px solid #7A9A00;color:#27330A}
@@ -352,8 +343,8 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 .hero-in{gap:30px}.sp{justify-self:stretch;max-width:none}
 .hero-bg::after{background:rgba(251,247,239,.14)}
 .hero-in>div:first-child{background:rgba(251,247,239,.84);backdrop-filter:blur(6px);padding:26px;border-radius:26px}
-.aud,.stats{grid-template-columns:1fr 1fr}.crew{grid-template-columns:1fr 1fr}
-.svc2-box{aspect-ratio:16/11}.ct-grid{gap:44px}.ft-top{grid-template-columns:1fr 1fr}.lb{padding:70px 20px 100px}
+.aud,.stats,.ind-grid{grid-template-columns:1fr 1fr}.crew{grid-template-columns:1fr 1fr}
+.ct-grid{gap:44px}.ft-top{grid-template-columns:1fr 1fr}.lb{padding:70px 20px 100px}
 }
 @media(max-width:920px){
 .nav-links,.nav>.btn{display:none}.hamburger{display:flex}
@@ -364,12 +355,11 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 .hero-in{padding-top:88px;gap:26px}.hero-in>div:first-child{padding:22px}
 .sp a{padding:16px 18px;gap:12px}.sp b{font-size:16px}.sp em{font-size:12px}
 .h2,.svc2 h2{font-size:clamp(26px,7.4vw,34px)}
-.svc2-head{flex-direction:column;align-items:flex-start}
-.svc-action-bar{flex-direction:column;align-items:flex-start}
-.dg-badges{grid-template-columns:1fr}
-.aud,.crew,.row,.stats{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats b{font-size:36px}.stats div{padding:22px 18px}
-.card b{font-size:20px}
-section.blk,.svc2,.clients,.statement{padding-block:56px}.pf{padding-block:110px 60px}
+.svc2-head,.svc-foot{flex-direction:column;align-items:flex-start}
+.dg-badges,.principles{grid-template-columns:1fr}
+.aud,.crew,.row,.stats,.ind-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats b{font-size:32px}.stats div{padding:20px 16px}
+.card b{font-size:19px}
+section.blk,.svc2,.clients{padding-block:56px}.pf{padding-block:110px 60px}
 .c-logo img{height:34px}.c-logo{padding:0 22px}
 .bk-sm{flex-direction:column}.bk-sm button{padding:12px}
 .ft-top{grid-template-columns:1fr;gap:26px}.hero-pg{bottom:14px}
@@ -407,11 +397,11 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 </nav>
 <div class="mnav" id="mnav">
 <a href="#branding">Brand &amp; Communication</a>
-<a href="branding/" style="font-size:14px;color:var(--wine);padding-left:14px">↳ View Brand Deep Dive Page ↗</a>
+<a href="branding/" style="font-size:14px;color:var(--wine);padding-left:14px">↳ Explore Branding &amp; Signage ↗</a>
 <a href="#landscaping">Landscape &amp; Urban Spaces</a>
-<a href="landscaping/" style="font-size:14px;color:#2F6B3A;padding-left:14px">↳ View Landscape Deep Dive Page ↗</a>
+<a href="landscaping/" style="font-size:14px;color:#2F6B3A;padding-left:14px">↳ Explore Landscape Work ↗</a>
 <a href="#interior">Interior Design</a>
-<a href="interior/" style="font-size:14px;color:var(--navy);padding-left:14px">↳ View Interior Deep Dive Page ↗</a>
+<a href="interior/" style="font-size:14px;color:var(--navy);padding-left:14px">↳ Explore Interior Work ↗</a>
 <a href="#portfolio">Portfolio</a>
 <div style="padding:14px 0 4px;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pt)">Our Concerns</div>
 <a href="#dhanshiri" style="padding-left:10px">↳ Dhanshiri Garden (Landscape &amp; Nursery)</a>
@@ -468,294 +458,235 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 <div class="card"><small>For supply chain &amp; procurement</small><b>Fewer vendors. One scope, one timeline.</b><p>One brief, one schedule and one handover, with site oversight and delivery tracking built in.</p></div>
 <div class="card"><small>For brand managers</small><b>Consistency that survives the real world.</b><p>The same identity on a billboard, a lobby wall and a landscaped forecourt — governed by guidelines your vendors can follow.</p></div>
 </div>
-<div class="stats r d2"><div><b>3</b><span>Core disciplines</span></div><div><b>1</b><span>Accountable team</span></div><div><b>24h</b><span>Brief response</span></div><div><b>360°</b><span>Brand to space</span></div></div>
+<div class="stats r d2"><div><b>3</b><span>Disciplines</span></div><div><b>1</b><span>Team</span></div><div><b>24h</b><span>Brief response</span></div><div><b>Turnkey</b><span>Concept to build</span></div></div>
 </section>
 
 <section class="blk wrap" id="industries">
-<div class="r"><span class="eyebrow">Every industry</span><h2 class="disp h2">Your sector. Our execution standard.</h2></div>
-<div class="chips2 r d1"><span>Real Estate</span><span>Healthcare &amp; Pharma</span><span>Hospitality</span><span>Manufacturing</span><span>Banking &amp; Finance</span><span>Retail &amp; F&amp;B</span><span>Education</span><span>Technology</span><span>Agro &amp; Resorts</span><span>Corporate Offices</span><span>Logistics</span><span>NGOs &amp; Development</span></div>
+<div class="r"><span class="eyebrow">Every industry</span><h2 class="disp h2">Sectors we build for.</h2></div>
+<div class="ind-grid r d1"><span>Real Estate</span><span>Healthcare &amp; Pharma</span><span>Hospitality</span><span>Manufacturing</span><span>Banking &amp; Finance</span><span>Retail &amp; F&amp;B</span><span>Education</span><span>Technology</span><span>Agro &amp; Resorts</span><span>Corporate Offices</span><span>Logistics</span><span>NGOs &amp; Development</span></div>
 </section>
 
 <section class="blk wrap" id="method">
-<div class="r"><span class="eyebrow">The Innerloop method</span><h2 class="disp h2">Brief to handover. One owner throughout.</h2></div>
+<div class="r"><span class="eyebrow">How we work</span><h2 class="disp h2">From first brief to final handover.</h2></div>
 <div class="steps r d1">
-<div class="step"><span class="step-n">01</span><h3>Brief &amp; discover</h3><p>Deep-dive into your goals, context and audience. We ask the questions others skip.</p></div>
-<div class="step"><span class="step-n">02</span><h3>Strategise</h3><p>Positioning, concept and creative direction agreed before a pixel is moved.</p></div>
-<div class="step"><span class="step-n">03</span><h3>Design &amp; develop</h3><p>Our multi-disciplinary team crafts solutions with precision and considered artistry.</p></div>
-<div class="step"><span class="step-n">04</span><h3>Refine &amp; align</h3><p>Structured feedback cycles with clear revision protocols — no ambiguity.</p></div>
-<div class="step"><span class="step-n">05</span><h3>Execute &amp; deliver</h3><p>On-site oversight, print production, installation and handover end to end.</p></div>
+<div class="step"><span class="step-n">01</span><h3>Brief &amp; site study</h3><p>Understanding your goals, physical site, and constraints before drawing anything.</p></div>
+<div class="step"><span class="step-n">02</span><h3>Direction</h3><p>Positioning, spatial layout, and material choices agreed up front.</p></div>
+<div class="step"><span class="step-n">03</span><h3>Design &amp; engineering</h3><p>Our architects, graphic designers, and horticulturists develop the drawings and artwork together.</p></div>
+<div class="step"><span class="step-n">04</span><h3>Review &amp; detailing</h3><p>Clear revision checkpoints, BOQs, and material samples with no guesswork.</p></div>
+<div class="step"><span class="step-n">05</span><h3>Build &amp; handover</h3><p>On-site carpentry, printing, fabrication, planting, and final inspection by our own crew.</p></div>
 </div>
 </section>
 
-<section class="svc2" id="branding" style="--ac:#7A1F2B">
-<div class="svc2-bg" data-bg style="background-image:url('images/SBbranding.jpg')"></div>
+<section class="svc2 alt-band" id="branding" style="--ac:#7A1F2B">
 <div class="wrap"><div class="r">
 <div class="svc2-head">
 <div>
-<span class="svc2-n">01 · BRAND &amp; SPATIAL COMMUNICATION</span>
+<span class="svc2-n">01 · Brand &amp; Communication</span>
 <h2 class="disp">Brand &amp; Communication</h2>
-<span class="arch-pill">Architecture-Led Thinking · Proportion · Geometry · Contrast</span>
-<p class="lead">Physical branding is spatial engineering. We calculate sightlines, wind-load resistance, material tensioning, and chromatic contrast so Above-the-Line (ATL) and Below-the-Line (BTL) assets hold their integrity across every vendor.</p>
-</div>
-<div class="tags" style="margin:0">
-<span>Outdoor / OOH</span><span>Site Fencing</span><span>3D LED Signage</span><span>Events &amp; Activations</span><span>Identity Governance</span>
+<p class="lead">Physical branding relies on proportion, sightlines, material tensioning, and contrast so outdoor media, site fencing, signage, and print collateral hold up in the real world.</p>
 </div>
 </div>
 
 <div class="svc-grid">
-<!-- Outdoor & Billboards -->
 <article class="svc-card r">
-<div class="svc-card-img"><img src="images/Signage (1).jpg" alt="Outdoor communication and billboard engineering" loading="lazy"><span class="svc-card-tag">Outdoor / OOH</span></div>
+<div class="svc-card-img"><img src="images/Signage (1).jpg" alt="Outdoor communication and billboard engineering" loading="lazy"></div>
 <div class="svc-card-body">
+<span class="svc-card-kicker">Outdoor / OOH</span>
 <h3>Outdoor Communication &amp; Billboards</h3>
-<p>Calculated viewing angles, velocity-scale typography, wind-load truss verification, and 550+ GSM heavy-duty weatherproof flex.</p>
-<div class="svc-card-meta"><span>Sightline Engineered</span> · <span>Zero Fade Inks</span></div>
+<p>Viewing-angle layout, large-scale typography, structural truss checks, and 550+ GSM weatherproof media built for Dhaka sun and monsoon wind.</p>
 </div>
 </article>
 
-<!-- Project Fencing -->
 <article class="svc-card r d1">
-<div class="svc-card-img"><img src="images/TPH-Fence-Canvas-Of-Happiness.jpg" alt="The Premium Homes Canvas of Happiness fence branding" loading="lazy"><span class="svc-card-tag">Site Fencing</span></div>
+<div class="svc-card-img"><img src="images/TPH-Fence-Canvas-Of-Happiness.jpg" alt="The Premium Homes Canvas of Happiness fence branding" loading="lazy"></div>
 <div class="svc-card-body">
+<span class="svc-card-kicker">Site Fencing</span>
 <h3>Project Fencing &amp; Boundary Hoardings</h3>
-<p>Rigid MS box-pipe perimeter framing, heavy-duty anti-wrinkle tensioning, and seamless flush seams across hundreds of running feet.</p>
-<div class="svc-card-meta"><span>Featured: TPH Canvas of Happiness</span> · <span>Zero Sag</span></div>
+<p>Rigid MS box-pipe framing and continuous mechanical tensioning across hundreds of feet — as built for The Premium Homes (Canvas of Happiness).</p>
 </div>
 </article>
 
-<!-- Architectural Signage -->
 <article class="svc-card r d2">
-<div class="svc-card-img"><img src="images/LED Signage-Max BTL.jpeg" alt="Max BTL 3D LED signage fabrication" loading="lazy"><span class="svc-card-tag">3D Signage</span></div>
+<div class="svc-card-img"><img src="images/LED Signage-Max BTL.jpeg" alt="Max BTL 3D LED signage fabrication" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Architectural Signage &amp; 3D LED Systems</h3>
-<p>CNC-routed cast acrylic, SS #304 channels, Samsung IP67 waterproof LED modules, and day/night contrast verification.</p>
-<div class="svc-card-meta"><span>Featured: Max BTL</span> · <span>Optical Heat Sinking</span></div>
+<span class="svc-card-kicker">3D Signage</span>
+<h3>Architectural Signage &amp; 3D LED</h3>
+<p>CNC-routed cast acrylic, SS #304 channels, and IP67 LED modules with balanced daylight and night contrast — built for clients such as Max BTL.</p>
 </div>
 </article>
 
-<!-- Events & Activations -->
 <article class="svc-card r d1">
-<div class="svc-card-img"><img src="images/Event (1).jpg" alt="Corporate event staging and activation" loading="lazy"><span class="svc-card-tag">Activation &amp; Event</span></div>
+<div class="svc-card-img"><img src="images/Event (1).jpg" alt="Corporate event staging and activation" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Events, Activations &amp; Staging Architecture</h3>
-<p>Spatial crowd flow mapping, stage geometry, acoustic balance, glare-free backdrops, and live on-site execution management.</p>
-<div class="svc-card-meta"><span>Featured: Credence Meet</span> · <span>Turnkey Direction</span></div>
+<span class="svc-card-kicker">Events &amp; Activations</span>
+<h3>Event Staging &amp; Exhibitions</h3>
+<p>Crowd flow planning, modular stage fabrication, glare-free backdrops, and live technical direction — including the Credence Ambassador Meet.</p>
 </div>
 </article>
 </div>
 
-<!-- Deep Dive Action Bar -->
-<div class="svc-action-bar r d2">
-<div class="svc-action-info">
-<small>In-Depth Process &amp; Technical Breakdown</small>
-<b>How much effort we pay for branding jobs — billboard, fence, event &amp; signage specs.</b>
-<p>Explore full structural calculations, material matrices, case studies, and execution standards.</p>
-</div>
+<div class="svc-foot r d2">
+<p>Full structural specs, fabrication methods, and real project documentation across billboards, site fencing, signage, and identity systems.</p>
 <div class="svc-action-btns">
-<a href="branding/" class="btn btn-fill">Explore Brand Deep Dive Page →</a>
-<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Brand%20project." target="_blank" rel="noopener" class="btn btn-line">Brief Brand Project ↗</a>
+<a href="branding/" class="btn btn-fill">Brand &amp; Communication →</a>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Brand%20project." target="_blank" rel="noopener" class="btn btn-line">Brief a Project ↗</a>
 </div>
 </div>
-
 </div></div>
 </section>
 
 <section class="svc2" id="landscaping" style="--ac:#2F6B3A">
-<div class="svc2-bg" data-bg style="background-image:url('images/SBlandscape.jpg')"></div>
 <div class="wrap"><div class="r">
 <div class="svc2-head">
 <div>
-<span class="svc2-n">02 · LANDSCAPE &amp; LIVING ARCHITECTURE</span>
+<span class="svc2-n">02 · Landscape &amp; Urban Spaces</span>
 <h2 class="disp">Landscape Design &amp; Urban Spaces</h2>
-<span class="arch-pill">Living Architecture · Agronomic Rigor · Powered by Dhanshiri Garden</span>
-<p class="lead">Outdoor environments are living architectural compositions. Paired with our sister concern <strong>Dhanshiri Garden</strong> (led by Agronomist Mr. Amir Ali, ex-DAE), we connect civil drainage, hardscape geometry, and scientific soil pathology.</p>
-</div>
-<div class="tags" style="margin:0">
-<span>Rooftop Gardens</span><span>Geometric Hardscaping</span><span>Urban Courtyards</span><span>Reflection Pools</span><span>Dhanshiri Nursery</span>
+<p class="lead">Outdoor spaces are living compositions. Working alongside our sister concern <strong>Dhanshiri Garden</strong> (led by agronomist Mr. Amir Ali, ex-DAE), we pair civil drainage and stonework with proper soil science.</p>
 </div>
 </div>
 
 <div class="svc-grid">
-<!-- Rooftop Gardens -->
 <article class="svc-card r">
-<div class="svc-card-img"><img src="images/Landscaping (1).jpg" alt="Rooftop terrace landscape design" loading="lazy"><span class="svc-card-tag">Rooftop &amp; Terrace</span></div>
+<div class="svc-card-img"><img src="images/Landscaping (1).jpg" alt="Rooftop terrace landscape design" loading="lazy"></div>
 <div class="svc-card-body">
+<span class="svc-card-kicker">Rooftop &amp; Terrace</span>
 <h3>Rooftop &amp; Terrace Gardens</h3>
-<p>Structural dead/live load verification, multi-layer HDPE root barrier membranes, dimpled drainage cells, and windbreak planting.</p>
-<div class="svc-card-meta"><span>Zero Roof Leakage</span> · <span>Lightweight Soil Matrix</span></div>
+<p>Slab load checks, HDPE root-barrier membranes, dimpled drainage cells, lightweight soil media, and wind-tolerant planting.</p>
 </div>
 </article>
 
-<!-- Geometric Hardscaping -->
 <article class="svc-card r d1">
-<div class="svc-card-img"><img src="images/Landscaping (4).jpg" alt="Hardscaping stone pathways and turf" loading="lazy"><span class="svc-card-tag">Hardscaping</span></div>
+<div class="svc-card-img"><img src="images/Landscaping (4).jpg" alt="Hardscaping stone pathways and turf" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Architectural Hardscaping &amp; Paving</h3>
-<p>Geometric stone paving, flamed granite walkways, retaining planter walls, and razor-sharp turf-to-stone transitions.</p>
-<div class="svc-card-meta"><span>Permeable Paving</span> · <span>Textural Masonry</span></div>
+<span class="svc-card-kicker">Hardscaping</span>
+<h3>Paving, Planters &amp; Stonework</h3>
+<p>Natural stone pathways, flamed granite surfaces, masonry retaining planters, and crisp edging between stone and lawn turf.</p>
 </div>
 </article>
 
-<!-- Urban Courtyards -->
 <article class="svc-card r d2">
-<div class="svc-card-img"><img src="images/HeroLandscape2.jpg" alt="Corporate forecourt landscape" loading="lazy"><span class="svc-card-tag">Biophilic Courtyards</span></div>
+<div class="svc-card-img"><img src="images/HeroLandscape2.jpg" alt="Corporate forecourt landscape" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Urban Courtyards &amp; Corporate Greening</h3>
-<p>Biophilic corporate forecourts, ambient 3000K low-voltage illumination, shaded benches, and evergreen architectural tree palettes.</p>
-<div class="svc-card-meta"><span>Featured: Dhanmondi Project</span> · <span>Low Maintenance</span></div>
+<span class="svc-card-kicker">Courtyards</span>
+<h3>Urban Courtyards &amp; Forecourts</h3>
+<p>Shaded corporate courtyards, warm 3000K pathway lighting, integrated timber seating, and low-maintenance evergreen trees.</p>
 </div>
 </article>
 
-<!-- Dhanshiri Agronomy Engine -->
 <article class="svc-card r d1">
-<div class="svc-card-img"><img src="images/dhanshiri-founder.jpg" alt="Mr. Amir Ali, Agronomist & Founder of Dhanshiri Garden" loading="lazy"><span class="svc-card-tag">Sister Concern Sourcing</span></div>
+<div class="svc-card-img"><img src="images/dhanshiri-founder.jpg" alt="Mr. Amir Ali, Agronomist & Founder of Dhanshiri Garden" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Plant Supply &amp; Agronomy with Dhanshiri Garden</h3>
-<p>Acclimatized specimen sourcing from our proprietary nursery in Naogaon Sadar + Dhaka hubs, custom organic compost, and lawn turfing.</p>
-<div class="svc-card-meta"><span>30,000+ Plants Nurtured</span> · <span>ex-DAE Agronomist Led</span></div>
+<span class="svc-card-kicker">Dhanshiri Garden</span>
+<h3>Nursery Supply &amp; Agronomy</h3>
+<p>Acclimatized plants from our Naogaon Sadar nursery and Dhaka hubs, organic soil conditioning, carpet grass turfing, and plant care.</p>
 </div>
 </article>
 </div>
 
-<!-- Deep Dive Action Bar -->
-<div class="svc-action-bar r d2">
-<div class="svc-action-info">
-<small>In-Depth Botanical &amp; Civil Engineering</small>
-<b>Explore landscape architecture, living compositions &amp; agronomy standards.</b>
-<p>View detailed drainage layers, hardscaping stone details, plant catalogs, and Dhanshiri Garden credentials.</p>
-</div>
+<div class="svc-foot r d2">
+<p>See our drainage details, hardscaping work, water features, and full Dhanshiri Garden nursery capabilities.</p>
 <div class="svc-action-btns">
-<a href="landscaping/" class="btn btn-fill" style="background:#2F6B3A;border-color:#2F6B3A;color:#fff">Explore Landscape Deep Dive Page →</a>
-<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Landscape%20project." target="_blank" rel="noopener" class="btn btn-line">Brief Landscape Project ↗</a>
+<a href="landscaping/" class="btn btn-fill" style="background:#2F6B3A;border-color:#2F6B3A;color:#fff">Landscape Practice →</a>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20a%20Landscape%20project." target="_blank" rel="noopener" class="btn btn-line">Brief a Project ↗</a>
 </div>
 </div>
-
 </div></div>
 </section>
 
-<section class="svc2" id="interior" style="--ac:#1F3047">
-<div class="svc2-bg" data-bg style="background-image:url('images/SBinterior.jpg')"></div>
+<section class="svc2 alt-band" id="interior" style="--ac:#1F3047">
 <div class="wrap"><div class="r">
 <div class="svc2-head">
 <div>
-<span class="svc2-n">03 · INTERIOR ARCHITECTURE &amp; SPATIAL DETAILING</span>
+<span class="svc2-n">03 · Interior Design</span>
 <h2 class="disp">Interior Design</h2>
-<span class="arch-pill">Spatial Architecture · BNBC Standards · Turnkey Joinery</span>
-<p class="lead">Space is the physical embodiment of identity. We apply architectural rigour, proportion, contrast, and geometry to workspaces, luxury residences, bespoke joinery, culinary kitchens, and hospitality atmospheres.</p>
-</div>
-<div class="tags" style="margin:0">
-<span>Workstations</span><span>TV Units</span><span>Master Bedrooms</span><span>Functional Kitchens</span><span>Showrooms</span><span>Restaurants</span>
+<p class="lead">Interior work built on architectural logic — proportion, lighting temperature, and durable materials across corporate offices, residences, kitchens, and retail spaces.</p>
 </div>
 </div>
 
 <div class="svc-grid">
-<!-- Office Workstation -->
 <article class="svc-card r">
-<div class="svc-card-img"><img src="images/Office Space-Dhanmondi.jpg" alt="Office Workstations Dhanmondi" loading="lazy"><span class="svc-card-tag">Office Workstation</span></div>
+<div class="svc-card-img"><img src="images/Office Space-Dhanmondi.jpg" alt="Office Workstations Dhanmondi" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Office Workstations &amp; Commercial Spaces</h3>
-<p>Modular ergonomic desks, integrated under-bench wire raceways, acoustic PET felt screens, and task-lighting zoning.</p>
-<div class="svc-card-meta"><span>Featured: Dhanmondi Corporate</span> · <span>Acoustic Balance</span></div>
+<span class="svc-card-kicker">Commercial</span>
+<h3>Office Workstations &amp; Headquarters</h3>
+<p>Ergonomic team desks, concealed under-bench cable raceways, acoustic dividers, and focused task lighting — including our Dhanmondi office fitout.</p>
 </div>
 </article>
 
-<!-- Residential TV Cabinet -->
 <article class="svc-card r d1">
-<div class="svc-card-img"><img src="images/Residential Interior-Uttara.jpg" alt="Residential TV Cabinet Uttara" loading="lazy"><span class="svc-card-tag">TV Cabinet &amp; Living</span></div>
+<div class="svc-card-img"><img src="images/Residential Interior-Uttara.jpg" alt="Residential TV Cabinet Uttara" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Residential TV Cabinet &amp; Living Wall Units</h3>
-<p>Concealed conduit routing, AV equipment thermal ventilation, fluted architectural louvers, and warm halo backlighting.</p>
-<div class="svc-card-meta"><span>Featured: Uttara Residence</span> · <span>Concealed Conduits</span></div>
+<span class="svc-card-kicker">Living Spaces</span>
+<h3>TV Cabinets &amp; Custom Joinery</h3>
+<p>Concealed wire conduits, ventilated AV cabinetry, fluted wood paneling, and warm 3000K indirect lighting — featured in our Uttara residence.</p>
 </div>
 </article>
 
-<!-- Luxury Bedroom with False Ceiling -->
 <article class="svc-card r d2">
-<div class="svc-card-img"><img src="images/Herointerior2.jpg" alt="Luxury Bedroom with False Ceiling" loading="lazy"><span class="svc-card-tag">Luxury Bedroom</span></div>
+<div class="svc-card-img"><img src="images/Herointerior2.jpg" alt="Luxury Bedroom with False Ceiling" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Luxury Bedroom with False Ceiling &amp; Lighting</h3>
-<p>Architectural ceiling shadow reveals (15mm), 3000K warm indirect cove lighting, acoustic headboard panelling, and tranquil serenity.</p>
-<div class="svc-card-meta"><span>Shadow Gap Reveals</span> · <span>CRI 92+ Illumination</span></div>
+<span class="svc-card-kicker">Bedrooms</span>
+<h3>Master Suites &amp; Ceiling Lighting</h3>
+<p>Clean 15mm perimeter shadow-gap ceilings, warm cove lighting, recessed glare-free downlights, and custom wardrobes.</p>
 </div>
 </article>
 
-<!-- Functional Kitchen Interior Design -->
 <article class="svc-card r">
-<div class="svc-card-img"><img src="images/Modern Kitchen-Lalmatia.jpg" alt="Modern Kitchen Lalmatia" loading="lazy"><span class="svc-card-tag">Functional Kitchen</span></div>
+<div class="svc-card-img"><img src="images/Modern Kitchen-Lalmatia.jpg" alt="Modern Kitchen Lalmatia" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Premium &amp; Functional Kitchen Interior Design</h3>
-<p>Golden work triangle geometry, 18mm boiling-water resistant (BWR) marine ply carcasses, Blum soft-close fittings, and quartz counters.</p>
-<div class="svc-card-meta"><span>Featured: Lalmatia Kitchen</span> · <span>BWR Marine Substrates</span></div>
+<span class="svc-card-kicker">Kitchens</span>
+<h3>Functional Kitchens</h3>
+<p>Practical work-triangle planning, 18mm BWR marine ply carcasses, soft-close hardware, and quartz countertops — as built in Lalmatia.</p>
 </div>
 </article>
 
-<!-- Showroom & Retail -->
 <article class="svc-card r d1">
-<div class="svc-card-img"><img src="images/Herointerior3.jpg" alt="Showroom Retail Interior" loading="lazy"><span class="svc-card-tag">Showroom &amp; Retail</span></div>
+<div class="svc-card-img"><img src="images/Herointerior3.jpg" alt="Showroom Retail Interior" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Commercial Showrooms &amp; Retail Experiences</h3>
-<p>Circulation path mapping, high-CRI (95+) magnetic track spotlights, architectural display plinths, and high-traffic floor durability.</p>
-<div class="svc-card-meta"><span>Customer Flow Mapping</span> · <span>High-CRI Accents</span></div>
+<span class="svc-card-kicker">Retail</span>
+<h3>Showrooms &amp; Retail</h3>
+<p>Clear visitor circulation, high-CRI (95+) track spotlights for accurate product color, custom plinths, and durable commercial flooring.</p>
 </div>
 </article>
 
-<!-- Restaurant & Hospitality -->
 <article class="svc-card r d2">
-<div class="svc-card-img"><img src="images/FInterior.jpg" alt="Restaurant Interior Design" loading="lazy"><span class="svc-card-tag">Restaurant &amp; Dining</span></div>
+<div class="svc-card-img"><img src="images/FInterior.jpg" alt="Restaurant Interior Design" loading="lazy"></div>
 <div class="svc-card-body">
-<h3>Restaurant &amp; Hospitality Atmospheres</h3>
-<p>Intimate table privacy geometry, acoustic ceiling baffles for effortless conversation, ambient dimming, and commercial stain-resistant fabrics.</p>
-<div class="svc-card-meta"><span>Acoustic RT60 &lt; 0.6s</span> · <span>High-Traffic Durability</span></div>
+<span class="svc-card-kicker">Hospitality</span>
+<h3>Restaurants &amp; Dining</h3>
+<p>Balanced booth spacing for diner privacy and staff flow, acoustic ceiling treatment, warm dimming, and heavy-duty commercial upholstery.</p>
 </div>
 </article>
 </div>
 
-<!-- Deep Dive Action Bar -->
-<div class="svc-action-bar r d2">
-<div class="svc-action-info">
-<small>In-Depth Spatial Architecture &amp; Execution</small>
-<b>Workstations, TV cabinets, kitchens, luxury bedrooms &amp; turnkey fitouts.</b>
-<p>Explore full joinery details, 3D laser survey workflow, material matrices, and 50-point snagging protocols.</p>
-</div>
+<div class="svc-foot r d2">
+<p>Review our joinery specifications, 3D survey workflow, material standards, and residential &amp; commercial fitout projects.</p>
 <div class="svc-action-btns">
-<a href="interior/" class="btn btn-fill" style="background:#1F3047;border-color:#1F3047;color:#fff">Explore Interior Deep Dive Page →</a>
-<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20an%20Interior%20project." target="_blank" rel="noopener" class="btn btn-line">Brief Interior Project ↗</a>
+<a href="interior/" class="btn btn-fill" style="background:#1F3047;border-color:#1F3047;color:#fff">Interior Architecture →</a>
+<a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20brief%20Innerloop%20Atelier%20on%20an%20Interior%20project." target="_blank" rel="noopener" class="btn btn-line">Brief a Project ↗</a>
 </div>
 </div>
-
 </div></div>
 </section>
 
-<section class="blk alt" id="studio"><div class="wrap">
-<div class="r"><span class="eyebrow">The people</span><h2 class="disp h2">Built by specialists.</h2><p class="lead">One team, start to finish — strategist to nurseryman. No hand-offs, nothing lost in translation.</p></div>
+<section class="blk wrap" id="studio">
+<div class="r"><span class="eyebrow">The studio</span><h2 class="disp h2">Built by specialists.</h2><p class="lead">One team from start to finish — strategist to nurseryman. Nothing lost between separate agencies.</p></div>
 <div class="crew">
-<div class="tc r"><div class="tc-av">👑</div><small>Founder &amp; Proprietor</small><b>Abid Abdullah</b><p>Runs strategy, client relationships, and keeps every discipline honest to the brief.</p></div>
-<div class="tc r d1"><div class="tc-av">🏗️</div><small>Core discipline</small><b>Architects</b><p>Space planning, technical drawing, 3D modelling and site supervision — BNBC-compliant, site to sign-off.</p></div>
-<div class="tc r d2"><div class="tc-av">◈</div><small>Core discipline</small><b>Graphic Designers</b><p>Brand identity, campaign design, typography and motion graphics that hold up across every medium.</p></div>
-<div class="tc r"><div class="tc-av">🌿</div><small>Core discipline</small><b>Horticulturists</b><p>Plans, layouts, plant selection, installation and plant care — from planting day to long-term growth.</p></div>
-<div class="tc r d1"><div class="tc-av">🔨</div><small>Operations</small><b>Workmen</b><p>The hands that turn every drawing into something you can actually stand in.</p></div>
-<div class="tc r d2"><div class="tc-av">🔍</div><small>Standards</small><b>Quality Control</b><p>Nothing ships until it's benchmarked against the brief and the Innerloop standard.</p></div>
-</div></div></section>
+<div class="tc r"><span class="tc-num">01</span><small>Founder &amp; Proprietor</small><b>Abid Abdullah</b><p>Leads studio strategy, client relationships, and keeps every discipline accountable to the brief.</p></div>
+<div class="tc r d1"><span class="tc-num">02</span><small>Architecture</small><b>Architects</b><p>Space planning, working drawings, 3D modeling, lighting schedules, and BNBC-compliant site supervision.</p></div>
+<div class="tc r d2"><span class="tc-num">03</span><small>Communication</small><b>Graphic Designers</b><p>Brand identity, typography, print prepress, packaging, and large-format environmental graphics.</p></div>
+<div class="tc r"><span class="tc-num">04</span><small>Botanical</small><b>Horticulturists</b><p>Plant selection, soil conditioning, installation, and long-term garden maintenance.</p></div>
+<div class="tc r d1"><span class="tc-num">05</span><small>Execution</small><b>Site Crew &amp; Craftsmen</b><p>Carpenters, fabricators, and installers turning drawings into physical spaces.</p></div>
+<div class="tc r d2"><span class="tc-num">06</span><small>Standards</small><b>Quality Control</b><p>Every joinery piece, print run, and site handover checked against the specification.</p></div>
+</div>
 
-<section class="blk wrap" id="why">
-<div class="r"><span class="eyebrow">Why Innerloop</span><h2 class="disp h2">What sets us apart.</h2></div>
-<div class="crew">
-<div class="tc r"><b>Execution-first culture</b><p>We are a delivery studio, not a consultancy. Every engagement ends with something tangible — built, printed, planted or launched.</p></div>
-<div class="tc r d1"><b>Cross-discipline integration</b><p>Brand, space and landscape under one roof, without the fragmentation of managing multiple agencies.</p></div>
-<div class="tc r d2"><b>Architecture-led thinking</b><p>Our process is rooted in architectural logic — proportional, structural and built to last.</p></div>
-<div class="tc r"><b>Living expertise</b><p>In-house nursery knowledge takes us beyond design into real horticultural care and plant longevity.</p></div>
-<div class="tc r d1"><b>Local context, global standards</b><p>Deep roots in the local design and business ecosystem, benchmarked against international practice.</p></div>
-</div></section>
-
-<section class="blk wrap" id="founder"><div class="fd">
-<div class="fd-ph r"><span>AA</span><img id="fp" alt="Abid Abdullah, Founder of Innerloop Atelier" hidden></div>
-<div class="r d1"><span class="eyebrow">The founder</span>
-<q>“A brand is not a logo, and a space is not a room. Both are <b>environments</b> — carefully authored to shape how people feel, decide and remember.”</q>
-<div class="fd-n">Abid Abdullah</div><div class="fd-r">Founder &amp; Proprietor, Innerloop Atelier</div>
-<button class="btn btn-fill" id="fm-open" type="button">Learn more →</button></div>
-</div></section>
-
-<section class="statement wrap"><p class="disp r">We are<br><span class="pop">identity-obsessed.</span><br>Detail-driven.<br>Never fragmented.</p></section>
+<div class="principles r d1">
+<div class="pr-item"><b>Execution-first culture</b><p>We are a delivery studio, not just a consultancy. Every engagement ends with something built, printed, or planted.</p></div>
+<div class="pr-item"><b>One accountable team</b><p>Brand, space, and landscape coordinated under one roof instead of juggling disconnected vendors.</p></div>
+<div class="pr-item"><b>Living horticultural care</b><p>Our in-house nursery expertise via Dhanshiri Garden extends from planting day to seasonal care.</p></div>
+<div class="pr-item"><b>Local roots, clear standards</b><p>Grounded in Dhaka’s materials, craftsmen, and building codes, held to international detailing standards.</p></div>
+</div>
+</section>
 
 <section class="blk alt" id="dhanshiri"><div class="wrap">
 <div class="r" style="max-width:960px">
@@ -838,9 +769,9 @@ html{scroll-behavior:auto}.mq-t,.c-track,.hs.on,.hero-pg i.on::after{animation:n
 <section class="blk wrap" id="contact"><div class="ct-grid">
 <div class="r"><span class="eyebrow">Let's work together</span><h2 class="disp h2" style="font-size:clamp(36px,5.4vw,72px)">Let's close the <span class="pop">gaps.</span></h2>
 <p class="lead" style="margin-bottom:28px">Launching a brand, reimagining a space or breathing life into a landscape? Bring us the brief. We reply within 24 hours — WhatsApp is fastest.</p>
-<div class="cd"><div class="cd-ic">📞</div><div><div class="cd-l">Phone</div><a href="tel:+8801759592324">+88 017 5959 2324</a> · <a href="tel:+8801521341076">+88 015 2134 1076</a></div></div>
-<div class="cd"><div class="cd-ic">✉️</div><div><div class="cd-l">Email</div><a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a><br><a href="mailto:info@innerloopatelier.com">info@innerloopatelier.com</a></div></div>
-<div class="cd"><div class="cd-ic">📍</div><div><div class="cd-l">Studio</div>Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212</div></div>
+<div class="cd"><div class="cd-l">Phone</div><a href="tel:+8801759592324">+88 017 5959 2324</a> · <a href="tel:+8801521341076">+88 015 2134 1076</a></div>
+<div class="cd"><div class="cd-l">Email</div><a href="mailto:innerloopatelier@gmail.com">innerloopatelier@gmail.com</a> · <a href="mailto:info@innerloopatelier.com">info@innerloopatelier.com</a></div>
+<div class="cd" style="border-bottom:0"><div class="cd-l">Studio</div>Ka-26/1, Rasulbag, Mohakhali, Dhaka 1212</div>
 <a href="https://wa.me/8801759592324?text=Hi!%20I%20want%20to%20brief%20Innerloop%20Atelier%20on%20a%20project." target="_blank" rel="noopener" class="btn" style="margin-top:10px;background:var(--wa);border-color:var(--wa);color:#fff">Chat on WhatsApp →</a></div>
 <div class="r d2"><div class="cf"><form id="cf" novalidate>
 <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
@@ -951,10 +882,8 @@ function next(){
 function start(){if(started)return;started=true;next();setInterval(function(){if(!document.hidden&&!$('home').hidden)next()},7000)}
 var im=new Image();im.onload=im.onerror=start;im.src=H0[0];setTimeout(start,1800);
 
-/* client logo loop, parallax */
+/* client logo loop */
 var ct=$('ct');Array.prototype.slice.call(ct.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');var a=k.querySelector('a');if(a)a.setAttribute('tabindex','-1');ct.appendChild(k)});
-var bgs=qa('[data-bg]'),tk=0;
-addEventListener('scroll',function(){if(tk)return;tk=1;requestAnimationFrame(function(){tk=0;bgs.forEach(function(b){b.style.transform='translateY('+(b.parentNode.getBoundingClientRect().top*-.1)+'px) scale(1.1)'})})},{passive:true});
 ['fp'].forEach(function(i){var e=$(i);e.src='images/Founder.jpg';e.hidden=false});
 
 /* contact form */

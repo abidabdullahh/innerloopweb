@@ -74,50 +74,49 @@ input,select,textarea{font-family:inherit;color:inherit}
 .mnav a{font-size:19px;font-weight:600;letter-spacing:-.01em;padding:15px 0;border-bottom:1px solid var(--line)}
 
 /* hero */
-.p-hero{position:relative;padding-top:130px;padding-bottom:80px;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1.5px solid var(--ink);overflow:hidden}
-.crumb{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.p-hero{padding-top:132px;padding-bottom:56px;border-bottom:1px solid var(--line)}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
 .crumb a:hover{color:var(--ink)}
-.p-hero-title{font-size:clamp(38px,6vw,78px);margin-bottom:20px}
-.p-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:40px}
-.p-stat{background:var(--bg);border:1.5px solid var(--ink);border-radius:20px;padding:22px;box-shadow:0 12px 30px rgba(23,17,13,.06)}
-.p-stat b{display:block;font-size:32px;font-weight:800;color:var(--wine);letter-spacing:-.03em}
-.p-stat span{display:block;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-top:4px}
+.p-hero-title{font-size:clamp(36px,5.4vw,66px);margin:12px 0 18px}
+.meta-strip{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--dim)}
+.meta-strip strong{color:var(--ink)}
 
-/* deep dive sections */
-section.p-block{padding-block:90px;border-bottom:1px solid var(--line)}
-.p-block:nth-child(even){background:rgba(241,233,217,.45)}
-.arch-tag{display:inline-block;padding:6px 14px;border-radius:100px;background:var(--wine);color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-.sec-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(36px,5vw,70px);align-items:center}
-.sec-grid.rev{grid-template-columns:1fr 1.1fr}
+/* sections */
+section.p-block{padding-block:80px;border-bottom:1px solid var(--line)}
+.p-block:nth-child(even){background:var(--bg2)}
+.arch-tag{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);margin-bottom:10px}
+.sec-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,64px);align-items:start}
+.sec-grid.rev{grid-template-columns:1fr 1.05fr}
 .sec-grid.rev .sec-text{order:2}
 .sec-grid.rev .sec-vis{order:1}
-.sec-text h2{font-size:clamp(28px,3.8vw,48px);letter-spacing:-.03em;margin-bottom:16px;line-height:1.12}
+.sec-text h2{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.03em;margin-bottom:14px;line-height:1.12}
 .sec-text p{font-size:15px;color:var(--dim);margin-bottom:16px;line-height:1.65}
-.eff-list{margin:22px 0;display:flex;flex-direction:column;gap:12px}
-.eff-item{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
-.eff-dot{width:22px;height:22px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:2px}
-.eff-item b{display:block;font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
-.eff-item p{font-size:13px;color:var(--dim);margin:0;line-height:1.45}
+.eff-list{margin:22px 0;border-top:1px solid var(--line)}
+.eff-item{padding:13px 0;border-bottom:1px solid var(--line)}
+.eff-dot{display:none}
+.eff-item b{display:block;font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.eff-item p{font-size:13.5px;color:var(--dim);margin:0;line-height:1.5}
 
 .sec-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .sec-gallery.single{grid-template-columns:1fr}
-.vis-card{position:relative;border-radius:20px;overflow:hidden;border:1.5px solid var(--ink);aspect-ratio:4/3;background:#EADBC6;box-shadow:0 18px 40px rgba(23,17,13,.12)}
-.vis-card.span2{grid-column:span 2;aspect-ratio:16/9}
-.vis-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
-.vis-card:hover img{transform:scale(1.05)}
-.vis-cap{position:absolute;bottom:10px;left:10px;right:10px;background:rgba(251,247,239,.94);backdrop-filter:blur(6px);padding:8px 14px;border-radius:12px;font-size:12px;font-weight:700;display:flex;justify-content:space-between;border:1px solid rgba(23,17,13,.1)}
-.vis-cap em{font-style:normal;color:var(--wine)}
+.vis-card{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--bg);margin:0}
+.vis-card.span2{grid-column:span 2}
+.vis-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.vis-card.span2 img{aspect-ratio:16/9}
+.vis-card:hover img{transform:scale(1.03)}
+.vis-cap{padding:9px 12px;border-top:1px solid var(--line);font-size:12px;font-weight:600;display:flex;justify-content:space-between;gap:8px;color:var(--ink)}
+.vis-cap em{font-style:normal;color:var(--dim);font-weight:500}
 
 /* process */
-.p-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;background:var(--ink);border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden;margin-top:36px}
-.p-step{background:var(--bg);padding:28px 22px}
-.p-step-n{display:block;font-weight:800;font-size:28px;color:var(--wine);margin-bottom:10px}
-.p-step h3{font-weight:800;font-size:16px;letter-spacing:-.02em;margin-bottom:8px}
-.p-step p{font-size:13px;color:var(--dim)}
+.p-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--ink);border-radius:14px;overflow:hidden;margin-top:32px}
+.p-step{background:var(--bg);padding:26px 22px}
+.p-step-n{display:block;font-weight:800;font-size:24px;color:var(--wine);margin-bottom:10px}
+.p-step h3{font-weight:800;font-size:16px;letter-spacing:-.02em;margin-bottom:6px}
+.p-step p{font-size:13.5px;color:var(--dim)}
 
 /* cta bar */
-.cta-box{background:var(--bg2);border:2px solid var(--ink);border-radius:32px;padding:clamp(30px,5vw,60px);text-align:center;box-shadow:0 30px 70px rgba(23,17,13,.12);margin-block:90px}
-.cta-box h2{font-size:clamp(32px,4.5vw,56px);margin-bottom:14px}
+.cta-box{background:var(--bg2);border:1px solid var(--ink);border-radius:16px;padding:clamp(28px,5vw,52px);text-align:center;margin-block:72px}
+.cta-box h2{font-size:clamp(28px,4vw,46px);margin-bottom:12px}
 
 /* footer */
 footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;background:var(--bg2)}
@@ -130,13 +129,15 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--dim)}
 
 @media(max-width:1024px){
-.sec-grid,.sec-grid.rev{grid-template-columns:1fr;gap:36px}
+.sec-grid,.sec-grid.rev{grid-template-columns:1fr;gap:32px}
 .sec-grid.rev .sec-text{order:1}.sec-grid.rev .sec-vis{order:2}
 .ft-top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:700px){
+@media(max-width:920px){
 .nav-links,.nav>.btn{display:none}.hamburger{display:flex}
-.sec-gallery{grid-template-columns:1fr}.vis-card.span2{grid-column:span 1;aspect-ratio:4/3}
+}
+@media(max-width:700px){
+.sec-gallery{grid-template-columns:1fr}.vis-card.span2{grid-column:span 1}.vis-card.span2 img{aspect-ratio:4/3}
 .ft-top{grid-template-columns:1fr}
 }
 </style>
@@ -181,14 +182,14 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 <header class="p-hero">
 <div class="wrap">
 <div class="crumb r"><a href="../">Home</a> <span>/</span> <a href="../#branding">Services</a> <span>/</span> <span>Brand &amp; Communication</span></div>
-<span class="eyebrow r d1" style="background:var(--wine);color:#fff">Discipline 01 · B2B Execution</span>
-<h1 class="disp p-hero-title r d1">Architecture-Led <span class="pop">Branding</span> &amp; Spatial Communication.</h1>
-<p class="lead r d2">Branding in the physical realm is not mere graphic design — it is <strong>spatial engineering</strong>. How much effort we pay for branding jobs comes down to four unyielding principles: <strong>proportion, contrast, structural geometry, and longevity</strong>. From multi-hundred-foot project fences to massive urban billboards, architectural wayfinding, and live brand activation stages, we eliminate the vendor chaos that degrades brand value.</p>
-<div class="p-stats r d2">
-<div class="p-stat"><b>100%</b><span>Geometric Sightline Alignment</span></div>
-<div class="p-stat"><b>550+ GSM</b><span>Industrial Weatherproof Media</span></div>
-<div class="p-stat"><b>Zero-Sag</b><span>Rigid Perimeter Structural Tension</span></div>
-<div class="p-stat"><b>1 Team</b><span>Concept to Fabrication &amp; Handover</span></div>
+<span class="eyebrow r d1" style="background:var(--wine);color:#fff">Discipline 01 · Brand &amp; Communication</span>
+<h1 class="disp p-hero-title r d1">Physical branding built with <span class="pop">architectural</span> discipline.</h1>
+<p class="lead r d2">Outdoor branding fails when print, structure, and proportion are left to separate subcontractors. We handle sightline layout, steel framing, 3D signage fabrication, event staging, and brand guidelines under one team — from project perimeter fences to corporate identities.</p>
+<div class="meta-strip r d2">
+<div><strong>Media:</strong> 550+ GSM weatherproof flex</div>
+<div><strong>Framing:</strong> Rigid MS box-pipe structures</div>
+<div><strong>Signage:</strong> Cast acrylic, SS #304 &amp; IP67 LED</div>
+<div><strong>Scope:</strong> Concept to fabrication &amp; install</div>
 </div>
 </div>
 </header>
@@ -199,7 +200,7 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 <div class="sec-text r">
 <span class="arch-tag">Structural OOH &amp; Large Format</span>
 <h2>Outdoor Communication &amp; Billboard Engineering</h2>
-<p>In high-speed urban transit corridors, a billboard has less than 2.8 seconds to establish recognition. That requires profound architectural discipline: calculation of motorists' viewing cones, vertical declination angles, typographic scale, and chromatic contrast against changing daylight conditions.</p>
+<p>On busy urban roads, a passing driver only has a couple of seconds to read a billboard. That requires clear viewing angles, generous type scale, and strong contrast against changing daylight.</p>
 <div class="eff-list">
 <div class="eff-item"><span class="eff-dot">✓</span><div><b>Sightline &amp; Speed-Scale Analysis</b><p>Typography and focal imagery sized proportionally to viewing distance (50m to 300m) and approach velocity, preventing visual clutter.</p></div></div>
 <div class="eff-item"><span class="eff-dot">✓</span><div><b>Wind-Load &amp; Sub-Structure Safety</b><p>Structural MS truss verification engineered to withstand monsoon gusts, with anti-tear perimeter grommets and tensioned cable anchors.</p></div></div>
@@ -245,7 +246,7 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 <section class="p-block wrap" id="signage">
 <div class="sec-grid">
 <div class="sec-text r">
-<span class="arch-tag">Optoelectronic Fabrication</span>
+<span class="arch-tag">3D Signage &amp; Lighting</span>
 <h2>Architectural Signage, LED &amp; Wayfinding</h2>
 <p>Signage is the physical signature of your building. We design and fabricate custom 3D acrylic letters, CNC-routed metal channels, and edge-lit LED systems that integrate seamlessly into architectural facades.</p>
 <div class="eff-list">
@@ -328,9 +329,9 @@ footer{border-top:3px solid var(--pop);padding:52px clamp(20px,4vw,56px) 28px;ba
 <!-- Bottom CTA -->
 <div class="wrap">
 <div class="cta-box r">
-<span class="eyebrow" style="background:var(--wine);color:#fff">Ready to build?</span>
-<h2 class="disp">Bring Us Your Brand Execution Brief.</h2>
-<p class="lead" style="margin-inline:auto;margin-bottom:28px">Whether commanding a highway with heavy-duty billboards, securing site perimeters with flawless tensioned fencing, or crafting an immersive brand activation — Innerloop delivers.</p>
+<span class="eyebrow" style="background:var(--wine);color:#fff">Start a project</span>
+<h2 class="disp">Bring us your branding or signage brief.</h2>
+<p class="lead" style="margin-inline:auto;margin-bottom:28px">From highway billboards and tensioned project fencing to 3D signage and corporate events — one team handles layout, fabrication, and installation.</p>
 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
 <a href="../#book" class="btn btn-fill">Book a Strategy Call →</a>
 <a href="https://wa.me/8801759592324?text=Hi!%20I%27d%20like%20to%20discuss%20a%20Branding%20project." target="_blank" rel="noopener" class="btn btn-line">WhatsApp Direct ↗</a>
